@@ -277,7 +277,7 @@
             this.updateView($(e.currentTarget), true /*wasJustSelected*/);
         },
 
-        copytoclip: (e) => Common.openOrClipboardLink(e, $(e.target)[0].textContent, ($(e.target)[0].className || $(e.target)[0].id ? i18n.__('title') : i18n.__('filename')), true),
+        copytoclip: (e) => Common.openOrClipboardLink(e, $(e.target)[0].textContent, (($(e.target)[0].className && $(e.target)[0].className !== 'tooltipped') || $(e.target)[0].id ? i18n.__('title') : i18n.__('filename')), true),
 
         openItem: function (e) {
             const hash = $('.tab-torrent.active')[0].getAttribute('id');
