@@ -27,41 +27,41 @@
         background-color $ShowBgColor1
 
     .button
-        position: absolute
-        right: 16.2%
-        cursor: pointer
-        height: 35px
-        margin-top: 15px
-        border-radius: $ButtonRadius
-        background-clip: padding-box
-        background-color: $ButtonBg
-        padding: 0 15px
-        transition: background-color 0.5s
-        color: $ButtonText
-        font-family: $MainFont
-        font-smoothing: antialiased
-        text-align: center
-        font-size: 12px
-        line-height: 34px
+        position absolute
+        right 16.2%
+        cursor pointer
+        height 35px
+        margin-top 15px
+        border-radius $ButtonRadius
+        background-clip padding-box
+        background-color $ButtonBg
+        padding 0 15px
+        transition background-color 0.5s
+        color $ButtonText
+        font-family $MainFont
+        font-smoothing antialiased
+        text-align center
+        font-size 12px
+        line-height 34px
 
         &:hover
-            background: $ButtonBgHover
-            text-decoration: none
+            background $ButtonBgHover
+            text-decoration none
 
         &:active
-            box-shadow: inset 0 1px 4px rgba(0,0,0,0.6)
-            background: $ButtonBgActive
+            box-shadow inset 0 1px 4px rgba(0,0,0,0.6)
+            background $ButtonBgActive
 
         .playerchoice
-            padding-left: 0px
-            margin: 0
-            border: 0
+            padding-left 0px
+            margin 0
+            border 0
 
         &.store-torrent
-            right: initial
-            margin-left: 17%
-            margin-top: 15px
-            position: absolute
+            right initial
+            margin-left 17%
+            margin-top 15px
+            position absolute
 
         &.disabled
             background-color $ButtonBgDisabled
@@ -97,7 +97,7 @@
             content '\f071'
             color $WarningColor
             font-family "Font Awesome 6 Free"
-            font-weight: 900
+            font-weight 900
             font-size 16px
             padding-right 8px
 
@@ -130,7 +130,7 @@
                     text-decoration blink
                     width 100%
                     display block
-                    padding 12px 160px 13px 24px
+                    padding 12px 160px 13px 20px
                     transition opacity .1s ease-in
                     overflow hidden
                     text-overflow ellipsis
@@ -143,7 +143,7 @@
 
                 i
                     float right
-                    margin 2px 14px 2px 2px
+                    margin 2px 13px 2px 1px
                     border-radius 50%
                     opacity 0.4
                     transition all .5s
