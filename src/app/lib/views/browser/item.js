@@ -426,6 +426,7 @@
                 }.bind(this)).then(function () {
                         var id = window.setTimeout(function() {}, 0);
                         while (id--) { window.clearTimeout(id); }
+                        $('.notification_alert').stop();
                         App.vent.trigger('notification:close');
                         App.vent.trigger('notification:show', new App.Model.Notification({
                             title: '',
