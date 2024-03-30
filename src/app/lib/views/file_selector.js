@@ -14,6 +14,7 @@
         events: {
             'click .close-icon': 'closeSelector',
             'click .file-item *': 'startStreaming',
+            'contextmenu .file-item a': 'copytoclip',
             'click .store-torrent': 'storeTorrent',
             'click .playerchoicemenu li a': 'selectPlayer',
             'click .playerchoicehelp': 'showPlayerList',
@@ -100,6 +101,8 @@
                 }
             }
         },
+
+        copytoclip: (e) => Common.openOrClipboardLink(e, $(e.target)[0].textContent, i18n.__('filename'), true),
 
         isTorrentStored: function () {
             var target = App.settings['databaseLocation'] + '/TorrentCollection/';
