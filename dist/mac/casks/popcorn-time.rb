@@ -1,5 +1,5 @@
 cask "popcorn-time" do
-  version "0.4.9"
+  version "0.5.0"
 
   nwjs = "0.64.0"
   arch = "x64"
