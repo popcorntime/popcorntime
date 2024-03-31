@@ -327,37 +327,16 @@
       _this.getRegion('qualitySelector').currentView.selectNext();
     },
 
-    selectPlayer: function(e) {
-      var player = $(e.currentTarget)
-        .parent('li')
-        .attr('id')
-        .replace('player-', '');
-      this.model.set('device', player);
-      if (!player.match(/[0-9]+.[0-9]+.[0-9]+.[0-9]/gi)) {
-        AdvSettings.set('chosenPlayer', player);
-      }
+    selectPlayer: function (e) {
+      Common.selectPlayer(e, this.model);
     },
 
-    showPlayerList: function(e) {
-      App.vent.trigger('notification:show', new App.Model.Notification({
-        title: '',
-        body: i18n.__('Popcorn Time currently supports') + '<div class="splayerlist">' + extPlayerlst + '.</div><br>' + i18n.__('There is also support for Chromecast, AirPlay & DLNA devices.'),
-        type: 'success'
-      }));
+    showPlayerList: function () {
+      Common.showPlayerList();
     },
 
     refreshPlayerList: function (e) {
-      e.stopPropagation();
-      $('.play-control .playerchoicerefresh').addClass('fa-spin fa-spinner spin').tooltip('hide');
-      Promise.all(App.Device.loadDeviceSupport()).then(function(data) {
-        App.Device.rescan();
-      }).then(function() {
-        setTimeout(() => {
-          App.Device.ChooserView('#player-chooser').render();
-          $('.playerchoicerefresh, .playerchoicehelp').tooltip({html: true, delay: {'show': 800,'hide': 100}});
-          $('.play-control .playerchoice').click();
-        }, 3000);
-      });
+      Common.refreshPlayerList(e);
     },
 
     showAllTorrents: function() {
