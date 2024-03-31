@@ -41,13 +41,9 @@ fadeicon(image, posx, posx2, size)
 .right
     float right
 
-    // Gives nicer scrollbars to an element
 scrollable()
     overflow-x hidden
-    // Overflow overlay is an undocumented webkit feature. It places the scrollbar *on top* of the content instead of eating some 16px.
-    // It's buggy, though (it paints the scrollbar *over* the content and composites badly, so it will crop the content anyway )
     overflow-y overlay
-    // Inertial scrolling for touch devices (mostly useless here)
     -webkit-overflow-scrolling touch
 
     &::-webkit-scrollbar
