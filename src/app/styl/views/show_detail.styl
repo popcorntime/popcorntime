@@ -8,7 +8,6 @@
 
     .show-header
         width 100vw
-        /*height 25vh TODO responsive header (especially poster)*/
         min-height 215px
 
         .sh-backdrop
@@ -350,7 +349,7 @@
         background rgba($ShowBgColor1, 0.7)
         height calc(100vh - 282px)
         display grid
-        padding-left 20px /* left-pad */
+        padding-left 20px
         gap 10px
         grid-template-columns fit-content(165px) 2fr minmax(480px, 1fr)
         grid-template-rows 2fr auto
@@ -483,7 +482,7 @@
         .sd-overview
             background rgba($ShowBgColor1, 0.3)
             grid-area overview
-            padding 10px 30px 10px 18px /* right pad */
+            padding 10px 30px 10px 18px
             display grid
             grid-template-rows auto 2fr
             &.transpOff
