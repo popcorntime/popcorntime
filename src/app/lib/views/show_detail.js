@@ -974,33 +974,15 @@
         },
 
         selectPlayer: function (e) {
-            var player = $(e.currentTarget).parent('li').attr('id').replace('player-', '');
-            _this.model.set('device', player);
-            if (!player.match(/[0-9]+.[0-9]+.[0-9]+.[0-9]/ig)) {
-                AdvSettings.set('chosenPlayer', player);
-            }
+            Common.selectPlayer(e, _this.model);
         },
 
-        showPlayerList: function(e) {
-            App.vent.trigger('notification:show', new App.Model.Notification({
-                title: '',
-                body: i18n.__('Popcorn Time currently supports') + '<div class="splayerlist">' + extPlayerlst + '.</div><br>' + i18n.__('There is also support for Chromecast, AirPlay & DLNA devices.'),
-                type: 'success'
-            }));
+        showPlayerList: function () {
+            Common.showPlayerList();
         },
 
         refreshPlayerList: function (e) {
-            e.stopPropagation();
-            $('.show-details .playerchoicerefresh').addClass('fa-spin fa-spinner spin').tooltip('hide');
-            Promise.all(App.Device.loadDeviceSupport()).then(function(data) {
-                App.Device.rescan();
-            }).then(function() {
-                setTimeout(() => {
-                    App.Device.ChooserView('#player-chooser').render();
-                    $('.playerchoicerefresh, .playerchoicehelp').tooltip({html: true, delay: {'show': 800,'hide': 100}});
-                    $('.show-details .playerchoice').click();
-                }, 3000);
-            });
+            Common.refreshPlayerList(e);
         },
 
         showAllTorrents: function() {
