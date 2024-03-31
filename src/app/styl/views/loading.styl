@@ -1,8 +1,8 @@
 .loading
-    position: absolute
-    z-index: 9
-    background-color: $BgColor1
-    -webkit-user-select: none
+    position absolute
+    z-index 9
+    background-color $BgColor1
+    -webkit-user-select none
     width 100%
     height 100%
     opacity 1
@@ -14,56 +14,56 @@
     -webkit-backface-visibility hidden
 
     .minimize-icon
-        top: 47px
-        right: 20px
-        position: fixed
-        color: $CloseButton
-        font-size: 18px
-        cursor: pointer
-        z-index: 100
-        -webkit-font-smoothing: antialiased
-        transition: color 0.2s
+        top 47px
+        right 20px
+        position fixed
+        color $CloseButton
+        font-size 18px
+        cursor pointer
+        z-index 100
+        -webkit-font-smoothing antialiased
+        transition color 0.2s
 
         &:hover
-            color: $CloseButtonHover
+            color $CloseButtonHover
 
     .maximize-icon
-        display: none
-        bottom: 20px
-        right: 20px
-        position: fixed
-        color: $CloseButton
-        font-size: 25px
-        cursor: pointer
-        z-index: 100
-        background: $BgColor2
-        padding: 10px 20px
-        opacity: 0.9
-        border-radius: 3px
-        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.15), 0 4px 14px 0 rgba(0,0,0,0.25)
-        -webkit-font-smoothing: antialiased
-        transition: background 0.2s, color 0.2s, opacity 0.2s
+        display none
+        bottom 20px
+        right 20px
+        position fixed
+        color $CloseButton
+        font-size 25px
+        cursor pointer
+        z-index 100
+        background $BgColor2
+        padding 10px 20px
+        opacity 0.9
+        border-radius 3px
+        box-shadow 0 2px 6px 0 rgba(0,0,0,0.15), 0 4px 14px 0 rgba(0,0,0,0.25)
+        -webkit-font-smoothing antialiased
+        transition background 0.2s, color 0.2s, opacity 0.2s
 
         &:hover
-            color: $ButtonText
-            background: $ButtonBgHover
-            opacity: 1
+            color $ButtonText
+            background $ButtonBgHover
+            opacity 1
 
         &.done:hover
-            color: #fff
-            background: #27ae60
+            color #fff
+            background #27ae60
 
         & > *
-            font-size: 12px
-            vertical-align: top
-            line-height: 25px
+            font-size 12px
+            vertical-align top
+            line-height 25px
 
         #maxic
-            font-size: 18px
-            margin-left: 10px
+            font-size 18px
+            margin-left 10px
 
     #userISP
-        text-decoration: underline
+        text-decoration underline
 
     .vpn
         margin-top 20px
@@ -73,14 +73,14 @@
         margin-top 20px
 
     .loading-backdrop
-        position: absolute
-        width: 100%
-        height: 100%
+        position absolute
+        width 100%
+        height 100%
         background-repeat no-repeat
         background-position-x 50%
         background-position-y 50%
         background-size cover
-        -webkit-filter: blur(20px) brightness(0.7)
+        -webkit-filter blur(20px) brightness(0.7)
 
     .loading-backdrop-overlay
         width 100%
@@ -90,10 +90,10 @@
         background-color #000
 
     .state-flex
-        height: 100%
-        display: flex
-        align-items: center
-        justify-content: center
+        height 100%
+        display flex
+        align-items center
+        justify-content center
 
     .state
         color #fff
@@ -116,7 +116,7 @@
 
         .external-play
             font-size 14px
-            font-style: italic
+            font-style italic
             padding-bottom 6px
             visibility hidden
 
@@ -177,40 +177,40 @@
             margin-left 5px
 
         #cancel-button-regular
-            margin-top: 10px
-            font-size: 10px
-            cursor: pointer
+            margin-top 10px
+            font-size 10px
+            cursor pointer
             display inline-block
             margin-right 5px
 
         .vpn
             .heading
-                font-size: 25px
-                margin-bottom: 10px
+                font-size 25px
+                margin-bottom 10px
             .subheading
-                font-size: 15px
-                margin-bottom: 10px
-                line-height: 20px
+                font-size 15px
+                margin-bottom 10px
+                line-height 20px
             .flex-map
-                display: flex
-                align-items: center
-                margin-top: 20px
-                margin-bottom: 20px
+                display flex
+                align-items center
+                margin-top 20px
+                margin-bottom 20px
                 .details
-                    padding-left: 20px
+                    padding-left 20px
                     .group
-                        margin-bottom: 15px;
-                        display: flex
-                        text-align: left;
+                        margin-bottom 15px
+                        display flex
+                        text-align left
                         .fixed-width
-                            width: 140px
+                            width 140px
 
 
             .map
-                width: 300px
+                width 300px
                 img
-                    border: 10px solid #bbb;
-                    width: 100%
+                    border 10px solid #bbb
+                    width 100%
 
         .cancel-button
             z-index 2
@@ -230,12 +230,12 @@
             transition background-color .5s
 
             &:hover
-                background: $ButtonBgHover
-                text-decoration: none
+                background $ButtonBgHover
+                text-decoration none
 
             &:active
-                box-shadow: inset 0 1px 4px rgba(0,0,0,0.6)
-                background: $ButtonBgActive
+                box-shadow inset 0 1px 4px rgba(0,0,0,0.6)
+                background $ButtonBgActive
 
             .cancel-button-text
                 -webkit-backface-visibility hidden
@@ -277,7 +277,7 @@
             border-radius 4px
             left 0
             right 0
-            background: rgba(0, 0, 0, .6)
+            background rgba(0, 0, 0, .6)
             display inline-block
 
             &:hover
@@ -363,12 +363,12 @@
             content '\f071'
             color #FFFF00
             font-family "Font Awesome 6 Free"
-            font-weight: 900
+            font-weight 900
             font-size 16px
             padding-right 8px
 
 @keyframes bounce_bar
     0%
-        margin-left:-100%;
+        margin-left:-100%
     100%
-        margin-left:100%;
+        margin-left:100%
