@@ -1,145 +1,145 @@
 #player,
 .player {
-    width: 100%
-    height: 100%
+    width 100%
+    height 100%
 }
 
 #video_player {
-  position: fixed
-  width: 100%
-  height: 100%
-  display: flex
-  align-items: center
-  justify-content: center
+  position fixed
+  width 100%
+  height 100%
+  display flex
+  align-items center
+  justify-content center
 }
 
 .player {
-    z-index: 10
-    position: absolute
-    overflow: hidden
-    background-color: #000
+    z-index 10
+    position absolute
+    overflow hidden
+    background-color #000
     video {
-        width: 100%
-        height: 100%
+        width 100%
+        height 100%
     }
     .details-player {
-        right: 10px
-        position: absolute
-        top: 20px
-        z-index: 20
+        right 10px
+        position absolute
+        top 20px
+        z-index 20
     }
     .minimize-icon {
-        top: -1px
-        right: 55px
-        position: absolute
-        color: #fff
-        font-size: 1.8em
-        font-smoothing: antialiased
-        transition: all 0.5s
+        top -1px
+        right 55px
+        position absolute
+        color #fff
+        font-size 1.8em
+        font-smoothing antialiased
+        transition all 0.5s
         &:hover {
-            cursor: pointer
-            color: #a3a5a7
+            cursor pointer
+            color #a3a5a7
         }
     }
     .maximize-icon {
-        display: none
-        bottom: 20px
-        right: 20px
-        position: fixed
-        color: $CloseButton
-        font-size: 25px
-        cursor: pointer
-        z-index: 100
-        background: $BgColor2
-        padding: 10px 20px
-        opacity: 0.9
-        border-radius: 3px
-        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.15), 0 4px 14px 0 rgba(0,0,0,0.25)
-        font-smoothing: antialiased
-        transition: background 0.2s, color 0.2s, opacity 0.2s
+        display none
+        bottom 20px
+        right 20px
+        position fixed
+        color $CloseButton
+        font-size 25px
+        cursor pointer
+        z-index 100
+        background $BgColor2
+        padding 10px 20px
+        opacity 0.9
+        border-radius 3px
+        box-shadow 0 2px 6px 0 rgba(0,0,0,0.15), 0 4px 14px 0 rgba(0,0,0,0.25)
+        font-smoothing antialiased
+        transition background 0.2s, color 0.2s, opacity 0.2s
         &:hover {
-            color: $ButtonText
-            background: $ButtonBgHover
-            opacity: 1
+            color $ButtonText
+            background $ButtonBgHover
+            opacity 1
         }
         &.done:hover {
-            color: #fff
-            background: #27ae60
+            color #fff
+            background #27ae60
         }
         & > * {
-            font-size: 12px
-            vertical-align: top
-            line-height: 25px
+            font-size 12px
+            vertical-align top
+            line-height 25px
         }
         #maxic {
-            font-size: 18px
-            margin-left: 10px
+            font-size 18px
+            margin-left 10px
         }
     }
     .close-info-player {
-        top: -1px
-        right: 18px
-        position: absolute
-        color: #fff
-        font-size: 2em
-        font-smoothing: antialiased
-        transition: all 0.5s
+        top -1px
+        right 18px
+        position absolute
+        color #fff
+        font-size 2em
+        font-smoothing antialiased
+        transition all 0.5s
         &:hover {
-            cursor: pointer
-            color: #a3a5a7
+            cursor pointer
+            color #a3a5a7
         }
     }
     .quality-info-player {
-        position: absolute
-        right: 132px
-        top: 3px
-        font-size: 1.3em
-        color: #fff
-        font-weight: bold
+        position absolute
+        right 132px
+        top 3px
+        font-size 1.3em
+        color #fff
+        font-weight bold
     }
     .state-info-player {
-        position: absolute
-        right: 90px
-        top: 120px
+        position absolute
+        right 90px
+        top 120px
         font-size 50px
-        color: rgba(255,255,255,.3)
-        z-index: 23
-        display: none
-        transition: all .4s ease-out
+        color rgba(255,255,255,.3)
+        z-index 23
+        display none
+        transition all .4s ease-out
     }
     .eye-info-player {
-        position: absolute
-        font-size: 2em
-        color: #fff
-        top: -1px
-        right: 92px
-        z-index: 4
-        transform: scaleY(0.9)
-        transition: all 0.5s
+        position absolute
+        font-size 2em
+        color #fff
+        top -1px
+        right 92px
+        z-index 4
+        transform scaleY(0.9)
+        transition all 0.5s
         &:hover {
-            cursor: pointer
-            color: #a3a5a7
+            cursor pointer
+            color #a3a5a7
             & + .details-info-player {
-                display: inline-block
+                display inline-block
             }
         }
     }
     .details-info-player {
-        display: none
-        width: auto
-        background: rgba(31,31,31,0.7)
-        padding: 12px 20px
-        top: 32px
-        position: absolute
-        right: 45px
-        border-radius: 5px
+        display none
+        width auto
+        background rgba(31,31,31,0.7)
+        padding 12px 20px
+        top 32px
+        position absolute
+        right 45px
+        border-radius 5px
 
         span {
             position relative
             color #fff
             font-family $AlternateFont
             -webkit-font-smoothing antialiased
-            display: inline-box
+            display inline-box
             font-size 14px
             line-height 16px
 
@@ -150,116 +150,116 @@
                 float right
             }
             &.remaining {
-                margin-top: 10px
-                display: block
-                text-align: center
+                margin-top 10px
+                display block
+                text-align center
             }
         }
 
         #sstatel-container,
         #dwnloading {
-            text-align: center
+            text-align center
         }
 
         #sstatel {
-            font-size: 170%
+            font-size 170%
         }
 
         .downloaded_player {
-            width: 100%
+            width 100%
         }
 
         .filename_player,
         .stream_url_player {
-            text-align: right
-            white-space: nowrap
-            overflow: hidden
-            text-overflow: ellipsis
+            text-align right
+            white-space nowrap
+            overflow hidden
+            text-overflow ellipsis
         }
     }
     .arrow-up {
-        width: 0
-        height: 0
-        border-left: 6px solid rgba(0,0,0,0)
-        border-right: 6px solid rgba(0,0,0,0)
-        border-bottom: 6px solid rgba(31,31,31,0.7)
-        top: -6px
-        right: 15px
-        position: absolute
+        width 0
+        height 0
+        border-left 6px solid rgba(0,0,0,0)
+        border-right 6px solid rgba(0,0,0,0)
+        border-bottom 6px solid rgba(31,31,31,0.7)
+        top -6px
+        right 15px
+        position absolute
     }
     .playing_next {
-        color: #fff
-        z-index: 23
-        bottom: 10vh !important
-        width: 450px;
-        height: 140px;
-        padding: 10px
-        font-size: 20px
-        left: 3vw !important
-        display: none
-        background-color: rgba(0, 0, 0, 0.54) !important
-        overflow: hidden
+        color #fff
+        z-index 23
+        bottom 10vh !important
+        width 450px
+        height 140px
+        padding 10px
+        font-size 20px
+        left 3vw !important
+        display none
+        background-color rgba(0, 0, 0, 0.54) !important
+        overflow hidden
         
         .pn_poster {
-            width: 90px;
-            height: 120px;
-            float: left;
+            width 90px
+            height 120px
+            float left
 
             .playing_next_poster {
-                width: 80px;
+                width 80px
             }
         }
         .pn_epinfo {
-            width: 235px;
-            height: 80px;
-            float: left;
-            text-align: left;
+            width 235px
+            height 80px
+            float left
+            text-align left
             
             .playing_next_show {
-                font-size: 15px;
-                font-weight: bold;
-                line-height: 20px;
-                overflow: hidden; 
-                text-overflow: ellipsis;
-                white-space: nowrap;
+                font-size 15px
+                font-weight bold
+                line-height 20px
+                overflow hidden 
+                text-overflow ellipsis
+                white-space nowrap
             }
             .playing_next_episode {
-                font-size: 11px;
-                line-height: 14px;
-                overflow: hidden; 
-                text-overflow: ellipsis;
-                white-space: nowrap;
+                font-size 11px
+                line-height 14px
+                overflow hidden 
+                text-overflow ellipsis
+                white-space nowrap
             }
             .playing_next_number {
-                font-size: 17px;
-                margin-top: 18px;
-                overflow: hidden; 
-                text-overflow: ellipsis;
-                white-space: nowrap;
+                font-size 17px
+                margin-top 18px
+                overflow hidden 
+                text-overflow ellipsis
+                white-space nowrap
             }
         }
         .pn_counter {
-            width: 105px;
-            height: 80px;
-            float: left;
+            width 105px
+            height 80px
+            float left
 
             .playing_next_countertext {
-                font-size: 11px;
-                text-align: center;
-                text-transform: uppercase;
+                font-size 11px
+                text-align center
+                text-transform uppercase
             }
 
             #nextCountdown {
-                color: rgb(0, 143, 255);
-                font-size: 38px;
-                text-align: center;
-                margin-top: 6px;
+                color rgb(0, 143, 255)
+                font-size 38px
+                text-align center
+                margin-top 6px
             }
         }
         .pn_btns {
-            width: 340px;
-            height: 40px;
-            float: left;
+            width 340px
+            height 40px
+            float left
 
             .auto-next-btn {
                 position relative
@@ -282,8 +282,8 @@
                     text-decoration none
                 }
                 &:active{
-                    box-shadow: inset 0 1px 4px rgba(0,0,0,0.6)
-                    background: $ButtonBgActive
+                    box-shadow inset 0 1px 4px rgba(0,0,0,0.6)
+                    background $ButtonBgActive
                 }
             }
 
@@ -291,71 +291,71 @@
         
     }
     .verify-metadata {
-        color: #fff
-        z-index: 23
-        bottom: 10vh !important
-        width: 450px;
-        height: 140px;
-        padding: 10px
-        font-size: 20px
-        left: 3vw !important
-        display: none
-        background-color: rgba(0, 0, 0, 0.54) !important
-        overflow: hidden
+        color #fff
+        z-index 23
+        bottom 10vh !important
+        width 450px
+        height 140px
+        padding 10px
+        font-size 20px
+        left 3vw !important
+        display none
+        background-color rgba(0, 0, 0, 0.54) !important
+        overflow hidden
         
         .vm_poster {
-            width: 90px;
-            height: 120px;
-            float: left;
+            width 90px
+            height 120px
+            float left
 
             .verifmeta_poster {
-                width: 80px;
+                width 80px
             }
         }
         .vm_epinfo {
-            width: 235px;
-            height: 80px;
-            float: left;
-            text-align: left;
+            width 235px
+            height 80px
+            float left
+            text-align left
             
             .verifmeta_show {
-                font-size: 15px;
-                font-weight: bold;
-                line-height: 20px;
-                overflow: hidden; 
-                text-overflow: ellipsis;
-                white-space: nowrap;
+                font-size 15px
+                font-weight bold
+                line-height 20px
+                overflow hidden 
+                text-overflow ellipsis
+                white-space nowrap
             }
             .verifmeta_episode {
-                font-size: 11px;
-                line-height: 14px;
-                overflow: hidden; 
-                text-overflow: ellipsis;
-                white-space: nowrap;
+                font-size 11px
+                line-height 14px
+                overflow hidden 
+                text-overflow ellipsis
+                white-space nowrap
             }
             .verifmeta_number {
-                font-size: 17px;
-                margin-top: 18px;
-                overflow: hidden; 
-                text-overflow: ellipsis;
-                white-space: nowrap;
+                font-size 17px
+                margin-top 18px
+                overflow hidden 
+                text-overflow ellipsis
+                white-space nowrap
             }
         }
         .vm_box {
-            width: 105px;
-            height: 80px;
-            float: left;
+            width 105px
+            height 80px
+            float left
 
             .verifmeta_boxtext {
-                font-size: 11px;
-                text-align: center;
-                text-transform: uppercase;
+                font-size 11px
+                text-align center
+                text-transform uppercase
             }
         }
         .vm_btns {
-            width: 340px;
-            height: 40px;
-            float: left;
+            width 340px
+            height 40px
+            float left
 
             .vm-btn {
                 position relative
@@ -378,8 +378,8 @@
                     text-decoration none
                 }
                 &:active{
-                    box-shadow: inset 0 1px 4px rgba(0,0,0,0.6)
-                    background: $ButtonBgActive
+                    box-shadow inset 0 1px 4px rgba(0,0,0,0.6)
+                    background $ButtonBgActive
                 }
             }
 
@@ -388,8 +388,8 @@
     }
 
 /*        span {
-            font-weight: bold
-            color: rgb(0, 143, 255)
+            font-weight bold
+            color rgb(0, 143, 255)
         }
     }
     .auto-next-btn {
@@ -429,117 +429,117 @@
             background-color #F15153
         }
         &:active{
-            box-shadow: inset 0 1px 4px rgba(0,0,0,0.6)
-            background: $ButtonBgActive
+            box-shadow inset 0 1px 4px rgba(0,0,0,0.6)
+            background $ButtonBgActive
         }
     }*/
 }
 
 .player-title {
-    position: absolute
-    top: 18px
-    left: 16px
-    color: #fff
-    font-family: 'Open Sans', sans-serif
-    font-size: 17px
-    max-width: 85%
-    z-index: 3
-    overflow: hidden
-    white-space: nowrap
-    text-overflow: ellipsis
-    padding-bottom: 3px
+    position absolute
+    top 18px
+    left 16px
+    color #fff
+    font-family 'Open Sans', sans-serif
+    font-size 17px
+    max-width 85%
+    z-index 3
+    overflow hidden
+    white-space nowrap
+    text-overflow ellipsis
+    padding-bottom 3px
 }
 
 .dragzone {
-    -webkit-app-region: drag
-    position: fixed
-    display: none
+    -webkit-app-region drag
+    position fixed
+    display none
 }
 
 .vjs-quality-button {
-    color: #fff
-    right: 35px
-    top: 19px
-    font-size: 12px
+    color #fff
+    right 35px
+    top 19px
+    font-size 12px
 }
 
 .vjs-subtitles-button {
-    top: 24px
+    top 24px
 }
 
 .vjs_smallersub_button {
     &.vjs-control {
-        top: 24px
+        top 24px
     }
 }
 
 .vjs_biggersub_button {
     &.vjs-control {
-        top: 24px
+        top 24px
     }
 }
 
 .player-header-background {
-    position: absolute
-    background: linear-gradient(rgba(0,0,0,0.7), transparent 95%, transparent) !important
-    width: 100% !important
-    height: 75px !important
-    z-index: 3
-    top: 0
+    position absolute
+    background linear-gradient(rgba(0,0,0,0.7), transparent 95%, transparent) !important
+    width 100% !important
+    height 75px !important
+    z-index 3
+    top 0
 }
 
 .vjs-overlay,
 .vjs-overlay.vjs-overlay-top-left {
-    position: absolute
-    width: auto
-    font-size: 16px
-    background-color: rgba(0,0,0,0.24)
-    color: #fff
-    font-family: "Open Sans Semibold"
-    font-smoothing: antialiased
-    padding: 14px
-    border-radius: 3px
-    top: 80px
-    right: 30px
-    text-align: right
-    opacity: 0
+    position absolute
+    width auto
+    font-size 16px
+    background-color rgba(0,0,0,0.24)
+    color #fff
+    font-family "Open Sans Semibold"
+    font-smoothing antialiased
+    padding 14px
+    border-radius 3px
+    top 80px
+    right 30px
+    text-align right
+    opacity 0
 }
 
 .vjs-overlay {
     &.vjs-overlay-top {
-        margin-left: -16.5%
-        left: 50%
+        margin-left -16.5%
+        left 50%
     }
     &.vjs-overlay-top-right {
-        left: auto
-        right: 5px
+        left auto
+        right 5px
     }
     &.vjs-overlay-left {
-        top: 50%
-        margin-top: -15px
+        top 50%
+        margin-top -15px
     }
     &.vjs-overlay-right {
-        left: auto
-        right: 5px
-        top: 50%
-        margin-top: -15px
+        left auto
+        right 5px
+        top 50%
+        margin-top -15px
     }
     &.vjs-overlay-bottom {
-        margin-left: -16.5%
-        left: 50%
-        top: auto
-        bottom: 4.5em
+        margin-left -16.5%
+        left 50%
+        top auto
+        bottom 4.5em
     }
     &.vjs-overlay-bottom-left {
-        bottom: 4.5em
-        top: auto
-        left: 5px
+        bottom 4.5em
+        top auto
+        left 5px
     }
     &.vjs-overlay-bottom-right {
-        bottom: 4.5em
-        top: auto
-        left: auto
-        right: 5px
+        bottom 4.5em
+        top auto
+        left auto
+        right 5px
     }
 }
 
@@ -547,7 +547,7 @@
     &.vjs-fullscreen {
         &.vjs-user-inactive {
             .vjs-tech {
-                pointer-events: none
+                pointer-events none
             }
         }
     }
