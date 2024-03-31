@@ -1,106 +1,91 @@
-.vjs-popcorn-skin {
+.vjs-popcorn-skin
     color #1c1c1c
-    .vjs-slider {
+    .vjs-slider
         position relative
         cursor pointer
         background-color rgba(255,255,255,0.2)
-        &:hover {
-            & > .vjs-slider-handle:before {
+        &:hover
+            & > .vjs-slider-handle:before
                 color $PlayerColor
-            }
-        }
-    }
-    .vjs-slider-handle {
+
+    .vjs-slider-handle
         position absolute
         top -6px
         width 14px
         height 14px
         margin-left -8px
-        &:before {
+        &:before
             color rgba(255,255,255,0)
             content '\25CF'
             font-size 46px
             line-height 14px
             transition all .1s !important
-        }
-    }
 
-    .vjs-control-bar, .vjs-control-window {
+    .vjs-control-bar, .vjs-control-window
         display none
         position absolute
         bottom 0
         left 0
         background linear-gradient(transparent, rgba(0,0,0,0.7))
-    }
 
-    .vjs-control-bar {
+    .vjs-control-bar
         right 0
         height 60px
         width 100%
-    }
 
-    &.vjs-user-active {
-        .player-header-background {
+    &.vjs-user-active
+        .player-header-background
             display block
-        }
-    }
-    .vjs-live-controls {
+
+    .vjs-live-controls
         display none
-    }
-    &.vjs-has-started {
-        &.vjs-user-inactive {
-            &.vjs-playing {
-                .vjs-control-bar, .vjs-control-window {
+
+    &.vjs-has-started
+        &.vjs-user-inactive
+            &.vjs-playing
+                .vjs-control-bar, .vjs-control-window
                     display block
                     visibility hidden
                     opacity 0
                     transition visibility 1s, opacity 1s
                     transition visibility 1s, opacity 1s
-                }
-            }
-        }
-        .vjs-big-play-button {
+
+        .vjs-big-play-button
             display none
-        }
-    }
-    &.vjs-controls-disabled {
-        .vjs-control-bar, .vjs-control-window {
+
+    &.vjs-controls-disabled
+        .vjs-control-bar, .vjs-control-window
             display none
-        }
-        .vjs-big-play-button {
+
+        .vjs-big-play-button
             display none
-        }
-    }
-    &.vjs-using-native-controls {
-        .vjs-control-bar, .vjs-control-window {
+
+    &.vjs-using-native-controls
+        .vjs-control-bar, .vjs-control-window
             display none
-        }
-        .vjs-big-play-button {
+
+        .vjs-big-play-button
             display none
-        }
-    }
-    &.vjs-error {
-        .vjs-control-bar, .vjs-control-window {
+
+    &.vjs-error
+        .vjs-control-bar, .vjs-control-window
             display none
-        }
-        .player-header-background {
-            &.vjs-control-bar, .vjs-control-window {
+
+        .player-header-background
+            &.vjs-control-bar, .vjs-control-window
                 visibility visible!important
                 opacity 1!important
                 display block!important
-            }
-        }
-    }
-    .vjs-control {
+
+    .vjs-control
         outline none
         position relative
         float left
         text-align center
         margin 0
-        &:focus {
-        }
-    }
-    .vjs-control-text {
+        &:focus
+
+    .vjs-control-text
         border 0
         clip rect(0 0 0 0)
         height 1px
@@ -109,21 +94,20 @@
         padding 0
         position absolute
         width 1px
-    }
-    .vjs-play-control {
+
+    .vjs-play-control
         top 24px
         cursor pointer
         width 14px
         height 16px
         margin-left 20px
-        &:hover {
+        &:hover
             transition all .5s
             -webkit-filter brightness(0.70)
-            &:before {
+            &:before
                 text-shadow none !important
-            }
-        }
-        &:before {
+
+        &:before
             position relative
             text-shadow none !important
             content "\f04b"
@@ -132,17 +116,14 @@
             font-size 14px
             line-height 17px
             font-weight 900
-        }
-    }
-    &.vjs-playing {
-        .vjs-play-control {
-            &:before {
+
+    &.vjs-playing
+        .vjs-play-control
+            &:before
                 content "\f04c"
-            }
-        }
-    }
-    .vjs-playback-rate {
-        .vjs-playback-rate-value {
+
+    .vjs-playback-rate
+        .vjs-playback-rate-value
             font-size 1.5em
             line-height 2
             position absolute
@@ -152,24 +133,20 @@
             height 100%
             text-align center
             text-shadow 1px 1px 1px rgba(0, 0, 0, 0.5)
-        }
-        &.vjs-menu-button {
-            .vjs-menu {
-                .vjs-menu-content {
+
+        &.vjs-menu-button
+            .vjs-menu
+                .vjs-menu-content
                     width 4em
                     left -2em
                     list-style none
-                }
-            }
-        }
-    }
-    .vjs-mute-control {
-        &:hover {
+
+    .vjs-mute-control
+        &:hover
             transition all .5s
             -webkit-filter brightness(0.70)
-        }
-    }
-    .vjs-volume-control {
+
+    .vjs-volume-control
         top 29px
         width 54px
         float right
@@ -177,37 +154,32 @@
         overflow hidden
         height 6px
         border-radius 3px/2px
-        &:hover {
+        &:hover
             top 28px
             height 8px
-            & > .vjs-volume-bar {
+            & > .vjs-volume-bar
                 height 8px
-            }
-        }
-    }
-    .vjs-volume-bar {
+
+    .vjs-volume-bar
         top 0px
         left -7px
         height 6px
         width 69px
         margin-right 0px
         border-radius 3px / 2px
-        &:hover {
-            & > .vjs-volume-level {
+        &:hover
+            & > .vjs-volume-level
                 height 8px
-            }
-            & > .vjs-volume-handle:before {
+
+            & > .vjs-volume-handle:before
                 font-size 14px
                 color rgba(0, 0, 0, 0)
-            }
-        }
-    }
-    .vjs-volume-menu-button {
-        .vjs-menu-content {
+
+    .vjs-volume-menu-button
+        .vjs-menu-content
             height 2.9em
-        }
-    }
-    .vjs-volume-level {
+
+    .vjs-volume-level
         position absolute
         top 0
         left 0
@@ -217,17 +189,16 @@
         border-radius 3px / 2px
         background-clip padding
         background-clip padding-box
-    }
-    .vjs-volume-handle {
-        &:before {
+
+    .vjs-volume-handle
+        &:before
             color rgba(0, 0, 0, 0)
             content '\25CF'
             font-size 14px
             line-height 17px
             margin-left 10px
-        }
-    }
-    .vjs-progress-control {
+
+    .vjs-progress-control
         position absolute
         top 19px
         width auto
@@ -242,22 +213,19 @@
         padding-bottom 2px
         cursor pointer
         transition all .1s !important
-        &:hover {
+        &:hover
             height 20px
             top 18px
-            & > .vjs-progress-holder > .vjs-seek-handle:before {
+            & > .vjs-progress-holder > .vjs-seek-handle:before
                 color $PlayerColor
-            }
-        }
-    }
-    &:hover {
-        .vjs-progress-control {
+
+    &:hover
+        .vjs-progress-control
             border-radius 3px / 2px
             background-clip padding
             background-clip padding-box
-        }
-    }
-    .vjs-progress-holder {
+
+    .vjs-progress-holder
         height calc(100% + 12px)
         top -10px
         border-radius 3px/12px 12px 4px 4px
@@ -265,17 +233,16 @@
         border-bottom 2px solid rgba(0,0,0,0)
         background-clip padding
         background-clip padding-box
-    }
-    .vjs-play-progress {
+
+    .vjs-play-progress
         background-color $PlayerColor
         transition all 0.5s ease
-    }
-    @keyframes progress {
-        to {
+
+    @keyframes progress
+        to
             background-position -30px 0
-        }
-    }
-    .vjs-load-progress {
+
+    .vjs-load-progress
         border-radius 3px / 2px
         border-radius 3px / 2px
         background-clip padding-box
@@ -286,36 +253,35 @@
         background-repeat repeat-x
         background-color white
         opacity 0.4
-    }
-    .vjs-seek-handle {
+
+    .vjs-seek-handle
         width 11px
         height 11px
         transition all 0.5s ease
-        &:before {
+        &:before
             padding-top 0.1em
-        }
-    }
-    .vjs-time-controls {
+
+    .vjs-time-controls
         position relative
         color #fff
         font-family "Open Sans", sans-serif
         font-size 16px
         top 24px
-    }
-    .vjs-current-time {
+
+    .vjs-current-time
         position relative
         float left
         margin-left 18px
-    }
-    .vjs-duration {
+
+    .vjs-duration
         position relative
         float left
-    }
-    .vjs-remaining-time {
+
+    .vjs-remaining-time
         display none
         float left
-    }
-    .vjs-fullscreen-control {
+
+    .vjs-fullscreen-control
         position relative
         top 23px
         margin-right 17px
@@ -324,14 +290,13 @@
         float right
         width 18px
         height 18px
-        &:hover {
+        &:hover
             transition all .5s
             -webkit-filter brightness(0.70)
-            &:before {
+            &:before
                 text-shadow none !important
-            }
-        }
-        &:before {
+
+        &:before
             content "\f065"
             text-shadow none !important
             font-size 18px
@@ -340,16 +305,13 @@
             width 18px
             color white
             font-weight 900
-        }
-    }
-    &.vjs-fullscreen {
-        .vjs-fullscreen-control {
-            &:before {
+
+    &.vjs-fullscreen
+        .vjs-fullscreen-control
+            &:before
                 content "\f066"
-            }
-        }
-    }
-    .vjs-big-play-button {
+
+    .vjs-big-play-button
         left 0.5em
         top 0.5em
         font-size 3em
@@ -368,7 +330,7 @@
         border-radius 0.8em
         box-shadow 0px 0px 1em rgba(255, 255, 255, 0.25)
         transition all 0.4s
-        &:before {
+        &:before
             content "\e001"
             font-family VideoJS
             line-height 2.6em
@@ -378,18 +340,16 @@
             left 0
             width 100%
             height 100%
-        }
-    }
-    &.vjs-big-play-centered {
-        .vjs-big-play-button {
+
+    &.vjs-big-play-centered
+        .vjs-big-play-button
             left 50%
             margin-left -2.1em
             top 50%
             margin-top -1.4000000000000001em
-        }
-    }
-    .vjs-loading-spinner {
-        &:before {
+
+    .vjs-loading-spinner
+        &:before
             content "\e01e"
             font-family VideoJS
             position absolute
@@ -400,9 +360,8 @@
             text-align center
             text-shadow 0em 0em 0.1em $PlayerColor
             color $PlayerColor
-        }
-    }
-    .vjs-menu-button {
+
+    .vjs-menu-button
         outline 0
         position relative
         float right
@@ -410,8 +369,8 @@
         margin-right 14px
         height 18px
         width 19px
-        .vjs-menu {
-            .vjs-menu-content {
+        .vjs-menu
+            .vjs-menu-content
                 display block
                 padding 0
                 margin 0
@@ -426,30 +385,26 @@
                 background-color #151517
                 opacity .8
                 border-radius 3px
-                &::-webkit-scrollbar {
+                &::-webkit-scrollbar
                     width 5px
-                }
-                &::-webkit-scrollbar-track {
+
+                &::-webkit-scrollbar-track
                     background-color #30333c
                     border-radius 2px
-                }
-                &::-webkit-scrollbar-thumb {
+
+                &::-webkit-scrollbar-thumb
                     background-color #83888c
                     border-radius 2px
-                    &:hover {
+                    &:hover
                         background-color #93989c
-                    }
-                }
-            }
-        }
-        &:hover {
-            .vjs-menu {
+
+        &:hover
+            .vjs-menu
                 display block
                 outline 0
-            }
-        }
-        ul {
-            li {
+
+        ul
+            li
                 list-style none
                 margin 0
                 padding 0.4em 0 0.4em 0
@@ -457,12 +412,12 @@
                 font-size 1.2em
                 text-align center
                 outline 0
-                &.vjs-selected {
+                &.vjs-selected
                     color $PlayerColor
                     background-color #151517
                     outline 0
-                }
-                &.vjs-menu-title {
+
+                &.vjs-menu-title
                     text-align center
                     text-transform uppercase
                     font-size 1em
@@ -471,11 +426,8 @@
                     margin 0 0 0.3em 0
                     font-weight bold
                     cursor default
-                }
-            }
-        }
-    }
-    .vjs-menu {
+
+    .vjs-menu
         display none
         position absolute
         bottom 0
@@ -484,9 +436,9 @@
         height 30px
         margin-bottom 10px
         outline 0
-    }
-    .vjs_smallersub_button {
-        &.vjs-control {
+
+    .vjs_smallersub_button
+        &.vjs-control
             outline 0
             position relative
             float right
@@ -494,25 +446,22 @@
             margin-right 14px
             height 13px
             width 14px
-            &:hover {
+            &:hover
                 transition all .5s
                 -webkit-filter brightness(0.70)
-                &:before {
+                &:before
                     text-shadow none
-                }
-            }
-            &:before {
+
+            &:before
                 height 13px
                 width 14px
                 font-size 14px
                 line-height 16px
                 content "A"
                 color #fff
-            }
-        }
-    }
-    .vjs_biggersub_button {
-        &.vjs-control {
+
+    .vjs_biggersub_button
+        &.vjs-control
             outline 0
             position relative
             float right
@@ -520,90 +469,72 @@
             margin-right 14px
             height 13px
             width 14px
-            &:hover {
+            &:hover
                 transition all .5s
                 -webkit-filter brightness(0.70)
-                &:before {
+                &:before
                     text-shadow none
-                }
-            }
-            &:before {
+
+            &:before
                 height 13px
                 width 14px
                 font-size 18px
                 line-height 14px
                 content "A"
                 color #fff
-            }
-        }
-    }
-    .vjs-subtitles-button {
-        &:before {
+
+    .vjs-subtitles-button
+        &:before
             content url('../images/icons/Player/Subtitles.png')
-        }
-        &:hover {
-            &:before {
+
+        &:hover
+            &:before
                 transition all .5s
                 -webkit-filter brightness(0.70)
-            }
-        }
-    }
-    .vjs-hidden {
+
+    .vjs-hidden
         display none
-    }
-}
 
-
-    .vjs-popcorn-skin {
-        &.vjs-has-started {
-            .vjs-control-bar, .vjs-control-window {
+    .vjs-popcorn-skin
+        &.vjs-has-started
+            .vjs-control-bar, .vjs-control-window
                 display block
                 visibility visible
                 transition visibility 0.1s, opacity 0.1s
                 transition visibility 0.1s, opacity 0.1s
-            }
-        }
-    }
-
 
 .vjs-popcorn-skin .vjs-control:focus:before,
-.vjs-popcorn-skin .vjs-control:hover:before {
+.vjs-popcorn-skin .vjs-control:hover:before
     text-shadow 0em 0em 1em #ffffff
-}
 
 .vjs-popcorn-skin .vjs-mute-control,
-.vjs-popcorn-skin .vjs-volume-menu-button {
+.vjs-popcorn-skin .vjs-volume-menu-button
     top 25px
     cursor pointer
     float right
     height 16px
     width 22px
     margin-right 11px
-}
 
 .vjs-popcorn-skin .vjs-mute-control:before,
-.vjs-popcorn-skin .vjs-volume-menu-button:before {
+.vjs-popcorn-skin .vjs-volume-menu-button:before
     position relative
     content url('../images/icons/Player/Sound3.png')
-}
 
 .vjs-popcorn-skin .vjs-mute-control.vjs-vol-2:before,
-.vjs-popcorn-skin .vjs-volume-menu-button.vjs-vol-2:before {
+.vjs-popcorn-skin .vjs-volume-menu-button.vjs-vol-2:before
     content url('../images/icons/Player/Sound2.png')
-}
 
 .vjs-popcorn-skin .vjs-mute-control.vjs-vol-1:before,
-.vjs-popcorn-skin .vjs-volume-menu-button.vjs-vol-1:before {
+.vjs-popcorn-skin .vjs-volume-menu-button.vjs-vol-1:before
     content url('../images/icons/Player/Sound1.png')
-}
 
 .vjs-popcorn-skin .vjs-mute-control.vjs-vol-0:before,
-.vjs-popcorn-skin .vjs-volume-menu-button.vjs-vol-0:before {
+.vjs-popcorn-skin .vjs-volume-menu-button.vjs-vol-0:before
     content url('../images/icons/Player/Sound0.png')
-}
 
 .vjs-popcorn-skin .vjs-progress-holder .vjs-play-progress,
-.vjs-popcorn-skin .vjs-progress-holder .vjs-load-progress {
+.vjs-popcorn-skin .vjs-progress-holder .vjs-load-progress
     position absolute
     display block
     height 100%
@@ -616,19 +547,16 @@
     background-clip padding
     background-clip padding-box
     background-clip padding-box
-}
 
-.vjs-current-time-display {
+.vjs-current-time-display
     width 50px
     text-align right
-}
 
-.vjs-duration-display {
+.vjs-duration-display
     width 50px
     text-align left
-}
 
-.vjs-time-divider {
+.vjs-time-divider
     position relative
     color #fff
     font-family "Open Sans", sans-serif
@@ -638,10 +566,9 @@
     margin-left 4px
     margin-right 3px
     top 8px
-}
 
 .vjs-popcorn-skin:hover .vjs-big-play-button,
-.vjs-popcorn-skin .vjs-big-play-button:focus {
+.vjs-popcorn-skin .vjs-big-play-button:focus
     outline 0
     border-color #fff
     background-color #505050
@@ -650,25 +577,22 @@
     box-shadow 0 0 3em #ffffff
     transition all 0s
     transition all 0s
-}
 
-.vjs-error {
-    .vjs-big-play-button {
+.vjs-error
+    .vjs-big-play-button
         display none
-    }
-    .vjs-error-display {
+
+    .vjs-error-display
         display block
         position absolute
         left 0
         top 75px
         width 100%
         height calc(100% - 115px)
-    }
-}
 
-.vjs-error-display {
+.vjs-error-display
     display none
-    div {
+    div
         top 40%
         color #666
         position absolute
@@ -679,15 +603,12 @@
         left 1em
         width 60%
         margin-left 20%
-    }
-}
 
 .vjs-error-display a,
-.vjs-error-display a:visited {
+.vjs-error-display a:visited
     color #F4A460
-}
 
-.vjs-loading-spinner {
+.vjs-loading-spinner
     display none
     position absolute
     top 50%
@@ -700,9 +621,8 @@
     margin-top -0.5em
     opacity 0.75
     animation spin 1.5s infinite linear
-}
 
-.video-js {
+.video-js
     background-color #000
     position relative
     padding 0
@@ -713,23 +633,22 @@
     font-family Arial, sans-serif
     user-select none
     user-select none
-    &.vjs-error {
-        .vjs-loading-spinner {
+    &.vjs-error
+        .vjs-loading-spinner
             display none !important
-        }
-        .vjs-text-track {
+
+        .vjs-text-track
             display none!important
-        }
-    }
-    .vjs-tech {
+
+    .vjs-tech
         position absolute
         top -50vh
         left -50vh
         width calc(100% + 100vh)
         height calc(100% + 100vh)
         border 50vh solid #000
-    }
-    &.vjs-fullscreen {
+
+    &.vjs-fullscreen
         position fixed
         overflow hidden
         z-index 1000
@@ -739,70 +658,61 @@
         right 0
         width 100% !important
         height 100% !important
-        &.vjs-user-inactive {
+        &.vjs-user-inactive
             cursor none
-        }
-    }
-    &:-webkit-full-screen {
+
+    &:-webkit-full-screen
         width 100% !important
         height 100% !important
-    }
-    &.vjs-using-native-controls {
-        .vjs-poster {
+
+    &.vjs-using-native-controls
+        .vjs-poster
             display none
-        }
-    }
-    .vjs-text-track-display {
+
+    .vjs-text-track-display
         text-align center
         position absolute
         bottom 38px
         left 1em
         right 1em
-    }
-    .vjs-text-track {
+
+    .vjs-text-track
         display none
         text-align center
         background-color transparent
         text-shadow 0px 0px 10px #000, -2px -2px 1px #000, 2px -2px 1px #000, -2px 2px 1px #000, 2px 2px 1px #000
         pointer-events none
-    }
-    .vjs-subtitles {
+
+    .vjs-subtitles
         color #ffffff
-    }
-    .vjs-captions {
+
+    .vjs-captions
         color #ffcc66
-    }
-}
 
 .vjs-popcorn-skin .vjs-menu-button .vjs-menu .vjs-menu-content::-webkit-resizer,
 .vjs-popcorn-skin .vjs-menu-button .vjs-menu .vjs-menu-content::-webkit-scrollbar-corner,
 .vjs-popcorn-skin .vjs-menu-button .vjs-menu .vjs-menu-content::-webkit-scrollbar-button,
-.vjs-popcorn-skin .vjs-menu-button .vjs-menu .vjs-menu-content::-webkit-scrollbar-track-piece {
+.vjs-popcorn-skin .vjs-menu-button .vjs-menu .vjs-menu-content::-webkit-scrollbar-track-piece
     display none
-}
 
 .vjs-popcorn-skin .vjs-menu-button ul li:hover,
 .vjs-popcorn-skin .vjs-menu-button ul li.vjs-selected:focus,
-.vjs-popcorn-skin .vjs-menu-button ul li.vjs-selected:hover {
+.vjs-popcorn-skin .vjs-menu-button ul li.vjs-selected:hover
     color $PlayerColor
-}
 
 .vjs-popcorn-skin .vjs-captions-button:focus .vjs-control-content:before,
-.vjs-popcorn-skin .vjs-captions-button:hover .vjs-control-content:before {
+.vjs-popcorn-skin .vjs-captions-button:hover .vjs-control-content:before
     box-shadow 0 0 1em #ffffff
     box-shadow 0 0 1em #ffffff
-}
 
-body {
-    &.vjs-full-window {
+body
+    &.vjs-full-window
         padding 0
         margin 0
         height 100%
         overflow-y auto
-    }
-}
 
-.vjs-poster {
+.vjs-poster
     background-repeat no-repeat
     background-position 50% 50%
     background-size contain
@@ -812,35 +722,30 @@ body {
     padding 0
     position relative
     width 100%
-    img {
+    img
         display block
         margin 0 auto
         max-height 100%
         padding 0
         width 100%
-    }
-}
 
-.vjs-tt-cue {
+.vjs-tt-cue
     display block
     padding 5px 10px
-}
 
-.vjs-lock-showing {
+.vjs-lock-showing
     display block !important
     opacity 1
     visibility visible
-}
 
 .vjs-poster,
 .vjs-loading-spinner,
 .vjs-big-play-button,
 .vjs-text-track-display,
-.vjs-youtube .iframeblocker {
+.vjs-youtube .iframeblocker
     pointer-events none !important
-}
 
-#vjs-tip {
+#vjs-tip
     visibility hidden
     display block
     padding 5px
@@ -848,9 +753,8 @@ body {
     position absolute
     z-index 100000
     pointer-events none
-}
 
-#vjs-tip-arrow {
+#vjs-tip-arrow
     background url(unquote('data:image/gif;base64,R0lGODlhCQAJAIABAAAAAAAAACH5BAEAAAEALAAAAAAJAAkAAAIRjAOnwIrcDJxvwkplPtchVQAAOw==')) no-repeat top left
     bottom 0
     left 50%
@@ -860,9 +764,8 @@ body {
     width 9px
     height 5px
     opacity 0
-}
 
-#vjs-tip-inner {
+#vjs-tip-inner
     border-radius 3px
     border-radius 3px
     padding 5px 8px 4px
@@ -872,4 +775,3 @@ body {
     text-align center
     font-size 150%
     font-weight 500
-}
