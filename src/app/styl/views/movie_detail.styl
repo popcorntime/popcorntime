@@ -1,106 +1,106 @@
 .movie-detail
-    display: flex
-    flex-direction: row
-    justify-content: flex-start
-    flex-flow: row wrap
-    height: 100vh             //needs to become calc(100vh - 65px)
-    padding-top: 65px        //when webkit calc() is fixed = m34
-    width: 100vw
-    user-select: none
-    backface-visibility: hidden
-    background-color: $BgColor1
-    position: fixed
+    display flex
+    flex-direction row
+    justify-content flex-start
+    flex-flow row wrap
+    height 100vh             //needs to become calc(100vh - 65px)
+    padding-top 65px        //when webkit calc() is fixed = m34
+    width 100vw
+    user-select none
+    backface-visibility hidden
+    background-color $BgColor1
+    position fixed
 
     .spinner
-        position: fixed
-        width: 100%
-        height: 100%
-        background: rgba(0, 0, 0, 0.5) center center no-repeat
-        pointer-events: all
-        z-index: 10
-        display: none
-        top: 0
+        position fixed
+        width 100%
+        height 100%
+        background rgba(0, 0, 0, 0.5) center center no-repeat
+        pointer-events all
+        z-index 10
+        display none
+        top 0
 
         .loading-container
-            margin: 50vh auto 0px
-            opacity: .8
+            margin 50vh auto 0px
+            opacity .8
 
     .backdrop-overlay
-        width: 100vw
-        height: 100vh
-        position: absolute
-        opacity: 0.65
-        background-color: #000
+        width 100vw
+        height 100vh
+        position absolute
+        opacity 0.65
+        background-color #000
 
     .backdrop
-        width: 100vw
-        height: 100%
-        margin-top: -35px
-        position: absolute
-        opacity: 0
+        width 100vw
+        height 100%
+        margin-top -35px
+        position absolute
+        opacity 0
         background-position-x 50%
         background-position-y 50%
-        -webkit-filter: blur(20px) brightness(0.7)
-        background-repeat: no-repeat
-        background-size: cover
+        -webkit-filter blur(20px) brightness(0.7)
+        background-repeat no-repeat
+        background-size cover
 
         &.fadein
-            transition: opacity .3s ease-in;
-            opacity: 1
+            transition opacity .3s ease-in
+            opacity 1
 
     .poster-box
-        height: 75vh
-        margin-top: 8vh
-        width: 35vw
-        padding-left: 4vw
+        height 75vh
+        margin-top 8vh
+        width 35vw
+        padding-left 4vw
 
         .mcover-image
-            float: right
-            width: 100%
-            height: 100%
-            max-width: 50vh
-            max-height: 75vh
-            position: relative
-            margin-right: 1vw
-            border-radius: 4px
+            float right
+            width 100%
+            height 100%
+            max-width 50vh
+            max-height 75vh
+            position relative
+            margin-right 1vw
+            border-radius 4px
             opacity 0
-            backface-visibility: hidden
+            backface-visibility hidden
 
             &.fadein
-                transition: opacity .3s ease-in;
-                opacity: 1
+                transition opacity .3s ease-in
+                opacity 1
 
     .content-box
-        height: 75vh
-        margin-top: 8vh
-        width: 64.99vw
-        padding-right: 4vw
-        display: flex
-        justify-content: space-between
-        flex-direction: column
+        height 75vh
+        margin-top 8vh
+        width 64.99vw
+        padding-right 4vw
+        display flex
+        justify-content space-between
+        flex-direction column
 
         .meta-container
-            height: calc(100% - 70px)
-            flex: 2
-            overflow: hidden
-            padding-top: 10px
-            margin-top: -10px
+            height calc(100% - 70px)
+            flex 2
+            overflow hidden
+            padding-top 10px
+            margin-top -10px
 
             .title
-                color: #FFF
-                position: relative
-                top: -4px
-                text-stroke: 1px rgba(0,0,0,0.1)
-                font-size: 38px
-                font-family: $MainFont
-                font-smoothing: antialiased
+                color #FFF
+                position relative
+                top -4px
+                text-stroke 1px rgba(0,0,0,0.1)
+                font-size 38px
+                font-family $MainFont
+                font-smoothing antialiased
 
             .metadatas
-                top: 15px
-                height: 20px
-                position: relative
-                display: flex
-                flex-wrap: wrap
+                top 15px
+                height 20px
+                position relative
+                display flex
+                flex-wrap wrap
 
                 .metaitem, .year, .certification, .show-cast, .movie-imdb-link
                     &:hover ~ .tmdb-link
@@ -108,125 +108,125 @@
                         transition-delay .8s
 
                 .metaitem
-                    color: #f8f8f8
-                    font-size: 12px
-                    position: relative
-                    font-family: $MainFontBold
-                    text-stroke: 1px rgba(0,0,0,0.1)
-                    font-smoothing: antialiased
-                    max-width: 29%
-                    overflow: hidden
-                    white-space: nowrap
-                    text-overflow: ellipsis
+                    color #f8f8f8
+                    font-size 12px
+                    position relative
+                    font-family $MainFontBold
+                    text-stroke 1px rgba(0,0,0,0.1)
+                    font-smoothing antialiased
+                    max-width 29%
+                    overflow hidden
+                    white-space nowrap
+                    text-overflow ellipsis
 
                     &::before
-                        content: ""
-                        margin: 4px 15px 0px 15px
-                        position: relative
-                        display: inline-block
-                        width: 4px
-                        float: left
-                        height: 4px
-                        border-radius: 2px
-                        background-color: #dbdbdd
+                        content ""
+                        margin 4px 15px 0px 15px
+                        position relative
+                        display inline-block
+                        width 4px
+                        float left
+                        height 4px
+                        border-radius 2px
+                        background-color #dbdbdd
 
                     &:first-child::before
-                        display: none
+                        display none
 
                 .show-cast
-                    color: #f8f8f8
-                    font-size: 12px
-                    position: relative
-                    font-family: "Font Awesome 6 Free"
-                    text-stroke: 1px rgba(0,0,0,0.1)
-                    font-smoothing: antialiased
-                    cursor: pointer
+                    color #f8f8f8
+                    font-size 12px
+                    position relative
+                    font-family "Font Awesome 6 Free"
+                    text-stroke 1px rgba(0,0,0,0.1)
+                    font-smoothing antialiased
+                    cursor pointer
 
                 .tmdb-link
-                    padding-left: 12px
+                    padding-left 12px
                     padding-right 6px
-                    color: #f8f8f8
-                    font-size: 11px
-                    position: relative
-                    font-family: "Font Awesome 6 Free"
-                    text-stroke: 1px rgba(0,0,0,0.1)
-                    font-smoothing: antialiased
-                    cursor: pointer
-                    opacity: 0
-                    transition: opacity .3s ease-in
-                    transition-delay: .2s
+                    color #f8f8f8
+                    font-size 11px
+                    position relative
+                    font-family "Font Awesome 6 Free"
+                    text-stroke 1px rgba(0,0,0,0.1)
+                    font-smoothing antialiased
+                    cursor pointer
+                    opacity 0
+                    transition opacity .3s ease-in
+                    transition-delay .2s
                     
                     &:hover
-                        opacity: 1
-                        transition-delay: 0s
+                        opacity 1
+                        transition-delay 0s
 
                     &.disabled
                         &:hover
-                            cursor: default
-                            opacity: 0.4
+                            cursor default
+                            opacity 0.4
 
                 .year, .certification
-                    color: #f8f8f8
-                    font-size: 12px
-                    position: relative
-                    font-family: $MainFontBold
-                    text-stroke: 1px rgba(0,0,0,0.1)
-                    font-smoothing: antialiased
-                    cursor: pointer
+                    color #f8f8f8
+                    font-size 12px
+                    position relative
+                    font-family $MainFontBold
+                    text-stroke 1px rgba(0,0,0,0.1)
+                    font-smoothing antialiased
+                    cursor pointer
 
                 .movie-imdb-link
-                    margin-top: -3px
-                    padding-top: 3px
-                    width: 29px
-                    height: 16px
-                    position: relative
-                    cursor: pointer
-                    background: url(../images/icons/imdb.png) right top no-repeat
+                    margin-top -3px
+                    padding-top 3px
+                    width 29px
+                    height 16px
+                    position relative
+                    cursor pointer
+                    background url(../images/icons/imdb.png) right top no-repeat
 
 
                 .rating-container
                     .hidden
-                        display: none
+                        display none
 
                     .number-container
-                        width: auto
-                        float: left
-                        font-size: 12px
-                        font-family: $MainFontBold
-                        color: #FFF
-                        cursor: pointer
-                        z-index: 2
+                        width auto
+                        float left
+                        font-size 12px
+                        font-family $MainFontBold
+                        color #FFF
+                        cursor pointer
+                        z-index 2
 
                         em
-                            font-size: 0.8em
+                            font-size 0.8em
 
                     .star-container
-                        width: auto
-                        float: left
-                        position: relative
-                        z-index: 2
-                        cursor: pointer
+                        width auto
+                        float left
+                        position relative
+                        z-index 2
+                        cursor pointer
 
                         .rating-star
                             color #ffc900
                             font-size 11px
-                            padding-right: 3px
+                            padding-right 3px
 
                         .rating-star-half
                             color #ffc900
                             font-size 11px
                             margin-left -4px
-                            padding-right: 3px
+                            padding-right 3px
 
                         .rating-star-half-empty
                             color #a3a5a7
                             font-size 11px
-                            margin-left: -4px
+                            margin-left -4px
 
                         .rating-star-empty
                             color #a3a5a7
                             font-size 11px
-                            padding-right: 3px
+                            padding-right 3px
 
                         .rating-star-half-container
                             width 1em
@@ -237,472 +237,472 @@
                             margin-left 4px
 
                 .status-indicators
-                    margin-left: auto
-                    display: flex
-                    flex-direction: row-reverse
-                    margin-right: 2%
+                    margin-left auto
+                    display flex
+                    flex-direction row-reverse
+                    margin-right 2%
 
                     &>*:not(:first-child)
-                        margin-right: 1em
-                        border-radius: 50%
+                        margin-right 1em
+                        border-radius 50%
 
                     .health-icon
-                        position: relative
-                        font-size: 14px
-                        color: #737577
-                        cursor: pointer
-                        margin-top: -1px
-                        border-radius: 50%
+                        position relative
+                        font-size 14px
+                        color #737577
+                        cursor pointer
+                        margin-top -1px
+                        border-radius 50%
                         &.Bad
-                            color: #d53f3f
+                            color #d53f3f
                         &.Medium
-                            color: #ece523
+                            color #ece523
                         &.Good
-                            color: #a3e147
+                            color #a3e147
                         &.Excellent
-                            color: #2ad942
+                            color #2ad942
 
                     .magnet-link
-                        position: relative
-                        top: 2px
-                        font-size: 13px
-                        color: #DDD
-                        cursor: pointer
-                        margin-top: -2px
-                        margin-right: 12px
+                        position relative
+                        top 2px
+                        font-size 13px
+                        color #DDD
+                        cursor pointer
+                        margin-top -2px
+                        margin-right 12px
                         &:hover
-                            color: #FFF
-                            transition: all .5s
+                            color #FFF
+                            transition all .5s
 
                     .source-link
-                        position: relative
-                        font-size: 13px
-                        color: #DDD
-                        cursor: pointer
-                        margin-top: -2px
-                        margin-right: 10px
+                        position relative
+                        font-size 13px
+                        color #DDD
+                        cursor pointer
+                        margin-top -2px
+                        margin-right 10px
                         &:hover
-                            color: #FFF
-                            transition: all .5s
+                            color #FFF
+                            transition all .5s
                         img
-                            height: 16px
+                            height 16px
 
             .overview
-                position: relative
-                max-height: 35%
-                overflow: hidden
-                float: none
-                color: #FFF
-                top: 25px
-                padding-right: 2%
-                font-family: $MainFont
-                font-smoothing: antialiased
-                font-size: 13px
-                line-height: 22px
-                text-align: justify
-                text-stroke: 1px rgba(0,0,0,0.1)
-                backface-visibility: hidden
-                scrollable();
+                position relative
+                max-height 35%
+                overflow hidden
+                float none
+                color #FFF
+                top 25px
+                padding-right 2%
+                font-family $MainFont
+                font-smoothing antialiased
+                font-size 13px
+                line-height 22px
+                text-align justify
+                text-stroke 1px rgba(0,0,0,0.1)
+                backface-visibility hidden
+                scrollable()
 
                 span
-                    opacity: 0.7
-                    font-size: 90%
+                    opacity 0.7
+                    font-size 90%
 
                 span.cname
-                    cursor: pointer
-                    opacity: 1
-                    font-size: 100%
+                    cursor pointer
+                    opacity 1
+                    font-size 100%
 
                 span.showall-cast
-                    cursor: pointer
-                    opacity: 1
-                    font-size: 100%
+                    cursor pointer
+                    opacity 1
+                    font-size 100%
 
                 p.sline
-                    line-height: 0.6
+                    line-height 0.6
 
             #torrent-list
-                position: relative
-                top: 48px
-                max-height: 55%
-                margin: 0 20px 0 3px
+                position relative
+                top 48px
+                max-height 55%
+                margin 0 20px 0 3px
 
                 table
                     tr
                         &:hover
-                            background: rgba(255,255,255,0.1)
+                            background rgba(255,255,255,0.1)
 
                         td
-                            color: #c3c5c7
-                            background: none
+                            color #c3c5c7
+                            background none
 
                             &:nth-child(5)
-                                padding-right: 20px
+                                padding-right 20px
 
                     td.provider
-                        width: 36px
-                        padding-left: 10px
+                        width 36px
+                        padding-left 10px
 
                     td.action
-                        width: 36px
-                        padding-left: 1px
+                        width 36px
+                        padding-left 1px
 
                         &:hover
-                            color: #fff
-                            transition: all .5s
+                            color #fff
+                            transition all .5s
 
         .play-control
-            display: flex
-            flex-direction: row
-            justify-content: space-between
-            white-space: nowrap
-            height: 70px
-            line-height: 35px
-            margin: 8px 25px 1px 16px
+            display flex
+            flex-direction row
+            justify-content space-between
+            white-space nowrap
+            height 70px
+            line-height 35px
+            margin 8px 25px 1px 16px
 
             .flex-left
-                min-width: 420px
-                margin-right: -15px
+                min-width 420px
+                margin-right -15px
 
             .setup-container
-                display: flex
-                flex-direction: row
-                justify-content: space-between
-                margin-left: -10px
+                display flex
+                flex-direction row
+                justify-content space-between
+                margin-left -10px
 
             .toggles-container
-                display: flex
-                flex: 2
-                padding-bottom: 10px
+                display flex
+                flex 2
+                padding-bottom 10px
 
             .favourites-toggle
-                cursor: pointer
-                padding: 5px
-                padding-left: 24px
-                float: left
-                color: #FFF
-                height: 26px
-                position: relative
-                width: auto
-                font-family: $MainFont
-                font-smoothing: antialiased
-                font-size: 12px
-                line-height: 17px
-                margin-right: 20px
+                cursor pointer
+                padding 5px
+                padding-left 24px
+                float left
+                color #FFF
+                height 26px
+                position relative
+                width auto
+                font-family $MainFont
+                font-smoothing antialiased
+                font-size 12px
+                line-height 17px
+                margin-right 20px
 
                 &:before
-                    content: "\f004"
-                    font-family: "Font Awesome 6 Free"
-                    font-weight: 900
-                    position: absolute
-                    font-size: 18px
-                    color: #FFF
-                    left: 0
-                    opacity: 1
-                    transition: opacity 0.5s
+                    content "\f004"
+                    font-family "Font Awesome 6 Free"
+                    font-weight 900
+                    position absolute
+                    font-size 18px
+                    color #FFF
+                    left 0
+                    opacity 1
+                    transition opacity 0.5s
 
                 &:after
-                    content: "\f004"
-                    font-family: "Font Awesome 6 Free"
-                    font-weight: 900
-                    position: absolute
-                    font-size: 18px
-                    color: $ButtonBgActive
-                    left: 0
-                    opacity: 0
-                    transition: opacity 0.5s
+                    content "\f004"
+                    font-family "Font Awesome 6 Free"
+                    font-weight 900
+                    position absolute
+                    font-size 18px
+                    color $ButtonBgActive
+                    left 0
+                    opacity 0
+                    transition opacity 0.5s
 
                 &:hover
                     &:before
-                        opacity: 0
+                        opacity 0
                     &:after
-                        opacity: 1
+                        opacity 1
 
 
                 &.selected
-                    height: 18px
-                    position: relative
+                    height 18px
+                    position relative
 
                     &:before
-                        content: "\f004"
-                        font-family: "Font Awesome 6 Free"
-                        font-weight: 900
-                        position: absolute
-                        font-size: 18px
-                        color: $FavoriteColor
-                        left: 0
-                        opacity: 1
-                        transition: opacity 0.5s
+                        content "\f004"
+                        font-family "Font Awesome 6 Free"
+                        font-weight 900
+                        position absolute
+                        font-size 18px
+                        color $FavoriteColor
+                        left 0
+                        opacity 1
+                        transition opacity 0.5s
 
                     &:after
-                        content: "\f004"
-                        font-family: "Font Awesome 6 Free"
-                        font-weight: 900
-                        position: absolute
-                        font-size: 18px
-                        color: #FFF
-                        left: 0
-                        opacity: 0
-                        transition: opacity 0.5s
+                        content "\f004"
+                        font-family "Font Awesome 6 Free"
+                        font-weight 900
+                        position absolute
+                        font-size 18px
+                        color #FFF
+                        left 0
+                        opacity 0
+                        transition opacity 0.5s
 
                     &:hover
                         &:before
-                            opacity: 0
+                            opacity 0
                         &:after
-                            opacity: 1
+                            opacity 1
 
             .watched-toggle
-                cursor: pointer
-                padding: 5px
-                padding-left: 28px
-                float: left
-                color: #FFF
-                height: 26px
-                position: relative
-                width: auto
-                font-family: $MainFont
-                font-smoothing: antialiased
-                font-size: 12px
-                line-height: 17px
+                cursor pointer
+                padding 5px
+                padding-left 28px
+                float left
+                color #FFF
+                height 26px
+                position relative
+                width auto
+                font-family $MainFont
+                font-smoothing antialiased
+                font-size 12px
+                line-height 17px
 
                 &:before
-                    content: "\f070"
-                    font-family: "Font Awesome 6 Free"
-                    font-weight: 900
-                    position: absolute
-                    font-size: 18px
-                    color: #FFF
-                    left: 0
-                    opacity: 1
-                    transform: scaleY(0.9)
-                    transition: opacity 0.5s
+                    content "\f070"
+                    font-family "Font Awesome 6 Free"
+                    font-weight 900
+                    position absolute
+                    font-size 18px
+                    color #FFF
+                    left 0
+                    opacity 1
+                    transform scaleY(0.9)
+                    transition opacity 0.5s
 
                 &:after
-                    content: "\f00c"
-                    font-family: "Font Awesome 6 Free"
-                    font-weight: 900
-                    position: absolute
-                    font-size: 20px
-                    color: #299000
-                    left: 0
-                    opacity: 0
-                    transition: opacity 0.5s
+                    content "\f00c"
+                    font-family "Font Awesome 6 Free"
+                    font-weight 900
+                    position absolute
+                    font-size 20px
+                    color #299000
+                    left 0
+                    opacity 0
+                    transition opacity 0.5s
 
                 &:hover
                     &:before
-                        opacity: 0
+                        opacity 0
                     &:after
-                        opacity: 1
+                        opacity 1
 
 
                 &.selected
                     &:before
-                        content: "\f00c"
-                        font-family: "Font Awesome 6 Free"
-                        font-weight: 900
-                        position: absolute
-                        font-size: 20px
-                        color: #299000
-                        left: 0
-                        opacity: 1
-                        transition: opacity 0.5s
+                        content "\f00c"
+                        font-family "Font Awesome 6 Free"
+                        font-weight 900
+                        position absolute
+                        font-size 20px
+                        color #299000
+                        left 0
+                        opacity 1
+                        transition opacity 0.5s
 
                     &:after
-                        content: "\f070"
-                        font-family: "Font Awesome 6 Free"
-                        font-weight: 900
-                        position: absolute
-                        font-size: 18px
-                        color: #FFF
-                        left: 0
-                        opacity: 0
-                        transition: opacity 0.5s
+                        content "\f070"
+                        font-family "Font Awesome 6 Free"
+                        font-weight 900
+                        position absolute
+                        font-size 18px
+                        color #FFF
+                        left 0
+                        opacity 0
+                        transition opacity 0.5s
 
                     &:hover
                         &:before
-                            opacity: 0
+                            opacity 0
                         &:after
-                            opacity: 1
+                            opacity 1
 
             .show-all-torrents
-                position: relative
-                float: left
-                font-family: $MainFont
-                -webkit-font-smoothing: antialiased
-                font-size: 11px
-                color: #fff
-                transition: all .2s ease-in, margin 0s
-                padding: 0 6px
-                margin: 6px 6px 0 -2px
-                border-radius: 10px
-                height: 23px
-                line-height: 23px
-                cursor: pointer
+                position relative
+                float left
+                font-family $MainFont
+                -webkit-font-smoothing antialiased
+                font-size 11px
+                color #fff
+                transition all .2s ease-in, margin 0s
+                padding 0 6px
+                margin 6px 6px 0 -2px
+                border-radius 10px
+                height 23px
+                line-height 23px
+                cursor pointer
 
                 &:hover, &.active
-                    color: $QualitySelectorText
-                    background: $QualitySelectorBg
+                    color $QualitySelectorText
+                    background $QualitySelectorBg
 
                 &.fa-spinner
-                    font-family: "Font Awesome 6 Free"
-                    transition: none
-                    margin-left: 6px
-                    color: #fff
+                    font-family "Font Awesome 6 Free"
+                    transition none
+                    margin-left 6px
+                    color #fff
 
                     &:hover, &.active
-                        background: none
+                        background none
 
             .play-selector
-                position: relative
-                float: left
+                position relative
+                float left
 
                 .startStreaming
-                    margin-left: 12px
-                    margin-right: 12px
+                    margin-left 12px
+                    margin-right 12px
 
                     &:after
-                        content: ''
-                        width: 70%
-                        height: 100%
-                        top: 0
-                        left: 0
-                        position: absolute
+                        content ''
+                        width 70%
+                        height 100%
+                        top 0
+                        left 0
+                        position absolute
 
             .quality-selector
-                position: relative
-                float: left
+                position relative
+                float left
                 .sdow-quality
-                    line-height: normal;
-                    padding: 4px;
-                    height 35px;
+                    line-height normal
+                    padding 4px
+                    height 35px
 
                     div
-                        cursor: pointer
-                        float: left
-                        font-family: $MainFont;
-                        -webkit-font-smoothing: antialiased;
-                        font-size: 11px
-                        color: #fff
-                        transition: all .2s ease-in
-                        padding: 4px
-                        margin-right: 6px
-                        margin-top: 2px
+                        cursor pointer
+                        float left
+                        font-family $MainFont
+                        -webkit-font-smoothing antialiased
+                        font-size 11px
+                        color #fff
+                        transition all .2s ease-in
+                        padding 4px
+                        margin-right 6px
+                        margin-top 2px
 
                     .disabled
-                        opacity: .3
-                        cursor: default
+                        opacity .3
+                        cursor default
 
                     .active
-                        cursor: pointer
-                        opacity: 1
-                        color: $QualitySelectorText
-                        background: $QualitySelectorBg
-                        border-radius: 10px
-                        font-family: $MainFontBold
+                        cursor pointer
+                        opacity 1
+                        color $QualitySelectorText
+                        background $QualitySelectorBg
+                        border-radius 10px
+                        font-family $MainFontBold
 
 
             .movie-quality-container
-                margin-top: 10px
-                float: left
-                position: relative
-                height: 15px
-                width: 95px
-                left: 3%
-                line-height: 1
+                margin-top 10px
+                float left
+                position relative
+                height 15px
+                width 95px
+                left 3%
+                line-height 1
 
                 .sdow-quality
                     div
-                        cursor: pointer
-                        float: left
-                        font-family: $MainFont;
-                        font-smoothing: antialiased
-                        font-size: 11px
-                        color: $ShowText1
-                        transition: all .2s ease-in
-                        padding: 4px
+                        cursor pointer
+                        float left
+                        font-family $MainFont
+                        font-smoothing antialiased
+                        font-size 11px
+                        color $ShowText1
+                        transition all .2s ease-in
+                        padding 4px
 
                 .tooltip
-                    width: 85px
+                    width 85px
 
                 .disabled
-                    opacity: .3
-                    cursor: default
+                    opacity .3
+                    cursor default
 
                 .active
-                    cursor: pointer
-                    opacity: 1
-                    color: $QualitySelectorText
-                    background: $QualitySelectorBg
-                    border-radius: 10px
-                    font-family: $MainFontBold
+                    cursor pointer
+                    opacity 1
+                    color $QualitySelectorText
+                    background $QualitySelectorBg
+                    border-radius 10px
+                    font-family $MainFontBold
 
                 .switch
-                    background: transparent
-                    border-radius: 32px
-                    display: block
-                    height: 12px
-                    position: absolute
-                    left: 28px
-                    width: 25px
-                    border: 2px solid #fff
-                    cursor: pointer
+                    background transparent
+                    border-radius 32px
+                    display block
+                    height 12px
+                    position absolute
+                    left 28px
+                    width 25px
+                    border 2px solid #fff
+                    cursor pointer
 
                     label
-                        transition: color 0.2s ease
-                        width: 20px
-                        cursor: pointer
+                        transition color 0.2s ease
+                        width 20px
+                        cursor pointer
                         &:nth-of-type(1)
-                            left: -38px
-                            position: absolute
-                            text-align: right
+                            left -38px
+                            position absolute
+                            text-align right
 
                         &:nth-of-type(2)
-                            position: absolute
-                            right: -30px
-                            text-align: left
+                            position absolute
+                            right -30px
+                            text-align left
 
                     .tooltip
-                        width: 130px
+                        width 130px
 
                     input
-                        height: 7px
-                        left: -27px
-                        opacity: 0
-                        position: absolute
-                        top: -4px
-                        width: 79px
-                        z-index: 2
-                        cursor: pointer
+                        height 7px
+                        left -27px
+                        opacity 0
+                        position absolute
+                        top -4px
+                        width 79px
+                        z-index 2
+                        cursor pointer
                         &:checked
-                            z-index: 0
+                            z-index 0
                             & ~ label
                                 &:nth-of-type(1)
-                                    color: $ButtonBgActive
+                                    color $ButtonBgActive
 
                                 &:nth-of-type(2)
-                                    color: #fff
+                                    color #fff
 
                             & ~ .toggle
-                                left: 0px
+                                left 0px
 
 
                         & ~ :checked
                             & ~ label
                                 &:nth-of-type(1)
-                                    color: #fff
+                                    color #fff
 
                                 &:nth-of-type(2)
-                                    color: $ButtonBgActive
+                                    color $ButtonBgActive
 
                             & ~ .toggle
-                                left: 11px
+                                left 11px
 
                     .toggle
-                        transition: left 0.2s ease
-                        background: $ButtonBgActive
-                        border-radius: 50%
-                        height: 10px
-                        left: -0px
-                        position: absolute
-                        top: -1px
-                        width: 10px
+                        transition left 0.2s ease
+                        background $ButtonBgActive
+                        border-radius 50%
+                        height 10px
+                        left -0px
+                        position absolute
+                        top -1px
+                        width 10px
