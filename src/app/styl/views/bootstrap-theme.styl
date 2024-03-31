@@ -1,35 +1,35 @@
 .nav
-    font-size: 0.8em
+    font-size 0.8em
 
 .header_icon
-    font-size: 20px
-    color: $Text3 //add onhover color of $FilterBarActive later
+    font-size 20px
+    color $Text3 //add onhover color of $FilterBarActive later
 
 ul.nav-hor > li
-    float: left
+    float left
 
 .dropdown-menu
-    background-color: $DropDownBg
+    background-color $DropDownBg
     opacity $DropDownOpacity
 
     & > li > a
-        transition: all 0.2s
-        color: $DropDownText
+        transition all 0.2s
+        color $DropDownText
         opacity 1
         padding 4px 20px
 
         &.active
-            color: $DropDownTextHover
-            background-color: $DropDownBgHover
-            background-image: none
-            border-left: 4px solid $FilterBarText
+            color $DropDownTextHover
+            background-color $DropDownBgHover
+            background-image none
+            border-left 4px solid $FilterBarText
 
         &:focus,
         &:hover
-            color: $DropDownTextHover
-            background-color: $DropDownBgHover
-            background-image: none
-            border-left: 4px solid $FilterBarActive
+            color $DropDownTextHover
+            background-color $DropDownBgHover
+            background-image none
+            border-left 4px solid $FilterBarActive
 
 .playerchoice
     padding-left 5px
@@ -70,7 +70,7 @@ ul.nav-hor > li
             width 20px
             position absolute
             right 3px
-            -webkit-filter: $PngLogo
+            -webkit-filter $PngLogo
 
     .playerchoicetoolbar
         background $DropDownBg
