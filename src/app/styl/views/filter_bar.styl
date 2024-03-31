@@ -1,137 +1,137 @@
 .vpn-connected
-    color: #38A169 !important
+    color #38A169 !important
 
 .vpn-disconnected
-    color: #E53E3E !important
+    color #E53E3E !important
 
 .filter-bar
-    z-index: 10
-    width: 100%
-    opacity: .97
-    height: 35px
-    background-color: $FilterBarBg
-    -webkit-user-select: none
-    position: absolute
-    top: $TitleHeight
-    height: $FilterBarHeight
-    box-shadow: $TopBarShadow
+    z-index 10
+    width 100%
+    opacity .97
+    height 35px
+    background-color $FilterBarBg
+    -webkit-user-select none
+    position absolute
+    top $TitleHeight
+    height $FilterBarHeight
+    box-shadow $TopBarShadow
 
     .source
-        box-sizing: content-box
-        color: $FilterBarText
-        text-align: center
-        cursor: pointer
-        height: 20px
-        margin-top: 10px
-        padding: 0px 15px 1px 18px
+        box-sizing content-box
+        color $FilterBarText
+        text-align center
+        cursor pointer
+        height 20px
+        margin-top 10px
+        padding 0px 15px 1px 18px
 
         &:hover
-            color: $FilterBarTextHover
+            color $FilterBarTextHover
 
         &.active
-            border-bottom: 4px solid $FilterBarActive
+            border-bottom 4px solid $FilterBarActive
 
     .nav.filters
-        float: left
-        margin-left: 10px
+        float left
+        margin-left 10px
 
     .nav.right
-        margin-right: 5px
+        margin-right 5px
 
     .filter
-        padding: 10px 0 0
-        margin-left: 20px
+        padding 10px 0 0
+        margin-left 20px
 
         & > a
-            display: inline-block
-            padding: 0
-            color: $FilterBarText
-            background-color: transparent !important
+            display inline-block
+            padding 0
+            color $FilterBarText
+            background-color transparent !important
 
             &:hover
-                color: $FilterBarTextHover
+                color $FilterBarTextHover
         .value
-            color: $FilterBarActive
-            padding-left: 10px
+            color $FilterBarActive
+            padding-left 10px
 
         .dropdown-menu
-            font-size: 0.9em
+            font-size 0.9em
             scrollable()
-            max-height: 445px
-            margin-top: 11px
-            border-top-left-radius: 0
-            border-top-right-radius: 0
+            max-height 445px
+            margin-top 11px
+            border-top-left-radius 0
+            border-top-right-radius 0
 
     i
-        transition: color 0.5s
-        margin: 8px 3px 0 4px
-        padding: 2px
-        color: $FilterBarIcon
-        font-size: 1.5em
+        transition color 0.5s
+        margin 8px 3px 0 4px
+        padding 2px
+        color $FilterBarIcon
+        font-size 1.5em
         &:hover
-            color: $FilterBarIconHover
-            cursor: pointer
+            color $FilterBarIconHover
+            cursor pointer
 
         &.active
             &.favorites
-                color: $FavoriteColor
+                color $FavoriteColor
                 &:hover
                     color darken($FavoriteColor, 10)
                     transition all .5s
 
             &.watchlist
-                color: $FilterBarActive
+                color $FilterBarActive
 
             &.torrent-collection
-                color: $FilterBarActive
+                color $FilterBarActive
 
             &.about
-                color: $FilterBarIconHover
+                color $FilterBarIconHover
 
             &.vpn
-                color: $FilterBarIconHover
+                color $FilterBarIconHover
             &.seedbox
-                color: $FilterBarActive
+                color $FilterBarActive
 
     .clear
-        display: none
+        display none
 
     .search
         form
             &:before
-                content: '\f002'
-                font-family: "Font Awesome 6 Free"
-                font-weight: 900
-                font-style: normal
+                content '\f002'
+                font-family "Font Awesome 6 Free"
+                font-weight 900
+                font-style normal
                 transition color 0.5s
-                color: $FilterBarIcon
-                position: absolute
-                top:11px
-                left: 8px
-                z-index: 2
-                font-size: 1.4em
+                color $FilterBarIcon
+                position absolute
+                top 11px
+                left 8px
+                z-index 2
+                font-size 1.4em
 
             &.edited .clear
-                display: block
-                font-weight: bold
+                display block
+                font-weight bold
                 transition color 0.5s
-                color: $FilterBarIcon
-                position: absolute
-                top:8px
-                right: 5px
-                padding: 3px 5px
-                font-size: 1.2em
+                color $FilterBarIcon
+                position absolute
+                top 8px
+                right 5px
+                padding 3px 5px
+                font-size 1.2em
 
             &.edited input, input:focus, input.expanded
-                width: 190px
-                background-color: $SearchBoxBg
-                color: $FilterBarText
-                padding-left: 28px
+                width 190px
+                background-color $SearchBoxBg
+                color $FilterBarText
+                padding-left 28px
 
             &.edited, &:hover
-                cursor: pointer
+                cursor pointer
                 &:before
-                    color: $FilterBarIconHover
+                    color $FilterBarIconHover
 
             input
                 line-height normal
@@ -153,13 +153,13 @@
                 transition width 0.5s
 
                 &:focus
-                    cursor: auto
+                    cursor auto
                     &:before
-                        color: $FilterBarIconHover //this doesn't work for some reason
+                        color $FilterBarIconHover //this doesn't work for some reason
 
                 &::-moz-placeholder,
                 &::-webkit-input-placeholder
-                    color: transparent
+                    color transparent
 
                 &:focus::-webkit-input-placeholder
-                    color: rgba($FilterBarText,.7)
+                    color rgba($FilterBarText,.7)
