@@ -1,32 +1,34 @@
 #player,
-.player
+.player {
     width 100%
     height 100%
+}
 
-#video_player
+#video_player {
   position fixed
   width 100%
   height 100%
   display flex
   align-items center
   justify-content center
+}
 
-.player
+.player {
     z-index 10
     position absolute
     overflow hidden
     background-color #000
-    video
+    video {
         width 100%
         height 100%
-
-    .details-player
+    }
+    .details-player {
         right 10px
         position absolute
         top 20px
         z-index 20
-
-    .minimize-icon
+    }
+    .minimize-icon {
         top -1px
         right 55px
         position absolute
@@ -34,11 +36,12 @@
         font-size 1.8em
         font-smoothing antialiased
         transition all 0.5s
-        &:hover
+        &:hover {
             cursor pointer
             color #a3a5a7
-
-    .maximize-icon
+        }
+    }
+    .maximize-icon {
         display none
         bottom 20px
         right 20px
@@ -54,25 +57,26 @@
         box-shadow 0 2px 6px 0 rgba(0,0,0,0.15), 0 4px 14px 0 rgba(0,0,0,0.25)
         font-smoothing antialiased
         transition background 0.2s, color 0.2s, opacity 0.2s
-        &:hover
+        &:hover {
             color $ButtonText
             background $ButtonBgHover
             opacity 1
-
-        &.done:hover
+        }
+        &.done:hover {
             color #fff
             background #27ae60
-
-        & > *
+        }
+        & > * {
             font-size 12px
             vertical-align top
             line-height 25px
-
-        #maxic
+        }
+        #maxic {
             font-size 18px
             margin-left 10px
-
-    .close-info-player
+        }
+    }
+    .close-info-player {
         top -1px
         right 18px
         position absolute
@@ -80,19 +84,20 @@
         font-size 2em
         font-smoothing antialiased
         transition all 0.5s
-        &:hover
+        &:hover {
             cursor pointer
             color #a3a5a7
-
-    .quality-info-player
+        }
+    }
+    .quality-info-player {
         position absolute
         right 132px
         top 3px
         font-size 1.3em
         color #fff
         font-weight bold
-
-    .state-info-player
+    }
+    .state-info-player {
         position absolute
         right 90px
         top 120px
@@ -101,8 +106,8 @@
         z-index 23
         display none
         transition all .4s ease-out
-
-    .eye-info-player
+    }
+    .eye-info-player {
         position absolute
         font-size 2em
         color #fff
@@ -111,13 +116,15 @@
         z-index 4
         transform scaleY(0.9)
         transition all 0.5s
-        &:hover
+        &:hover {
             cursor pointer
             color #a3a5a7
-            & + .details-info-player
+            & + .details-info-player {
                 display inline-block
-
-    .details-info-player
+            }
+        }
+    }
+    .details-info-player {
         display none
         width auto
         background rgba(31,31,31,0.7)
@@ -127,7 +134,7 @@
         right 45px
         border-radius 5px
 
-        span
+        span {
             position relative
             color #fff
             font-family $AlternateFont
@@ -136,35 +143,41 @@
             font-size 14px
             line-height 16px
 
-            &.loading-info-text
+            &.loading-info-text {
                 float left
-
-            &.value
+            }
+            &.value {
                 float right
-
-            &.remaining
+            }
+            &.remaining {
                 margin-top 10px
                 display block
                 text-align center
+            }
+        }
 
         #sstatel-container,
-        #dwnloading
+        #dwnloading {
             text-align center
+        }
 
-        #sstatel
+        #sstatel {
             font-size 170%
+        }
 
-        .downloaded_player
+        .downloaded_player {
             width 100%
+        }
 
         .filename_player,
-        .stream_url_player
+        .stream_url_player {
             text-align right
             white-space nowrap
             overflow hidden
             text-overflow ellipsis
-
-    .arrow-up
+        }
+    }
+    .arrow-up {
         width 0
         height 0
         border-left 6px solid rgba(0,0,0,0)
@@ -173,8 +186,8 @@
         top -6px
         right 15px
         position absolute
-
-    .playing_next
+    }
+    .playing_next {
         color #fff
         z-index 23
         bottom 10vh !important
@@ -187,64 +200,68 @@
         background-color rgba(0, 0, 0, 0.54) !important
         overflow hidden
         
-        .pn_poster
+        .pn_poster {
             width 90px
             height 120px
             float left
 
-            .playing_next_poster
+            .playing_next_poster {
                 width 80px
-
-        .pn_epinfo
+            }
+        }
+        .pn_epinfo {
             width 235px
             height 80px
             float left
             text-align left
             
-            .playing_next_show
+            .playing_next_show {
                 font-size 15px
                 font-weight bold
                 line-height 20px
                 overflow hidden 
                 text-overflow ellipsis
                 white-space nowrap
-
-            .playing_next_episode
+            }
+            .playing_next_episode {
                 font-size 11px
                 line-height 14px
                 overflow hidden 
                 text-overflow ellipsis
                 white-space nowrap
-
-            .playing_next_number
+            }
+            .playing_next_number {
                 font-size 17px
                 margin-top 18px
                 overflow hidden 
                 text-overflow ellipsis
                 white-space nowrap
-
-        .pn_counter
+            }
+        }
+        .pn_counter {
             width 105px
             height 80px
             float left
 
-            .playing_next_countertext
+            .playing_next_countertext {
                 font-size 11px
                 text-align center
                 text-transform uppercase
+            }
 
-            #nextCountdown
+            #nextCountdown {
                 color rgb(0, 143, 255)
                 font-size 38px
                 text-align center
                 margin-top 6px
-
-        .pn_btns
+            }
+        }
+        .pn_btns {
             width 340px
             height 40px
             float left
 
-            .auto-next-btn
+            .auto-next-btn {
                 position relative
                 float left
                 margin-top 3px
@@ -259,16 +276,21 @@
                 font-size 12px
                 cursor pointer
                 transition background-color .5s
-                &:hover
+                &:hover {
                     background-color $ButtonBgHover
                     color $SettingsButtonTextHover
                     text-decoration none
-
-                &:active
+                }
+                &:active{
                     box-shadow inset 0 1px 4px rgba(0,0,0,0.6)
                     background $ButtonBgActive
+                }
+            }
 
-    .verify-metadata
+        }
+        
+    }
+    .verify-metadata {
         color #fff
         z-index 23
         bottom 10vh !important
@@ -281,58 +303,61 @@
         background-color rgba(0, 0, 0, 0.54) !important
         overflow hidden
         
-        .vm_poster
+        .vm_poster {
             width 90px
             height 120px
             float left
 
-            .verifmeta_poster
+            .verifmeta_poster {
                 width 80px
-
-        .vm_epinfo
+            }
+        }
+        .vm_epinfo {
             width 235px
             height 80px
             float left
             text-align left
             
-            .verifmeta_show
+            .verifmeta_show {
                 font-size 15px
                 font-weight bold
                 line-height 20px
                 overflow hidden 
                 text-overflow ellipsis
                 white-space nowrap
-
-            .verifmeta_episode
+            }
+            .verifmeta_episode {
                 font-size 11px
                 line-height 14px
                 overflow hidden 
                 text-overflow ellipsis
                 white-space nowrap
-
-            .verifmeta_number
+            }
+            .verifmeta_number {
                 font-size 17px
                 margin-top 18px
                 overflow hidden 
                 text-overflow ellipsis
                 white-space nowrap
-
-        .vm_box
+            }
+        }
+        .vm_box {
             width 105px
             height 80px
             float left
 
-            .verifmeta_boxtext
+            .verifmeta_boxtext {
                 font-size 11px
                 text-align center
                 text-transform uppercase
-
-        .vm_btns
+            }
+        }
+        .vm_btns {
             width 340px
             height 40px
             float left
 
-            .vm-btn
+            .vm-btn {
                 position relative
                 float left
                 margin-top 3px
@@ -347,24 +372,32 @@
                 font-size 12px
                 cursor pointer
                 transition background-color .5s
-                &:hover
+                &:hover {
                     background-color $ButtonBgHover
                     color $SettingsButtonTextHover
                     text-decoration none
-
-                &:active
+                }
+                &:active{
                     box-shadow inset 0 1px 4px rgba(0,0,0,0.6)
                     background $ButtonBgActive
+                }
+            }
 
-/*        span
+        }
+        
+    }
+
+/*        span {
             font-weight bold
             color rgb(0, 143, 255)
-
-    .auto-next-btn
+        }
+    }
+    .auto-next-btn {
         position relative
         float right
         margin 15px
         padding 12px
+
 
         border-radius $ButtonRadius
         background-color $ButtonBg
@@ -374,30 +407,35 @@
         font-size 13px
         cursor pointer
         transition background-color .5s
-        &:hover
+        &:hover {
             background-color $ButtonBgHover
             color $SettingsButtonTextHover
             text-decoration none
-
-        &.disabled
+        }
+        &.disabled {
             background-color $ButtonBgDisabled
-            &:hover
+            &:hover{
                 background-color $ButtonBgDisabled
-
-            &:active
+            }
+            &:active{
                 background-color $ButtonBgDisabled
+            }
+        }
 
-        &.green
+        &.green{
             background-color #27AE60
-
-        &.red
+        }
+        &.red{
             background-color #F15153
-        
-        &:active
+        }
+        &:active{
             box-shadow inset 0 1px 4px rgba(0,0,0,0.6)
             background $ButtonBgActive
+        }
+    }*/
+}
 
-.player-title
+.player-title {
     position absolute
     top 18px
     left 16px
@@ -410,39 +448,48 @@
     white-space nowrap
     text-overflow ellipsis
     padding-bottom 3px
+}
 
-.dragzone
+.dragzone {
     -webkit-app-region drag
     position fixed
     display none
+}
 
-.vjs-quality-button
+.vjs-quality-button {
     color #fff
     right 35px
     top 19px
     font-size 12px
+}
 
-.vjs-subtitles-button
+.vjs-subtitles-button {
     top 24px
+}
 
-.vjs_smallersub_button
-    &.vjs-control
+.vjs_smallersub_button {
+    &.vjs-control {
         top 24px
+    }
+}
 
-.vjs_biggersub_button
-    &.vjs-control
+.vjs_biggersub_button {
+    &.vjs-control {
         top 24px
+    }
+}
 
-.player-header-background
+.player-header-background {
     position absolute
     background linear-gradient(rgba(0,0,0,0.7), transparent 95%, transparent) !important
     width 100% !important
     height 75px !important
     z-index 3
     top 0
+}
 
 .vjs-overlay,
-.vjs-overlay.vjs-overlay-top-left
+.vjs-overlay.vjs-overlay-top-left {
     position absolute
     width auto
     font-size 16px
@@ -456,45 +503,52 @@
     right 30px
     text-align right
     opacity 0
+}
 
-.vjs-overlay
-    &.vjs-overlay-top
+.vjs-overlay {
+    &.vjs-overlay-top {
         margin-left -16.5%
         left 50%
-
-    &.vjs-overlay-top-right
+    }
+    &.vjs-overlay-top-right {
         left auto
         right 5px
-
-    &.vjs-overlay-left
+    }
+    &.vjs-overlay-left {
         top 50%
         margin-top -15px
-
-    &.vjs-overlay-right
+    }
+    &.vjs-overlay-right {
         left auto
         right 5px
         top 50%
         margin-top -15px
-
-    &.vjs-overlay-bottom
+    }
+    &.vjs-overlay-bottom {
         margin-left -16.5%
         left 50%
         top auto
         bottom 4.5em
-
-    &.vjs-overlay-bottom-left
+    }
+    &.vjs-overlay-bottom-left {
         bottom 4.5em
         top auto
         left 5px
-
-    &.vjs-overlay-bottom-right
+    }
+    &.vjs-overlay-bottom-right {
         bottom 4.5em
         top auto
         left auto
         right 5px
+    }
+}
 
-.video-js
-    &.vjs-fullscreen
-        &.vjs-user-inactive
-            .vjs-tech
+.video-js {
+    &.vjs-fullscreen {
+        &.vjs-user-inactive {
+            .vjs-tech {
                 pointer-events none
+            }
+        }
+    }
+}
