@@ -7,18 +7,18 @@
     opacity 1
 
     .spinner
-        position: fixed
-        width: 100%
-        height: 100%
-        background: rgba(0, 0, 0, 0.5) center center no-repeat
-        pointer-events: all
-        z-index: 10
-        display: none
-        top: 0
+        position fixed
+        width 100%
+        height 100%
+        background rgba(0, 0, 0, 0.5) center center no-repeat
+        pointer-events all
+        z-index 10
+        display none
+        top 0
 
         .loading-container
-            margin: 50vh auto 0px
-            opacity: .8
+            margin 50vh auto 0px
+            opacity .8
 
     .margintop
         height 100px
@@ -32,46 +32,46 @@
         font-size 17px
 
         .seedbox-details
-          width: 100vw
-          z-index: 1
-          height: 100%
-          display: flex
-          flex-direction: row
-          padding-left: 20px /* left-pad */
+          width 100vw
+          z-index 1
+          height 100%
+          display flex
+          flex-direction row
+          padding-left 20px /* left-pad */
 
           .seedbox-types ul, .seedbox-torrents ul
-              height: calc(100vh - 167px)
-              /* direction: rtl */
-              text-align: right
+              height calc(100vh - 167px)
+              /* direction rtl */
+              text-align right
               scrollable()
 
               li
-                  padding: 0px 17px 0px 0px
-                  margin: 1px 0px 1px 1px
-                  float: left
-                  width: calc(100% - 7px)
-                  cursor: pointer
+                  padding 0px 17px 0px 0px
+                  margin 1px 0px 1px 1px
+                  float left
+                  width calc(100% - 7px)
+                  cursor pointer
 
                   .watched
                       padding 10px 0
-                      color: $ShowWatchedIcon_false
+                      color $ShowWatchedIcon_false
                       transition color .5s
-                      font-size: 0.9em
-                      font-family: $MainFont, "Font Awesome 6 Free"
+                      font-size 0.9em
+                      font-family $MainFont, "Font Awesome 6 Free"
 
                       &.true
-                          color: $ShowWatchedIcon_true
+                          color $ShowWatchedIcon_true
 
                       &.disabled
-                          cursor: not-allowed
-                          opacity: 0.2
+                          cursor not-allowed
+                          opacity 0.2
 
                           &:hover
-                              color: $ShowWatchedIcon_false !important
+                              color $ShowWatchedIcon_false !important
 
                   .watched:not(.fa-download):not(.fa-upload)
                       &:hover
-                          color: $ShowWatchedIcon_true
+                          color $ShowWatchedIcon_true
 
                   .pause-torrent
                       width 50px
@@ -103,74 +103,74 @@
                       border-width 16px 6px 17px 6px
 
               a
-                  text-decoration: none
-                  font-size: 15px
-                  line-height: 34px
-                  font-weight: normal
-                  float: left
-                  flex-direction: row
-                  direction: ltr
+                  text-decoration none
+                  font-size 15px
+                  line-height 34px
+                  font-weight normal
+                  float left
+                  flex-direction row
+                  direction ltr
 
                   span
-                      float: left
-                      margin: 0px
+                      float left
+                      margin 0px
 
                   div
-                      white-space: nowrap
-                      border-left: 1px solid $ShowBgColor1
-                      padding-left: 25px
-                      text-align: left
-                      overflow: hidden
-                      text-overflow: ellipsis
+                      white-space nowrap
+                      border-left 1px solid $ShowBgColor1
+                      padding-left 25px
+                      text-align left
+                      overflow hidden
+                      text-overflow ellipsis
 
           .seedbox-types, .seedbox-torrents
               .seedbox-types-title, .seedbox-torrent-title
-                  font-size: 24px
-                  overflow: hidden
-                  text-overflow: ellipsis
-                  white-space: nowrap
-                  margin-bottom: 15px
-                  margin-top: 2px
-                  color: $ShowText1
+                  font-size 24px
+                  overflow hidden
+                  text-overflow ellipsis
+                  white-space nowrap
+                  margin-bottom 15px
+                  margin-top 2px
+                  color $ShowText1
 
           .seedbox-types
-              min-width: 165px
-              max-width: 165px
-              flex-shrink: 1
-              flex-grow: 1
-              padding: 10px
+              min-width 165px
+              max-width 165px
+              flex-shrink 1
+              flex-grow 1
+              padding 10px
 
               .seedbox-types-list ul a
-                  color: $SaisonListText
-                  font-family: $AlternateFont
-                  white-space: nowrap
+                  color $SaisonListText
+                  font-family $AlternateFont
+                  white-space nowrap
 
           .seedbox-torrents
-              flex-grow: 2
-              padding: 10px
-              width: calc(65vw - 20px)
+              flex-grow 2
+              padding 10px
+              width calc(65vw - 20px)
 
               .seedbox-torrent-list ul
-                  white-space: nowrap
+                  white-space nowrap
 
               .seedbox-torrent-list ul li a
-                  color: $EpisodeListText
-                  font-family: $MainFont
-                  min-width: 70px
-                  max-width: calc(100% - 265px)
+                  color $EpisodeListText
+                  font-family $MainFont
+                  min-width 70px
+                  max-width calc(100% - 265px)
 
               .seedbox-torrent-list ul li.active a
-                  color: $EpisodeSelectorText
+                  color $EpisodeSelectorText
 
               .seedbox-torrent-list ul li.active i
-                  color: rgba($EpisodeSelectorText,.5)
+                  color rgba($EpisodeSelectorText,.5)
 
               .seedbox-torrent-list ul li.active i:not(.fa-download):not(.fa-upload)
                   &:hover
-                      color: $EpisodeSelectorText
+                      color $EpisodeSelectorText
 
               .seedbox-torrent-list ul li.error
-                  background: $NotificationError
+                  background $NotificationError
 
               .notorrents-info
                   display block
@@ -213,86 +213,86 @@
                           font-size 20px
 
           .seedbox-overview
-              background: $ShowBgColor2
-              flex-grow: 1
-              flex-shrink: 0
-              width: 35vw
-              min-width: 350px
-              padding: 12px 18px
-              margin-top: 28px
-              display: none
+              background $ShowBgColor2
+              flex-grow 1
+              flex-shrink 0
+              width 35vw
+              min-width 350px
+              padding 12px 18px
+              margin-top 28px
+              display none
 
               .seedbox-infos
                   .seedbox-infos-title
-                      overflow: hidden
-                      white-space: nowrap
-                      text-overflow: ellipsis
-                      font-size: 24px
-                      font-weight: bold
-                      margin-top: 2px
-                      margin-bottom: 7px
-                      color: $ShowText1
-                      min-height: 24px
+                      overflow hidden
+                      white-space nowrap
+                      text-overflow ellipsis
+                      font-size 24px
+                      font-weight bold
+                      margin-top 2px
+                      margin-bottom 7px
+                      color $ShowText1
+                      min-height 24px
 
                   .seedbox-infos-links
-                      position: absolute
-                      right: 30px
-                      margin-top: -2px
+                      position absolute
+                      right 30px
+                      margin-top -2px
 
                       &>div
-                          padding: 5px 2px
-                          border-radius: 50%
-                          cursor: pointer
-                          position: relative
+                          padding 5px 2px
+                          border-radius 50%
+                          cursor pointer
+                          position relative
 
                       .health-icon
-                          font-size: 14px
-                          color: #737577
-                          transition: all .3s ease-in
+                          font-size 14px
+                          color #737577
+                          transition all .3s ease-in
 
                           &.Bad
-                              color: #d53f3f
+                              color #d53f3f
                           &.Medium
-                              color: #ece523
+                              color #ece523
                           &.Good
-                              color: #a3e147
+                              color #a3e147
                           &.Excellent
-                              color: #2ad942
+                              color #2ad942
 
                       .magnet-icon
-                          font-size: 13px
-                          color: #DDD
-                          margin-right: 1px
+                          font-size 13px
+                          color #DDD
+                          margin-right 1px
 
                           &:hover
-                              color: #FFF
-                              transition: all .5s
+                              color #FFF
+                              transition all .5s
 
                   .seedbox-infos-aired
-                      font-size: 14px
-                      line-height: 18px
-                      margin-bottom: 10px
-                      color: $ShowText2
+                      font-size 14px
+                      line-height 18px
+                      margin-bottom 10px
+                      color $ShowText2
 
                       .seedbox-infos-date
-                          overflow: hidden
-                          white-space: nowrap
-                          text-overflow: ellipsis
+                          overflow hidden
+                          white-space nowrap
+                          text-overflow ellipsis
 
                       i
-                          margin-right: 8px
-                          font-family: $MainFont, "Font Awesome 6 Free"
+                          margin-right 8px
+                          font-family $MainFont, "Font Awesome 6 Free"
 
                   .seedbox-infos-synopsis
-                      color: $ShowText1
-                      font-size: 13px
-                      line-height: 18px
-                      text-align: justify
-                      margin-top: 14px
-                      margin-left: -18px
-                      padding: 4px 6px 5px 0
-                      margin-right: 9px
-                      height: calc(100vh - 338px)
+                      color $ShowText1
+                      font-size 13px
+                      line-height 18px
+                      text-align justify
+                      margin-top 14px
+                      margin-left -18px
+                      padding 4px 6px 5px 0
+                      margin-right 9px
+                      height calc(100vh - 338px)
                       scrollable()
 
                       ul
@@ -380,7 +380,7 @@
                               .item-icon
                                   position relative
                                   font-family "Font Awesome 6 Free"
-                                  font-weight: 900
+                                  font-weight 900
                                   font-style normal
                                   font-size 15px
                                   height 15px
@@ -391,9 +391,9 @@
                                   margin-top -16px
 
                                   &.torrent-icon:before
-                                      content: '\f016'
+                                      content '\f016'
                                   &.magnet-icon:before
-                                      content: '\f076'
+                                      content '\f076'
 
                                   &.magnet-icon:hover
                                       cursor pointer
@@ -401,7 +401,7 @@
 
                               .online-size
                                   position relative
-                                  color: $TextError
+                                  color $TextError
                                   font-style normal
                                   font-size .9em
                                   left calc(100% - 35px)
@@ -411,191 +411,191 @@
                               width calc(100% - 50px)
 
               .seedbox-watch
-                  height: 60px
-                  padding: 10px 0
+                  height 60px
+                  padding 10px 0
 
                   .sdow-quality
-                      margin-top: 20px
-                      float: left
+                      margin-top 20px
+                      float left
 
                       div
-                          cursor: pointer
-                          float: left
-                          font-family: $MainFont;
-                          -webkit-font-smoothing: antialiased;
-                          font-size: 11px
-                          color: $ShowText1
-                          transition: all .2s ease-in
-                          padding: 4px
-                          margin-right: 6px
+                          cursor pointer
+                          float left
+                          font-family $MainFont
+                          -webkit-font-smoothing antialiased
+                          font-size 11px
+                          color $ShowText1
+                          transition all .2s ease-in
+                          padding 4px
+                          margin-right 6px
 
                       .disabled
-                          opacity: .3
-                          cursor: default
+                          opacity .3
+                          cursor default
 
                       .active
-                          cursor: pointer
-                          opacity: 1
-                          color: $QualitySelectorText
-                          background: $QualitySelectorBg
-                          border-radius: 10px
-                          font-family: $MainFontBold
+                          cursor pointer
+                          opacity 1
+                          color $QualitySelectorText
+                          background $QualitySelectorBg
+                          border-radius 10px
+                          font-family $MainFontBold
 
                   .sdow-watchnow
-                      margin-top: 6px
-                      float: right
+                      margin-top 6px
+                      float right
 
           /* ugly rule to bypass restrictions */
-          .seedbox-types[style*="display: none"] + .seedbox-torrents ul a div
-              max-width: calc(60vw - 100px)
+          .seedbox-types[style*="display none"] + .seedbox-torrents ul a div
+              max-width calc(60vw - 100px)
 
         // Progress container
         .progress-wrapper {
-            position: relative;
-            padding: 1.5rem 10px 0 10px;
+            position relative
+            padding 1.5rem 10px 0 10px
         }
 
 
         // General styles
         .progress {
-            height: 8px;
-            background: $FileSelectorBg;
-            margin-bottom: $spacer;
-            overflow: hidden;
-            border-radius: .2rem !default;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            height 8px
+            background $FileSelectorBg
+            margin-bottom $spacer
+            overflow hidden
+            border-radius .2rem !default
+            box-shadow inset 0 1px 2px rgba(0, 0, 0, 0.1)
 
             .sr-only {
-                width: auto;
-                height: 20px;
-                margin: 0 0 0 30px;
-                left: 0;
-                clip: auto;
-                line-height: 20px;
-                font-size: 13px;
+                width auto
+                height 20px
+                margin 0 0 0 30px
+                left 0
+                clip auto
+                line-height 20px
+                font-size 13px
             }
         }
 
 
         // Size variations
         .progress-sm {
-            height: 5px;
+            height 5px
         }
 
         .progress-xs {
-            height: 3px;
+            height 3px
         }
 
         // Progress inner elements
         .progress-heading {
-            font-size: 14px;
-            font-weight: 500;
-            margin: 0 0 2px;
-            padding: 0;
+            font-size 14px
+            font-weight 500
+            margin 0 0 2px
+            padding 0
         }
 
         .progress-bar {
-            box-shadow: none;
-            border-radius: 0;
-            height: 8px;
-            width: 0%;
-            background-color: #fb6340;
-            background-image: linear-gradient(to bottom, #fb6340 100%, #fb6340 100%);
+            box-shadow none
+            border-radius 0
+            height 8px
+            width 0%
+            background-color #fb6340
+            background-image linear-gradient(to bottom, #fb6340 100%, #fb6340 100%)
 
             &.done {
-                background-color: #27ae60;
-                background-image: linear-gradient(to bottom, #27ae60 100%, #27ae60 100%);
+                background-color #27ae60
+                background-image linear-gradient(to bottom, #27ae60 100%, #27ae60 100%)
             }
         }
 
         .exit-when-done
-            width: 44px;
-            margin-top: 21px;
-            margin-right: -18px;
-            float: right;
-            padding: 0.36rem 1rem;
-            border-radius: 3px;
-            background: $ShowBgColor2;
-            color: $ShowText2;
-            font-size: 0.65rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            overflow: hidden;
-            text-overflow: clip;
-            white-space: nowrap;
-            cursor: pointer;
-            transition: all 0.7s ease, color 0.1s, background-color 0.3s;
-            transition-delay: 0.6s, 0s, 0s;
+            width 44px
+            margin-top 21px
+            margin-right -18px
+            float right
+            padding 0.36rem 1rem
+            border-radius 3px
+            background $ShowBgColor2
+            color $ShowText2
+            font-size 0.65rem
+            font-weight 600
+            text-transform uppercase
+            overflow hidden
+            text-overflow clip
+            white-space nowrap
+            cursor pointer
+            transition all 0.7s ease, color 0.1s, background-color 0.3s
+            transition-delay 0.6s, 0s, 0s
 
             &:hover
-                width: 35vw;
-                transition-delay: 0.3s, 0s, 0s;
-                border-radius: 0;
-                padding: 0.86rem 1.62rem 0.86rem 1rem;
-                margin-top: 13px;
-                margin-right: -28px;
+                width 35vw
+                transition-delay 0.3s, 0s, 0s
+                border-radius 0
+                padding 0.86rem 1.62rem 0.86rem 1rem
+                margin-top 13px
+                margin-right -28px
 
                 & > span
-                    opacity: 1;
-                    transition-delay: 0.3s;
+                    opacity 1
+                    transition-delay 0.3s
 
                 & > i
-                    color: $CloseButtonHover;
+                    color $CloseButtonHover
 
             &.active
-                color: #fff;
-                background-color: #27ae60;
+                color #fff
+                background-color #27ae60
 
                 &:hover
                     & > i
-                        color: #fff;
+                        color #fff
 
             &.disabled
-                display: none;
+                display none
 
             & i
-                font-family: "Font Awesome 6 Free";
-                font-size: 12px;
-                float: right;
-                pointer-events: none;
-                transition: color 0.3s;
-                margin-top: 1px;
+                font-family "Font Awesome 6 Free"
+                font-size 12px
+                float right
+                pointer-events none
+                transition color 0.3s
+                margin-top 1px
 
             & span
-                opacity: 0;
-                transition: opacity 0.5s ease-in-out;
-                transition-delay: 0.6s;
-                pointer-events: none;
-                margin-left: 12px;
-                line-height: calc(100% + 3px);
+                opacity 0
+                transition opacity 0.5s ease-in-out
+                transition-delay 0.6s
+                pointer-events none
+                margin-left 12px
+                line-height calc(100% + 3px)
 
         .progress-info {
-            margin-bottom: .5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            margin-bottom .5rem
+            display flex
+            align-items center
+            justify-content space-between
         }
 
         .progress-label {
             span {
-                display: inline-block;
-                color: $ShowText2;
-                font-size: .65rem;
-                font-weight: 600;
-                text-transform: uppercase;
-                background: $FileSelectorBg;
-                padding: .25rem 1rem;
-                border-radius: 30px;
+                display inline-block
+                color $ShowText2
+                font-size .65rem
+                font-weight 600
+                text-transform uppercase
+                background $FileSelectorBg
+                padding .25rem 1rem
+                border-radius 30px
             }
         }
 
         .progress-percentage {
-            text-align: right;
-            color: $ShowText2;
+            text-align right
+            color $ShowText2
             span {
-                display: inline-block;
-                color: #e9ecef !default;
-                font-size: .875rem;
-                font-weight: 600;
+                display inline-block
+                color #e9ecef !default
+                font-size .875rem
+                font-weight 600
             }
         }
