@@ -110,7 +110,7 @@ If you encounter trouble with the above method, you can try:
 
 Optionally, you may simply run `./make_popcorn.sh` if you are on a linux or mac based operating system.
 
-Full instructions & troubleshooting tips can be found in the [Contributing Guide](CONTRIBUTING.md#contributing-to-popcorn-time).
+Full instructions & troubleshooting tips can be found in the [Contributing Guide](docs/Contributing.md#contributing-to-popcorn-time).
 
 #### Building redistribuable packages/installers:
 
@@ -126,7 +126,7 @@ Redistribuable packages are saved into `build/` subfolder.
 
 ## Getting Involved
 Want to report a bug, request a feature, contribute to or translate Popcorn Time?  
-Check out our in-depth guide to [Contributing to Popcorn Time](CONTRIBUTING.md#contributing-to-popcorn-time). We need all the help we can get!  
+Check out our in-depth guide to [Contributing to Popcorn Time](docs/Contributing.md#contributing-to-popcorn-time). We need all the help we can get!  
 You can also join our [community](README.md#community) to keep up-to-date and meet other developers.  
 
 
