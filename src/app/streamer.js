@@ -1,5 +1,5 @@
 const Server = require("webtorrent/lib/server");
-const FileServer = require("./lib/fileserver");
+const FileServer = require("./fileserver");
 (function (App) {
     'use strict';
     var subtitle_retry;
