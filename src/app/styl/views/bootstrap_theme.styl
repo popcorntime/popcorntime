@@ -1,0 +1,118 @@
+.nav
+    font-size 0.8em
+
+.header_icon
+    font-size 20px
+    color $Text3
+
+ul.nav-hor > li
+    float left
+
+.dropdown-menu
+    background-color $DropDownBg
+    opacity $DropDownOpacity
+
+    & > li > a
+        transition all 0.2s
+        color $DropDownText
+        opacity 1
+        padding 4px 20px
+
+        &.active
+            color $DropDownTextHover
+            background-color $DropDownBgHover
+            background-image none
+            border-left 4px solid $FilterBarText
+
+        &:focus,
+        &:hover
+            color $DropDownTextHover
+            background-color $DropDownBgHover
+            background-image none
+            border-left 4px solid $FilterBarActive
+
+.playerchoice
+    padding-left 5px
+    margin-left 8px
+    margin-right -5px
+    border-left 1px solid rgba(255,255,255,.2)
+
+    img
+        width 20px
+        height 20px
+        margin 7.5px 2px
+        float left
+        filter invert($ButtonImgInvert)
+
+    &:after
+        content ''
+        width 30px
+        height 100%
+        top 0
+        right 0
+        position absolute
+
+.playerchoicemenu
+    font-size 1em
+    text-align left
+    left auto
+    right -2px
+
+    & > li > a
+        padding-left 10px
+        padding-right 25px
+        text-overflow ellipsis
+        overflow hidden
+        max-width 200px
+
+        img
+            height 20px
+            width 20px
+            position absolute
+            right 3px
+            -webkit-filter $PngLogo
+
+    .playerchoicetoolbar
+        background $DropDownBg
+        position absolute
+        width 50px
+        height 22px
+        top -26px
+        right 0px
+        border-radius 30px
+
+        .playerchoicerefresh
+            top 3px
+            left 6px
+            padding 2px
+            position absolute
+            color $DropDownText
+            opacity 0.3
+            transition color 0.4s ease, opacity 0.4s ease
+
+            &:hover
+                color $DropDownTextHover
+                opacity 0.97
+
+            &.spin
+                color $DropDownTextHover
+                opacity 0.97
+
+        .playerchoicehelp
+            top 3px
+            right 6px
+            padding 2px
+            position absolute
+            color $DropDownText
+            opacity 0.3
+            transition color 0.4s ease, opacity 0.4s ease
+
+            &:hover
+                color $DropDownTextHover
+                opacity 0.97
+
+.splayerlist
+    display inline-block
+    width 420px
+    line-height 20px
+    padding 4px 0px 14px
