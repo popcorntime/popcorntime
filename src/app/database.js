@@ -439,7 +439,7 @@ var Database = {
             })
             .then(function () {
                 if (AdvSettings.get('disclaimerAccepted')) {
-                    App.DhtReader.updateOld();
+                    App.Updater.updateDHTOld();
                     if (Settings.updateNotification) {
                         App.Updater.onlyNotification();
                     }
