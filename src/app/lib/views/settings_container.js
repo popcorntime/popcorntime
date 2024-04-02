@@ -729,7 +729,7 @@
 
         updateDht: function(e) {
             let updateMode = e === 'enable' ? e : (e ? 'manual' : '');
-            App.DhtReader.update(updateMode);
+            App.Updater.updateDHT(updateMode);
         },
 
         updateApp: function(e) {
