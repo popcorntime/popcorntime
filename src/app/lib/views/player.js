@@ -436,7 +436,7 @@
             $('#player_drag').show();
             var that = this;
 
-            $('.movie-detail .button:not(#download-torrent), .show-details .sdo-watch, .sdow-watchnow, .show-details #download-torrent, .file-item, .file-item a, .result-item, .collection-paste, .collection-import, .seedbox .item-play, #torrent-list .item-row, #torrent-show-list .item-row').addClass('disabled');
+            $('.button:not(#download-torrent, #cancel-button), .show-details .sdo-watch, .sdow-watchnow, .show-details #download-torrent, .file-item, .file-item a, .result-item, .collection-paste, .collection-import, .seedbox .item-play, #torrent-list .item-row, #torrent-show-list .item-row').addClass('disabled');
             $('#watch-now, #watch-trailer, .playerchoice, .file-item, .file-item a, .result-item, .result-item > *:not(.item-icon), .seedbox .item-play, #torrent-list .item-play, #torrent-show-list .item-play').prop('disabled', true);
 
             // Double Click to toggle Fullscreen
@@ -1273,7 +1273,7 @@
             if (this.inFullscreen && !win.isFullscreen) {
                 $('.btn-os.fullscreen').removeClass('active');
             }
-            $('.movie-detail .button, #watch-now, .show-details .sdo-watch, .sdow-watchnow, .playerchoice, .file-item, .file-item a, .result-item, .result-item > *:not(.item-icon), .trash-torrent, .collection-paste, .collection-import, .seedbox .item-play, .seedbox .exit-when-done, #torrent-list .item-row, #torrent-show-list .item-row, #torrent-list .item-play, #torrent-show-list .item-play').removeClass('disabled').removeProp('disabled');
+            $('.button:not(#cancel-button), #watch-now, .show-details .sdo-watch, .sdow-watchnow, .playerchoice, .file-item, .file-item a, .result-item, .result-item > *:not(.item-icon), .trash-torrent, .collection-paste, .collection-import, .seedbox .item-play, .seedbox .exit-when-done, #torrent-list .item-row, #torrent-show-list .item-row, #torrent-list .item-play, #torrent-show-list .item-play').removeClass('disabled').removeProp('disabled');
             this.unbindKeyboardShortcuts();
             Mousetrap.bind('ctrl+v', function (e) {
             });
