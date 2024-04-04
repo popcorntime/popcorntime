@@ -77,7 +77,7 @@
       $('.playerchoicerefresh, .playerchoicehelp').tooltip({html: true, delay: {'show': 800,'hide': 100}});
 
       if ($('.loading .maximize-icon').is(':visible') || $('.player .maximize-icon').is(':visible')) {
-        $('.button:not(#download-torrent)').addClass('disabled');
+        $('.movie-detail .button:not(#download-torrent)').addClass('disabled');
         $('#watch-now, #watch-trailer, .playerchoice').prop('disabled', true);
       }
     },
