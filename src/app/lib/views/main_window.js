@@ -19,7 +19,6 @@
       Disclaimer: '#disclaimer-container',
       About: '#about-container',
       Keyboard: '#keyboard-container',
-      Help: '#help-container',
       TorrentCollection: '#torrent-collection-container',
       Notification: '#notification',
       Seedbox: '#seedbox-container'
