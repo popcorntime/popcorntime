@@ -595,7 +595,7 @@ gulp.task(
     'build',
     'compresszip',
     'deb',
-    'mac-pkg',
+   // 'mac-pkg',
     'nsis',
     'cleanForDist',
     function(done) {
