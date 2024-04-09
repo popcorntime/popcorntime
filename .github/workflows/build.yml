@@ -51,18 +51,18 @@ jobs:
           key: "${{ matrix.os }}"
           map: |
             {
-              "ubuntu-latest": { "platform": "linux", "dist": "linux32,linux64" },
-              "macOS-latest": { "platform": "osx", "dist": "osx64" },
-              "windows-latest": { "platform": "win", "dist": "win32,win64" }
+              "ubuntu-latest": { "platform": "linux64" },
+              "macOS-latest": { "platform": "osx64" },
+              "windows-latest": { "platform": "win64" }
             }
 
       - name: Build info
-        run: echo Build ${{ env.dist }} on nw-v${{ matrix.nwjs }}
+        run: echo Build ${{ env.platform }} on nw-v${{ matrix.nwjs }}
 
       - name: Build App
         run: |
           yarn
-          yarn gulp dist --platforms=${{ env.platform == 'win' && '"' || '' }}${{ env.dist }}${{ env.platform == 'win' && '"' || '' }} --nwVersion=${{ matrix.nwjs }}
+          yarn gulp dist --platforms=${{ env.platform == 'win' && '"' || '' }}${{ env.platform }}${{ env.platform == 'win' && '"' || '' }} --nwVersion=${{ matrix.nwjs }}
       - name: Upload artifacts
         uses: actions/upload-artifact@master
         with:
@@ -91,7 +91,7 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: linux-${{ matrix.nwjs }}
+          name: linux64-${{ matrix.nwjs }}
           path: .
 
       - name: Install packages and appimagetool
@@ -109,12 +109,12 @@ jobs:
           cp repo/dist/linux/appimage/* $VER.AppDir/
           ln -s Popcorn-Time $VER.AppDir/AppRun
           mkdir build
-          ./appimagetool-x86_64.AppImage $VER.AppDir build/$VER-linux${{ matrix.nwjs == '0.44.5' && '-0.44.5' || '' }}.AppImage
+          ./appimagetool-x86_64.AppImage $VER.AppDir build/$VER-linux64${{ matrix.nwjs == '0.44.5' && '-0.44.5' || '' }}.AppImage
 
       - name: Upload artifacts
         uses: actions/upload-artifact@master
         with:
-          name: linux-${{ matrix.nwjs }}.AppImage
+          name: linux64-${{ matrix.nwjs }}.AppImage
           path: build
 
 
