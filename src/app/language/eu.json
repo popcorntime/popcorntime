@@ -466,7 +466,7 @@
     "Enable Protocol Encryption": "Gaitu protokoloaren enkriptatzea",
     "Allows connecting to peers that use PE/MSE. Will in most cases increase the number of connectable peers but might also result in increased CPU usage": "PE/MSE erabiltzen duten kideekin konektatzeko aukera ematen du. Kasu gehienetan konekta daitezkeen parekideen kopurua handituko da, baina PUZaren erabilera areagotzea ere eragingo du",
     "Show the Seedbox when a new download is added": "Erakutsi Seedbox deskarga berri bat gehitzen denean",
-    "Download added": "Download added",
+    "Download added": "Deskarga gehitu da",
     "Change API Server": "Aldatu API zerbitzaria",
     "Default Content Language": "Edukien hizkuntza lehenetsia",
     "Title translation": "Izenburuaren itzulpena",
