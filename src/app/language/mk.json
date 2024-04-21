@@ -530,5 +530,7 @@
 	"720p": "720p",
 	"1080p": "1080p",
 	"2160p": "2160p",
-	"3D": "3D"
+	"3D": "3D",
+	"The remote movies API failed to respond, please check %s and try again later": "The remote movies API failed to respond, please check %s and try again later",
+	"No watched items found...": "No watched items found..."
 }
