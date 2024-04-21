@@ -526,5 +526,9 @@
 	"Action & Adventure": "Action & Adventure",
 	"Tv Movie": "Tv Movie",
 	"No favorites found...": "No favorites found...",
-	"Flush watched database": "Flush watched database"
+	"Flush watched database": "Flush watched database",
+	"720p": "720p",
+	"1080p": "1080p",
+	"2160p": "2160p",
+	"3D": "3D"
 }
