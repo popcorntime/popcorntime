@@ -72,11 +72,6 @@
   dependencies:
     make-plural "^7.0.0"
 
-"@noble/ed25519@^1.7":
-  version "1.7.3"
-  resolved "https://registry.npmjs.org/@noble/ed25519/-/ed25519-1.7.3.tgz"
-  integrity sha512-iR8GBkDt0Q3GyaVcIu7mSsVIqnFbkbRzGLWlvhwunacoLwt4J3swfKhfaM6rN6WY+TBGoYT1GtT1mIh2/jGbRQ==
-
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -896,6 +891,13 @@ bitfield@^4.0.0, bitfield@^4.1.0:
   version "4.1.0"
   resolved "https://registry.npmjs.org/bitfield/-/bitfield-4.1.0.tgz"
   integrity sha512-6cEDG3K+PK9f+B7WyhWYjp09bqSa+uaAaecVA7Y5giFixyVe1s6HKGnvOqYNR4Mi4fBMjfDPLBpHkKvzzgP7kg==
+
+bittorrent-dht-sodium@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/bittorrent-dht-sodium/-/bittorrent-dht-sodium-1.2.0.tgz#6e05f05248ffc91e306c58ae02a868f4f9b0942c"
+  integrity sha512-qDUtTixcqizCb1hjsi/JnxXljna2R+93ZSWq77phKEf5sgs3Yda17+lanMKLaMGGeuwN60UXfrtmxHCtb6Rehw==
+  dependencies:
+    sodium-native "^3.0.0"
 
 bittorrent-dht@^10.0.7:
   version "10.0.7"
@@ -6760,6 +6762,13 @@ socks@^2.0.0, socks@^2.6.2:
   dependencies:
     ip "^2.0.0"
     smart-buffer "^4.2.0"
+
+sodium-native@^3.0.0:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/sodium-native/-/sodium-native-3.4.1.tgz#44616c07ccecea15195f553af88b3e574b659741"
+  integrity sha512-PaNN/roiFWzVVTL6OqjzYct38NSXewdl2wz8SRB51Br/MLIJPrbM3XexhVWkq7D3UWMysfrhKVf1v1phZq6MeQ==
+  dependencies:
+    node-gyp-build "^4.3.0"
 
 solidtorrents@^1.0:
   version "1.0.0"
