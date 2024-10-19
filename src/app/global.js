@@ -14,7 +14,6 @@ var _ = require('underscore'),
   rimraf = require('rimraf'),
   jsonFileEditor = require('edit-json-file'),
   // Compression
-  tar = require('tar'),
   AdmZip = require('adm-zip'),
   zlib = require('zlib'),
   // Encoding/Decoding
