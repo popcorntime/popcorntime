@@ -1,7 +1,7 @@
 (function (App) {
     'use strict';
     var DHT = require('bittorrent-dht');
-    var ed = require('bittorrent-dht-sodium');
+    var ed = require('@noble/ed25519'); // better use ed25519-supercop but need rebuild ed25519 for windows
 
     function Updater(options) {
         if (!(this instanceof Updater)) {
