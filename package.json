@@ -45,7 +45,7 @@
   ],
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4",
-    "bittorrent-dht-sodium": "1.2.0",
+    "@noble/ed25519": "^1.7",
     "adm-zip": "0.4.16",
     "airplayer": "2.0.0",
     "async": "3.2.2",
