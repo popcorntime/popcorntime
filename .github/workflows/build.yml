@@ -109,7 +109,7 @@ jobs:
           cp repo/dist/linux/appimage/* $VER.AppDir/
           ln -s Popcorn-Time $VER.AppDir/AppRun
           mkdir build
-          ./appimagetool-x86_64.AppImage $VER.AppDir build/$VER-linux64${{ matrix.nwjs == '0.44.5' && '-0.44.5' || '' }}.AppImage
+          ARCH=x86_64 ./appimagetool-x86_64.AppImage $VER.AppDir build/$VER-linux64${{ matrix.nwjs == '0.44.5' && '-0.44.5' || '' }}.AppImage
 
       - name: Upload artifacts
         uses: actions/upload-artifact@master
