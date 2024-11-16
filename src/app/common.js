@@ -307,11 +307,12 @@ Common.refreshPlayerList = function (e) {
         App.Device.rescan();
     }).then(function() {
         setTimeout(() => {
+            const dropdownVis = $(dropdownToggle)[0].ariaExpanded || 'false';
             App.Device.ChooserView('#player-chooser').render();
             App.Device.ChooserView('#player-chooser2').render();
             $('.file-selector #watch-now').text('');
             $('.playerchoicerefresh, .playerchoicehelp').tooltip({html: true, delay: {'show': 800,'hide': 100}});
-            $(dropdownToggle).click();
+            dropdownVis === 'true' ? $(dropdownToggle).click() : null;
         }, 3000);
     });
 };
