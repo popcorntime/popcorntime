@@ -69,7 +69,7 @@ if [ -e "$git_dir"/config ]; then
 fi
 if [ "$clone_repo" = "True" ]; then
     echo "Cloning Popcorn Time"
-    read -p "Where do you wish to clone Popcorn Time to? [popcorn] " dir
+    read -r -p "Where do you wish to clone Popcorn Time to? [popcorn] " dir
     if [ -z "$dir" ]; then
         dir='popcorn'
     elif [ "$dir" = "/" ]; then
