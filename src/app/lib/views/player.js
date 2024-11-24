@@ -473,7 +473,7 @@
                     techOrder: ['youtube'],
                     forceSSL: true,
                     ytcontrols: false,
-                    quality: '720p'
+                    quality: '1080p'
                 }).ready(function () {
                     that.player && that.player.cache_ && that.player.cache_.volume ? that.player.volume(Settings.playerVolume) : null;
                     this.addClass('vjs-has-started');
