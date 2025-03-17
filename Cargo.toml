@@ -1,0 +1,62 @@
+[workspace]
+members = ["crates/popcorntime-*", "crates/popcorntime-graphql-client/macros"]
+resolver = "2"
+
+[workspace.package]
+authors = ["Popcorn Time <hello@popcorntime.app>"]
+edition = "2021"
+version = "0.0.1"
+
+[workspace.dependencies]
+anyhow = "1.0.99"
+thiserror = "2.0.16"
+serde = { version = "1.0.223", features = ["derive"] }
+serde_json = "1.0.145"
+tokio = { version = "1.47.1", default-features = false }
+tokio-util = "0.7.16"
+
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.20", features = [
+    "time",
+    "json",
+    "env-filter",
+] }
+
+reqwest = "0.12.23"
+url = "2.5.7"
+time = "0.3.43"
+jsonwebtoken = "9.3.1"
+
+tauri = "2.8.5"
+tauri-build = "2.4.1"
+tauri-plugin-opener = "2.5.0"
+tauri-plugin-log = "2.7.0"
+tauri-plugin-shell = "2.3.1"
+tauri-plugin-fs = "2.4.2"
+tauri-plugin-deep-link = "2.4.3"
+tauri-plugin-updater = "2.9.0"
+tauri-plugin-process = "2.3.0"
+tauri-plugin-single-instance = "2.3.4"
+
+futures-util = "0.3"
+toml = "0.9.5"
+async-graphql = { version = "7.0.11", features = [
+    "chrono",
+    "time",
+    "dataloader",
+] }
+async-graphql-poem = "7.0.11"
+poem = "3.1.12"
+uuid = "1.18.1"
+convert_case = "0.8.0"
+
+objc2 = "0.6.2"
+objc2-foundation = "0.3.1"
+objc2-app-kit = { version = "0.3.1", features = ["NSView"] }
+
+popcorntime-session = { path = "crates/popcorntime-session" }
+popcorntime-error = { path = "crates/popcorntime-error" }
+popcorntime-graphql-client = { path = "crates/popcorntime-graphql-client" }
+popcorntime-graphql-macros = { path = "crates/popcorntime-graphql-client/macros" }
+popcorntime-tauri-trafficlights = { path = "crates/popcorntime-tauri-trafficlights" }
+popcorntime-tauri-splash = { path = "crates/popcorntime-tauri-splash" }

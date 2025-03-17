@@ -1,0 +1,28 @@
+[package]
+name = "popcorntime-session"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+publish = false
+
+[dependencies]
+reqwest = { workspace = true, features = ["json"] }
+url.workspace = true
+anyhow.workspace = true
+tokio = { workspace = true, features = ["macros", "rt"] }
+tokio-util.workspace = true
+tracing.workspace = true
+serde.workspace = true
+time = { workspace = true, features = ["serde"] }
+jsonwebtoken.workspace = true
+serde_json.workspace = true
+uuid.workspace = true
+tauri.workspace = true
+poem.workspace = true
+
+popcorntime-error.workspace = true
+
+oauth2 = "5.0.0"
+notify = "8.0.0"
+toml = "0.8.20"
+config = "0.15.8"

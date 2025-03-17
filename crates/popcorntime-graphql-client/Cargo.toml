@@ -1,0 +1,16 @@
+[package]
+name = "popcorntime-graphql-client"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+publish = false
+
+[dependencies]
+reqwest = { workspace = true, features = ["json"] }
+serde_json.workspace = true
+serde.workspace = true
+anyhow.workspace = true
+tokio = { workspace = true, features = ["macros", "rt"] }
+graphql_client = "0.14.0"
+popcorntime-error = { workspace = true }
+popcorntime-graphql-macros = { path = "macros" }

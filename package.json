@@ -1,0 +1,28 @@
+{
+  "name": "popcorntime",
+  "private": true,
+  "packageManager": "pnpm@10.6.4",
+  "scripts": {
+    "codegen:graphql": "graphql-client introspect-schema http://localhost:8080 --output ./crates/popcorntime-graphql-client/gql/schema.json && pnpm --filter @popcorntime/graphql generate",
+    "dev:web": "turbo watch --filter @popcorntime/web dev",
+    "dev:desktop": "pnpm tauri dev",
+    "dev:prepare-for-tauri": "pnpm --filter @popcorntime/desktop dev",
+    "build:desktop": "turbo run build --no-daemon",
+    "prod:build-for-tauri": "turbo run --filter @popcorntime/desktop build --no-daemon",
+    "tauri:icon": "tauri icon ./resources/app-icon.png",
+    "tauri": "tauri",
+    "translate": "pnpm --filter @popcorntime/translator translate",
+    "test": "turbo run test --no-daemon",
+    "type-check": "turbo run type-check --no-daemon",
+    "format": "biome check . --write",
+    "format-check": "biome check ."
+  },
+  "devDependencies": {
+    "@popcorntime/typescript-config": "workspace:*",
+    "@biomejs/biome": "2.2.3",
+    "@tauri-apps/cli": "^2.8.4",
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.6",
+    "typescript": "5.7.3"
+  }
+}

@@ -1,0 +1,13 @@
+query Preferences {
+  preferences {
+    language
+    country
+  }
+}
+
+mutation UpdatePreferences($country: Country!, $language: Language!) {
+  updatePreferences(country: $country, language: $language) {
+    country
+    language
+  }
+}

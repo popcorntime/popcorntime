@@ -1,0 +1,18 @@
+query Providers($country: Country!, $query: String, $favorites: Boolean) {
+  providers(country: $country, query: $query, favorites: $favorites) {
+    key
+    name
+    logo
+    weight
+    priceTypes
+    parentKey
+  }
+}
+
+mutation AddFavoriteProvider($country: Country!, $providerKey: String!) {
+  addFavoriteProvider(country: $country, providerKey: $providerKey)
+}
+
+mutation RemoveFavoriteProvider($country: Country!, $providerKey: String!) {
+  removeFavoriteProvider(country: $country, providerKey: $providerKey)
+}

@@ -1,0 +1,105 @@
+query Media($slug: String!, $country: Country!, $language: Language) {
+  media(by: { slug: $slug }, country: $country, language: $language) {
+    id
+    __typename
+    title
+    slug
+    overview
+    tagline
+    languages
+    poster
+    backdrop
+    released
+    year
+    country
+    tags
+    trailers
+    genres
+    classification
+    countries
+    kind
+
+    videos {
+      source
+      videoId
+    }
+
+    ratings {
+      rating
+      source
+    }
+
+    ranking {
+      score
+      position
+      points
+    }
+
+    pochoclinReview(language: $language) {
+      review
+      excerpt
+    }
+
+    similars(country: $country, language: $language) {
+      title
+      overview
+      kind
+      slug
+      poster
+      year
+    }
+
+    similarsFree: similars(
+      country: $country
+      arguments: { country: $country, priceTypes: FREE }
+    ) {
+      title
+      overview
+      kind
+      slug
+      poster
+      year
+    }
+
+    charts(country: $country, language: $language) {
+      title
+      kind
+      slug
+      poster
+      year
+      rank {
+        position
+        change
+        points
+        previousPoints
+      }
+    }
+
+    availabilities(country: $country) {
+      providerId
+      providerName
+      logo
+      availableTo
+      urlHash
+      audioLanguages
+      subtitleLanguages
+      pricesType
+    }
+
+    talents {
+      id
+      rank
+      name
+      role
+      roleType
+    }
+
+    ... on Movie {
+      runtime
+    }
+
+    ... on TVShow {
+      inProduction
+    }
+  }
+}

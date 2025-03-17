@@ -1,0 +1,16 @@
+[package]
+name = "popcorntime-graphql-macros"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+publish = false
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "2", features = ["full"] }
+proc-macro2 = "1"
+quote = "1"
+anyhow.workspace = true
+convert_case.workspace = true

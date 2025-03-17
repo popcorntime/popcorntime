@@ -1,0 +1,42 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - 'crates/*'
+
+catalog:
+  "@tauri-apps/api": ^2.8.0
+  "@tauri-apps/plugin-fs": ^2.4.2
+  "@tauri-apps/plugin-log": ^2.7.0
+  "@tauri-apps/plugin-opener": ^2.5.0
+  "@tauri-apps/plugin-process": ^2.3.0
+  "@tauri-apps/plugin-shell": ^2.3.1
+  "@tauri-apps/plugin-updater": ^2.9.0
+  "@hookform/resolvers": ^5.2.1
+  "fuse.js": ^7.1.0
+  flag-icons: ^7.5.0
+  i18next: ^25.5.2
+  i18next-resources-to-backend: ^1.2.1
+  immer: ^10.1.3
+  lucide-react: ^0.544.0
+  react: ^19.1.1
+  react-dom: ^19.1.1
+  react-fast-compare: ^3.2.2
+  react-hook-form: ^7.62.0
+  react-i18next: ^15.7.3
+  react-infinite-scroll-hook: ^6.0.1
+  react-router: ^7.8.2
+  rtl-detect: ^1.1.2
+  sonner: ^2.0.7
+  zod: ^4.1.5
+  zustand: ^5.0.8
+  "@tailwindcss/vite": ^4.1.13
+  "@types/node": ^24.3.1
+  "@types/react": ^19.1.12
+  "@types/react-dom": ^19.1.9
+  "@types/rtl-detect": ^1.0.3
+  "@vitejs/plugin-react": ^5.0.2
+  postcss: ^8.5.6
+  typescript: ^5.9.2
+  tailwindcss: ^4.1.13
+  vite: ^6.3.6
+  vitest: ^3.2.4

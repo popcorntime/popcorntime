@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Popcorn Time",
+  "version": "0.0.1",
+  "identifier": "app.popcorntime",
+  "build": {
+    "beforeDevCommand": "pnpm dev:prepare-for-tauri",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm prod:build-for-tauri",
+    "frontendDist": "../../apps/desktop/dist"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "security": {
+      "csp": {
+        "default-src": "'self'",
+        "img-src": "'self' asset: https://asset.localhost data: tauri://localhost https://*.popcorntime.app https://popcorntime.app",
+        "media-src": "'self' https://get.popcorntime.app",
+        "connect-src": "'self'",
+        "script-src": "'self'",
+        "style-src": "'self' 'unsafe-inline'"
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "createUpdaterArtifacts": true,
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": ["dictionaries/*"]
+  },
+  "plugins": {
+    "deep-link": {
+      "mobile": [],
+      "desktop": {
+        "schemes": ["popcorntime"]
+      }
+    },
+    "updater": {
+      "endpoints": [
+        "https://updates.popcorntime.app/nightly/{{target}}-{{arch}}/{{current_version}}"
+      ],
+
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEUyNjE5REFCQzI3Njk4NjUKUldSbG1IYkNxNTFoNHJmeVlFbzVZOS80T2pneEs3V04xUUMvSk5YcE9TaCtucDRaMVlDSHNLTTQK"
+    }
+  }
+}

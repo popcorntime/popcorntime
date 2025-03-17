@@ -1,0 +1,8 @@
+[env]
+GRAPHQL_SERVER = "https://api.popcorntime.app"
+AUTH_SERVER = "https://accounts.popcorntime.app"
+CLIENT_ID = "dc855eea-1421-466b-9cd0-166da403d004" # Public DEV client ID
+
+[build]
+rustflags = ["--cfg", "tokio_unstable"]
+target-dir = "target"

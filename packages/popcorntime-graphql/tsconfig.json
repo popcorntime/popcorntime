@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "lib": ["ESNext", "ESNext.AsyncIterable"],
+    "moduleResolution": "bundler",
+    "paths": {
+      "@popcorntime/graphql": ["./src/*"]
+    }
+  }
+}

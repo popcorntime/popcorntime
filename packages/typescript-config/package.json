@@ -1,0 +1,9 @@
+{
+  "name": "@popcorntime/typescript-config",
+  "version": "0.0.0",
+  "private": true,
+  "license": "PROPRIETARY",
+  "publishConfig": {
+    "access": "public"
+  }
+}

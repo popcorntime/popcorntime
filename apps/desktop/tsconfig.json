@@ -1,0 +1,33 @@
+{
+	"extends": "@popcorntime/typescript-config/react-library.json",
+	"compilerOptions": {
+		"useDefineForClassFields": true,
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+
+		/* Bundler mode */
+		"moduleResolution": "bundler",
+		"allowImportingTsExtensions": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+
+		/* Linting */
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"paths": {
+			"@/*": ["./src/*"],
+			"@popcorntime/ui/*": ["../../packages/popcorntime-ui/src/*"],
+			"@popcorntime/i18n/*": ["../../packages/popcorntime-i18n/src/*"],
+			"@popcorntime/i18n/dictionaries/*": ["../../packages/popcorntime-i18n/dictionaries/*"]
+		}
+	},
+	"include": ["src"],
+	"references": [
+		{
+			"path": "tsconfig.node.json"
+		}
+	]
+}

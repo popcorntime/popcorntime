@@ -1,0 +1,26 @@
+{
+  "name": "@popcorntime/translator",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "bin": {
+    "translate": "./src/index.ts"
+  },
+  "scripts": {
+    "translate": "tsx src/index.ts"
+  },
+  "devDependencies": {
+    "@popcorntime/typescript-config": "workspace:*",
+    "tsx": "^4.19.3",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@google-cloud/translate": "^9.0.1",
+    "@popcorntime/i18n": "workspace:*",
+    "@types/jsonpath": "^0.2.4",
+    "dotenv": "^16.4.7",
+    "jsonpath": "^1.1.1",
+    "openai": "^4.89.0"
+  }
+}

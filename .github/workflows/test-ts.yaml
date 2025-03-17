@@ -1,0 +1,24 @@
+name: Test TS
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+  pull_request:
+    paths:
+      - ".github/workflows/test-ts.yml"
+      - "apps/**"
+      - "packages/**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  vitest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/init-env-node
+      - run: pnpm test

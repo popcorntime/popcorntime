@@ -1,0 +1,20 @@
+{
+  "name": "@popcorntime/graphql",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./types": "./src/types.d.ts"
+  },
+  "scripts": {
+    "generate": "graphql-codegen"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^6.0.0",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  },
+  "dependencies": {
+    "@popcorntime/i18n": "workspace:*"
+  }
+}

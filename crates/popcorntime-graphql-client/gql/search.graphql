@@ -1,0 +1,44 @@
+query Search(
+  $after: String
+  $before: String
+  $first: Int
+  $last: Int
+  $sortKey: SortKey
+  $country: Country!
+  $language: Language
+  $query: String
+  $arguments: SearchArguments
+) {
+  search(
+    after: $after
+    before: $before
+    first: $first
+    last: $last
+    country: $country
+    language: $language
+    sortKey: $sortKey
+    query: $query
+    arguments: $arguments
+  ) {
+    nodes {
+      id
+      slug
+      kind
+      title
+      overview
+      poster
+      backdrop
+      released
+      updatedAt
+      providers {
+        providerId
+        priceTypes
+      }
+      year
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

@@ -1,0 +1,192 @@
+name: "Publish"
+on:
+  # schedule:
+  # every day at 3am
+  #- cron: "0 3 * * *"
+  workflow_run:
+    workflows: ["Nightly build"]
+    types:
+      - completed
+
+  workflow_dispatch:
+    inputs:
+      channel:
+        type: choice
+        required: true
+        description: channel
+        default: nightly
+        options:
+          - nightly
+      bump:
+        type: choice
+        required: true
+        description: update type
+        default: patch
+        options:
+          - undefined
+          - patch
+          - minor
+          - major
+
+jobs:
+  build-tauri:
+    env:
+      CARGO_TERM_COLOR: always
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - macos-13 # [macOs, x64]
+          - macos-latest # [macOs, ARM64]
+          - ubuntu-24.04 # [linux, x64]
+          - windows-latest # [windows, x64]
+
+    runs-on: ${{ matrix.platform }}
+
+    outputs:
+      platform: ${{ matrix.platform }}
+      channel: ${{ env.channel }}
+      version: ${{ env.version }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_POCHOCLIN }} # custom token here so that we can push tags later
+      - uses: ./.github/actions/init-env-node
+      - uses: ./.github/actions/init-env-linux
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: Consume input variables
+        shell: bash
+        if: ${{ !github.event.workflow_run }}
+        run: |
+          echo "channel=${{ github.event.inputs.channel || 'nightly' }}" >> $GITHUB_ENV
+          echo "bump=${{ github.event.inputs.bump || 'patch' }}" >> $GITHUB_ENV
+
+      - name: Calculate next version
+        shell: bash
+        run: |
+          CURRENT_VERSION="$(curl --silent "https://updates.popcorntime.app/${{ env.channel }}" | jq -r '.version')"
+          NEXT_VERSION=$(./scripts/next.sh "${CURRENT_VERSION}" "${{ env.bump }}")
+          echo "version=$NEXT_VERSION" >> $GITHUB_ENV
+          mkdir -p release && echo "$NEXT_VERSION" > release/version
+
+      - name: Build binary
+        shell: bash
+        run: |
+          ./scripts/release.sh \
+            --sign \
+            --channel                    "${{ env.channel }}" \
+            --dist                       "./release" \
+            --version                    "${{ env.version }}"
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          APPLE_CERTIFICATE: ${{ secrets.APPLE_CERTIFICATE }}
+          APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          AUTH_SERVER: ${{ secrets.AUTH_SERVER }}
+          GRAPHQL_SERVER: ${{ secrets.GRAPHQL_SERVER }}
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: "${{ env.channel }}-${{ matrix.platform }}-${{ github.run_number }}"
+          path: release/
+          if-no-files-found: error
+
+  create-git-tag:
+    needs: [build-tauri]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_POCHOCLIN }} # custom token here so that we can push tags later
+      - name: Create git tag
+        shell: bash
+        env:
+          TAG_NAME: "${{ needs.build-tauri.outputs.channel }}/${{ needs.build-tauri.outputs.version }}"
+        run: |
+          function tag_exists() {
+            git tag --list | grep -q "^$1$"
+          }
+          function fetch_tag() {
+            git fetch origin "refs/tags/$1:refs/tags/$1"
+          }
+          function delete_tag() {
+            git push --delete origin "$1"
+          }
+          function create_tag() {
+            git tag --force "$1"
+            git push --tags
+          }
+
+          fetch_tag "$TAG_NAME" || true
+          if tag_exists "$TAG_NAME"; then
+            delete_tag "$TAG_NAME"
+          fi
+          create_tag "$TAG_NAME"
+
+  upload-releases:
+    needs: [build-tauri]
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ env.version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-private-repositories
+        platform:
+          - macos-13 # [macOs, x64]
+          - macos-latest # [macOs, ARM64]
+          - ubuntu-24.04 # [linux, x64]
+          - windows-latest # [windows, x64]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_POCHOCLIN }} # custom token here so that we can push tags later
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: "${{ needs.build-tauri.outputs.channel }}-${{ matrix.platform }}-${{ github.run_number }}"
+          path: release
+      - name: Extract version
+        shell: bash
+        run: |
+          VERSION="$(cat release/version)"
+          echo "version=$VERSION" >> $GITHUB_ENV
+      - name: Prepare R2 payload
+        shell: bash
+        run: |
+          rm -rf release-r2
+          mkdir -p release-r2
+          rsync -avE --prune-empty-dirs --include-from='.github/workflows/publish.include.txt' --exclude='*' release/ release-r2/
+          bash scripts/normalize-spaces.sh ./release-r2
+      - uses: ryand56/r2-upload-action@latest
+        name: Upload To R2
+        id: R2
+        with:
+          r2-account-id: ${{ secrets.R2_ACCOUNT_ID }}
+          r2-access-key-id: ${{ secrets.R2_ACCESS_KEY_ID }}
+          r2-secret-access-key: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          r2-bucket: ${{ secrets.R2_BUCKET }}
+          source-dir: "release-r2/"
+          destination-dir: "${{ needs.build-tauri.outputs.channel }}/${{ env.version }}-${{ github.run_number }}"
+
+  promote-tauri:
+    needs: [build-tauri, upload-releases]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify updater API of new release
+        shell: bash
+        run: |
+          curl 'https://updates.popcorntime.app' \
+          --fail \
+          --request POST \
+          --header 'Content-Type: application/json' \
+          --header 'Authorization: Bearer ${{ secrets.UPDATER_AUTH_TOKEN }}' \
+          --data '{"channel":"${{ needs.build-tauri.outputs.channel }}","version":"${{ needs.build-tauri.outputs.version }}","index": ${{ github.run_number }}}'
