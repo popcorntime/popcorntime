@@ -61,7 +61,6 @@ If you have Apple Silicon (M-series chips), you need to use the `arm64` release.
 xattr -c "/Applications/Popcorn-Time.app/"
 ```
 
-
 ### Linux - Debian/Ubuntu based distros:
 Download and install:
   * **Latest release**: check [popcorn-time.site](https://popcorn-time.site) or the repo's [releases page](https://github.com/popcorn-official/popcorn-desktop/releases)
@@ -69,16 +68,23 @@ Download and install:
 
 Via .deb package:
 
-  _**Firstly, be aware** in some cases, missings dependencies packages (libatomic1, libgconf-2-4, libcanberra-gtk-module) were reported to be required for the app to works.  
+  _**Firstly, be aware** in some cases, missings dependencies packages (libatomic1, libgconf-2-4, libcanberra-gtk-module) were reported to be required for the app to work.  
   **If the app don't start for you too**, in this case, **try `sudo apt update && sudo apt install libatomic1 libgconf-2-4 libcanberra-gtk-module`** to be sure your system have the required dependencies._
+
+###Linux - Mageia (other rpm based distributions might name the packages differently)
+
+  _** Install the dependencies using: `sudo dnf libGConf2_4 libatomic1 libcanberra-gtk0`**
 
 Via archive and command line (tested on ubuntu 18.04 and 20.04):
   1. Download Popcorn Time archive from the github repo for the **latest release** :
   `wget -c https://github.com/popcorn-official/popcorn-desktop/releases/download/v0.5.1/Popcorn-Time-0.5.1-linux64.zip`
   2. Create popcorn-time folder in /opt/:  
   `sudo mkdir /opt/popcorn-time`  
-  3. Install unzip && dependencies (they should not be always required but some users needed them to make Popcorn Time working):  
-  `sudo apt update && sudo apt install unzip libcanberra-gtk-module libgconf-2-4 libatomic1`  
+  3a. Install unzip && dependencies (they should not be always required but some users needed them to make Popcorn Time working):  
+  `sudo apt update && sudo apt install unzip libcanberra-gtk-module libgconf-2-4 libatomic1`
+  3b. Install unzip && dependencies (couldn't get PopcornTime running without them):
+  `sudo dnf update && sudo dnf install unzip libcanberra-gtk0 libGConf2_4 libatomic1`
+
   4. Extract the zip in /opt/popcorn-time:  
   `sudo unzip Popcorn-Time-0.5.1-linux64.zip -d /opt/popcorn-time`
   5. Create symlink of Popcorn-Time in /usr/bin:  
@@ -131,12 +137,10 @@ Full instructions & troubleshooting tips can be found in the [Contributing Guide
 
 Redistributable packages are saved into `build/` subfolder.
 
-
 ## Getting Involved
 Want to report a bug, request a feature, contribute to or translate Popcorn Time?  
 Check out our in-depth guide to [Contributing to Popcorn Time](docs/Contributing.md#contributing-to-popcorn-time). We need all the help we can get!  
 You can also join our [community](README.md#community) to keep up-to-date and meet other developers.  
-
 
 <a name="community"></a>
 ## Community
@@ -144,10 +148,8 @@ Keep track of Popcorn Time development and community activity.
   * Read and contribute to the official [Popcorn Time Wiki](https://github.com/popcorn-official/popcorn-desktop/wiki/).
   * Join in discussions on [r/PopCornTimeApp](https://www.reddit.com/r/PopcornTimeApp).
 
-
 ## Screenshots
 ![Popcorn Time](https://cloud.githubusercontent.com/assets/8317250/10714437/b1e1dc8c-7b32-11e5-9c25-d9fbd5b2f3bd.png)
-
 
 ## Versioning
 For transparency and insight into our release cycle, and for striving to maintain backward compatibility, Popcorn Time will be maintained according to the [Semantic Versioning](http://semver.org/) guidelines as much as possible.
@@ -162,7 +164,6 @@ Constructed with the following guidelines:
 * A new *minor* release indicates a normal change that maintains backward compatibility.
 * A new *patch* release indicates a bugfix or small change which does not affect compatibility.
 * A new *build* release indicates this is a pre-release of the version.
-
 
 ***
 
