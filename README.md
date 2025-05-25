@@ -73,7 +73,7 @@ Via .deb package:
 
 ###Linux - Mageia (other rpm based distributions might name the packages differently)
 
-  _** Install the dependencies using: `sudo dnf libGConf2_4 libatomic1 libcanberra-gtk0`**
+  _** Install the dependencies using: `sudo dnf install libGConf2_4 libatomic1 libcanberra-gtk0`**
 
 Via archive and command line (tested on ubuntu 18.04 and 20.04):
   1. Download Popcorn Time archive from the github repo for the **latest release** :
