@@ -345,17 +345,19 @@
             var removeDupesAndSort = function (arr) {
                 const found = [];
                 const unique = [];
-                for (const a in arr) {
-                    const provider = arr[a];
-                    for (const p in provider) {
-                        const obj = provider[p];
-                        const link = obj.magnet.split('&dn');
-                        if (found.indexOf(link[0]) === -1) {
-                            found.push(link);
-                            unique.push(obj);
+                try {
+                    for (const a in arr) {
+                        const provider = arr[a];
+                        for (const p in provider) {
+                            const obj = provider[p];
+                            const link = obj.magnet.split('&dn');
+                            if (found.indexOf(link[0]) === -1) {
+                                found.push(link);
+                                unique.push(obj);
+                            }
                         }
                     }
-                }
+                } catch (err) {}
                 return unique.sort(function (a, b) {
                     return b.seeds - a.seeds;
                 });
