@@ -5,7 +5,7 @@ Popcorn Time is starting fresh. The project is being rebuilt from the ground up,
 Whether you're a seasoned developer, a designer, a translator, or just someone who wants to test and give feedback - there's a place for you here.
 
 > [!NOTE]
-> See [DEVELOPMENT.md](DEVELOPMENT.md) for instructions on building and running Popcorn Time.
+> See [DEVELOPMENT.md](.github/DEVELOPMENT.md) for instructions on building and running Popcorn Time.
 
 ## Table of Contents
 
@@ -51,8 +51,8 @@ No [Rust skills](https://www.rust-lang.org/) are required for most of these, if 
 
 Bring Popcorn Time to your language and region.
 
-We currently leverage our custom `translator` CLI that takes  
-`crates/popcorntime-tauri/dictionaries/en.json` and generates all required translations.
+We currently leverage our custom [translator](packages/translator/) CLI that takes  
+our [english dictionary](crates/popcorntime-tauri/dictionaries/en.json) and generates all required translations.
 
 #### Requirements
 
