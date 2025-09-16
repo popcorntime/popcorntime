@@ -58,7 +58,7 @@
 		"typescript": "catalog:",
 		"vite": "catalog:",
 		"vitest": "catalog:",
-		"@redux-devtools/cli": "^4.0.3",
+		"@redux-devtools/cli": "^4.0.4",
 		"@testing-library/jest-dom": "^6.8.0",
 		"@testing-library/react": "^16.3.0",
 		"@testing-library/user-event": "^14.6.1",
