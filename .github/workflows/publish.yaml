@@ -49,7 +49,7 @@ jobs:
       version: ${{ env.version }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           token: ${{ secrets.PAT_POCHOCLIN }} # custom token here so that we can push tags later
       - uses: ./.github/actions/init-env-node
@@ -103,7 +103,7 @@ jobs:
     needs: [build-tauri]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           token: ${{ secrets.PAT_POCHOCLIN }} # custom token here so that we can push tags later
       - name: Create git tag
@@ -146,7 +146,7 @@ jobs:
           - ubuntu-24.04 # [linux, x64]
           - windows-latest # [windows, x64]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           token: ${{ secrets.PAT_POCHOCLIN }} # custom token here so that we can push tags later
       - name: Download artifacts
