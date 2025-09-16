@@ -23,6 +23,6 @@ poem.workspace = true
 popcorntime-error.workspace = true
 
 oauth2 = "5.0.0"
-notify = "8.0.0"
-toml = "0.8.20"
-config = "0.15.8"
+notify = "8.2.0"
+toml = "0.9.5"
+config = "0.15.13"
