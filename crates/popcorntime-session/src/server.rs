@@ -1,9 +1,8 @@
 use oauth2::{AuthorizationCode, CsrfToken};
 use poem::{
-  get, handler,
+  EndpointExt, Route, Server, get, handler,
   listener::TcpListener,
   web::{Data, Query, Redirect},
-  EndpointExt, Route, Server,
 };
 use serde::Deserialize;
 use std::{net::SocketAddr, sync::Arc};

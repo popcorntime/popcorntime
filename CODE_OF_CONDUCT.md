@@ -7,4 +7,4 @@ This describes the minimum behavior expected from all contributors.
 
 ## Enforcement
 
-Instances of violations of the Code of Conduct can be reported by contacting the project team at [hello@popcorntime.app](mailto:hello@popcorntime.app).
+Instances of violations of the Code of Conduct can be reported by contacting the project team at [hey@popcorntime.app](mailto:hey@popcorntime.app).

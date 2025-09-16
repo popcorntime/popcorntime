@@ -1,10 +1,9 @@
 use objc2::{
-  define_class,
-  ffi::{objc_setAssociatedObject, OBJC_ASSOCIATION_RETAIN_NONATOMIC},
+  DefinedClass, MainThreadMarker, MainThreadOnly, define_class,
+  ffi::{OBJC_ASSOCIATION_RETAIN_NONATOMIC, objc_setAssociatedObject},
   msg_send,
   rc::Retained,
   runtime::{AnyObject, ProtocolObject},
-  DefinedClass, MainThreadMarker, MainThreadOnly,
 };
 use objc2_app_kit::{NSApplicationPresentationOptions, NSWindow, NSWindowButton, NSWindowDelegate};
 use objc2_foundation::{NSNotification, NSObject, NSObjectProtocol};
@@ -16,10 +15,12 @@ unsafe fn set_associated_delegate(
   window: &NSWindow,
   delegate: &Retained<PopcornTimeWindowDelegate>,
 ) {
-  let key = &DELEGATE_ASSOC_KEY as *const _ as *const core::ffi::c_void;
-  let win_obj = window as *const _ as *mut AnyObject;
-  let ptr = Retained::<PopcornTimeWindowDelegate>::as_ptr(delegate) as *mut AnyObject;
-  objc_setAssociatedObject(win_obj, key, ptr, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  unsafe {
+    let key = &DELEGATE_ASSOC_KEY as *const _ as *const core::ffi::c_void;
+    let win_obj = window as *const _ as *mut AnyObject;
+    let ptr = Retained::<PopcornTimeWindowDelegate>::as_ptr(delegate) as *mut AnyObject;
+    objc_setAssociatedObject(win_obj, key, ptr, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+  }
 }
 
 pub(crate) fn update<R: Runtime>(window: &WebviewWindow<R>, inset: &LogicalPosition<f64>) {
@@ -91,63 +92,75 @@ define_class!(
   unsafe impl NSObjectProtocol for PopcornTimeWindowDelegate {}
   unsafe impl NSWindowDelegate for PopcornTimeWindowDelegate {
     #[unsafe(method(windowShouldClose:))]
-    unsafe fn window_should_close(&self, sender: &NSWindow) -> bool {
+    fn window_should_close(&self, sender: &NSWindow) -> bool {
       let super_del = &self.ivars().super_delegate;
-      super_del.windowShouldClose(sender)
+      unsafe { super_del.windowShouldClose(sender) }
     }
 
     #[unsafe(method(windowWillClose:))]
-    unsafe fn window_will_close(&self, notification: &NSNotification) {
+    fn window_will_close(&self, notification: &NSNotification) {
       let super_del = &self.ivars().super_delegate;
-      super_del.windowWillClose(notification);
+      unsafe {
+        super_del.windowWillClose(notification);
+      }
     }
 
     #[unsafe(method(windowDidResize:))]
-    unsafe fn window_did_resize(&self, notification: &NSNotification) {
+    fn window_did_resize(&self, notification: &NSNotification) {
       let state = &self.ivars().app_state;
       assert!(state.window.ns_window().is_ok(), "qed; valid window");
       update(&state.window, &state.traffic_lights_inset);
 
       let super_del = &self.ivars().super_delegate;
-      super_del.windowDidResize(notification);
+      unsafe {
+        super_del.windowDidResize(notification);
+      }
     }
 
     #[unsafe(method(windowDidMove:))]
-    unsafe fn window_did_move(&self, notification: &NSNotification) {
+    fn window_did_move(&self, notification: &NSNotification) {
       let super_del = &self.ivars().super_delegate;
-      super_del.windowDidMove(notification);
+      unsafe {
+        super_del.windowDidMove(notification);
+      }
     }
 
     #[unsafe(method(windowDidChangeBackingProperties:))]
-    unsafe fn window_did_change_backing_properties(&self, notification: &NSNotification) {
+    fn window_did_change_backing_properties(&self, notification: &NSNotification) {
       let super_del = &self.ivars().super_delegate;
-      super_del.windowDidChangeBackingProperties(notification);
+      unsafe {
+        super_del.windowDidChangeBackingProperties(notification);
+      }
     }
 
     #[unsafe(method(windowDidBecomeKey:))]
-    unsafe fn window_did_become_key(&self, notification: &NSNotification) {
+    fn window_did_become_key(&self, notification: &NSNotification) {
       let super_del = &self.ivars().super_delegate;
-      super_del.windowDidBecomeKey(notification);
+      unsafe {
+        super_del.windowDidBecomeKey(notification);
+      }
     }
 
     #[unsafe(method(windowDidResignKey:))]
-    unsafe fn window_did_resign_key(&self, notification: &NSNotification) {
+    fn window_did_resign_key(&self, notification: &NSNotification) {
       let super_del = &self.ivars().super_delegate;
-      super_del.windowDidResignKey(notification);
+      unsafe {
+        super_del.windowDidResignKey(notification);
+      }
     }
 
     #[unsafe(method(window:willUseFullScreenPresentationOptions:))]
-    unsafe fn window_will_use_full_screen_presentation_options(
+    fn window_will_use_full_screen_presentation_options(
       &self,
       window: &NSWindow,
       proposed_options: NSApplicationPresentationOptions,
     ) -> NSApplicationPresentationOptions {
       let super_del = &self.ivars().super_delegate;
-      super_del.window_willUseFullScreenPresentationOptions(window, proposed_options)
+      unsafe { super_del.window_willUseFullScreenPresentationOptions(window, proposed_options) }
     }
 
     #[unsafe(method(windowDidEnterFullScreen:))]
-    unsafe fn window_did_enter_full_screen(&self, notification: &NSNotification) {
+    fn window_did_enter_full_screen(&self, notification: &NSNotification) {
       let state = &self.ivars().app_state;
       state
         .window
@@ -155,11 +168,13 @@ define_class!(
         .expect("Failed to emit event");
 
       let super_del = &self.ivars().super_delegate;
-      super_del.windowDidEnterFullScreen(notification);
+      unsafe {
+        super_del.windowDidEnterFullScreen(notification);
+      }
     }
 
     #[unsafe(method(windowWillEnterFullScreen:))]
-    unsafe fn window_will_enter_full_screen(&self, notification: &NSNotification) {
+    fn window_will_enter_full_screen(&self, notification: &NSNotification) {
       let state = &self.ivars().app_state;
       state
         .window
@@ -167,11 +182,13 @@ define_class!(
         .expect("Failed to emit event");
 
       let super_del = &self.ivars().super_delegate;
-      super_del.windowWillEnterFullScreen(notification);
+      unsafe {
+        super_del.windowWillEnterFullScreen(notification);
+      }
     }
 
     #[unsafe(method(windowDidExitFullScreen:))]
-    unsafe fn window_did_exit_full_screen(&self, notification: &NSNotification) {
+    fn window_did_exit_full_screen(&self, notification: &NSNotification) {
       let state = &self.ivars().app_state;
       state
         .window
@@ -179,11 +196,11 @@ define_class!(
         .expect("Failed to emit event");
 
       let super_del = &self.ivars().super_delegate;
-      super_del.windowDidExitFullScreen(notification)
+      unsafe { super_del.windowDidExitFullScreen(notification) }
     }
 
     #[unsafe(method(windowWillExitFullScreen:))]
-    unsafe fn window_will_exit_full_screen(&self, notification: &NSNotification) {
+    fn window_will_exit_full_screen(&self, notification: &NSNotification) {
       let state = &self.ivars().app_state;
       state
         .window
@@ -191,13 +208,17 @@ define_class!(
         .expect("Failed to emit event");
 
       let super_del = &self.ivars().super_delegate;
-      super_del.windowWillExitFullScreen(notification);
+      unsafe {
+        super_del.windowWillExitFullScreen(notification);
+      }
     }
 
     #[unsafe(method(windowDidFailToEnterFullScreen:))]
-    unsafe fn window_did_fail_to_enter_full_screen(&self, window: &NSWindow) {
+    fn window_did_fail_to_enter_full_screen(&self, window: &NSWindow) {
       let super_del = &self.ivars().super_delegate;
-      super_del.windowDidFailToEnterFullScreen(window);
+      unsafe {
+        super_del.windowDidFailToEnterFullScreen(window);
+      }
     }
   }
 );
