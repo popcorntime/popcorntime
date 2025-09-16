@@ -12,15 +12,15 @@
   },
   "devDependencies": {
     "@popcorntime/typescript-config": "workspace:*",
-    "tsx": "^4.19.3",
+    "tsx": "^4.20.5",
     "typescript": "catalog:"
   },
   "dependencies": {
-    "@google-cloud/translate": "^9.0.1",
+    "@google-cloud/translate": "^9.2.0",
     "@popcorntime/i18n": "workspace:*",
     "@types/jsonpath": "^0.2.4",
-    "dotenv": "^16.4.7",
+    "dotenv": "^16.6.1",
     "jsonpath": "^1.1.1",
-    "openai": "^4.89.0"
+    "openai": "^4.104.0"
   }
 }

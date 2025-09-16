@@ -11,7 +11,7 @@ catalog:
   "@tauri-apps/plugin-process": ^2.3.0
   "@tauri-apps/plugin-shell": ^2.3.1
   "@tauri-apps/plugin-updater": ^2.9.0
-  "@hookform/resolvers": ^5.2.1
+  "@hookform/resolvers": ^5.2.2
   "fuse.js": ^7.1.0
   flag-icons: ^7.5.0
   i18next: ^25.5.2
@@ -24,14 +24,14 @@ catalog:
   react-hook-form: ^7.62.0
   react-i18next: ^15.7.3
   react-infinite-scroll-hook: ^6.0.1
-  react-router: ^7.8.2
+  react-router: ^7.9.1
   rtl-detect: ^1.1.2
   sonner: ^2.0.7
   zod: ^4.1.5
   zustand: ^5.0.8
   "@tailwindcss/vite": ^4.1.13
   "@types/node": ^24.3.1
-  "@types/react": ^19.1.12
+  "@types/react": ^19.1.13
   "@types/react-dom": ^19.1.9
   "@types/rtl-detect": ^1.0.3
   "@vitejs/plugin-react": ^5.0.2
