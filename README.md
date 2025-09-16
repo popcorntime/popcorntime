@@ -8,7 +8,7 @@
   </p>
 </div>
 
-![gitbutler_client](/resources/screenshot.jpg)
+![popcorntime](/resources/screenshot.jpg)
 
 We're building a **new version of Popcorn Time**.
 
