@@ -5,7 +5,6 @@ Popcorn Time is starting fresh. The project is being rebuilt from the ground up,
 Whether you're a seasoned developer, a designer, a translator, or just someone who wants to test and give feedback - there's a place for you here.
 
 > [!NOTE]
-> 💡 Looking to set up the project locally?  
 > See [DEVELOPMENT.md](DEVELOPMENT.md) for instructions on building and running Popcorn Time.
 
 ## Table of Contents
@@ -50,9 +49,25 @@ No [Rust skills](https://www.rust-lang.org/) are required for most of these, if 
 
 ### 3. Translators
 
-- Bring Popcorn Time to your language and region.
+Bring Popcorn Time to your language and region.
 
-TODO: We leverage AI translations for now
+We currently leverage our custom `translator` CLI that takes  
+`crates/popcorntime-tauri/dictionaries/en.json` and generates all required translations.
+
+#### Requirements
+
+- `OPENAI_API_KEY` → used for full-sentence/context translations.
+- `GOOGLE_CLOUD_PROJECT_ID` → used for short words.
+
+#### Usage
+
+Run translations with:
+
+```bash
+pnpm translate
+```
+
+This will update the localized dictionaries automatically.
 
 ### 4. Testers
 
