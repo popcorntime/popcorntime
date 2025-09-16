@@ -1,13 +1,13 @@
 use anyhow::Result;
 use oauth2::basic::{BasicClient, BasicTokenType};
-use oauth2::{
-  reqwest, AuthorizationCode, CsrfToken, EmptyExtraTokenFields, PkceCodeChallenge, RefreshToken,
-  Scope, StandardTokenResponse, TokenResponse,
-};
 use oauth2::{AuthUrl, ClientId, RedirectUrl, TokenUrl};
+use oauth2::{
+  AuthorizationCode, CsrfToken, EmptyExtraTokenFields, PkceCodeChallenge, RefreshToken, Scope,
+  StandardTokenResponse, TokenResponse, reqwest,
+};
 use serde::{Deserialize, Serialize};
-use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::Arc;
+use std::sync::atomic::{AtomicBool, Ordering};
 use std::time::Duration;
 use tokio::sync::mpsc;
 use tokio::time::timeout;

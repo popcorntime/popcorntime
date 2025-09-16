@@ -1,10 +1,10 @@
 use anyhow::Result;
 use config::{Config, File};
-use notify::{event::ModifyKind, Event, EventKind, RecommendedWatcher, RecursiveMode, Watcher};
-use serde::{de::DeserializeOwned, Deserialize, Serialize};
+use notify::{Event, EventKind, RecommendedWatcher, RecursiveMode, Watcher, event::ModifyKind};
+use serde::{Deserialize, Serialize, de::DeserializeOwned};
 use std::{
   path::{Path, PathBuf},
-  sync::{mpsc, Arc, RwLock},
+  sync::{Arc, RwLock, mpsc},
   time::Duration,
 };
 use tokio::task::spawn_blocking;

@@ -1,6 +1,6 @@
 use crate::WindowSplashExt;
 use objc2::runtime::AnyObject;
-use objc2::{rc::Retained, MainThreadMarker, MainThreadOnly};
+use objc2::{MainThreadMarker, MainThreadOnly, rc::Retained};
 use objc2_app_kit::{
   NSAutoresizingMaskOptions, NSControlSize, NSProgressIndicator, NSProgressIndicatorStyle,
   NSVisualEffectBlendingMode, NSVisualEffectMaterial, NSVisualEffectState, NSVisualEffectView,
@@ -90,11 +90,11 @@ impl<R: Runtime> WindowSplashExt for WebviewWindow<R> {
 
         // find and remove splash container
         for v in &subviews {
-          if let Some(id) = v.identifier() {
-            if id.to_string() == SPLASH_CONTAINER_ID {
-              v.removeFromSuperview();
-              break;
-            }
+          if let Some(id) = v.identifier()
+            && id.to_string() == SPLASH_CONTAINER_ID
+          {
+            v.removeFromSuperview();
+            break;
           }
         }
       }

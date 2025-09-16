@@ -2,8 +2,9 @@ use convert_case::{Case, Casing};
 use proc_macro::TokenStream;
 use quote::quote;
 use syn::{
+  Ident, LitStr, Token,
   parse::{Parse, ParseStream},
-  parse_macro_input, Ident, LitStr, Token,
+  parse_macro_input,
 };
 
 struct Args {
