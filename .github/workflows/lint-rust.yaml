@@ -7,6 +7,7 @@ on:
       - main
   pull_request:
     paths:
+      - Cargo.lock
       - ".github/workflows/lint-rust.yml"
       - "crates/**"
 
