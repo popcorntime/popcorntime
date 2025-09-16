@@ -2,7 +2,7 @@ use crate::consts::GRAPHQL_SERVER;
 use anyhow::Result;
 use graphql_client::{QueryBody, Response};
 use reqwest::header;
-use serde::{de::DeserializeOwned, Serialize};
+use serde::{Serialize, de::DeserializeOwned};
 use std::{fmt::Debug, sync::Arc, time::Duration};
 use tokio::{runtime::Handle, sync::Mutex};
 
