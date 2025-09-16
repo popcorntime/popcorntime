@@ -1,95 +1,120 @@
-## Popcorn Time Contributing Guide
+# Contributing to Popcorn Time
 
-Hi! Thanks for checking out Popcorn Time. We’re excited you want to contribute. Please take a minute to read through our Code of Conduct and this guide before diving in.
+Popcorn Time is starting fresh. The project is being rebuilt from the ground up, and we need contributors to help shape this new era.
 
-- [Issue Reporting Guidelines](#issue-reporting-guidelines)
-- [Pull Request Guidelines](#pull-request-guidelines)
-- [Development Guide](#development-guide)
+Whether you're a seasoned developer, a designer, a translator, or just someone who wants to test and give feedback - there's a place for you here.
 
----
+> [!NOTE]
+> 💡 Looking to set up the project locally?  
+> See [DEVELOPMENT.md](DEVELOPMENT.md) for instructions on building and running Popcorn Time.
 
-### Issue Reporting Guidelines
+## Table of Contents
 
-- The issue list of this repo is **exclusively** for bug reports and feature requests. Non-conforming issues will be closed immediately.
-
-- If you have a question, you can get quick answers from the [Tauri Discord chat](https://discord.gg/SpmNs4S).
-
-- Try to search for your issue, it may have already been answered or even fixed in the development branch (`dev`).
-
-- Check if the issue is reproducible with the latest stable version of Popcorn Time. If you are using a nightly, please indicate the specific version you are using.
-
-- It is **required** that you clearly describe the steps necessary to reproduce the issue you are running into. Although we would love to help our users as much as possible, diagnosing issues without clear reproduction steps is extremely time-consuming and simply not sustainable.
-
-- Issues with no clear repro steps will not be triaged. If an issue labeled "need repro" receives no further input from the issue author for more than 5 days, it will be closed.
-
----
-
-### Pull Request Guidelines
-
-- Open PRs against the dev branch.
-- Keep PRs small and focused.
-- Squash merges are used, so multiple commits in a PR are fine.
-- For new features:
-  - Open an issue first so the idea can be discussed.
-- For bug fixes:
-  - Reference issues with fix: … (fix #1234) in your PR title.
-  - Explain the bug and how your fix solves it.
-- CI must pass before merging (TS type-check, tests, Rust fmt/clippy).
-
-### PR Checklist
-
-- Builds locally (`pnpm dev`)
-- pnpm type-check passes
-- pnpm test passes (if applicable)
-- cargo fmt + cargo clippy clean (if Rust touched)
-- Screenshots/GIFs for UI changes
+- [Code of Conduct](#code-of-conduct)
+- [Ways to Contribute](#ways-to-contribute)
+  - [Developers](#1-developers)
+  - [Designers & UX](#2-designers--ux)
+  - [Translators](#3-translators)
+  - [Testers](#4-testers)
+  - [Documentation & Community](#5-documentation--community)
+- [How to Start](#how-to-start)
+- [Contributing in Issues](#contributing-in-issues)
+- [Pull Requests](#pull-requests)
+- [Commit Messages](#commit-messages)
+- [Reviews](#reviews)
+- [Not Just Code](#not-just-code)
 
 ---
 
-### Development Guide
+## Code of Conduct
 
-_Requirements:_
+Popcorn Time follows the [Rust Code of Conduct](CODE_OF_CONDUCT.md).
+We expect all contributors to help create a respectful, inclusive, and welcoming environment.
 
-- Node.js 20+, pnpm 10+
-- Rust stable
-- Tauri prerequisites (see https://tauri.app/start/prerequisites/)
+---
 
-To set up your machine for development, follow the [Tauri setup guide](https://v2.tauri.app/start/prerequisites/) to get all the tools you need to develop Tauri apps. The only additional tool you may need is [PNPM](https://pnpm.io/).
+## Ways to Contribute
 
-Next, [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) and clone [this repository](https://github.com/popcorntime/popcorntime).
+No [Rust skills](https://www.rust-lang.org/) are required for most of these, if you can run the app and provide feedback, you can contribute.
 
-The development process varies depending on what part of Popcorn Time you are contributing.
+### 1. Developers
+
+- React/TypeScript: Most of the visible app is React. You don't need to know Rust to make meaningful contributions.
+
+- Rust: If you want to dive deeper, there's plenty of work close to the metal: networking, system integration, performance.
+
+### 2. Designers & UX
+
+- Help refine the interface and overall user experience.
+- Contribute mockups, interaction flows, or polish existing UI.
+
+### 3. Translators
+
+- Bring Popcorn Time to your language and region.
+
+TODO: We leverage AI translations for now
+
+### 4. Testers
+
+- Run nightly builds.
+- Report bugs, UI quirks, or performance issues.
+- Suggest improvements based on real usage.
+
+### 5. Documentation & Community
+
+- Improve README, guides, FAQs.
+- Help answer questions from new users and contributors.
+- Share ideas about what features matter most.
+
+---
+
+## How to Start
+
+1. Join the conversation: check our [Call for Contributors](/popcorntime/popcorntime/issues/3109).
+
+2. Pick a way to help: code, design, docs, testing, or translation.
+
+3. Open an Issue/PR:
+
+- Issues → report bugs, suggest features, or volunteer for tasks.
+- PRs → contribute code, docs, translations, or fixes.
+
+---
+
+## Contributing in Issues
+
+If you find a bug, spot missing docs, or have an idea, open an issue.
+
+---
+
+## Pull Requests
+
+- Small, focused PRs are easier to review and merge.
+- If you're planning a large change, open an issue first to discuss.
+- Add tests when needed.
+
+---
+
+## Commit Messages
+
+We use conventional commit style for squash merges:
 
 ```
-git clone https://github.com/popcorntime/popcorntime.git
-cd popcorntime
-pnpm install
-pnpm dev
+feat(ui): add dark mode toggle
+fix(ui): resolve onboarding crash
+docs: update installation guide
 ```
 
-### Repo Layout
+---
 
-- `apps/desktop` - Tauri desktop app built with react-router)
-- `packages/*` — Shared TypeScript packages (UI, configs, i18n, etc.)
-- `crates/*` — Rust crates (error handling, GraphQL, tauri bindings, etc.)
+## Reviews
+
+- Expect feedback. It's part of the process.
+- Keep discussions focused and respectful.
+- Incremental improvements are fine - PRs don't have to be perfect to land.
 
 ---
 
-### Code Style
+## Not Just Code
 
-- Use clear commit messages (feat:, fix:, refactor: are welcome but not enforced).
-- Keep code typed, documented, and formatted.
-- Avoid duplication — prefer shared packages/crates.
-
----
-
-### Questions?
-
-- Open a Discussion or Draft PR.
-- Faster feedback is better than a “perfect” PR!
-
----
-
-### Financial Contribution
-
-Popcorn Time is MIT-licensed and community-driven. If you’d like to support the work, stay tuned for sponsorship options coming soon.
+Popcorn Time is an open-source project, but it's not just about code. Translators, designers, testers, writers, and community members are equally important. If you're here, you're part of the process.
