@@ -1,0 +1,19 @@
+rust:
+  - changed-files:
+      - any-glob-to-any-file: crates/**/*
+
+'@popcorntime/desktop':
+  - changed-files:
+      - any-glob-to-any-file: apps/desktop/**/*
+
+'@popcorntime/ui':
+  - changed-files:
+      - any-glob-to-any-file: packages/popcorntime-ui/**/*
+
+'@popcorntime/graphql':
+  - changed-files:
+      - any-glob-to-any-file: packages/popcorntime-graphql/**/*
+
+'@popcorntime/i18n':
+  - changed-files:
+      - any-glob-to-any-file: packages/popcorntime-i18n/**/*

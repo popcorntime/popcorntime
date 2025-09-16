@@ -1,0 +1,16 @@
+name: Documentation
+description: Request to update or improve Popcorn Time documentation
+labels: [documentation]
+body:
+  - type: textarea
+    attributes:
+      label: What is the improvement or update you wish to see?
+      description: The Popcorn Time docs are missing information about X.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Is there any context that might help us understand?
+      description: A clear description of any added context that might help us understand.
+    validations:
+      required: false
