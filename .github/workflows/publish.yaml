@@ -53,10 +53,30 @@ jobs:
         with:
           token: ${{ secrets.PAT_POCHOCLIN }} # custom token here so that we can push tags later
       - uses: ./.github/actions/init-env-node
-      - uses: ./.github/actions/init-env-linux
+      - name: Install linux dependencies
+        shell: bash
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt update;
+          sudo apt install -y \
+            build-essential \
+            curl \
+            wget \
+            file \
+            libssl-dev \
+            libgtk-3-dev \
+            libappindicator3-dev \
+            librsvg2-dev;
+
+          sudo apt install -y \
+            libwebkit2gtk-4.1-0=2.44.0-2 \
+            libwebkit2gtk-4.1-dev=2.44.0-2 \
+            libjavascriptcoregtk-4.1-0=2.44.0-2 \
+            libjavascriptcoregtk-4.1-dev=2.44.0-2 \
+            gir1.2-javascriptcoregtk-4.1=2.44.0-2 \
+            gir1.2-webkit2-4.1=2.44.0-2;
 
       - uses: Swatinem/rust-cache@v2
-
       - name: Consume input variables
         shell: bash
         if: ${{ !github.event.workflow_run }}
