@@ -1,8 +1,8 @@
 name: "Publish"
 on:
-  # schedule:
   # every day at 3am
-  #- cron: "0 3 * * *"
+  schedule:
+    - cron: "0 3 * * *"
   workflow_run:
     workflows: ["Nightly build"]
     types:
