@@ -9,7 +9,7 @@ const setAllReady = () => {
 	s.providers.setInitialized();
 	s.session.setInitialized();
 	s.preferences.setInitialized();
-	s.settings.setOnboarded(true);
+	s.settings.setSettings({ enableAnalytics: true, onboarded: true });
 };
 
 beforeEach(() => {
@@ -55,7 +55,7 @@ describe("boot & app flags", () => {
 		const s = useGlobalStore.getState();
 		expect(s.app.bootInitialized).toBe(false);
 		s.session.setInitialized();
-		s.settings.setOnboarded(true);
+		s.settings.setSettings({ enableAnalytics: true, onboarded: true });
 		expect(useGlobalStore.getState().app.bootInitialized).toBe(true);
 	});
 

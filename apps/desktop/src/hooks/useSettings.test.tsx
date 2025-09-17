@@ -22,7 +22,11 @@ afterEach(() => {
 describe("useSettings", () => {
 	it("should not be onboarded", async () => {
 		mockIPC((cmd, _args) => {
-			if (cmd === "is_onboarded") return false;
+			if (cmd === "settings")
+				return {
+					enableAnalytics: false,
+					onboarded: false,
+				};
 		});
 
 		const r = renderWithProvider();
@@ -35,7 +39,11 @@ describe("useSettings", () => {
 
 	it("should be onboarded", async () => {
 		mockIPC((cmd, _args) => {
-			if (cmd === "is_onboarded") return true;
+			if (cmd === "settings")
+				return {
+					enableAnalytics: false,
+					onboarded: true,
+				};
 		});
 
 		const r = renderWithProvider();

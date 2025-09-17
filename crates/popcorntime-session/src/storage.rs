@@ -23,6 +23,8 @@ pub struct InnerSessionStore {
   #[serde(default)]
   pub onboarding_complete: bool,
   #[serde(default)]
+  pub enable_analytics: bool,
+  #[serde(default)]
   #[serde(skip_serializing_if = "Option::is_none")]
   pub oauth_app: Option<OAuthApp>,
   #[serde(default)]
@@ -75,6 +77,20 @@ impl SessionStore<InnerSessionStore> {
       Err(err) => {
         tracing::error!("Failed to update onboarding_complete: {:?}", err);
         return Err(anyhow::anyhow!("Failed to update onboarding_complete"));
+      }
+    }
+    self.save()?;
+    Ok(())
+  }
+
+  pub fn update_enable_analytics(&self, allow: bool) -> Result<()> {
+    match self.snapshot.write() {
+      Ok(mut settings) => {
+        settings.enable_analytics = allow;
+      }
+      Err(err) => {
+        tracing::error!("Failed to update enable_analytics: {:?}", err);
+        return Err(anyhow::anyhow!("Failed to update enable_analytics"));
       }
     }
     self.save()?;

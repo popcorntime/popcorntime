@@ -2,6 +2,7 @@ use anyhow::{Context, Result};
 use authorization::{AuthorizationBroker, AuthorizationBrokerEvent, AuthorizationBrokerResponse};
 use consts::{AUTH_SERVER, CLIENT_ID};
 use popcorntime_error::Code;
+use serde::Serialize;
 use session::AppSession;
 use std::{path::Path, sync::Arc};
 use storage::{InnerSessionStore, SessionStore};
@@ -19,6 +20,13 @@ pub struct AuthorizationService {
   broker: Arc<AuthorizationBroker>,
   store: Arc<SessionStore>,
   snapshot: Arc<RwLock<AppSession>>,
+}
+
+#[derive(Debug, Clone, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct Settings {
+  pub onboarded: bool,
+  pub enable_analytics: bool,
 }
 
 impl AuthorizationService {
@@ -82,19 +90,37 @@ impl AuthorizationService {
       .await
   }
 
-  pub fn is_onboarded(&self) -> Result<bool> {
+  pub fn settings(&self) -> Result<Settings> {
     let inner_settings = self.store.clone();
-    Ok(
-      inner_settings
-        .snapshot
-        .read()
-        .is_ok_and(|s| s.onboarding_complete),
-    )
+    inner_settings
+      .snapshot
+      .read()
+      .ok()
+      .map(|s| Settings {
+        onboarded: s.onboarding_complete,
+        enable_analytics: s.enable_analytics,
+      })
+      .ok_or_else(|| anyhow::anyhow!("Failed to get settings").context(Code::Unknown))
   }
 
   pub fn set_onboarded(&self, onboarded: bool) -> Result<()> {
     let inner_settings = self.store.clone();
     inner_settings.update_onboarding_complete(onboarded)
+  }
+
+  pub fn is_analytics_enabled(&self) -> Result<bool> {
+    let inner_settings = self.store.clone();
+    Ok(
+      inner_settings
+        .snapshot
+        .read()
+        .is_ok_and(|s| s.enable_analytics),
+    )
+  }
+
+  pub fn set_enable_analytics(&self, allow: bool) -> Result<()> {
+    let inner_settings = self.store.clone();
+    inner_settings.update_enable_analytics(allow)
   }
 
   pub async fn validate(&self) -> Result<()> {

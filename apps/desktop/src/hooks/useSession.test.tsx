@@ -35,7 +35,7 @@ describe("SessionProvider with mockIPC", () => {
 		});
 
 		const s = useGlobalStore.getState();
-		s.settings.setOnboarded(true);
+		s.settings.setSettings({ enableAnalytics: true, onboarded: false });
 		expect(useGlobalStore.getState().settings.initialized).toBe(true);
 
 		const r = renderWithProvider(0);
@@ -52,7 +52,7 @@ describe("SessionProvider with mockIPC", () => {
 		});
 
 		const s = useGlobalStore.getState();
-		s.settings.setOnboarded(true);
+		s.settings.setSettings({ enableAnalytics: true, onboarded: false });
 		expect(useGlobalStore.getState().settings.initialized).toBe(true);
 
 		const r = renderWithProvider(1);
@@ -69,7 +69,7 @@ describe("SessionProvider with mockIPC", () => {
 		});
 
 		const s = useGlobalStore.getState();
-		s.settings.setOnboarded(true);
+		s.settings.setSettings({ enableAnalytics: true, onboarded: true });
 		expect(useGlobalStore.getState().settings.initialized).toBe(true);
 		expect(useGlobalStore.getState().app.initialized).toBe(false);
 		expect(useGlobalStore.getState().preferences.initialized).toBe(false);
@@ -97,7 +97,7 @@ describe("SessionProvider with mockIPC", () => {
 		});
 
 		const s = useGlobalStore.getState();
-		s.settings.setOnboarded(true);
+		s.settings.setSettings({ enableAnalytics: true, onboarded: true });
 		expect(useGlobalStore.getState().settings.initialized).toBe(true);
 		expect(useGlobalStore.getState().app.initialized).toBe(false);
 		expect(useGlobalStore.getState().preferences.initialized).toBe(false);
