@@ -54,7 +54,7 @@ Popcorn Time is a [Tauri](https://tauri.app/)-based application. Its UI is writt
 
 ## Bugs and Feature Requests
 
-If you have a bug or feature request, feel free to open an [issue](/popcorntime/popcorntime/issues/new/choose)
+If you have a bug or feature request, feel free to open an [issue](https://github.com/popcorntime/popcorntime/issues/new/choose)
 
 ## Contributing
 
