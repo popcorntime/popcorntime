@@ -8,8 +8,8 @@ If you believe you have found a security vulnerability in this repository, pleas
 
 ## Reporting a Vulnerability
 
-> [!NOTE]
-> ⚠️ Please do not report security vulnerabilities through public GitHub issues, discussions, or pull requests.
+> [!CAUTION]
+> Please do not report security vulnerabilities through public GitHub issues, discussions, or pull requests.
 
 - Use [private vulnerability reporting on GitHub](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability) to submit directly.
 - Alternatively, email us at **hello@popcorntime.app**.
