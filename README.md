@@ -31,7 +31,7 @@ This is a **complete rebuild of Popcorn Time**. Not a fork, not a patch - a fres
 - Modern, safer, and legal
 - Cross-platform: desktop, mobile, and TV
 - Open source and community driven
-- Weekly published databases for developers and researchers - [issue #3113](/popcorntime/popcorntime/issues/3115)
+- Weekly published databases for developers and researchers - [issue #3113](https://github.com/popcorntime/popcorntime/issues/3115)
 - Local media playback, not just links (soon)
 
 ## How Does Popcorn Time Differ?
