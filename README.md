@@ -46,17 +46,6 @@ Popcorn Time is different:
 - Features and direction come from contributors, not corporate agendas
 - We share strong, growing databases with everyone - we're not here to monetize discovery like the big guys
 
-## What About Other Media Players?
-
-We often get compared to other media players. Here's how Popcorn Time stands apart:
-
-- Our catalog isn't rented from third parties - it's built, maintained, and published by us
-- Weekly Parquet datasets let developers and researchers build on top of the same data we use
-- No legacy systems or heavy dependencies
-- Others focus on being media servers or directories. Popcorn Time is both a global streaming index **and** a local player - without bolted-on complexity
-
-We're not here to be another aggregator or another closed media suite. We're here to change how discovery and playback work - open, fast, and community-driven.
-
 ## Tech
 
 Popcorn Time is a [Tauri](https://tauri.app/)-based application. Its UI is written in [React](https://react.dev/) using [TypeScript](https://www.typescriptlang.org) and its backend is written in [Rust](https://www.rust-lang.org/).
