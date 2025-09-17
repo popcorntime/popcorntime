@@ -40,7 +40,7 @@ Other platforms like JustWatch or Reelgood act as directories. They show you whe
 
 Popcorn Time is different:
 
-- The code is public, built by and for the community.
+- The code is public, built by and for the community
 - Our catalog is released weekly as [Parquet](https://parquet.apache.org/) datasets for developers and researchers
 - You can play your own files, not just follow links
 - Features and direction come from contributors, not corporate agendas
@@ -54,7 +54,7 @@ Popcorn Time is a [Tauri](https://tauri.app/)-based application. Its UI is writt
 
 ## Bugs and Feature Requests
 
-If you have a bug or feature request, feel free to open an [issue](https://github.com/popcorntime/popcorntime/issues/new)
+If you have a bug or feature request, feel free to open an [issue](/popcorntime/popcorntime/issues/new/choose)
 
 ## Contributing
 
