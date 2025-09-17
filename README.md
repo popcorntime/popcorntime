@@ -24,19 +24,31 @@
 [b-dw]: https://deepwiki.com/badge.svg
 [l-dw]: https://deepwiki.com/popcorntime/popcorntime
 
-This is a complete rebuild of Popcorn Time
+This is a **complete rebuild of Popcorn Time**. Not a fork, not a patch - a fresh start with new goals and a clean foundation.
 
-This repository will stay up to date with ongoing development, documentation, and releases.
+This repository will be the home for ongoing development, documentation, and releases.
 
-#### Our goals:
+#### What's New
 
-- A modern, safer, and legal Popcorn Time
-- Cross-platform apps: desktop, mobile, and TV
+- Modern, safer, and legal
+- Cross-platform: desktop, mobile, and TV
 - Open source and community driven
-- Published databases for developers and researchers
-- Play and stream local media
+- Weekly published databases for developers and researchers
+- Local media playback, not just links
 
-Stay tuned — updates, docs, and releases will follow.
+## How Does Popcorn Time Differ?
+
+Other platforms like JustWatch or Reelgood act as directories. They show you where content might be, but they don't let you do much beyond clicking through to a service.
+
+Popcorn Time is different:
+
+- The code is public, built by and for the community.
+- Our catalog is released weekly as [Parquet](https://parquet.apache.org/) datasets for developers and researchers
+- You can play your own files, not just follow links
+- Features and direction come from contributors, not corporate agendas
+- We share strong, growing databases with everyone - we're not here to monetize discovery like the big guys
+
+In short: Popcorn Time combines a global streaming index with a real media player, built openly and shared freely.
 
 ## Tech
 
