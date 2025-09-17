@@ -7,7 +7,7 @@ on:
       - main
   pull_request:
     paths:
-      - ".github/workflows/test-ts.yml"
+      - ".github/workflows/test-ts.yaml"
       - "apps/**"
       - "packages/**"
 

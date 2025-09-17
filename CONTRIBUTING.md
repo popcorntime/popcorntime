@@ -5,7 +5,7 @@ Popcorn Time is starting fresh. The project is being rebuilt from the ground up,
 Whether you're a seasoned developer, a designer, a translator, or just someone who wants to test and give feedback - there's a place for you here.
 
 > [!NOTE]
-> See [DEVELOPMENT.md](.github/DEVELOPMENT.md) for instructions on building and running Popcorn Time.
+> See [DEVELOPMENT.md](DEVELOPMENT.md) for instructions on building and running Popcorn Time.
 
 ## Table of Contents
 
