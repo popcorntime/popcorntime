@@ -24,9 +24,7 @@
 [b-dw]: https://deepwiki.com/badge.svg
 [l-dw]: https://deepwiki.com/popcorntime/popcorntime
 
-This is a **complete rebuild of Popcorn Time**. Not a fork, not a patch - a fresh start with new goals and a clean foundation.
-
-This repository will be the home for ongoing development, documentation, and releases.
+This is a **complete rebuild of Popcorn Time**. Not a fork, not a patch - a fresh start with new goals and a clean foundation. This repository will be the home for ongoing development, documentation, and releases.
 
 #### What's New
 
