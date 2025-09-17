@@ -2,18 +2,13 @@ name: Feature Request
 description: Suggest a new feature or enhancement
 labels: [feature]
 body:
-  - type: input
-    id: title
-    attributes:
-      label: Feature title
-      description: Short, clear name for the feature
-    validations:
-      required: true
   - type: textarea
     id: problem
     attributes:
       label: Problem
       description: What problem would this feature solve? Why is it important?
+      placeholder: |
+        Example: Improve usability in low-light environments.
     validations:
       required: true
   - type: textarea
@@ -22,7 +17,7 @@ body:
       label: Proposed solution
       description: Describe the solution you'd like to see.
       placeholder: |
-        Example: Add a toggle for dark mode in the settings menu.
+        Example: Add dark mode support to the application.
     validations:
       required: true
   - type: textarea
