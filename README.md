@@ -11,8 +11,6 @@
 
 [![Lint Rust][b-lr]][l-lr] [![Lint TS][b-lt]][l-lt] [![Test TS][b-tt]][l-tt] [![FB][b-fb]][l-fb] [![DEEPWIKI][b-dw]][l-dw]
 
-![Alt](https://repobeats.axiom.co/api/embed/43a2bb4de028846d535d070679206180031096c5.svg "Repobeats analytics image")
-
 </div>
 
 [b-lr]: https://github.com/popcorntime/popcorntime/actions/workflows/lint-rust.yaml/badge.svg?branch=dev
