@@ -16,6 +16,11 @@ import { devtools } from "@/stores/devtools";
 type UpdateStatus = "available" | "manual" | "no-update";
 type UpdateProgress = "downloading" | "downloaded" | "installing" | "installed";
 
+export interface Settings {
+	enableAnalytics: boolean;
+	onboarded: boolean;
+}
+
 export interface GlobalState {
 	i18n: {
 		/** Application locale */
@@ -51,9 +56,15 @@ export interface GlobalState {
 		/** Session initialized */
 		initialized: boolean;
 
+		/** Whether analytics (PostHog) is enabled */
+		allowAnalytics?: boolean;
+		setAllowAnalytics: (allow: boolean) => void;
+
 		/** Whether onboarding flow has been completed */
-		onboarded: boolean;
+		onboarded?: boolean;
 		setOnboarded: (onboarded: boolean) => void;
+
+		setSettings: (settings: Settings) => void;
 	};
 	app: {
 		/** Application is ready and browsing can start */
@@ -157,10 +168,18 @@ export const useGlobalStore = create<GlobalState>()(
 				},
 				settings: {
 					initialized: false,
-					onboarded: false,
+					setAllowAnalytics: (allow: boolean) =>
+						set(state => {
+							state.settings.allowAnalytics = allow;
+						}),
 					setOnboarded: (onboarded: boolean) =>
 						set(state => {
 							state.settings.onboarded = onboarded;
+						}),
+					setSettings: (settings: Settings) =>
+						set(state => {
+							state.settings.allowAnalytics = settings.enableAnalytics;
+							state.settings.onboarded = settings.onboarded;
 							state.settings.initialized = true;
 						}),
 				},
