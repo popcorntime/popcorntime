@@ -24,5 +24,5 @@ popcorntime-error.workspace = true
 
 oauth2 = "5.0.0"
 notify = "8.2.0"
-toml = "0.9.5"
+toml = "0.9.7"
 config = "0.15.13"

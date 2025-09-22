@@ -8,9 +8,9 @@ edition = "2024"
 version = "0.0.1"
 
 [workspace.dependencies]
-anyhow = "1.0.99"
+anyhow = "1.0.100"
 thiserror = "2.0.16"
-serde = { version = "1.0.225", features = ["derive"] }
+serde = { version = "1.0.226", features = ["derive"] }
 serde_json = "1.0.145"
 tokio = { version = "1.47.1", default-features = false }
 tokio-util = "0.7.16"
@@ -24,7 +24,7 @@ tracing-subscriber = { version = "0.3.20", features = [
 
 reqwest = "0.12.23"
 url = "2.5.7"
-time = "0.3.43"
+time = "0.3.44"
 jsonwebtoken = "9.3.1"
 
 tauri = "2.8.5"
@@ -39,7 +39,7 @@ tauri-plugin-process = "2.3.0"
 tauri-plugin-single-instance = "2.3.4"
 
 futures-util = "0.3"
-toml = "0.9.5"
+toml = "0.9.7"
 async-graphql = { version = "7.0.11", features = [
     "chrono",
     "time",
