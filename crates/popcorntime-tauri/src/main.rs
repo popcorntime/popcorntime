@@ -107,9 +107,7 @@ fn main() {
                 }
               }
               // send frontend event
-              SessionUpdate
-                .emit(&app_handle)
-                .context(Code::InvalidEvent)
+              SessionUpdate.emit(&app_handle).context(Code::InvalidEvent)
             }
           })?;
 
