@@ -1,8 +1,3 @@
-import {
-	type ProviderSearchForCountry,
-	type SearchArguments,
-	SortKey,
-} from "@popcorntime/graphql/types";
 import { i18n } from "@popcorntime/i18n";
 import type { Country, Locale } from "@popcorntime/i18n/types";
 import type { Update } from "@tauri-apps/plugin-updater";
@@ -12,7 +7,9 @@ import { create } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { devtools } from "@/stores/devtools";
+import type { ProviderSearchForCountry, SearchArguments, SortKey } from "@/tauri/types";
 
+export type SortOrder = "ASC" | "DESC";
 type UpdateStatus = "available" | "manual" | "no-update";
 type UpdateProgress = "downloading" | "downloaded" | "installing" | "installed";
 
@@ -100,6 +97,9 @@ export interface GlobalState {
 		/** Current browsing sort key */
 		sortKey: SortKey;
 		setSortKey: (sortKey: SortKey) => void;
+		/** Current browsing sort key */
+		sortOrder: SortOrder;
+		setSortOrder: (sortKey: SortOrder) => void;
 		/** Whether to show only favorite providers content */
 		preferFavorites: boolean;
 		togglePreferFavorites: () => void;
@@ -237,11 +237,9 @@ export const useGlobalStore = create<GlobalState>()(
 						}),
 				},
 				browse: {
-					query: undefined,
-					cursor: undefined,
-					args: undefined,
-					sortKey: SortKey.POSITION,
-					preferFavorites: true,
+					sortKey: "POSITION",
+					sortOrder: "ASC",
+					preferFavorites: false,
 					setQuery: (query?: string) =>
 						set(state => {
 							state.browse.query = query;
@@ -257,6 +255,10 @@ export const useGlobalStore = create<GlobalState>()(
 					setSortKey: (sortKey: SortKey) =>
 						set(state => {
 							state.browse.sortKey = sortKey;
+						}),
+					setSortOrder: (sortOrder: SortOrder) =>
+						set(state => {
+							state.browse.sortOrder = sortOrder;
 						}),
 					togglePreferFavorites: () =>
 						set(state => {
@@ -319,10 +321,8 @@ export const resetGlobalStore = () => {
 
 function syncFavorites(favorites: ProviderSearchForCountry[]) {
 	const {
-		providers,
 		browse: { preferFavorites },
 	} = useGlobalStore.getState();
-	if (!providers.initialized) return;
 	if (!preferFavorites) return;
 	const keys = Array.from(new Set(favorites.map(p => p.key)));
 	useGlobalStore.setState(state => {
@@ -349,7 +349,12 @@ useGlobalStore.subscribe(
 
 useGlobalStore.subscribe(
 	state => state.providers.favorites,
-	favorites => syncFavorites(favorites)
+	favorites => {
+		useGlobalStore.setState(state => {
+			state.browse.preferFavorites = true;
+		});
+		syncFavorites(favorites);
+	}
 );
 
 useGlobalStore.subscribe(

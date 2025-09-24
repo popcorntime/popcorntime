@@ -1,23 +1,68 @@
-use anyhow::{Context, Result};
-use client::ApiClient;
-use graphql_client::GraphQLQuery;
-use popcorntime_error::Code;
-use popcorntime_graphql_macros::define_graphql_query;
+use cynic::{impl_coercions, impl_scalar};
+use serde::{Deserialize, Serialize};
+use std::ops::Deref;
+use time::serde::format_description;
 
 pub mod client;
 pub mod consts;
+pub mod media;
+pub mod preferences;
+pub mod providers;
+pub mod search;
 
-type DateTime = String;
-type Date = String;
-type Country = String;
-type Language = String;
-type Tag = String;
+impl_scalar!(Date, schema::Date);
+impl_scalar!(DateTime, schema::DateTime);
+impl_coercions!(Country, schema::Country);
+impl_coercions!(Language, schema::Language);
+format_description!(date_str, Date, "[year]-[month]-[day]");
 
-define_graphql_query!(Search, "gql/search.graphql");
-define_graphql_query!(Preferences, "gql/preferences.graphql");
-define_graphql_query!(UpdatePreferences, "gql/preferences.graphql");
-define_graphql_query!(Media, "gql/media.graphql");
+#[derive(Debug, Clone, specta::Type, Serialize, Deserialize)]
+#[serde(transparent)]
+pub struct Country(String);
 
-define_graphql_query!(Providers, "gql/providers.graphql");
-define_graphql_query!(AddFavoriteProvider, "gql/providers.graphql");
-define_graphql_query!(RemoveFavoriteProvider, "gql/providers.graphql");
+impl cynic::schema::IsScalar<schema::Country> for Country {
+  type SchemaType = schema::Country;
+}
+
+impl schema::variable::Variable for Country {
+  const TYPE: cynic::variables::VariableType =
+    cynic::variables::VariableType::Named(<schema::Country as cynic::schema::NamedType>::NAME);
+}
+
+#[derive(Debug, Clone, specta::Type, Serialize, Deserialize)]
+#[serde(transparent)]
+pub struct Date(#[serde(with = "date_str")] time::Date);
+
+impl Deref for Date {
+  type Target = time::Date;
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+#[derive(Debug, Clone, specta::Type, Serialize, Deserialize)]
+#[serde(transparent)]
+pub struct DateTime(#[serde(with = "time::serde::rfc3339")] time::OffsetDateTime);
+
+impl Deref for DateTime {
+  type Target = time::OffsetDateTime;
+  fn deref(&self) -> &Self::Target {
+    &self.0
+  }
+}
+
+#[derive(Debug, Clone, specta::Type, Serialize, Deserialize)]
+#[serde(transparent)]
+pub struct Language(String);
+
+impl cynic::schema::IsScalar<schema::Language> for Language {
+  type SchemaType = schema::Language;
+}
+
+impl schema::variable::Variable for Language {
+  const TYPE: cynic::variables::VariableType =
+    cynic::variables::VariableType::Named(<schema::Language as cynic::schema::NamedType>::NAME);
+}
+
+#[cynic::schema("popcorntime")]
+mod schema {}

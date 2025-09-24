@@ -1,5 +1,5 @@
 [workspace]
-members = ["crates/popcorntime-*", "crates/popcorntime-graphql-client/macros"]
+members = ["crates/popcorntime-*"]
 resolver = "2"
 
 [workspace.package]
@@ -24,7 +24,7 @@ tracing-subscriber = { version = "0.3.20", features = [
 
 reqwest = "0.12.23"
 url = "2.5.7"
-time = "0.3.43"
+time = "0.3.44"
 jsonwebtoken = "9.3.1"
 
 tauri = "2.8.5"
@@ -53,6 +53,13 @@ convert_case = "0.8.0"
 objc2 = "0.6.2"
 objc2-foundation = "0.3.1"
 objc2-app-kit = { version = "0.3.1", features = ["NSView"] }
+
+specta = "=2.0.0-rc.22"
+tauri-specta = "=2.0.0-rc.21"
+specta-typescript = "0.0.9"
+
+cynic = "3.12.0"
+cynic-codegen = "3.12.0"
 
 popcorntime-session = { path = "crates/popcorntime-session" }
 popcorntime-error = { path = "crates/popcorntime-error" }

@@ -1,4 +1,3 @@
-import { MediaKind } from "@popcorntime/graphql/types";
 import { countries } from "@popcorntime/i18n";
 import { Button } from "@popcorntime/ui/components/button";
 import {
@@ -90,7 +89,7 @@ function CommandCenterCommand({ command }: { command: Command }) {
 
 	const handleOpenView = useCallback(
 		(view: CommandCenterView) => {
-			setQuery(undefined);
+			setQuery(null);
 			goto(view);
 		},
 		[goto, setQuery]
@@ -125,7 +124,7 @@ function CommandCenterCommand({ command }: { command: Command }) {
 					key={command.id}
 					value={command.id}
 					onSelect={() => {
-						handleNavigation(`/browse/${country}?kind=${MediaKind.MOVIE}`);
+						handleNavigation(`/browse/${country}?kind=MOVIE`);
 					}}
 				>
 					<Film />
@@ -139,7 +138,7 @@ function CommandCenterCommand({ command }: { command: Command }) {
 					key={command.id}
 					value={command.id}
 					onSelect={() => {
-						handleNavigation(`/browse/${country}?kind=${MediaKind.TV_SHOW}`);
+						handleNavigation(`/browse/${country}?kind=TV_SHOW`);
 					}}
 				>
 					<Tv />
@@ -209,7 +208,7 @@ function CommandCenterCommands() {
 	);
 
 	const commands = useMemo(() => {
-		return filterCommandGroups(defaultCommands, query);
+		return filterCommandGroups(defaultCommands, query ?? undefined);
 	}, [query, filterCommandGroups]);
 
 	if (!commands || commands.length === 0) return null;
@@ -244,11 +243,10 @@ function CommandCenterViewSearchResults() {
 	const { data, isLoading } = useSearch({
 		country,
 		query,
-		limit: 20,
-		cursor: undefined,
+		last: 50,
 		language: locale,
-		sortKey,
 		enabled: !!query,
+		sortKey,
 	});
 
 	return (
@@ -293,9 +291,7 @@ function CommandCenterViewSearchResults() {
 								{media.title}
 							</div>
 							<div className="hover:text-accent-foreground flex">
-								<span>
-									{media.kind === MediaKind.MOVIE ? t("media.movie") : t("media.tv-show")}
-								</span>
+								<span>{media.kind === "MOVIE" ? t("media.movie") : t("media.tv-show")}</span>
 								{media.year && <span>, {media.year}</span>}
 							</div>
 						</div>
@@ -338,7 +334,7 @@ export function CommandCenter() {
 	const onClickClose = useCallback(() => {
 		// if on search result, clear results
 		if (query) {
-			setQuery(undefined);
+			setQuery(null);
 		} else {
 			toggle();
 		}

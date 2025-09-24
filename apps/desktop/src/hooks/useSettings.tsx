@@ -7,13 +7,13 @@ const SettingsContext = createContext(undefined);
 export const SettingsProvider = ({ children }: { children: ReactNode }) => {
 	const setOnboarded = useGlobalStore(state => state.settings.setOnboarded);
 	const isActive = useGlobalStore(state => state.session.isActive);
-	const { invoke } = useTauri();
+	const { api } = useTauri();
 
 	useEffect(() => {
 		if (!isActive) {
-			invoke<boolean>("is_onboarded", undefined).then(setOnboarded);
+			api.isOnboarded().then(setOnboarded);
 		}
-	}, [invoke, setOnboarded, isActive]);
+	}, [api, setOnboarded, isActive]);
 
 	return <SettingsContext.Provider value={undefined}>{children}</SettingsContext.Provider>;
 };

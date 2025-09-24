@@ -14,7 +14,6 @@ These are shared with the `desktop` application.
 
 The packages are:
 
-- `popcorntime-graphql` containing the GraphQL types
 - `popcorntime-ui` containing the shared UI components
 - `popcorntime-i18n` containing the i18n types and utils
 - `typescript-config` containing the typescript configuration files

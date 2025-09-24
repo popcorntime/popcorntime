@@ -1,0 +1,177 @@
+---
+source: crates/popcorntime-graphql-client/src/media.rs
+expression: operation.query
+---
+query MediaOutput($country: Country!, $slug: String!, $language: Language) {
+  media(by: {slug: $slug}, country: $country, language: $language) {
+    __typename
+    ... on Movie {
+      runtime
+      id
+      __typename
+      title
+      slug
+      overview
+      tagline
+      languages
+      poster
+      backdrop
+      released
+      year
+      country
+      tags
+      trailers
+      genres
+      classification
+      countries
+      kind
+      videos {
+        source
+        videoId
+      }
+      ratings {
+        rating
+        source
+      }
+      ranking {
+        score
+        position
+        points
+      }
+      pochoclinReview(language: $language) {
+        review
+        excerpt
+      }
+      similars(country: $country, language: $language, arguments: {}) {
+        title
+        overview
+        kind
+        slug
+        poster
+        year
+      }
+      similars_free: similars(country: $country, language: $language, arguments: {priceTypes: [FREE]}) {
+        title
+        overview
+        kind
+        slug
+        poster
+        year
+      }
+      charts(country: $country, language: $language) {
+        title
+        kind
+        slug
+        poster
+        year
+        rank {
+          position
+          change
+          points
+          previousPoints
+        }
+      }
+      availabilities(country: $country) {
+        providerId
+        providerName
+        logo
+        availableTo
+        urlHash
+        audioLanguages
+        subtitleLanguages
+        pricesType
+      }
+      talents {
+        id
+        rank
+        name
+        role
+        roleType
+      }
+    }
+    ... on TVShow {
+      inProduction
+      id
+      __typename
+      title
+      slug
+      overview
+      tagline
+      languages
+      poster
+      backdrop
+      released
+      year
+      country
+      tags
+      trailers
+      genres
+      classification
+      countries
+      kind
+      videos {
+        source
+        videoId
+      }
+      ratings {
+        rating
+        source
+      }
+      ranking {
+        score
+        position
+        points
+      }
+      pochoclinReview(language: $language) {
+        review
+        excerpt
+      }
+      similars(country: $country, language: $language) {
+        title
+        overview
+        kind
+        slug
+        poster
+        year
+      }
+      similars_free: similars(country: $country, language: $language, arguments: {priceTypes: [FREE]}) {
+        title
+        overview
+        kind
+        slug
+        poster
+        year
+      }
+      charts(country: $country, language: $language) {
+        title
+        kind
+        slug
+        poster
+        year
+        rank {
+          position
+          change
+          points
+          previousPoints
+        }
+      }
+      availabilities(country: $country) {
+        providerId
+        providerName
+        logo
+        availableTo
+        urlHash
+        audioLanguages
+        subtitleLanguages
+        pricesType
+      }
+      talents {
+        id
+        rank
+        name
+        role
+        roleType
+      }
+    }
+  }
+}

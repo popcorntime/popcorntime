@@ -62,7 +62,7 @@ export function PreferencesDialog() {
 	useEffect(() => {
 		if (initialized) {
 			if (preferences.country) {
-				form.setValue("country", preferences.country.toLowerCase() as Country);
+				form.setValue("country", preferences.country);
 			}
 			if (preferences.language) {
 				form.setValue("language", preferences.language);

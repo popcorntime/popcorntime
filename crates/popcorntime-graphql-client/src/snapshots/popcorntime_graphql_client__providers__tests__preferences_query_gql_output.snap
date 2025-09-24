@@ -1,0 +1,14 @@
+---
+source: crates/popcorntime-graphql-client/src/providers.rs
+expression: operation.query
+---
+query ProvidersOutput($country: Country!, $favorites: Boolean, $query: String) {
+  providers(country: $country, query: $query, favorites: $favorites) {
+    key
+    name
+    logo
+    weight
+    priceTypes
+    parentKey
+  }
+}

@@ -7,6 +7,7 @@ use tauri::webview::PageLoadPayload;
 pub const MAIN_WINDOW_LABEL: &str = "main";
 
 #[tauri::command]
+#[specta::specta]
 pub fn show_main_window(_window: tauri::WebviewWindow) {
   #[cfg(target_os = "macos")]
   {

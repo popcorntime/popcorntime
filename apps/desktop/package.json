@@ -12,7 +12,6 @@
 	},
 	"dependencies": {
 		"@hookform/resolvers": "catalog:",
-		"@popcorntime/graphql": "workspace:*",
 		"@popcorntime/ui": "workspace:*",
 		"@tauri-apps/api": "catalog:",
 		"@tauri-apps/plugin-fs": "catalog:",

@@ -6,24 +6,35 @@ import logo from "@/assets/logo.png";
 import { useTauri } from "@/hooks/useTauri";
 import { useGlobalStore } from "@/stores/global";
 
-type Event = {
-	authorizeUrl: string;
-};
-
 export function LoginRoute() {
-	const { invoke, listen } = useTauri();
+	const { api, on } = useTauri();
 	const appInitialized = useGlobalStore(state => state.app.initialized);
 	const navigate = useNavigate();
 
 	async function initialize_session_authorization() {
-		await invoke("initialize_session_authorization");
+		api.initializeSessionAuthorization();
 	}
 
 	useEffect(() => {
-		return listen<Event>("popcorntime://session_server_ready", event => {
-			open(event.payload.authorizeUrl);
-		});
-	}, [listen]);
+		let disposed = false;
+		let unlisten: (() => void) | undefined;
+
+		(async () => {
+			const fn = await on.sessionServerReady.listen(event => {
+				open(event.payload.authorization_url);
+			});
+			if (disposed) {
+				fn();
+				return;
+			}
+			unlisten = fn;
+		})();
+
+		return () => {
+			disposed = true;
+			if (unlisten) unlisten();
+		};
+	}, [on.sessionServerReady]);
 
 	useEffect(() => {
 		if (!appInitialized) return;

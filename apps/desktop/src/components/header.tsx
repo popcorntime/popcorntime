@@ -1,4 +1,3 @@
-import type { MediaKind } from "@popcorntime/graphql/types";
 import { Button, buttonVariants } from "@popcorntime/ui/components/button";
 import {
 	Menubar,
@@ -31,6 +30,7 @@ import { CommandCenter } from "@/components/command-center";
 import { useCountry } from "@/hooks/useCountry";
 import { useSession } from "@/hooks/useSession";
 import { useGlobalStore } from "@/stores/global";
+import type { MediaKind } from "@/tauri/types";
 
 export function Header() {
 	const favorites = useGlobalStore(state => state.providers.favorites);
