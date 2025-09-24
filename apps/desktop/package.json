@@ -37,7 +37,7 @@
 		"sonner": "catalog:",
 		"typewriter-effect": "^2.22.0",
 		"use-debounce": "^10.0.6",
-		"vault66-crt-effect": "^1.4.0",
+		"vault66-crt-effect": "^1.4.1",
 		"zod": "catalog:",
 		"zustand": "catalog:"
 	},
