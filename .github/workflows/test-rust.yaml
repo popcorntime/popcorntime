@@ -25,7 +25,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v5
-      - name: install Rust stable and rustfmt
+      - uses: ./.github/actions/init-env-linux
+      - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
 
       - name: run test
