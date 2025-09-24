@@ -1,119 +1,128 @@
 use crate::error::Error;
-use popcorntime_graphql_client::{
-  add_favorite_provider, client::ApiClient, media, preferences, providers,
-  remove_favorite_provider, search, update_preferences,
-};
+use cynic::{MutationBuilder, QueryBuilder};
+use popcorntime_graphql_client::{client::ApiClient, media, preferences, providers, search};
 use popcorntime_session::AuthorizationService;
 use tauri::State;
 use tracing::instrument;
 
 #[tauri::command(async)]
+#[specta::specta]
 #[instrument(skip(api_client, auth_service), err(Debug))]
-pub async fn search_medias(
+pub async fn search_medias<'a>(
   api_client: State<'_, ApiClient>,
   auth_service: State<'_, AuthorizationService>,
-  params: search::Variables,
-) -> Result<Option<search::SearchSearch>, Error> {
+  params: search::SearchInput<'a>,
+) -> Result<Option<search::SearchOutput>, Error> {
   auth_service.validate().await?;
 
-  Ok(api_client.search(&params).await?.map(|data| data.search))
+  api_client
+    .query(search::SearchOutput::build(params), false)
+    .await
+    .map(|res| res.data)
+    .map_err(Into::into)
 }
 
 #[tauri::command(async)]
+#[specta::specta]
 #[instrument(skip(api_client, auth_service), err(Debug))]
 pub async fn user_preferences(
   api_client: State<'_, ApiClient>,
   auth_service: State<'_, AuthorizationService>,
-) -> Result<Option<preferences::PreferencesPreferences>, Error> {
+) -> Result<Option<preferences::PreferencesOutput>, Error> {
   auth_service.validate().await?;
 
-  let result = api_client
-    .preferences(&preferences::Variables {})
-    .await?
-    .and_then(|data| data.preferences);
-
-  Ok(result)
+  api_client
+    .query(preferences::PreferencesOutput::build(()), true)
+    .await
+    .map(|res| res.data)
+    .map_err(Into::into)
 }
 
 #[tauri::command(async)]
+#[specta::specta]
 #[instrument(skip(api_client, auth_service), err(Debug))]
 pub async fn update_user_preferences(
   api_client: State<'_, ApiClient>,
   auth_service: State<'_, AuthorizationService>,
-  params: update_preferences::Variables,
-) -> Result<Option<update_preferences::UpdatePreferencesUpdatePreferences>, Error> {
+  params: preferences::UpdatePreferencesInput,
+) -> Result<Option<preferences::UpdatePreferencesMutation>, Error> {
   auth_service.validate().await?;
 
-  let result = api_client
-    .update_preferences(&params)
-    .await?
-    .and_then(|data| data.update_preferences);
-
-  Ok(result)
+  api_client
+    .query(preferences::UpdatePreferencesMutation::build(params), true)
+    .await
+    .map(|res| res.data)
+    .map_err(Into::into)
 }
 
 #[tauri::command(async)]
+#[specta::specta]
 #[instrument(skip(api_client, auth_service), err(Debug))]
-pub async fn media(
+pub async fn media<'a>(
   api_client: State<'_, ApiClient>,
   auth_service: State<'_, AuthorizationService>,
-  params: media::Variables,
-) -> Result<Option<media::MediaMedia>, Error> {
+  params: media::MediaInput<'a>,
+) -> Result<Option<media::MediaOutput>, Error> {
   auth_service.validate().await?;
 
-  Ok(api_client.media(&params).await?.and_then(|data| data.media))
+  api_client
+    .query(media::MediaOutput::build(params), false)
+    .await
+    .map(|res| res.data)
+    .map_err(Into::into)
 }
 
 #[tauri::command(async)]
+#[specta::specta]
 #[instrument(skip(api_client, auth_service), err(Debug))]
-pub async fn providers(
+pub async fn providers<'a>(
   api_client: State<'_, ApiClient>,
   auth_service: State<'_, AuthorizationService>,
-  params: providers::Variables,
-) -> Result<Vec<providers::ProvidersProviders>, Error> {
+  params: providers::ProvidersInput<'a>,
+) -> Result<Option<providers::ProvidersOutput>, Error> {
   auth_service.validate().await?;
+  let skip_cache = params.favorites.unwrap_or(false);
 
-  let result = api_client
-    .providers(&params)
-    .await?
-    .map(|data| data.providers)
-    .unwrap_or_default();
-
-  Ok(result)
+  api_client
+    .query(providers::ProvidersOutput::build(params), skip_cache)
+    .await
+    .map(|res| res.data)
+    .map_err(Into::into)
 }
 
 #[tauri::command(async)]
+#[specta::specta]
 #[instrument(skip(api_client, auth_service), err(Debug))]
-pub async fn remove_favorites_provider(
+pub async fn remove_favorites_provider<'a>(
   api_client: State<'_, ApiClient>,
   auth_service: State<'_, AuthorizationService>,
-  params: remove_favorite_provider::Variables,
-) -> Result<bool, Error> {
+  params: providers::RemoveFavoriteProviderInput<'a>,
+) -> Result<Option<providers::RemoveFavoriteProviderMutation>, Error> {
   auth_service.validate().await?;
 
-  let result = api_client
-    .remove_favorite_provider(&params)
-    .await?
-    .map(|data| data.remove_favorite_provider)
-    .unwrap_or_default();
-
-  Ok(result)
+  api_client
+    .query(
+      providers::RemoveFavoriteProviderMutation::build(params),
+      true,
+    )
+    .await
+    .map(|res| res.data)
+    .map_err(Into::into)
 }
 
 #[tauri::command(async)]
+#[specta::specta]
 #[instrument(skip(api_client, auth_service), err(Debug))]
-pub async fn add_favorites_provider(
+pub async fn add_favorites_provider<'a>(
   api_client: State<'_, ApiClient>,
   auth_service: State<'_, AuthorizationService>,
-  params: add_favorite_provider::Variables,
-) -> Result<bool, Error> {
+  params: providers::AddFavoriteProviderInput<'a>,
+) -> Result<Option<providers::AddFavoriteProviderMutation>, Error> {
   auth_service.validate().await?;
 
-  let result = api_client
-    .add_favorite_provider(&params)
-    .await?
-    .map(|data| data.add_favorite_provider)
-    .unwrap_or_default();
-
-  Ok(result)
+  api_client
+    .query(providers::AddFavoriteProviderMutation::build(params), true)
+    .await
+    .map(|res| res.data)
+    .map_err(Into::into)
 }

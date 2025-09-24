@@ -1,9 +1,9 @@
-import type { ProviderSearchForCountry } from "@popcorntime/graphql/types";
 import type { Country } from "@popcorntime/i18n/types";
 import { useCallback } from "react";
 import { useCountry } from "@/hooks/useCountry";
 import { useTauri } from "@/hooks/useTauri";
 import { useGlobalStore } from "@/stores/global";
+import type { ProviderSearchForCountry } from "@/tauri/types";
 
 export interface InvokeParams {
 	country: Country;
@@ -16,26 +16,18 @@ export const useProviders = () => {
 	const setProviders = useGlobalStore(state => state.providers.setProviders);
 	const setFavoriteProviders = useGlobalStore(state => state.providers.setFavorites);
 	const { country } = useCountry();
-	const { invoke } = useTauri();
+	const { api } = useTauri();
 
 	const loadProviders = useCallback(
 		async (favorites: boolean, country: Country): Promise<ProviderSearchForCountry[]> => {
 			try {
-				return invoke<ProviderSearchForCountry[]>(
-					"providers",
-					{
-						params: { country: country, favorites },
-					},
-					{
-						hideToast: true,
-					}
-				);
+				return api.providers({ country, favorites }).then(res => res?.providers ?? []);
 			} catch (err) {
 				console.error("failed to load providers", err);
 				return [];
 			}
 		},
-		[invoke]
+		[api.providers]
 	);
 
 	const getProviders = useCallback(
@@ -61,29 +53,27 @@ export const useProviders = () => {
 	const addToFavorites = useCallback(
 		async (providerKey: string) => {
 			setIsLoading(true);
-			await invoke<boolean>("add_favorites_provider", {
-				params: { country: country.toUpperCase(), providerKey },
-			});
+			await api.addFavoritesProvider({ country, providerKey });
+
 			setIsLoading(false);
 			// update favs
 			const favs = await loadProviders(true, country.toUpperCase() as Country);
 			setFavoriteProviders(favs);
 		},
-		[country, loadProviders, invoke, setFavoriteProviders, setIsLoading]
+		[country, loadProviders, api.addFavoritesProvider, setFavoriteProviders, setIsLoading]
 	);
 
 	const removeFromFavorites = useCallback(
 		async (providerKey: string) => {
 			setIsLoading(true);
-			await invoke<boolean>("remove_favorites_provider", {
-				params: { country: country.toUpperCase(), providerKey },
-			});
+			await api.removeFavoritesProvider({ country, providerKey });
+
 			setIsLoading(false);
 			// update favs
 			const favs = await loadProviders(true, country.toUpperCase() as Country);
 			setFavoriteProviders(favs);
 		},
-		[country, loadProviders, invoke, setFavoriteProviders, setIsLoading]
+		[country, loadProviders, api.removeFavoritesProvider, setFavoriteProviders, setIsLoading]
 	);
 
 	return {

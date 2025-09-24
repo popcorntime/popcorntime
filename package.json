@@ -3,7 +3,7 @@
   "private": true,
   "packageManager": "pnpm@10.6.4",
   "scripts": {
-    "codegen:graphql": "graphql-client introspect-schema http://localhost:8080 --output ./crates/popcorntime-graphql-client/gql/schema.json && pnpm --filter @popcorntime/graphql generate",
+    "codegen:graphql": "cynic introspect http://localhost:8080 -o ./crates/popcorntime-graphql-client/gql/schema.graphql",
     "dev:web": "turbo watch --filter @popcorntime/web dev",
     "dev:desktop": "pnpm tauri dev",
     "dev:prepare-for-tauri": "pnpm --filter @popcorntime/desktop dev",

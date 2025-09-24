@@ -1,10 +1,10 @@
-import { emit } from "@tauri-apps/api/event";
-import { mockIPC } from "@tauri-apps/api/mocks";
+import { clearMocks, mockIPC } from "@tauri-apps/api/mocks";
 import { act, render, screen } from "@testing-library/react";
 import { MemoryRouter, Route, Routes, useLocation } from "react-router";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { LoginRoute } from "@/routes/login";
 import { resetGlobalStore, useGlobalStore } from "@/stores/global";
+import { events } from "@/tauri/types";
 import { pluginShellOpen } from "@/test/mock";
 
 const AUTH_URL = "https://popcorntime.app/authorize";
@@ -37,8 +37,8 @@ beforeEach(() => {
 	mockIPC(
 		(cmd, _args) => {
 			if (cmd === "initialize_session_authorization") {
-				emit("popcorntime://session_server_ready", {
-					authorizeUrl: AUTH_URL,
+				events.sessionServerReady.emit({
+					authorization_url: AUTH_URL,
 				});
 				return;
 			}
@@ -49,6 +49,7 @@ beforeEach(() => {
 
 afterEach(() => {
 	resetGlobalStore();
+	clearMocks();
 });
 
 describe("LoginRoute", () => {

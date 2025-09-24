@@ -1,0 +1,10 @@
+---
+source: crates/popcorntime-graphql-client/src/preferences.rs
+expression: operation.query
+---
+mutation UpdatePreferencesMutation($country: Country!, $language: Language!) {
+  updatePreferences(country: $country, language: $language) {
+    language
+    country
+  }
+}

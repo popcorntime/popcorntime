@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { cn } from "@popcorntime/ui/lib/utils";
-import { MediaSearch, WatchPriceType } from "@popcorntime/graphql/types";
 
 export function PosterSkeleton() {
   return (
@@ -12,31 +11,29 @@ export function PosterSkeleton() {
   );
 }
 
+interface Media {
+  poster?: string | null;
+  title: string;
+  overview?: string | null;
+}
+
 export function Poster({
   media,
   placeholder,
   isAboveTheFold = false,
   translations,
+  withFreeBadge = false,
 }: {
   isAboveTheFold?: boolean;
   placeholder?: string;
-  media: MediaSearch;
+  media: Media;
+  withFreeBadge?: boolean;
   translations: {
     free: string;
     kind: string;
   };
 }) {
-  const isProbablyFree = useMemo(() => {
-    if (media.providers) {
-      return (
-        media.providers.find((provider) =>
-          provider.priceTypes.includes(WatchPriceType.FREE)
-        ) !== undefined
-      );
-    }
 
-    return false;
-  }, [media]);
 
   const posterId = useMemo(() => {
     // `/ID.jpg` is the original poster
@@ -49,7 +46,7 @@ export function Poster({
     <div className="group relative w-full rounded-xs border border-border h-full">
       <div className="absolute -inset-px rounded-xs border-2 border-transparent opacity-0 [--quick-links-hover-bg:theme(colors.slate.800)] [background:linear-gradient(var(--quick-links-hover-bg,theme(colors.sky.50)),var(--quick-links-hover-bg,theme(colors.sky.50)))_padding-box,linear-gradient(to_top,theme(colors.slate.400),theme(colors.cyan.400),theme(colors.sky.500))_border-box] group-hover:opacity-100" />
       <div className="relative overflow-hidden rounded-xs h-full">
-        {isProbablyFree && (
+        {withFreeBadge && (
           <div className="absolute right-0 top-0 h-16 w-20">
             <div className="absolute -right-12 top-4 w-40 rotate-45 transform bg-[#e54b3f] py-1 text-center text-sm font-bold uppercase tracking-tighter text-white shadow-md">
               {translations.free}

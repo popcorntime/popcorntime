@@ -1,50 +1,67 @@
-import { type ProviderSearchForCountry, WatchPriceType } from "@popcorntime/graphql/types";
 import type { Country } from "@popcorntime/i18n/types";
 import { clearMocks, mockIPC } from "@tauri-apps/api/mocks";
 import { act, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router";
 import { afterEach, describe, expect, it } from "vitest";
+import { CountryProvider } from "@/hooks/useCountry";
+import { useProviders } from "@/hooks/useProviders";
 import { resetGlobalStore, useGlobalStore } from "@/stores/global";
+import type {
+	AddFavoriteProviderInput,
+	ProviderSearchForCountry,
+	ProvidersInput,
+	ProvidersOutput,
+	RemoveFavoriteProviderInput,
+} from "@/tauri/types";
 
 const ALL = {
-	CA: [
-		{
-			id: "1",
-			key: "netflix",
-			name: "Netflix",
-			priceTypes: [WatchPriceType.FLATRATE],
-		},
-		{
-			id: "2",
-			key: "hulu",
-			name: "Hulu",
-			priceTypes: [WatchPriceType.FLATRATE],
-		},
-		{
-			id: "3",
-			key: "disney_plus",
-			name: "Disney+",
-			priceTypes: [WatchPriceType.FLATRATE],
-		},
-	],
-} satisfies Partial<Record<Country, ProviderSearchForCountry[]>>;
+	CA: {
+		providers: [
+			{
+				key: "netflix",
+				name: "Netflix",
+				priceTypes: ["FLATRATE"],
+				logo: null,
+				parentKey: null,
+				weight: null,
+			},
+			{
+				key: "hulu",
+				name: "Hulu",
+				priceTypes: ["FLATRATE"],
+				logo: null,
+				parentKey: null,
+				weight: null,
+			},
+			{
+				key: "disney_plus",
+				name: "Disney+",
+				priceTypes: ["FLATRATE"],
+				logo: null,
+				parentKey: null,
+				weight: null,
+			},
+		],
+	},
+} satisfies Partial<Record<Country, ProvidersOutput>>;
 
 const initialFavs = [
 	{
-		id: "1",
 		key: "netflix",
 		name: "Netflix",
-		priceTypes: [WatchPriceType.FLATRATE],
+		priceTypes: ["FLATRATE"],
+		logo: null,
+		parentKey: null,
+		weight: null,
 	},
-];
+] satisfies ProvidersOutput["providers"];
 
 let FAVORITES = {
-	CA: initialFavs,
-} satisfies Partial<Record<Country, ProviderSearchForCountry[]>>;
-
-import { CountryProvider } from "@/hooks/useCountry";
-import { type InvokeParams, useProviders } from "@/hooks/useProviders";
+	CA: {
+		providers: initialFavs,
+	},
+} satisfies Partial<Record<Country, ProvidersOutput>>;
 
 function Harness() {
 	const { getProviders, addToFavorites, removeFromFavorites } = useProviders();
@@ -88,43 +105,58 @@ beforeEach(async () => {
 	});
 
 	FAVORITES = {
-		CA: initialFavs,
-	};
+		CA: {
+			providers: initialFavs,
+		},
+	} satisfies Partial<Record<Country, ProvidersOutput>>;
 
 	mockIPC((cmd, args: unknown) => {
 		if (cmd === "providers") {
-			const { params } = args as { params: InvokeParams };
-			if (params.country !== "CA") return [];
-			const { favorites, country } = params;
+			const {
+				params: { country, favorites },
+			} = args as { params: ProvidersInput };
+			if (country !== "CA") return [];
 			return favorites ? FAVORITES[country] : ALL[country];
 		}
 
 		if (cmd === "add_favorites_provider") {
-			const { params } = args as {
-				params: { country: Country; providerKey: string };
+			const {
+				params: { country, providerKey },
+			} = args as { params: AddFavoriteProviderInput };
+
+			if (country !== "CA") return [];
+
+			const base = FAVORITES[country] ?? [];
+			const toAdd = (ALL[country] ?? []).providers.find(p => p.key === providerKey);
+			const exists = base.providers.some(p => p.key === providerKey);
+
+			const providers = exists || !toAdd ? base.providers.slice() : [...base.providers, toAdd];
+
+			FAVORITES = {
+				...FAVORITES,
+				[country]: {
+					providers,
+				},
 			};
-
-			if (params.country !== "CA") return [];
-
-			const base = FAVORITES[params.country] ?? [];
-			const toAdd = (ALL[params.country] ?? []).find(p => p.key === params.providerKey);
-			const exists = base.some(p => p.key === params.providerKey);
-
-			const next = exists || !toAdd ? base.slice() : [...base, toAdd];
-			FAVORITES = { ...FAVORITES, [params.country]: next };
 
 			return;
 		}
 
 		if (cmd === "remove_favorites_provider") {
-			const { params } = args as {
-				params: { country: Country; providerKey: string };
-			};
-			if (params.country !== "CA") return [];
+			const {
+				params: { country, providerKey },
+			} = args as { params: RemoveFavoriteProviderInput };
 
-			const base = FAVORITES[params.country] ?? [];
-			const next = base.filter(p => p.key !== params.providerKey);
-			FAVORITES = { ...FAVORITES, [params.country]: next };
+			if (country !== "CA") return [];
+
+			const base = FAVORITES[country] ?? [];
+			const providers = base.providers.filter(p => p.key !== providerKey);
+			FAVORITES = {
+				...FAVORITES,
+				[country]: {
+					providers,
+				},
+			};
 
 			return;
 		}

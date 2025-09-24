@@ -1,5 +1,12 @@
 use popcorntime_error::AnyhowContextExt;
+use popcorntime_error::Code;
 use serde::{ser::SerializeMap, Serialize};
+use specta::function::FunctionArg;
+use specta::{
+  datatype::PrimitiveType,
+  internal::construct::{field, r#struct, sid, struct_named},
+  DataType,
+};
 use std::borrow::Cow;
 
 /// An error type for serialization which isn't expected to carry a code.
@@ -44,6 +51,44 @@ pub struct Error(anyhow::Error);
 impl From<anyhow::Error> for Error {
   fn from(value: anyhow::Error) -> Self {
     Self(value)
+  }
+}
+
+impl specta::Type for Error {
+  fn inline(
+    type_map: &mut specta::TypeMap,
+    _generics: specta::Generics,
+  ) -> specta::datatype::DataType {
+    DataType::Struct(r#struct(
+      "TxError".into(),
+      Some(sid("Error", "error")),
+      vec![],
+      struct_named(
+        vec![
+          (
+            "message".into(),
+            field(
+              false,
+              false,
+              None,
+              "short message to be displayed in the toast".into(),
+              Some(DataType::Primitive(PrimitiveType::String)),
+            ),
+          ),
+          (
+            "code".into(),
+            field(
+              false,
+              false,
+              None,
+              "error code".into(),
+              Code::to_datatype(type_map),
+            ),
+          ),
+        ],
+        None,
+      ),
+    ))
   }
 }
 

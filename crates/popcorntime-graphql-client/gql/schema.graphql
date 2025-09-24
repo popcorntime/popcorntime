@@ -1,0 +1,500 @@
+schema {
+  query: QueryRoot
+  mutation: MutationRoot
+}
+type Availability {
+  providerId: String!
+  providerName: String!
+  logo: String
+  availableTo: Date
+  urlHash: String!
+  pricesType: [WatchPriceType!]
+  formats: [MediaFormat!]
+  audioLanguages: [Language!]
+  subtitleLanguages: [Language!]
+}
+
+type CollectionSearch {
+  id: Int!
+  slug: String!
+  country: Country!
+  language: Language
+}
+
+scalar Country
+
+"""
+ISO 8601 calendar date without timezone.
+Format: %Y-%m-%d
+
+# Examples
+
+* `1994-11-13`
+* `2000-02-24`
+"""
+scalar Date
+
+"""
+A datetime with timezone offset.
+
+The input is a string in RFC3339 format, e.g. "2022-01-12T04:00:19.12345Z"
+or "2022-01-12T04:00:19+03:00". The output is also a string in RFC3339
+format, but it is always normalized to the UTC (Z) offset, e.g.
+"2022-01-12T04:00:19.12345Z".
+"""
+scalar DateTime
+
+type ExternalId {
+  id: String!
+  source: MetaSource!
+}
+
+type ExternalRating {
+  rating: Float!
+  source: RatingSource!
+}
+
+enum Genre {
+  ACTION
+  ADVENTURE
+  ANIMATION
+  COMEDY
+  CRIME
+  DOCUMENTARY
+  DRAMA
+  FAMILY
+  FANTASY
+  HISTORY
+  HORROR
+  MUSIC
+  MYSTERY
+  ROMANCE
+  SCIENCE_FICTION
+  TV_MOVIE
+  THRILLER
+  WAR
+  WESTERN
+  OTHER
+}
+
+type HomeSearchForCountry {
+  """
+  Short ID
+  """
+  id: Country!
+  topMovies: [MediaSearch!]!
+  topSeries: [MediaSearch!]!
+  newMovies: [MediaSearch!]!
+  newTvshows: [MediaSearch!]!
+}
+
+scalar Language
+
+interface Media {
+  id: Int!
+  slug: String!
+  ids: [ExternalId!]!
+  ratings: [ExternalRating!]!
+  ranking: Ranking
+  title: String!
+  homepage: String
+  year: Int
+  country: Country
+  languages: [Language!]!
+  released: String
+  tagline: String
+  overview: String
+  classification: String
+  genres: [Genre!]!
+  poster: String
+  backdrop: String
+  trailers: [String!]!
+  videos: [MediaVideo!]!
+  tags: [Tag!]!
+  talents: [People!]!
+  similars(
+    country: Country!
+    language: Language
+    arguments: SearchArguments
+  ): [MediaSearch!]!
+  pochoclinReview(language: Language): PochoclinReview
+  charts(country: Country!, language: Language): [MediaSearch!]!
+  availabilities(
+    country: Country!
+    priceType: WatchPriceType
+    format: MediaFormat
+  ): [Availability!]!
+  countries: [Country!]!
+  createdAt: String!
+  updatedAt: String!
+  kind: MediaKind!
+}
+
+input MediaBy {
+  id: Int
+  slug: String
+}
+
+type MediaCountryRanking {
+  position: Int!
+  score: Int!
+  points: Int!
+  change: Float!
+  previousPosition: Int!
+  previousPoints: Int!
+}
+
+enum MediaFormat {
+  _3D
+  _4K
+  SD
+  HD
+  UHD
+  UNKNOWN
+}
+
+enum MediaKind {
+  MOVIE
+  TV_SHOW
+}
+
+type MediaSearch {
+  id: Int!
+  rank: MediaCountryRanking
+  kind: MediaKind!
+  slug: String!
+  title: String!
+  genres: [Genre!]!
+  providers: [MeliSearchProvider!]!
+  offersLanguages: [Language!]!
+  offersSubtitles: [Language!]!
+  collections: [Int!]!
+  poster: String
+  backdrop: String
+  originalTitle: String
+  year: Int
+  classification: String
+  country: Country
+  tagline: String
+  overview: String
+  released: Date
+  featuredFrom: Date
+  updatedAt: DateTime!
+}
+
+type MediaSearchConnection {
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+  """
+  A list of edges.
+  """
+  edges: [MediaSearchEdge!]!
+  """
+  A list of nodes.
+  """
+  nodes: [MediaSearch!]!
+}
+
+"""
+An edge in a connection.
+"""
+type MediaSearchEdge {
+  """
+  The item at the end of the edge
+  """
+  node: MediaSearch!
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
+}
+
+type MediaVideo {
+  id: Int!
+  source: VideoSource!
+  videoId: String!
+}
+
+type MeliSearchProvider {
+  providerId: String!
+  priceTypes: [WatchPriceType!]!
+}
+
+enum MetaSource {
+  IMDB
+  TVDB
+  TMDB
+  TRAKT
+}
+
+type Movie implements Media {
+  id: Int!
+  slug: String!
+  ids: [ExternalId!]!
+  ratings: [ExternalRating!]!
+  ranking: Ranking
+  title: String!
+  homepage: String
+  year: Int
+  kind: MediaKind!
+  country: Country
+  languages: [Language!]!
+  released: String
+  tagline: String
+  overview: String
+  classification: String
+  genres: [Genre!]!
+  poster: String
+  backdrop: String
+  trailers: [String!]!
+  tags: [Tag!]!
+  talents: [People!]!
+  createdAt: String!
+  updatedAt: String!
+  runtime: String!
+  videos: [MediaVideo!]!
+  countries: [Country!]!
+  pochoclinReview(language: Language): PochoclinReview
+  similars(
+    country: Country!
+    language: Language
+    arguments: SearchArguments
+  ): [MediaSearch!]!
+  charts(country: Country!, language: Language): [MediaSearch!]!
+  availabilities(
+    country: Country!
+    priceType: WatchPriceType
+    format: MediaFormat
+  ): [Availability!]!
+}
+
+type MutationRoot {
+  setReaction(mediaId: Int!, reaction: UserReactionType): Boolean!
+  updatePreferences(country: Country!, language: Language!): UserPreferences
+  addFavoriteProvider(country: Country!, providerKey: String!): Boolean!
+  removeFavoriteProvider(country: Country!, providerKey: String!): Boolean!
+}
+
+"""
+Information about pagination in a connection
+"""
+type PageInfo {
+  """
+  When paginating backwards, are there more items?
+  """
+  hasPreviousPage: Boolean!
+  """
+  When paginating forwards, are there more items?
+  """
+  hasNextPage: Boolean!
+  """
+  When paginating backwards, the cursor to continue.
+  """
+  startCursor: String
+  """
+  When paginating forwards, the cursor to continue.
+  """
+  endCursor: String
+}
+
+type People {
+  id: Int!
+  name: String!
+  roleType: RoleType!
+  role: String
+  rank: Int!
+}
+
+type PochoclinReview {
+  language: Language!
+  review: String!
+  excerpt: String!
+}
+
+type ProviderSearchForCountry {
+  """
+  Short ID
+  """
+  id: String!
+  """
+  ID of the provider
+  """
+  key: String!
+  """
+  Parent ID
+  """
+  parentKey: String
+  """
+  Name of the provider
+  """
+  name: String!
+  """
+  Logo of the provider
+  """
+  logo: String
+  """
+  Available price types
+  """
+  priceTypes: [WatchPriceType!]!
+  """
+  Weight of the provider
+  """
+  weight: Int
+}
+
+type QueryRoot {
+  media(by: MediaBy!, country: Country!, language: Language): Media
+  search(
+    after: String = null
+    before: String = null
+    first: Int
+    last: Int
+    country: Country!
+    language: Language
+    query: String
+    arguments: SearchArguments
+    sortKey: SortKey! = ID
+  ): MediaSearchConnection!
+  homeCollection(country: Country!, language: Language): HomeSearchForCountry
+  collections(country: Country!, language: Language): [CollectionSearch!]!
+  count(country: Country!): Int!
+  providers(
+    country: Country!
+    favorites: Boolean
+    query: String
+  ): [ProviderSearchForCountry!]!
+  preferences: UserPreferences
+}
+
+type Ranking {
+  score: Int!
+  position: Int!
+  points: Int!
+}
+
+enum RatingSource {
+  IMDB
+  TMDB
+}
+
+enum RoleType {
+  EXECUTIVE_PRODUCER
+  DIRECTOR
+  FIRST_ASSISTANT_DIRECTOR
+  SECOND_ASSISTANT_DIRECTOR
+  SECOND_SECOND_ASSISTANT_DIRECTOR
+  SCRIPT_SUPERVISOR
+  PRODUCER
+  WRITER
+  ACTOR
+}
+
+input SearchArguments {
+  collection: Int
+  kind: MediaKind
+  year: Int
+  providers: [String!]
+  priceTypes: [WatchPriceType!]
+  genres: [Genre!]
+  audio: Language
+  subtitle: Language
+  country: Country
+  withPoster: Boolean
+  featured: Boolean
+}
+
+enum SortKey {
+  ID
+  RELEASED_AT
+  CREATED_AT
+  UPDATED_AT
+  POSITION
+}
+
+type TVShow implements Media {
+  id: Int!
+  ids: [ExternalId!]!
+  ratings: [ExternalRating!]!
+  ranking: Ranking
+  slug: String!
+  title: String!
+  homepage: String
+  year: Int
+  kind: MediaKind!
+  country: Country
+  languages: [Language!]!
+  released: String
+  tagline: String
+  overview: String
+  classification: String
+  genres: [Genre!]!
+  poster: String
+  backdrop: String
+  trailers: [String!]!
+  tags: [Tag!]!
+  talents: [People!]!
+  createdAt: String!
+  updatedAt: String!
+  inProduction: Boolean!
+  lastAirDate: String
+  videos: [MediaVideo!]!
+  countries: [Country!]!
+  pochoclinReview(language: Language): PochoclinReview
+  similars(
+    country: Country!
+    language: Language
+    arguments: SearchArguments
+  ): [MediaSearch!]!
+  charts(country: Country!, language: Language): [MediaSearch!]!
+  availabilities(
+    country: Country!
+    priceType: WatchPriceType
+    format: MediaFormat
+  ): [Availability!]!
+}
+
+scalar Tag
+
+"""
+A UUID is a unique 128-bit number, stored as 16 octets. UUIDs are parsed as
+Strings within GraphQL. UUIDs are used to assign unique identifiers to
+entities without requiring a central allocating authority.
+
+# References
+
+* [Wikipedia: Universally Unique Identifier](http://en.wikipedia.org/wiki/Universally_unique_identifier)
+* [RFC4122: A Universally Unique Identifier (UUID) URN Namespace](http://tools.ietf.org/html/rfc4122)
+"""
+scalar UUID
+
+type UserPreferences {
+  userId: UUID!
+  language: Language!
+  country: Country!
+  createdAt: DateTime!
+}
+
+enum UserReactionType {
+  LIKE
+  DISLIKE
+}
+
+enum VideoSource {
+  RUMBLE
+  YOUTUBE
+}
+
+enum WatchPriceType {
+  RENT
+  BUY
+  FLATRATE
+  FREE
+  CINEMA
+}
+
+"""
+Indicates that an Input Object is a OneOf Input Object (and thus requires exactly one of its field be provided)
+"""
+directive @oneOf on INPUT_OBJECT

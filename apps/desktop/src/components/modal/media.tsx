@@ -1,8 +1,12 @@
-import { type Movie, RatingSource, type TVShow, WatchPriceType } from "@popcorntime/graphql/types";
 import { type Country, getLocalesForCountry, type Locale } from "@popcorntime/i18n";
 import { Badge } from "@popcorntime/ui/components/badge";
 import { Button, buttonVariants } from "@popcorntime/ui/components/button";
-import { Dialog, DialogContent } from "@popcorntime/ui/components/dialog";
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogTitle,
+} from "@popcorntime/ui/components/dialog";
 import { MediaPosterAsPicture } from "@popcorntime/ui/components/poster";
 import { ScrollArea } from "@popcorntime/ui/components/scroll-area";
 import { Spinner } from "@popcorntime/ui/components/spinner";
@@ -20,6 +24,7 @@ import { useCountry } from "@/hooks/useCountry";
 import { useTauri } from "@/hooks/useTauri";
 import { NotFoundRoute } from "@/routes/not-found";
 import { useGlobalStore } from "@/stores/global";
+import type { Media } from "@/tauri/types";
 
 function MediaContentSkeleton() {
 	return (
@@ -35,25 +40,25 @@ function MediaContent() {
 	const toggle = useGlobalStore(state => state.dialogs.media.toggle);
 	const { country } = useCountry();
 	const [isLoading, setIsLoading] = useState(false);
-	const { invoke } = useTauri();
-	const [media, setMedia] = useState<Movie | TVShow | null>(null);
+	const { api } = useTauri();
+	const [media, setMedia] = useState<Media | null>(null);
 	const { t } = useTranslation();
 	const officialLocales = useMemo(() => [...getLocalesForCountry(country)], [country]);
 
 	const fetch = useCallback(
 		async (slug: string) => {
 			setIsLoading(true);
-			const results = await invoke<Movie | TVShow>("media", {
-				params: {
-					country: country.toUpperCase() as Country,
-					slug,
-					language: locale,
-				},
+			const results = await api.media({
+				country: country.toUpperCase() as Country,
+				slug,
+				language: locale,
 			});
-			setMedia(results);
+			if (results) {
+				setMedia(results.media ?? null);
+			}
 			setIsLoading(false);
 		},
-		[country, locale, invoke]
+		[country, locale, api]
 	);
 
 	useEffect(() => {
@@ -84,16 +89,16 @@ function MediaContent() {
 
 		// sort bestProvider  with free provider first, then subscription then others by weight
 		bestProvider.sort((a, b) => {
-			if (a.pricesType?.includes(WatchPriceType.FREE)) {
+			if (a.pricesType?.includes("FREE")) {
 				return -1;
 			}
-			if (b.pricesType?.includes(WatchPriceType.FREE)) {
+			if (b.pricesType?.includes("FREE")) {
 				return 1;
 			}
-			if (a.pricesType?.includes(WatchPriceType.FLATRATE)) {
+			if (a.pricesType?.includes("FLATRATE")) {
 				return -1;
 			}
-			if (b.pricesType?.includes(WatchPriceType.FLATRATE)) {
+			if (b.pricesType?.includes("FLATRATE")) {
 				return 1;
 			}
 			// default
@@ -123,7 +128,7 @@ function MediaContent() {
 	}, [bestProviders]);
 
 	const imdbRating = useMemo(() => {
-		return media?.ratings?.find(rating => rating.source === RatingSource.IMDB && rating.rating > 0);
+		return media?.ratings?.find(rating => rating.source === "IMDB" && rating.rating > 0);
 	}, [media?.ratings]);
 
 	const allLanguages = useMemo(() => {
@@ -133,9 +138,9 @@ function MediaContent() {
 		return Array.from(
 			media.availabilities.reduce((acc, availability) => {
 				availability.audioLanguages
-					?.filter(l => officialLocales.includes(l))
+					?.filter(l => officialLocales.includes(l as Locale))
 					.forEach(lang => {
-						acc.add(lang);
+						acc.add(lang as Locale);
 					});
 				return acc;
 			}, new Set<Locale>())
@@ -149,10 +154,10 @@ function MediaContent() {
 		return Array.from(
 			media.availabilities.reduce((acc, availability) => {
 				availability.subtitleLanguages
-					?.filter(l => officialLocales.includes(l))
-					.filter((a: Locale) => !allLanguages.includes(a))
+					?.filter(l => officialLocales.includes(l as Locale))
+					.filter(a => !allLanguages.includes(a as Locale))
 					.forEach(lang => {
-						acc.add(lang);
+						acc.add(lang as Locale);
 					});
 				return acc;
 			}, new Set<Locale>())
@@ -427,6 +432,8 @@ export function MediaDialog() {
 	return (
 		<Dialog open={isOpen} onOpenChange={toggle} modal>
 			<DialogContent className="z-[300] h-full w-full max-w-2xl border-0 p-0 outline-none md:max-h-[90vh] lg:max-w-4xl">
+				<DialogTitle hidden></DialogTitle>
+				<DialogDescription hidden></DialogDescription>
 				<div
 					className={cn(
 						"flex min-h-[calc(100vh-(12rem))] flex-col transition-all duration-300",

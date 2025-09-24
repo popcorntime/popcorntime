@@ -1,0 +1,33 @@
+name: Test Rust
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+  pull_request:
+    paths:
+      - Cargo.lock
+      - ".github/workflows/test-rust.yaml"
+      - "crates/**"
+
+env:
+  RUST_BACKTRACE: 1
+  CARGO_PROFILE_DEV_DEBUG: 0
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cargo-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/init-env-linux
+      - name: install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: run test
+        run: cargo test --workspace --all-targets

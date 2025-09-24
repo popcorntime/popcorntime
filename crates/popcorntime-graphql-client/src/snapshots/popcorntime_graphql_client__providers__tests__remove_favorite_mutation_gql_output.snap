@@ -1,0 +1,7 @@
+---
+source: crates/popcorntime-graphql-client/src/providers.rs
+expression: operation.query
+---
+mutation RemoveFavoriteProviderMutation($country: Country!, $providerKey: String!) {
+  removeFavoriteProvider(country: $country, providerKey: $providerKey)
+}

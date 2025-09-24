@@ -1,7 +1,7 @@
-import { type ProviderSearchForCountry, SortKey } from "@popcorntime/graphql/types";
 import i18next from "i18next";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { resetGlobalStore, useGlobalStore } from "@/stores/global";
+import type { ProviderSearchForCountry } from "@/tauri/types";
 
 const mkProv = (key: string) => ({ key }) as ProviderSearchForCountry;
 const setAllReady = () => {
@@ -72,7 +72,6 @@ describe("favorites sync → browse.args.providers", () => {
 	it("writes providers keys when providers.initialized && preferFavorites", () => {
 		const s = useGlobalStore.getState();
 		s.providers.setInitialized();
-		// preferFavorites defaults to true in your store
 		s.providers.setFavorites([mkProv("netflix"), mkProv("hulu"), mkProv("netflix")]);
 
 		const args = useGlobalStore.getState().browse.args;
@@ -85,7 +84,7 @@ describe("favorites sync → browse.args.providers", () => {
 		s.providers.setFavorites([mkProv("netflix")]);
 		expect(useGlobalStore.getState().browse.args?.providers).toEqual(["netflix"]);
 
-		s.browse.togglePreferFavorites(); // -> false
+		s.browse.togglePreferFavorites();
 		expect(useGlobalStore.getState().browse.args?.providers).toBeUndefined();
 	});
 });
@@ -96,13 +95,13 @@ describe("browse setters", () => {
 		s.browse.setQuery("batman");
 		s.browse.setCursor("abc123");
 		s.browse.setArgs({ year: 2024 });
-		s.browse.setSortKey(SortKey.CREATED_AT);
+		s.browse.setSortKey("CREATED_AT");
 
 		const st = useGlobalStore.getState().browse;
 		expect(st.query).toBe("batman");
 		expect(st.cursor).toBe("abc123");
 		expect(st.args).toEqual({ year: 2024 });
-		expect(st.sortKey).toBe(SortKey.CREATED_AT);
+		expect(st.sortKey).toBe("CREATED_AT");
 	});
 });
 

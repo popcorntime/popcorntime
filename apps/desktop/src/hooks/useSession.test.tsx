@@ -3,8 +3,8 @@ import { act, render, screen } from "@testing-library/react";
 import { MemoryRouter, useLocation } from "react-router";
 import { afterEach, describe, expect, it } from "vitest";
 import { SessionProvider } from "@/hooks/useSession";
-import { TauriError } from "@/hooks/useTauri";
 import { resetGlobalStore, useGlobalStore } from "@/stores/global";
+import type { PreferencesOutput } from "@/tauri/types";
 import { Code } from "@/utils/error";
 
 function LocationProbe() {
@@ -30,8 +30,7 @@ afterEach(() => {
 describe("SessionProvider with mockIPC", () => {
 	it("should not be onboarded and stay on splash", async () => {
 		mockIPC((cmd, _args) => {
-			if (cmd === "validate")
-				throw new TauriError("Invalid session", Code.InvalidSession, undefined);
+			if (cmd === "validate") throw { message: "Invalid session", code: Code.InvalidSession };
 		});
 
 		const s = useGlobalStore.getState();
@@ -47,8 +46,7 @@ describe("SessionProvider with mockIPC", () => {
 
 	it("should redirect to login (private page)", async () => {
 		mockIPC((cmd, _args) => {
-			if (cmd === "validate")
-				throw new TauriError("Invalid session", Code.InvalidSession, undefined);
+			if (cmd === "validate") throw { message: "Invalid session", code: Code.InvalidSession };
 		});
 
 		const s = useGlobalStore.getState();
@@ -65,7 +63,10 @@ describe("SessionProvider with mockIPC", () => {
 	it("should initialize app with session", async () => {
 		mockIPC((cmd, _args) => {
 			if (cmd === "validate") null;
-			if (cmd === "user_preferences") return { country: "US", language: "fr" };
+			if (cmd === "user_preferences")
+				return {
+					preferences: { country: "US", language: "fr" },
+				} satisfies PreferencesOutput;
 		});
 
 		const s = useGlobalStore.getState();

@@ -1,12 +1,47 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
+use anyhow::Context;
+use popcorntime_error::Code;
 use popcorntime_graphql_client::client::ApiClient;
 use popcorntime_session::AuthorizationService;
-use popcorntime_tauri::event::FrontendEvent;
+use popcorntime_tauri::event::{SessionServerReady, SessionUpdate};
+#[cfg(debug_assertions)]
+use specta_typescript::Typescript;
 use tauri::Manager;
 use tauri_plugin_deep_link::DeepLinkExt;
 use tauri_plugin_log::{Target, TargetKind};
+use tauri_specta::{collect_commands, collect_events, Event};
 
 fn main() {
+  let builder = tauri_specta::Builder::<tauri::Wry>::new()
+    .commands(collect_commands![
+      popcorntime_tauri::graphql::search_medias,
+      popcorntime_tauri::graphql::user_preferences,
+      popcorntime_tauri::graphql::update_user_preferences,
+      popcorntime_tauri::graphql::media,
+      popcorntime_tauri::graphql::providers,
+      popcorntime_tauri::graphql::add_favorites_provider,
+      popcorntime_tauri::graphql::remove_favorites_provider,
+      popcorntime_tauri::window::show_main_window,
+      popcorntime_tauri::session::is_onboarded,
+      popcorntime_tauri::session::set_onboarded,
+      popcorntime_tauri::session::validate,
+      popcorntime_tauri::session::logout,
+      popcorntime_tauri::session::initialize_session_authorization,
+    ])
+    .events(collect_events![SessionServerReady, SessionUpdate]);
+
+  #[cfg(debug_assertions)]
+  builder
+    .export(
+      Typescript::default()
+        .header("// @ts-nocheck\n\n")
+        .formatter(specta_typescript::formatter::biome)
+        // year and IDs are safe for number
+        .bigint(specta_typescript::BigIntExportBehavior::Number),
+      "./apps/desktop/src/tauri/types.ts",
+    )
+    .expect("Failed to export typescript bindings");
+
   tokio::runtime::Builder::new_multi_thread()
     .enable_all()
     .build()
@@ -21,8 +56,10 @@ fn main() {
         .build();
 
       tauri::Builder::default()
-        .setup(|app| {
+        .invoke_handler(builder.invoke_handler())
+        .setup(move |app| {
           let app_handle = app.handle();
+          builder.mount_events(app_handle);
 
           // initialize window
           if let Err(err) = popcorntime_tauri::window::create_main(app_handle, "/index.html") {
@@ -70,13 +107,20 @@ fn main() {
                 }
               }
               // send frontend event
-              popcorntime_tauri::event::FrontendEvent::from(app_settings).send(&app_handle)
+              SessionUpdate.emit(&app_handle).context(Code::InvalidEvent)
             }
           })?;
 
           let app_handle_isolated = app_handle.clone();
           app.deep_link().on_open_url(move |event| {
-            FrontendEvent::from(event).send(&app_handle_isolated).ok();
+            tracing::info!(
+              id = %event.id(),
+              urls = ?event.urls(),
+              "Deep link URL received"
+            );
+            // FIXME: ideally we would have a more specific event - handling URLs
+            // let's trigger a session update to let the frontend know something happened
+            SessionUpdate.emit(&app_handle_isolated).ok();
           });
 
           app_handle.manage(auth_service);
@@ -97,22 +141,6 @@ fn main() {
           }
         }))
         .plugin(log_plugin)
-        .invoke_handler(tauri::generate_handler![
-          popcorntime_tauri::window::show_main_window,
-          popcorntime_tauri::graphql::search_medias,
-          popcorntime_tauri::graphql::user_preferences,
-          popcorntime_tauri::graphql::update_user_preferences,
-          popcorntime_tauri::graphql::media,
-          popcorntime_tauri::graphql::providers,
-          popcorntime_tauri::session::is_onboarded,
-          popcorntime_tauri::session::set_onboarded,
-          popcorntime_tauri::session::validate,
-          popcorntime_tauri::session::validate,
-          popcorntime_tauri::session::logout,
-          popcorntime_tauri::session::initialize_session_authorization,
-          popcorntime_tauri::graphql::add_favorites_provider,
-          popcorntime_tauri::graphql::remove_favorites_provider
-        ])
         .build(tauri::generate_context!())
         .expect("valid app")
         .run(|_app_handle, event| {

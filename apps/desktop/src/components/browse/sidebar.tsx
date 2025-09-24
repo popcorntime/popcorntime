@@ -1,4 +1,3 @@
-import { Genre, MediaKind, WatchPriceType } from "@popcorntime/graphql/types";
 import { Button } from "@popcorntime/ui/components/button";
 import { Checkbox } from "@popcorntime/ui/components/checkbox";
 import { Label } from "@popcorntime/ui/components/label";
@@ -13,7 +12,6 @@ import {
 	useSidebarFooter,
 	useSidebarHeader,
 } from "@popcorntime/ui/components/sidebar";
-import { defaultFilters, type Filters } from "@popcorntime/ui/lib/medias";
 import { cn } from "@popcorntime/ui/lib/utils";
 import { Film, Podcast, Tv, X } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -21,6 +19,8 @@ import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 import { useShallow } from "zustand/shallow";
 import { useGlobalStore } from "@/stores/global";
+import type { Genre, MediaKind, WatchPriceType } from "@/tauri/types";
+import { defaultFilters, type Filters, GENRES, WATCH_PRICE_TYPES } from "@/utils/medias";
 
 function compareArrayDiff<T>(a: T[], b: T[]) {
 	return a.filter(v => !b.includes(v)).length + b.filter(v => !a.includes(v)).length;
@@ -195,21 +195,21 @@ export function BrowseSidebarGroup() {
 						<SidebarMenuItem className="space-y-2">
 							<div className="flex items-center space-x-2 px-2">
 								<Checkbox
-									id={MediaKind.MOVIE}
-									checked={filters.kind.includes(MediaKind.MOVIE)}
-									onCheckedChange={() => handleTypeChange(MediaKind.MOVIE)}
+									id="MOVIE"
+									checked={filters.kind.includes("MOVIE")}
+									onCheckedChange={() => handleTypeChange("MOVIE")}
 								/>
-								<Label htmlFor={MediaKind.MOVIE} className="flex items-center gap-2">
+								<Label htmlFor="MOVIE" className="flex items-center gap-2">
 									<Film className="h-4 w-4" /> Movies
 								</Label>
 							</div>
 							<div className="flex items-center space-x-2 px-2">
 								<Checkbox
-									id={MediaKind.TV_SHOW}
-									checked={filters.kind.includes(MediaKind.TV_SHOW)}
-									onCheckedChange={() => handleTypeChange(MediaKind.TV_SHOW)}
+									id="TV_SHOW"
+									checked={filters.kind.includes("TV_SHOW")}
+									onCheckedChange={() => handleTypeChange("TV_SHOW")}
 								/>
-								<Label htmlFor={MediaKind.TV_SHOW} className="flex items-center gap-2">
+								<Label htmlFor="TV_SHOW" className="flex items-center gap-2">
 									<Tv className="h-4 w-4" /> TV Shows
 								</Label>
 							</div>
@@ -229,7 +229,7 @@ export function BrowseSidebarGroup() {
 					<SidebarGroupLabel>Genres</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<div className="grid grid-cols-2 gap-2 px-2">
-							{Object.values(Genre).map(genre => (
+							{GENRES.map(genre => (
 								<div key={genre} className="flex items-center space-x-2">
 									<Checkbox
 										id={`genre-${genre.toLowerCase()}`}
@@ -251,7 +251,7 @@ export function BrowseSidebarGroup() {
 					<SidebarGroupLabel>Prices</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<div className="grid grid-cols-2 gap-2 px-2">
-							{Object.values(WatchPriceType).map(priceType => (
+							{WATCH_PRICE_TYPES.map(priceType => (
 								<div key={priceType} className="flex items-center space-x-2">
 									<Checkbox
 										id={`priceType-${priceType.toLowerCase()}`}

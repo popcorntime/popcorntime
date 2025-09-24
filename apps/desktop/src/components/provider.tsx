@@ -1,8 +1,8 @@
-import { type Availability, WatchPriceType } from "@popcorntime/graphql/types";
 import { cn } from "@popcorntime/ui/lib/utils";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import emptyProvider from "@/assets/provider.svg";
+import type { Availability } from "@/tauri/types";
 
 export function ProviderIcon({
 	icon,
@@ -53,22 +53,19 @@ export function ProviderIcon({
 export function ProviderText({ availability }: { availability: Availability }) {
 	const { t } = useTranslation();
 	const translateKey = useMemo(() => {
-		if (
-			availability.pricesType?.includes(WatchPriceType.BUY) &&
-			availability.pricesType?.includes(WatchPriceType.RENT)
-		) {
+		if (availability.pricesType?.includes("BUY") && availability.pricesType?.includes("RENT")) {
 			return "buy-rent-on";
 		}
 
-		if (availability.pricesType?.includes(WatchPriceType.BUY)) {
+		if (availability.pricesType?.includes("BUY")) {
 			return "buy-on";
 		}
 
-		if (availability.pricesType?.includes(WatchPriceType.FREE)) {
+		if (availability.pricesType?.includes("FREE")) {
 			return "free-on";
 		}
 
-		if (availability.pricesType?.includes(WatchPriceType.RENT)) {
+		if (availability.pricesType?.includes("RENT")) {
 			return "rent-on";
 		}
 

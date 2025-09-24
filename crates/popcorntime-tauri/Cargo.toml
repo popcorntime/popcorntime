@@ -43,6 +43,11 @@ popcorntime-session.workspace = true
 popcorntime-graphql-client.workspace = true
 popcorntime-error.workspace = true
 
+specta.workspace = true
+tauri-specta = { workspace = true, features = ["derive", "typescript"] }
+specta-typescript.workspace = true
+cynic.workspace = true
+
 [target.'cfg(target_os = "macos")'.dependencies]
 popcorntime-tauri-trafficlights.workspace = true
 popcorntime-tauri-splash.workspace = true
