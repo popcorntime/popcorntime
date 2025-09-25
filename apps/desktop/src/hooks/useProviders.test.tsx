@@ -2,18 +2,18 @@ import type { Country } from "@popcorntime/i18n/types";
 import { clearMocks, mockIPC } from "@tauri-apps/api/mocks";
 import { act, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { useMemo } from "react";
 import { MemoryRouter } from "react-router";
 import { afterEach, describe, expect, it } from "vitest";
 import { CountryProvider } from "@/hooks/useCountry";
 import { useProviders } from "@/hooks/useProviders";
 import { resetGlobalStore, useGlobalStore } from "@/stores/global";
 import type {
-	SetFavoriteProviderInput,
 	Provider,
 	ProvidersInput,
 	ProvidersOutput,
+	SetFavoriteProviderInput,
 } from "@/tauri/types";
-import { useMemo } from "react";
 
 const initialProviders = [
 	{

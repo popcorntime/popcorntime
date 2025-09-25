@@ -2,9 +2,10 @@
 source: crates/popcorntime-graphql-client/src/providers.rs
 expression: operation.query
 ---
-query ProvidersOutput($country: Country!, $favorites: Boolean, $query: String) {
-  providers(country: $country, query: $query, favorites: $favorites) {
+query ProvidersOutput($country: Country!, $query: String) {
+  providers(country: $country, query: $query) {
     key
+    favorite
     name
     logo
     weight
