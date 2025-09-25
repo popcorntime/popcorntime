@@ -7,7 +7,8 @@
     <a href="https://popcorntime.app"><strong>popcorntime.app</strong></a>
     <br />
     <br />
-    (Unstable Nightly releases can be found <a href="https://popcorntime.app/download#nightly">here</a>)  </p>
+    (Unstable Nightly releases can be found <a href="https://popcorntime.app/download#nightly">here</a>)
+  </p>
 
 ![popcorntime](/resources/screenshot.jpg)
 
