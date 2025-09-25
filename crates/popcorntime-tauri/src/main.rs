@@ -20,6 +20,7 @@ fn main() {
       popcorntime_tauri::graphql::media,
       popcorntime_tauri::graphql::providers,
       popcorntime_tauri::graphql::set_favorites_provider,
+      popcorntime_tauri::graphql::set_media_reaction,
       popcorntime_tauri::window::show_main_window,
       popcorntime_tauri::session::is_onboarded,
       popcorntime_tauri::session::set_onboarded,

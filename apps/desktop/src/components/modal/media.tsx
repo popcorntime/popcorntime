@@ -14,7 +14,7 @@ import { Table, TableBody, TableCell, TableRow } from "@popcorntime/ui/component
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@popcorntime/ui/components/tabs";
 import { timeDisplay } from "@popcorntime/ui/lib/time";
 import { cn } from "@popcorntime/ui/lib/utils";
-import { Calendar, Clock, ExternalLink, Star, X } from "lucide-react";
+import { Calendar, Clock, ExternalLink, Star, ThumbsDown, ThumbsUp, X } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
@@ -24,7 +24,7 @@ import { useCountry } from "@/hooks/useCountry";
 import { useTauri } from "@/hooks/useTauri";
 import { NotFoundRoute } from "@/routes/not-found";
 import { useGlobalStore } from "@/stores/global";
-import type { Media } from "@/tauri/types";
+import type { Media, UserReactionType } from "@/tauri/types";
 
 function MediaContentSkeleton() {
 	return (
@@ -44,6 +44,22 @@ function MediaContent() {
 	const [media, setMedia] = useState<Media | null>(null);
 	const { t } = useTranslation();
 	const officialLocales = useMemo(() => [...getLocalesForCountry(country)], [country]);
+
+	const setMediaReaction = useCallback(
+		(reaction: UserReactionType) => {
+			if (!media?.id) return;
+			setMedia(prev => (prev ? { ...prev, reaction } : prev));
+			try {
+				void api.setMediaReaction({
+					mediaId: media.id,
+					reaction: "LIKE",
+				});
+			} catch (error) {
+				console.error("Failed to set media reaction:", error);
+			}
+		},
+		[media?.id, api.setMediaReaction]
+	);
 
 	const fetch = useCallback(
 		async (slug: string) => {
@@ -227,7 +243,7 @@ function MediaContent() {
 							title={media.title}
 							posterId={posterId}
 							placeholder={placeholderImg}
-							className="w-32 rounded-md"
+							className="w-42 rounded-md"
 						/>
 						<div className="flex flex-1 flex-col pb-4">
 							<h1 className="mb-3 line-clamp-1 text-4xl leading-tight font-bold">{media.title}</h1>
@@ -270,6 +286,25 @@ function MediaContent() {
 										{t(`genres.${genre}`)}
 									</Badge>
 								))}
+							</div>
+
+							<div>
+								<Button
+									disabled={media.reaction === "LIKE"}
+									onClick={() => setMediaReaction("LIKE")}
+									variant="ghost"
+									size="icon"
+								>
+									<ThumbsUp />
+								</Button>
+								<Button
+									disabled={media.reaction === "DISLIKE"}
+									onClick={() => setMediaReaction("DISLIKE")}
+									variant="ghost"
+									size="icon"
+								>
+									<ThumbsDown />
+								</Button>
 							</div>
 
 							{bestProvider && (

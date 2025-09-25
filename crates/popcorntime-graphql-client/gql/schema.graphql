@@ -247,6 +247,7 @@ type Movie implements Media {
   updatedAt: String!
   runtime: String!
   videos: [MediaVideo!]!
+  reaction: UserReactionType
   countries: [Country!]!
   pochoclinReview(language: Language): PochoclinReview
   similars(country: Country!, language: Language, arguments: SearchArguments): [MediaSearch!]!
@@ -349,6 +350,7 @@ type QueryRoot {
   count(country: Country!): Int!
   providers(country: Country!, query: String): [Provider!]!
   preferences: UserPreferences
+  reactions(after: String = null, before: String = null, first: Int, last: Int): UserReactionConnection!
 }
 
 type Ranking {
@@ -423,6 +425,7 @@ type TVShow implements Media {
   inProduction: Boolean!
   lastAirDate: String
   videos: [MediaVideo!]!
+  reaction: UserReactionType
   countries: [Country!]!
   pochoclinReview(language: Language): PochoclinReview
   similars(country: Country!, language: Language, arguments: SearchArguments): [MediaSearch!]!
@@ -449,6 +452,40 @@ type UserPreferences {
   language: Language!
   country: Country!
   createdAt: DateTime!
+}
+
+type UserReaction {
+  mediaId: Int!
+  reaction: UserReactionType!
+}
+
+type UserReactionConnection {
+  """
+  Information to aid in pagination.
+  """
+  pageInfo: PageInfo!
+  """
+  A list of edges.
+  """
+  edges: [UserReactionEdge!]!
+  """
+  A list of nodes.
+  """
+  nodes: [UserReaction!]!
+}
+
+"""
+An edge in a connection.
+"""
+type UserReactionEdge {
+  """
+  The item at the end of the edge
+  """
+  node: UserReaction!
+  """
+  A cursor for use in pagination
+  """
+  cursor: String!
 }
 
 enum UserReactionType {

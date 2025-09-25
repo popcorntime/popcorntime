@@ -8,6 +8,7 @@ pub mod consts;
 pub mod media;
 pub mod preferences;
 pub mod providers;
+pub mod reactions;
 pub mod search;
 
 impl_scalar!(Date, schema::Date);
@@ -62,6 +63,13 @@ impl cynic::schema::IsScalar<schema::Language> for Language {
 impl schema::variable::Variable for Language {
   const TYPE: cynic::variables::VariableType =
     cynic::variables::VariableType::Named(<schema::Language as cynic::schema::NamedType>::NAME);
+}
+
+#[derive(cynic::QueryFragment, Debug, specta::Type, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct PageInfo {
+  pub end_cursor: Option<String>,
+  pub has_next_page: bool,
 }
 
 #[cynic::schema("popcorntime")]

@@ -55,6 +55,14 @@ async setFavoritesProvider(params: SetFavoriteProviderInput) : Promise<Result<Se
     else return { status: "error", error: e  as any };
 }
 },
+async setMediaReaction(params: SetReactionInput) : Promise<Result<SetReactionMutation | null, { message: string; code: Code }>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("set_media_reaction", { params }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
 async showMainWindow() : Promise<void> {
     await TAURI_INVOKE("show_main_window");
 },
@@ -136,7 +144,7 @@ export type MediaSearchConnection = { nodes: MediaSearch[]; pageInfo: PageInfo }
 export type MediaSimilar = { title: string; overview: string | null; kind: MediaKind; slug: string; poster: string | null; year: number | null }
 export type MediaVideo = { source: VideoSource; video_id: string }
 export type MeliSearchProvider = { providerId: string; priceTypes: WatchPriceType[] }
-export type Movie = { runtime: string; id: number; __typename: string; title: string; slug: string; overview: string | null; tagline: string | null; languages: Language[]; poster: string | null; backdrop: string | null; released: string | null; year: number | null; country: Country | null; tags: Tag[]; trailers: string[]; genres: Genre[]; classification: string | null; countries: Country[]; kind: MediaKind; videos: MediaVideo[]; ratings: ExternalRating[]; ranking: Ranking | null; pochoclinReview: PochoclinReview | null; similars: MediaSimilar[]; similarsFree: MediaSimilar[]; charts: MediaCharts[]; availabilities: Availability[]; talents: People[] }
+export type Movie = { runtime: string; id: number; __typename: string; title: string; slug: string; overview: string | null; tagline: string | null; languages: Language[]; poster: string | null; backdrop: string | null; released: string | null; year: number | null; country: Country | null; tags: Tag[]; trailers: string[]; genres: Genre[]; classification: string | null; countries: Country[]; kind: MediaKind; videos: MediaVideo[]; ratings: ExternalRating[]; ranking: Ranking | null; pochoclinReview: PochoclinReview | null; similars: MediaSimilar[]; similarsFree: MediaSimilar[]; charts: MediaCharts[]; availabilities: Availability[]; talents: People[]; reaction: UserReactionType | null }
 export type PageInfo = { endCursor: string | null; hasNextPage: boolean }
 export type People = { id: number; rank: number; name: string; role: string | null; roleType: RoleType }
 export type PochoclinReview = { review: string; excerpt: string }
@@ -154,12 +162,15 @@ export type SessionServerReady = { authorization_url: string }
 export type SessionUpdate = null
 export type SetFavoriteProviderInput = { country: Country; providerKey: string; favorite: boolean }
 export type SetFavoriteProviderMutation = { setFavoriteProvider: boolean }
+export type SetReactionInput = { mediaId: number; reaction: UserReactionType }
+export type SetReactionMutation = { setReaction: boolean }
 export type SortKey = "ID" | "RELEASED_AT" | "CREATED_AT" | "UPDATED_AT" | "POSITION"
 export type Tag = string
-export type Tvshow = { inProduction: boolean; id: number; __typename: string; title: string; slug: string; overview: string | null; tagline: string | null; languages: Language[]; poster: string | null; backdrop: string | null; released: string | null; year: number | null; country: Country | null; tags: Tag[]; trailers: string[]; genres: Genre[]; classification: string | null; countries: Country[]; kind: MediaKind; videos: MediaVideo[]; ratings: ExternalRating[]; ranking: Ranking | null; pochoclinReview: PochoclinReview | null; similars: MediaSimilar[]; similarsFree: MediaSimilar[]; charts: MediaCharts[]; availabilities: Availability[]; talents: People[] }
+export type Tvshow = { inProduction: boolean; id: number; __typename: string; title: string; slug: string; overview: string | null; tagline: string | null; languages: Language[]; poster: string | null; backdrop: string | null; released: string | null; year: number | null; country: Country | null; tags: Tag[]; trailers: string[]; genres: Genre[]; classification: string | null; countries: Country[]; kind: MediaKind; videos: MediaVideo[]; ratings: ExternalRating[]; ranking: Ranking | null; pochoclinReview: PochoclinReview | null; similars: MediaSimilar[]; similarsFree: MediaSimilar[]; charts: MediaCharts[]; availabilities: Availability[]; talents: People[]; reaction: UserReactionType | null }
 export type UpdatePreferencesInput = { country: Country; language: Language }
 export type UpdatePreferencesMutation = { updatePreferences: UserPreferences | null }
 export type UserPreferences = { language: Language; country: Country }
+export type UserReactionType = "LIKE" | "DISLIKE"
 export type VideoSource = "RUMBLE" | "YOUTUBE"
 export type WatchPriceType = "RENT" | "BUY" | "FLATRATE" | "FREE" | "CINEMA"
 

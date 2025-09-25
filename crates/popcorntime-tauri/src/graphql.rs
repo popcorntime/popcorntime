@@ -1,6 +1,8 @@
 use crate::error::Error;
 use cynic::{MutationBuilder, QueryBuilder};
-use popcorntime_graphql_client::{client::ApiClient, media, preferences, providers, search};
+use popcorntime_graphql_client::{
+  client::ApiClient, media, preferences, providers, reactions, search,
+};
 use popcorntime_session::AuthorizationService;
 use tauri::State;
 use tracing::instrument;
@@ -102,6 +104,23 @@ pub async fn set_favorites_provider<'a>(
 
   api_client
     .query(providers::SetFavoriteProviderMutation::build(params), true)
+    .await
+    .map(|res| res.data)
+    .map_err(Into::into)
+}
+
+#[tauri::command(async)]
+#[specta::specta]
+#[instrument(skip(api_client, auth_service), err(Debug))]
+pub async fn set_media_reaction(
+  api_client: State<'_, ApiClient>,
+  auth_service: State<'_, AuthorizationService>,
+  params: reactions::SetReactionInput,
+) -> Result<Option<reactions::SetReactionMutation>, Error> {
+  auth_service.validate().await?;
+
+  api_client
+    .query(reactions::SetReactionMutation::build(params), true)
     .await
     .map(|res| res.data)
     .map_err(Into::into)

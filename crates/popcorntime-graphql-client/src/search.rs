@@ -1,7 +1,6 @@
 use crate::{
-  Country, Date, DateTime, Language,
-  media::Genre,
-  media::{MediaKind, WatchPriceType},
+  Country, Date, DateTime, Language, PageInfo,
+  media::{Genre, MediaKind, WatchPriceType},
   schema,
 };
 use serde::{Deserialize, Serialize};
@@ -68,13 +67,6 @@ pub struct SearchOutput {
 pub struct MediaSearchConnection {
   pub nodes: Vec<MediaSearch>,
   pub page_info: PageInfo,
-}
-
-#[derive(cynic::QueryFragment, Debug, specta::Type, Serialize)]
-#[serde(rename_all = "camelCase")]
-pub struct PageInfo {
-  pub end_cursor: Option<String>,
-  pub has_next_page: bool,
 }
 
 #[derive(cynic::QueryFragment, Debug, specta::Type, Serialize)]

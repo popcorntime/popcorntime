@@ -1,4 +1,4 @@
-use crate::{Country, Date, Language, schema};
+use crate::{Country, Date, Language, reactions::UserReactionType, schema};
 use serde::{Deserialize, Serialize};
 
 #[derive(cynic::QueryVariables, Debug, specta::Type, Deserialize)]
@@ -35,6 +35,7 @@ pub enum Media {
 #[serde(rename_all = "camelCase")]
 pub struct Tvshow {
   pub in_production: bool,
+  // same as movie -- cynic doesn't support inheritance
   pub id: i32,
   #[serde(rename = "__typename")]
   pub __typename: String,
@@ -70,6 +71,7 @@ pub struct Tvshow {
   #[arguments(country: $country)]
   pub availabilities: Vec<Availability>,
   pub talents: Vec<People>,
+  pub reaction: Option<UserReactionType>,
 }
 
 #[derive(cynic::QueryFragment, Debug, specta::Type, Serialize)]
@@ -77,6 +79,8 @@ pub struct Tvshow {
 #[serde(rename_all = "camelCase")]
 pub struct Movie {
   pub runtime: String,
+  // same as tvshow -- cynic doesn't support inheritance
+  // the cynic(spread) require same type
   pub id: i32,
   #[serde(rename = "__typename")]
   pub __typename: String,
@@ -112,6 +116,7 @@ pub struct Movie {
   #[arguments(country: $country)]
   pub availabilities: Vec<Availability>,
   pub talents: Vec<People>,
+  pub reaction: Option<UserReactionType>,
 }
 
 #[derive(cynic::QueryFragment, Debug, specta::Type, Serialize)]
@@ -275,11 +280,10 @@ pub struct Tag(pub String);
 #[cfg(test)]
 mod tests {
   use super::*;
+  use cynic::QueryBuilder;
 
   #[test]
   fn media_query_gql_output() {
-    use cynic::QueryBuilder;
-
     let operation = MediaOutput::build(MediaInput {
       country: Country("US".to_string()),
       language: Some(Language("en".to_string())),
