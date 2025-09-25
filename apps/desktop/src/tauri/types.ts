@@ -47,17 +47,9 @@ async providers(params: ProvidersInput) : Promise<Result<ProvidersOutput | null,
     else return { status: "error", error: e  as any };
 }
 },
-async addFavoritesProvider(params: AddFavoriteProviderInput) : Promise<Result<AddFavoriteProviderMutation | null, { message: string; code: Code }>> {
+async setFavoritesProvider(params: SetFavoriteProviderInput) : Promise<Result<SetFavoriteProviderMutation | null, { message: string; code: Code }>> {
     try {
-    return { status: "ok", data: await TAURI_INVOKE("add_favorites_provider", { params }) };
-} catch (e) {
-    if(e instanceof Error) throw e;
-    else return { status: "error", error: e  as any };
-}
-},
-async removeFavoritesProvider(params: RemoveFavoriteProviderInput) : Promise<Result<RemoveFavoriteProviderMutation | null, { message: string; code: Code }>> {
-    try {
-    return { status: "ok", data: await TAURI_INVOKE("remove_favorites_provider", { params }) };
+    return { status: "ok", data: await TAURI_INVOKE("set_favorites_provider", { params }) };
 } catch (e) {
     if(e instanceof Error) throw e;
     else return { status: "error", error: e  as any };
@@ -125,8 +117,6 @@ sessionUpdate: "session-update"
 
 /** user-defined types **/
 
-export type AddFavoriteProviderInput = { country: Country; providerKey: string }
-export type AddFavoriteProviderMutation = { addFavoriteProvider: boolean }
 export type Availability = { providerId: string; providerName: string; logo: string | null; availableTo: Date | null; urlHash: string; audioLanguages: Language[] | null; subtitleLanguages: Language[] | null; pricesType: WatchPriceType[] | null }
 export type Code = "errors.unknown" | "errors.graphql.server" | "errors.database.not_available" | "errors.session.invalid" | "errors.events.invalid" | "errors.graphql.no_data"
 export type Country = string
@@ -151,19 +141,19 @@ export type PageInfo = { endCursor: string | null; hasNextPage: boolean }
 export type People = { id: number; rank: number; name: string; role: string | null; roleType: RoleType }
 export type PochoclinReview = { review: string; excerpt: string }
 export type PreferencesOutput = { preferences: UserPreferences | null }
-export type ProviderSearchForCountry = { key: string; name: string; logo: string | null; weight: number | null; priceTypes: WatchPriceType[]; parentKey: string | null }
-export type ProvidersInput = { country: Country; favorites?: boolean | null; query?: string | null }
-export type ProvidersOutput = { providers: ProviderSearchForCountry[] }
+export type Provider = { key: string; favorite: boolean; name: string; logo: string | null; weight: number | null; priceTypes: WatchPriceType[]; parentKey: string | null }
+export type ProvidersInput = { country: Country; query?: string | null }
+export type ProvidersOutput = { providers: Provider[] }
 export type Ranking = { score: number; position: number; points: number }
 export type RatingSource = "IMDB" | "TMDB"
-export type RemoveFavoriteProviderInput = { country: Country; providerKey: string }
-export type RemoveFavoriteProviderMutation = { removeFavoriteProvider: boolean }
 export type RoleType = "EXECUTIVE_PRODUCER" | "DIRECTOR" | "FIRST_ASSISTANT_DIRECTOR" | "SECOND_ASSISTANT_DIRECTOR" | "SECOND_SECOND_ASSISTANT_DIRECTOR" | "SCRIPT_SUPERVISOR" | "PRODUCER" | "WRITER" | "ACTOR"
 export type SearchArguments = { collection?: number | null; kind?: MediaKind | null; year?: number | null; providers?: string[] | null; priceTypes?: WatchPriceType[] | null; genres?: Genre[] | null; audio?: Language | null; subtitle?: Language | null; country?: Country | null; withPoster?: boolean | null; featured?: boolean | null }
 export type SearchInput = { after?: string | null; arguments?: SearchArguments | null; before?: string | null; country: Country; first?: number | null; language?: Language | null; last?: number | null; query?: string | null; sortKey: SortKey }
 export type SearchOutput = { search: MediaSearchConnection }
 export type SessionServerReady = { authorization_url: string }
 export type SessionUpdate = null
+export type SetFavoriteProviderInput = { country: Country; providerKey: string; favorite: boolean }
+export type SetFavoriteProviderMutation = { setFavoriteProvider: boolean }
 export type SortKey = "ID" | "RELEASED_AT" | "CREATED_AT" | "UPDATED_AT" | "POSITION"
 export type Tag = string
 export type Tvshow = { inProduction: boolean; id: number; __typename: string; title: string; slug: string; overview: string | null; tagline: string | null; languages: Language[]; poster: string | null; backdrop: string | null; released: string | null; year: number | null; country: Country | null; tags: Tag[]; trailers: string[]; genres: Genre[]; classification: string | null; countries: Country[]; kind: MediaKind; videos: MediaVideo[]; ratings: ExternalRating[]; ranking: Ranking | null; pochoclinReview: PochoclinReview | null; similars: MediaSimilar[]; similarsFree: MediaSimilar[]; charts: MediaCharts[]; availabilities: Availability[]; talents: People[] }

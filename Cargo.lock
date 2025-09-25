@@ -1001,7 +1001,7 @@ version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3136ed6464e975162667c08092fcb54947ce08785fca301162fd614c4dfd974f"
 dependencies = [
- "indexmap 2.7.1",
+ "indexmap 2.11.4",
  "lalrpop-util",
  "logos",
 ]

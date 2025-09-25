@@ -3,7 +3,7 @@ import { useCallback } from "react";
 import { useCountry } from "@/hooks/useCountry";
 import { useTauri } from "@/hooks/useTauri";
 import { useGlobalStore } from "@/stores/global";
-import type { ProviderSearchForCountry } from "@/tauri/types";
+import type { Provider } from "@/tauri/types";
 
 export interface InvokeParams {
 	country: Country;
@@ -14,14 +14,13 @@ export const useProviders = () => {
 	const setInitialized = useGlobalStore(state => state.providers.setInitialized);
 	const setIsLoading = useGlobalStore(state => state.providers.setIsLoading);
 	const setProviders = useGlobalStore(state => state.providers.setProviders);
-	const setFavoriteProviders = useGlobalStore(state => state.providers.setFavorites);
 	const { country } = useCountry();
 	const { api } = useTauri();
 
 	const loadProviders = useCallback(
-		async (favorites: boolean, country: Country): Promise<ProviderSearchForCountry[]> => {
+		async (country: Country): Promise<Provider[]> => {
 			try {
-				return api.providers({ country, favorites }).then(res => res?.providers ?? []);
+				return api.providers({ country }).then(res => res?.providers ?? []);
 			} catch (err) {
 				console.error("failed to load providers", err);
 				return [];
@@ -34,12 +33,8 @@ export const useProviders = () => {
 		async (country: Country) => {
 			setIsLoading(true);
 			try {
-				const [fav, all] = await Promise.all([
-					loadProviders(true, country),
-					loadProviders(false, country),
-				]);
-				setFavoriteProviders(fav);
-				setProviders(all);
+				const providers = await loadProviders(country);
+				setProviders(providers);
 			} catch (error) {
 				console.error("failed to load providers", error);
 			} finally {
@@ -47,33 +42,35 @@ export const useProviders = () => {
 				setIsLoading(false);
 			}
 		},
-		[setIsLoading, setFavoriteProviders, setProviders, loadProviders, setInitialized]
+		[setIsLoading, setProviders, loadProviders, setInitialized]
+	);
+
+	const setFavorites = useCallback(
+		async (providerKey: string, favorite: boolean) => {
+			setIsLoading(true);
+			await api.setFavoritesProvider({ country, providerKey, favorite });
+
+			setIsLoading(false);
+
+			// re-sync providers (would be better with a diff)
+			const providers = await loadProviders(country);
+			setProviders(providers);
+		},
+		[country, api.setFavoritesProvider, setProviders, setIsLoading, loadProviders]
 	);
 
 	const addToFavorites = useCallback(
 		async (providerKey: string) => {
-			setIsLoading(true);
-			await api.addFavoritesProvider({ country, providerKey });
-
-			setIsLoading(false);
-			// update favs
-			const favs = await loadProviders(true, country.toUpperCase() as Country);
-			setFavoriteProviders(favs);
+			setFavorites(providerKey, true);
 		},
-		[country, loadProviders, api.addFavoritesProvider, setFavoriteProviders, setIsLoading]
+		[setFavorites]
 	);
 
 	const removeFromFavorites = useCallback(
 		async (providerKey: string) => {
-			setIsLoading(true);
-			await api.removeFavoritesProvider({ country, providerKey });
-
-			setIsLoading(false);
-			// update favs
-			const favs = await loadProviders(true, country.toUpperCase() as Country);
-			setFavoriteProviders(favs);
+			setFavorites(providerKey, false);
 		},
-		[country, loadProviders, api.removeFavoritesProvider, setFavoriteProviders, setIsLoading]
+		[setFavorites]
 	);
 
 	return {

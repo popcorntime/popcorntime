@@ -18,7 +18,6 @@ import { ProviderIcon } from "../provider";
 
 export function WatchPreferencesDialog() {
 	const providers = useGlobalStore(state => state.providers.providers);
-	const favorites = useGlobalStore(state => state.providers.favorites);
 	const isOpen = useGlobalStore(state => state.dialogs.watchPreferences.isOpen);
 	const toggle = useGlobalStore(state => state.dialogs.watchPreferences.toggle);
 	const { addToFavorites, removeFromFavorites } = useProviders();
@@ -43,13 +42,12 @@ export function WatchPreferencesDialog() {
 						<Table>
 							<TableBody>
 								{providers.map(provider => {
-									const isFavorite = favorites.find(f => f.key === provider.key);
 									return (
 										<TableRow
 											key={provider.key}
 											className={cn(
 												"border-gray-700/30 transition-colors hover:bg-gray-800/40",
-												isFavorite && "bg-accent"
+												provider.favorite && "bg-accent"
 											)}
 										>
 											<TableCell className="py-4">
@@ -74,7 +72,7 @@ export function WatchPreferencesDialog() {
 											</TableCell>
 
 											<TableCell className="text-right">
-												{isFavorite ? (
+												{provider.favorite ? (
 													<Button
 														variant="outline"
 														size="icon"

@@ -8,58 +8,45 @@ import { CountryProvider } from "@/hooks/useCountry";
 import { useProviders } from "@/hooks/useProviders";
 import { resetGlobalStore, useGlobalStore } from "@/stores/global";
 import type {
-	AddFavoriteProviderInput,
-	ProviderSearchForCountry,
+	SetFavoriteProviderInput,
+	Provider,
 	ProvidersInput,
 	ProvidersOutput,
-	RemoveFavoriteProviderInput,
 } from "@/tauri/types";
+import { useMemo } from "react";
 
-const ALL = {
-	CA: {
-		providers: [
-			{
-				key: "netflix",
-				name: "Netflix",
-				priceTypes: ["FLATRATE"],
-				logo: null,
-				parentKey: null,
-				weight: null,
-			},
-			{
-				key: "hulu",
-				name: "Hulu",
-				priceTypes: ["FLATRATE"],
-				logo: null,
-				parentKey: null,
-				weight: null,
-			},
-			{
-				key: "disney_plus",
-				name: "Disney+",
-				priceTypes: ["FLATRATE"],
-				logo: null,
-				parentKey: null,
-				weight: null,
-			},
-		],
-	},
-} satisfies Partial<Record<Country, ProvidersOutput>>;
-
-const initialFavs = [
+const initialProviders = [
 	{
 		key: "netflix",
+		favorite: true,
 		name: "Netflix",
 		priceTypes: ["FLATRATE"],
 		logo: null,
 		parentKey: null,
 		weight: null,
 	},
-] satisfies ProvidersOutput["providers"];
-
-let FAVORITES = {
+	{
+		key: "hulu",
+		favorite: false,
+		name: "Hulu",
+		priceTypes: ["FLATRATE"],
+		logo: null,
+		parentKey: null,
+		weight: null,
+	},
+	{
+		key: "disney_plus",
+		favorite: false,
+		name: "Disney+",
+		priceTypes: ["FLATRATE"],
+		logo: null,
+		parentKey: null,
+		weight: null,
+	},
+] as Provider[];
+let ALL = {
 	CA: {
-		providers: initialFavs,
+		providers: initialProviders,
 	},
 } satisfies Partial<Record<Country, ProvidersOutput>>;
 
@@ -67,7 +54,7 @@ function Harness() {
 	const { getProviders, addToFavorites, removeFromFavorites } = useProviders();
 	const isLoading = useGlobalStore(st => st.providers.isLoading);
 	const providers = useGlobalStore(st => st.providers.providers);
-	const favorites = useGlobalStore(st => st.providers.favorites);
+	const favorites = useMemo(() => providers?.filter(p => p.favorite), [providers]);
 
 	return (
 		<div>
@@ -104,57 +91,41 @@ beforeEach(async () => {
 		language: "en",
 	});
 
-	FAVORITES = {
+	ALL = {
 		CA: {
-			providers: initialFavs,
+			providers: initialProviders,
 		},
 	} satisfies Partial<Record<Country, ProvidersOutput>>;
 
 	mockIPC((cmd, args: unknown) => {
 		if (cmd === "providers") {
 			const {
-				params: { country, favorites },
+				params: { country },
 			} = args as { params: ProvidersInput };
-			if (country !== "CA") return [];
-			return favorites ? FAVORITES[country] : ALL[country];
+			if (country !== "CA") {
+				console.warn("Unexpected country", country);
+				return {};
+			}
+			return ALL[country];
 		}
 
-		if (cmd === "add_favorites_provider") {
+		if (cmd === "set_favorites_provider") {
 			const {
-				params: { country, providerKey },
-			} = args as { params: AddFavoriteProviderInput };
+				params: { country, providerKey, favorite },
+			} = args as { params: SetFavoriteProviderInput };
 
-			if (country !== "CA") return [];
+			if (country !== "CA") {
+				console.warn("Unexpected country", country);
+				return {};
+			}
 
-			const base = FAVORITES[country] ?? [];
-			const toAdd = (ALL[country] ?? []).providers.find(p => p.key === providerKey);
-			const exists = base.providers.some(p => p.key === providerKey);
-
-			const providers = exists || !toAdd ? base.providers.slice() : [...base.providers, toAdd];
-
-			FAVORITES = {
-				...FAVORITES,
+			ALL = {
+				...ALL,
 				[country]: {
-					providers,
-				},
-			};
-
-			return;
-		}
-
-		if (cmd === "remove_favorites_provider") {
-			const {
-				params: { country, providerKey },
-			} = args as { params: RemoveFavoriteProviderInput };
-
-			if (country !== "CA") return [];
-
-			const base = FAVORITES[country] ?? [];
-			const providers = base.providers.filter(p => p.key !== providerKey);
-			FAVORITES = {
-				...FAVORITES,
-				[country]: {
-					providers,
+					...ALL[country],
+					providers: ALL[country].providers.map(p =>
+						p.key === providerKey ? { ...p, favorite } : p
+					),
 				},
 			};
 
@@ -178,12 +149,8 @@ describe("useProviders", () => {
 			const all = JSON.parse(screen.getByTestId("all").textContent || "[]");
 			const favs = JSON.parse(screen.getByTestId("favs").textContent || "[]");
 
-			expect(all.map((p: ProviderSearchForCountry) => p.key)).toEqual([
-				"netflix",
-				"hulu",
-				"disney_plus",
-			]);
-			expect(favs.map((p: ProviderSearchForCountry) => p.key)).toEqual(["netflix"]);
+			expect(all.map((p: Provider) => p.key)).toEqual(["netflix", "hulu", "disney_plus"]);
+			expect(favs.map((p: Provider) => p.key)).toEqual(["netflix"]);
 		});
 
 		r.unmount();
@@ -196,14 +163,16 @@ describe("useProviders", () => {
 		await userEvent.click(screen.getByText("load"));
 		await waitFor(() => {
 			const favs = JSON.parse(screen.getByTestId("favs").textContent || "[]");
-			expect(favs.map((p: ProviderSearchForCountry) => p.key)).toEqual(["netflix"]);
+			expect(favs.map((p: Provider) => p.key)).toEqual(["netflix"]);
 		});
 
 		await userEvent.click(screen.getByText("addFav"));
 		await waitFor(() => {
 			const favs = JSON.parse(screen.getByTestId("favs").textContent || "[]") || [];
-			expect(favs.map((p: ProviderSearchForCountry) => p.key)).toEqual(["netflix", "disney_plus"]);
+			expect(favs.map((p: Provider) => p.key)).toEqual(["netflix", "disney_plus"]);
 		});
+
+		expect(useGlobalStore.getState().providers.haveFavorites).toBe(true);
 
 		r.unmount();
 	});
@@ -215,14 +184,16 @@ describe("useProviders", () => {
 		await userEvent.click(screen.getByText("load"));
 		await waitFor(() => {
 			const favs = JSON.parse(screen.getByTestId("favs").textContent || "[]");
-			expect(favs.map((p: ProviderSearchForCountry) => p.key)).toEqual(["netflix"]);
+			expect(favs.map((p: Provider) => p.key)).toEqual(["netflix"]);
 		});
 
 		await userEvent.click(screen.getByText("rmFav"));
 		await waitFor(() => {
 			const favs = JSON.parse(screen.getByTestId("favs").textContent || "[]") || [];
-			expect(favs.map((p: ProviderSearchForCountry) => p.key)).toEqual([]);
+			expect(favs.map((p: Provider) => p.key)).toEqual([]);
 		});
+
+		expect(useGlobalStore.getState().providers.haveFavorites).toBe(false);
 
 		r.unmount();
 	});

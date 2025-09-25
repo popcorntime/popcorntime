@@ -1,9 +1,9 @@
 import i18next from "i18next";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { resetGlobalStore, useGlobalStore } from "@/stores/global";
-import type { ProviderSearchForCountry } from "@/tauri/types";
+import type { Provider } from "@/tauri/types";
 
-const mkProv = (key: string) => ({ key }) as ProviderSearchForCountry;
+const mkProv = (key: string, favorite: boolean) => ({ key, favorite }) as Provider;
 const setAllReady = () => {
 	const s = useGlobalStore.getState();
 	s.providers.setInitialized();
@@ -72,7 +72,11 @@ describe("favorites sync → browse.args.providers", () => {
 	it("writes providers keys when providers.initialized && preferFavorites", () => {
 		const s = useGlobalStore.getState();
 		s.providers.setInitialized();
-		s.providers.setFavorites([mkProv("netflix"), mkProv("hulu"), mkProv("netflix")]);
+		s.providers.setProviders([
+			mkProv("netflix", true),
+			mkProv("hulu", true),
+			mkProv("prime", false),
+		]);
 
 		const args = useGlobalStore.getState().browse.args;
 		expect(args?.providers).toEqual(["netflix", "hulu"]);
@@ -81,7 +85,11 @@ describe("favorites sync → browse.args.providers", () => {
 	it("removes providers filter when preferFavorites toggles off", () => {
 		const s = useGlobalStore.getState();
 		s.providers.setInitialized();
-		s.providers.setFavorites([mkProv("netflix")]);
+		s.providers.setProviders([
+			mkProv("netflix", true),
+			mkProv("hulu", false),
+			mkProv("prime", false),
+		]);
 		expect(useGlobalStore.getState().browse.args?.providers).toEqual(["netflix"]);
 
 		s.browse.togglePreferFavorites();

@@ -33,8 +33,8 @@ import { useGlobalStore } from "@/stores/global";
 import type { MediaKind } from "@/tauri/types";
 
 export function Header() {
-	const favorites = useGlobalStore(state => state.providers.favorites);
 	const { logout } = useSession();
+	const haveFavorites = useGlobalStore(state => state.providers.haveFavorites);
 	const preferFavorites = useGlobalStore(state => state.browse.preferFavorites);
 	const togglePreferFavorites = useGlobalStore(state => state.browse.togglePreferFavorites);
 	const openPreferences = useGlobalStore(state => state.dialogs.preferences.toggle);
@@ -49,7 +49,6 @@ export function Header() {
 
 	const openLogsDir = useCallback(async () => {
 		const appLogDirPath = await appLogDir();
-		console.log(appLogDirPath);
 		openPath(appLogDirPath);
 	}, []);
 
@@ -63,7 +62,7 @@ export function Header() {
 						 * <SidebarTrigger className={cn(kind === 'tv_show' && 'invisible')} />
 						 */}
 
-						{favorites.length > 0 && kind && (
+						{haveFavorites && (
 							<Tooltip>
 								<TooltipTrigger asChild>
 									<Button
@@ -77,7 +76,7 @@ export function Header() {
 										onClick={togglePreferFavorites}
 									>
 										<StarsIcon />
-										<span className="sr-only">Toggle Sidebar</span>
+										<span className="sr-only">Toggle Favorites</span>
 									</Button>
 								</TooltipTrigger>
 								<TooltipContent side="bottom" className="flex items-center gap-2 py-1 text-xs ">

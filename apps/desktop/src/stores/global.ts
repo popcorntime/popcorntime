@@ -7,7 +7,7 @@ import { create } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { devtools } from "@/stores/devtools";
-import type { ProviderSearchForCountry, SearchArguments, SortKey } from "@/tauri/types";
+import type { Provider, SearchArguments, SortKey } from "@/tauri/types";
 
 export type SortOrder = "ASC" | "DESC";
 type UpdateStatus = "available" | "manual" | "no-update";
@@ -79,10 +79,9 @@ export interface GlobalState {
 		setInitialized: () => void;
 		isLoading: boolean;
 		setIsLoading: (isLoading: boolean) => void;
-		providers: ProviderSearchForCountry[];
-		setProviders: (providers: ProviderSearchForCountry[]) => void;
-		favorites: ProviderSearchForCountry[];
-		setFavorites: (favorites: ProviderSearchForCountry[]) => void;
+		providers: Provider[];
+		haveFavorites: boolean;
+		setProviders: (providers: Provider[]) => void;
 	};
 	browse: {
 		/** Search query */
@@ -218,7 +217,7 @@ export const useGlobalStore = create<GlobalState>()(
 					initialized: false,
 					isLoading: false,
 					providers: [],
-					favorites: [],
+					haveFavorites: false,
 					setInitialized: () =>
 						set(state => {
 							state.providers.initialized = true;
@@ -227,13 +226,9 @@ export const useGlobalStore = create<GlobalState>()(
 						set(state => {
 							state.providers.isLoading = isLoading;
 						}),
-					setProviders: (providers: ProviderSearchForCountry[]) =>
+					setProviders: (providers: Provider[]) =>
 						set(state => {
 							state.providers.providers = providers;
-						}),
-					setFavorites: (favorites: ProviderSearchForCountry[]) =>
-						set(state => {
-							state.providers.favorites = favorites;
 						}),
 				},
 				browse: {
@@ -319,7 +314,7 @@ export const resetGlobalStore = () => {
 	useGlobalStore.setState(initial, true);
 };
 
-function syncFavorites(favorites: ProviderSearchForCountry[]) {
+function syncFavorites(favorites: Provider[]) {
 	const {
 		browse: { preferFavorites },
 	} = useGlobalStore.getState();
@@ -348,10 +343,22 @@ useGlobalStore.subscribe(
 );
 
 useGlobalStore.subscribe(
-	state => state.providers.favorites,
-	favorites => {
+	state => state.providers.providers,
+	providers => {
+		const favorites = providers.filter(p => p.favorite);
+		const currentPreferFavorites = useGlobalStore.getState().browse.preferFavorites;
+		if (favorites.length === 0) {
+			if (currentPreferFavorites) {
+				useGlobalStore.setState(state => {
+					state.browse.preferFavorites = false;
+					state.providers.haveFavorites = false;
+				});
+			}
+			return;
+		}
 		useGlobalStore.setState(state => {
 			state.browse.preferFavorites = true;
+			state.providers.haveFavorites = true;
 		});
 		syncFavorites(favorites);
 	}
@@ -361,11 +368,13 @@ useGlobalStore.subscribe(
 	state => state.browse.preferFavorites,
 	preferFavorites => {
 		if (preferFavorites) {
-			syncFavorites(useGlobalStore.getState().providers.favorites);
+			const favorites = useGlobalStore.getState().providers.providers.filter(p => p.favorite);
+			if (favorites.length > 0) {
+				syncFavorites(favorites);
+			}
 		} else {
 			useGlobalStore.setState(state => {
-				if (!state.browse.args) return;
-				delete state.browse.args.providers;
+				delete state.browse.args?.providers;
 			});
 		}
 	}

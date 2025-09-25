@@ -112,18 +112,10 @@ interface Media {
   videos: [MediaVideo!]!
   tags: [Tag!]!
   talents: [People!]!
-  similars(
-    country: Country!
-    language: Language
-    arguments: SearchArguments
-  ): [MediaSearch!]!
+  similars(country: Country!, language: Language, arguments: SearchArguments): [MediaSearch!]!
   pochoclinReview(language: Language): PochoclinReview
   charts(country: Country!, language: Language): [MediaSearch!]!
-  availabilities(
-    country: Country!
-    priceType: WatchPriceType
-    format: MediaFormat
-  ): [Availability!]!
+  availabilities(country: Country!, priceType: WatchPriceType, format: MediaFormat): [Availability!]!
   countries: [Country!]!
   createdAt: String!
   updatedAt: String!
@@ -257,24 +249,15 @@ type Movie implements Media {
   videos: [MediaVideo!]!
   countries: [Country!]!
   pochoclinReview(language: Language): PochoclinReview
-  similars(
-    country: Country!
-    language: Language
-    arguments: SearchArguments
-  ): [MediaSearch!]!
+  similars(country: Country!, language: Language, arguments: SearchArguments): [MediaSearch!]!
   charts(country: Country!, language: Language): [MediaSearch!]!
-  availabilities(
-    country: Country!
-    priceType: WatchPriceType
-    format: MediaFormat
-  ): [Availability!]!
+  availabilities(country: Country!, priceType: WatchPriceType, format: MediaFormat): [Availability!]!
 }
 
 type MutationRoot {
   setReaction(mediaId: Int!, reaction: UserReactionType): Boolean!
   updatePreferences(country: Country!, language: Language!): UserPreferences
-  addFavoriteProvider(country: Country!, providerKey: String!): Boolean!
-  removeFavoriteProvider(country: Country!, providerKey: String!): Boolean!
+  setFavoriteProvider(country: Country!, providerKey: String!, favorite: Boolean!): Boolean!
 }
 
 """
@@ -313,11 +296,15 @@ type PochoclinReview {
   excerpt: String!
 }
 
-type ProviderSearchForCountry {
+type Provider {
   """
   Short ID
   """
   id: String!
+  """
+  Favorite
+  """
+  favorite: Boolean!
   """
   ID of the provider
   """
@@ -360,11 +347,7 @@ type QueryRoot {
   homeCollection(country: Country!, language: Language): HomeSearchForCountry
   collections(country: Country!, language: Language): [CollectionSearch!]!
   count(country: Country!): Int!
-  providers(
-    country: Country!
-    favorites: Boolean
-    query: String
-  ): [ProviderSearchForCountry!]!
+  providers(country: Country!, query: String): [Provider!]!
   preferences: UserPreferences
 }
 
@@ -442,17 +425,9 @@ type TVShow implements Media {
   videos: [MediaVideo!]!
   countries: [Country!]!
   pochoclinReview(language: Language): PochoclinReview
-  similars(
-    country: Country!
-    language: Language
-    arguments: SearchArguments
-  ): [MediaSearch!]!
+  similars(country: Country!, language: Language, arguments: SearchArguments): [MediaSearch!]!
   charts(country: Country!, language: Language): [MediaSearch!]!
-  availabilities(
-    country: Country!
-    priceType: WatchPriceType
-    format: MediaFormat
-  ): [Availability!]!
+  availabilities(country: Country!, priceType: WatchPriceType, format: MediaFormat): [Availability!]!
 }
 
 scalar Tag
@@ -498,3 +473,4 @@ enum WatchPriceType {
 Indicates that an Input Object is a OneOf Input Object (and thus requires exactly one of its field be provided)
 """
 directive @oneOf on INPUT_OBJECT
+

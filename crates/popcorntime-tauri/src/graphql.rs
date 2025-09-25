@@ -81,10 +81,10 @@ pub async fn providers<'a>(
   params: providers::ProvidersInput<'a>,
 ) -> Result<Option<providers::ProvidersOutput>, Error> {
   auth_service.validate().await?;
-  let skip_cache = params.favorites.unwrap_or(false);
 
+  // FIXME: we can't cache this query as it include the favs
   api_client
-    .query(providers::ProvidersOutput::build(params), skip_cache)
+    .query(providers::ProvidersOutput::build(params), true)
     .await
     .map(|res| res.data)
     .map_err(Into::into)
@@ -93,35 +93,15 @@ pub async fn providers<'a>(
 #[tauri::command(async)]
 #[specta::specta]
 #[instrument(skip(api_client, auth_service), err(Debug))]
-pub async fn remove_favorites_provider<'a>(
+pub async fn set_favorites_provider<'a>(
   api_client: State<'_, ApiClient>,
   auth_service: State<'_, AuthorizationService>,
-  params: providers::RemoveFavoriteProviderInput<'a>,
-) -> Result<Option<providers::RemoveFavoriteProviderMutation>, Error> {
+  params: providers::SetFavoriteProviderInput<'a>,
+) -> Result<Option<providers::SetFavoriteProviderMutation>, Error> {
   auth_service.validate().await?;
 
   api_client
-    .query(
-      providers::RemoveFavoriteProviderMutation::build(params),
-      true,
-    )
-    .await
-    .map(|res| res.data)
-    .map_err(Into::into)
-}
-
-#[tauri::command(async)]
-#[specta::specta]
-#[instrument(skip(api_client, auth_service), err(Debug))]
-pub async fn add_favorites_provider<'a>(
-  api_client: State<'_, ApiClient>,
-  auth_service: State<'_, AuthorizationService>,
-  params: providers::AddFavoriteProviderInput<'a>,
-) -> Result<Option<providers::AddFavoriteProviderMutation>, Error> {
-  auth_service.validate().await?;
-
-  api_client
-    .query(providers::AddFavoriteProviderMutation::build(params), true)
+    .query(providers::SetFavoriteProviderMutation::build(params), true)
     .await
     .map(|res| res.data)
     .map_err(Into::into)
