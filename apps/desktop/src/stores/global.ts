@@ -374,7 +374,9 @@ useGlobalStore.subscribe(
 			}
 		} else {
 			useGlobalStore.setState(state => {
-				delete state.browse.args?.providers;
+				if (state.browse.args) {
+					delete state.browse.args.providers;
+				}
 			});
 		}
 	}
