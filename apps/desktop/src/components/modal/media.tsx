@@ -243,7 +243,7 @@ function MediaContent() {
 							title={media.title}
 							posterId={posterId}
 							placeholder={placeholderImg}
-							className="w-42 rounded-md"
+							className="w-44 rounded-md"
 						/>
 						<div className="flex flex-1 flex-col pb-4 gap-2">
 							<h1 className="line-clamp-1 text-4xl leading-tight font-bold">{media.title}</h1>
