@@ -88,6 +88,7 @@ query MediaOutput($country: Country!, $slug: String!, $language: Language) {
         role
         roleType
       }
+      reaction
     }
     ... on TVShow {
       inProduction
@@ -172,6 +173,7 @@ query MediaOutput($country: Country!, $slug: String!, $language: Language) {
         role
         roleType
       }
+      reaction
     }
   }
 }

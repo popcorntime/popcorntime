@@ -91,14 +91,12 @@ export function MediaPosterAsPicture({
 }) {
   if (!posterId) {
     return (
-      <div className="w-full h-full flex items-center justify-center">
         <img
           src={placeholder}
           alt={title}
           loading={loading}
           className={cn("w-full bg-cover", className)}
         />
-      </div>
     );
   }
 

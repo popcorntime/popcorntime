@@ -67,8 +67,9 @@ pub async fn media<'a>(
 ) -> Result<Option<media::MediaOutput>, Error> {
   auth_service.validate().await?;
 
+  // cache is disabled because this query include user reaction that can change
   api_client
-    .query(media::MediaOutput::build(params), false)
+    .query(media::MediaOutput::build(params), true)
     .await
     .map(|res| res.data)
     .map_err(Into::into)

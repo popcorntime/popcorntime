@@ -13,7 +13,7 @@ pub enum UserReactionType {
 #[serde(rename_all = "camelCase")]
 pub struct SetReactionInput {
   pub media_id: i32,
-  pub reaction: UserReactionType,
+  pub reaction: Option<UserReactionType>,
 }
 
 #[derive(cynic::QueryVariables, Debug, specta::Type, Deserialize)]
@@ -80,7 +80,7 @@ mod tests {
   fn set_reaction_like_mutation_gql_output() {
     let operation = SetReactionMutation::build(SetReactionInput {
       media_id: 123,
-      reaction: UserReactionType::Like,
+      reaction: Some(UserReactionType::Like),
     });
     insta::assert_snapshot!(operation.query);
   }
@@ -89,7 +89,16 @@ mod tests {
   fn remove_favorite_mutation_gql_output() {
     let operation = SetReactionMutation::build(SetReactionInput {
       media_id: 123,
-      reaction: UserReactionType::Dislike,
+      reaction: Some(UserReactionType::Dislike),
+    });
+    insta::assert_snapshot!(operation.query);
+  }
+
+  #[test]
+  fn delete_favorite_mutation_gql_output() {
+    let operation = SetReactionMutation::build(SetReactionInput {
+      media_id: 123,
+      reaction: None,
     });
     insta::assert_snapshot!(operation.query);
   }

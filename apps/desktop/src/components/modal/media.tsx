@@ -46,13 +46,13 @@ function MediaContent() {
 	const officialLocales = useMemo(() => [...getLocalesForCountry(country)], [country]);
 
 	const setMediaReaction = useCallback(
-		(reaction: UserReactionType) => {
+		(reaction: UserReactionType | null) => {
 			if (!media?.id) return;
 			setMedia(prev => (prev ? { ...prev, reaction } : prev));
 			try {
 				void api.setMediaReaction({
 					mediaId: media.id,
-					reaction: "LIKE",
+					reaction,
 				});
 			} catch (error) {
 				console.error("Failed to set media reaction:", error);
@@ -237,7 +237,7 @@ function MediaContent() {
 				</div>
 
 				<div className="absolute right-0 bottom-0 left-0 px-8">
-					<div className="flex h-full items-stretch gap-6">
+					<div className="flex h-full items-stretch gap-6 space-y-2">
 						<MediaPosterAsPicture
 							loading="lazy"
 							title={media.title}
@@ -245,10 +245,10 @@ function MediaContent() {
 							placeholder={placeholderImg}
 							className="w-42 rounded-md"
 						/>
-						<div className="flex flex-1 flex-col pb-4">
-							<h1 className="mb-3 line-clamp-1 text-4xl leading-tight font-bold">{media.title}</h1>
+						<div className="flex flex-1 flex-col pb-4 gap-2">
+							<h1 className="line-clamp-1 text-4xl leading-tight font-bold">{media.title}</h1>
 
-							<div className="mb-4 flex flex-wrap items-center gap-6">
+							<div className="flex flex-wrap items-center gap-6">
 								<div className="flex items-center gap-2">
 									<Star className="h-5 w-5 fill-current text-yellow-400" />
 									{media.ranking?.score && (
@@ -272,7 +272,7 @@ function MediaContent() {
 								)}
 							</div>
 
-							<div className="mb-4 flex flex-wrap gap-2">
+							<div className="flex flex-wrap gap-2">
 								<Badge variant="default" className="font-medium capitalize backdrop-blur-sm">
 									{media.__typename === "Movie" ? t("media.movie") : t("media.tv-show")}
 								</Badge>
@@ -288,20 +288,18 @@ function MediaContent() {
 								))}
 							</div>
 
-							<div>
+							<div className="flex gap-2">
 								<Button
-									disabled={media.reaction === "LIKE"}
-									onClick={() => setMediaReaction("LIKE")}
-									variant="ghost"
-									size="icon"
+									variant={media.reaction === "LIKE" ? "accent" : "ghost"}
+									onClick={() => setMediaReaction(media.reaction === "LIKE" ? null : "LIKE")}
+									size="iconXl"
 								>
 									<ThumbsUp />
 								</Button>
 								<Button
-									disabled={media.reaction === "DISLIKE"}
-									onClick={() => setMediaReaction("DISLIKE")}
-									variant="ghost"
-									size="icon"
+									variant={media.reaction === "DISLIKE" ? "accent" : "ghost"}
+									onClick={() => setMediaReaction(media.reaction === "DISLIKE" ? null : "DISLIKE")}
+									size="iconXl"
 								>
 									<ThumbsDown />
 								</Button>
@@ -312,7 +310,7 @@ function MediaContent() {
 									<Link
 										className={cn(
 											buttonVariants({ variant: "default", size: "xl" }),
-											"group bg-primary/40 dark:bg-primary/20 hover:bg-primary/90 hover:text-secondary flex w-full items-center justify-center gap-x-2 px-4 font-extrabold sm:w-auto sm:max-w-sm"
+											"group text-foreground/80 bg-primary/40 dark:bg-primary/20 hover:bg-primary/90 hover:text-secondary flex w-full items-center justify-center gap-x-2 px-4 font-extrabold sm:w-auto sm:max-w-sm"
 										)}
 										to={`https://go.popcorntime.app/${bestProvider.urlHash}?country=${country?.toUpperCase()}`}
 										target="_blank"

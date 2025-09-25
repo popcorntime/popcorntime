@@ -2,6 +2,6 @@
 source: crates/popcorntime-graphql-client/src/reactions.rs
 expression: operation.query
 ---
-mutation SetReactionMutation($mediaId: Int!, $reaction: UserReactionType!) {
+mutation SetReactionMutation($mediaId: Int!, $reaction: UserReactionType) {
   setReaction(mediaId: $mediaId, reaction: $reaction)
 }
