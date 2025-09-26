@@ -14,7 +14,7 @@ function LocationProbe() {
 
 const renderWithProvider = (initialIndex: number) =>
 	render(
-		<MemoryRouter initialEntries={["/", "/browse/us", "/login"]} initialIndex={initialIndex}>
+		<MemoryRouter initialEntries={["/", "/browse", "/login"]} initialIndex={initialIndex}>
 			<SessionProvider>
 				<div data-testid="root" />
 				<LocationProbe />

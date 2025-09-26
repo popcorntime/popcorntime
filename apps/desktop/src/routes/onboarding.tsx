@@ -1,3 +1,4 @@
+import { OnboardingExperience } from "@/components/onboarding/experience";
 import { OnboardingManifest } from "@/components/onboarding/manifest";
 import { OnboardingTimeline } from "@/components/onboarding/timeline";
 import { OnboardingWelcome } from "@/components/onboarding/welcome";
@@ -12,4 +13,8 @@ export function OnboardingTimelineRoute() {
 
 export function OnboardingManifestRoute() {
 	return <OnboardingManifest />;
+}
+
+export function OnboardingExperienceRoute() {
+	return <OnboardingExperience />;
 }

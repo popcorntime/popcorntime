@@ -423,21 +423,3 @@ useGlobalStore.subscribe(
 		}
 	}
 );
-
-// FIXME: should we open?
-useGlobalStore.subscribe(
-	state =>
-		state.app.bootInitialized &&
-		state.session.isActive &&
-		state.settings.onboarded &&
-		state.preferences.initialized &&
-		(!state.preferences.country || !state.preferences.language) &&
-		!state.dialogs.preferences.isOpen,
-	ready => {
-		if (!ready) return;
-		useGlobalStore.setState(state => {
-			state.dialogs.preferences.isOpen = true;
-		});
-	},
-	{ equalityFn: Object.is }
-);

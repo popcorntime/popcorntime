@@ -56,7 +56,7 @@ function CommandCenterViewCountrySelection() {
 			{sortedCountries.map(country => (
 				<CommandItem
 					key={country}
-					onSelect={() => handleNavigation(`/browse/${country}`)}
+					onSelect={() => handleNavigation(`/browse?country=${country}`)}
 					className="group gap-2"
 				>
 					<span className="flex w-6 justify-center">
@@ -110,7 +110,7 @@ function CommandCenterCommand({ command }: { command: Command }) {
 					key={command.id}
 					value={command.id}
 					onSelect={() => {
-						handleNavigation(`/browse/${country}`);
+						handleNavigation(`/browse`);
 					}}
 				>
 					<TrendingUp />
@@ -124,7 +124,7 @@ function CommandCenterCommand({ command }: { command: Command }) {
 					key={command.id}
 					value={command.id}
 					onSelect={() => {
-						handleNavigation(`/browse/${country}?kind=MOVIE`);
+						handleNavigation(`/browse?kind=MOVIE`);
 					}}
 				>
 					<Film />
@@ -138,7 +138,7 @@ function CommandCenterCommand({ command }: { command: Command }) {
 					key={command.id}
 					value={command.id}
 					onSelect={() => {
-						handleNavigation(`/browse/${country}?kind=TV_SHOW`);
+						handleNavigation(`/browse?kind=TV_SHOW`);
 					}}
 				>
 					<Tv />

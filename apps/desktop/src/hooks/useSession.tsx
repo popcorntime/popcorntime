@@ -34,6 +34,11 @@ export const SessionProvider = ({ children }: { children: ReactNode }) => {
 	const { country } = useGlobalStore(useShallow(state => state.preferences));
 	const setPreferences = useGlobalStore(state => state.preferences.setPreferences);
 	const isActive = useGlobalStore(state => state.session.isActive);
+	const bootInitialized = useGlobalStore(state => state.app.bootInitialized);
+	const onboarded = useGlobalStore(state => state.settings.onboarded);
+	const preferencesInitialized = useGlobalStore(state => state.preferences.initialized);
+	const preferencesCountry = useGlobalStore(state => state.preferences.country);
+	const preferencesLanguage = useGlobalStore(state => state.preferences.language);
 
 	const { api, on } = useTauri();
 	const { pathname } = useLocation();
@@ -52,12 +57,10 @@ export const SessionProvider = ({ children }: { children: ReactNode }) => {
 			setActive(true);
 		} catch (e) {
 			setActive(false);
-			if (
-				!isPublicRoute(pathRef.current) &&
-				isTauriError(e) &&
-				e.code === "errors.session.invalid"
-			) {
-				navigateRef.current("/login", { replace: true });
+			if (isTauriError(e) && e.code === "errors.session.invalid") {
+				if (!isPublicRoute(pathRef.current)) {
+					navigateRef.current("/login", { replace: true });
+				}
 			} else {
 				throw e;
 			}
@@ -162,6 +165,28 @@ export const SessionProvider = ({ children }: { children: ReactNode }) => {
 		},
 		[api.updateUserPreferences, setPreferences, t]
 	);
+
+	useEffect(() => {
+		if (
+			bootInitialized &&
+			isActive &&
+			onboarded &&
+			preferencesInitialized &&
+			(!preferencesCountry || !preferencesLanguage) &&
+			pathname !== "/onboarding/experience"
+		) {
+			navigate("/onboarding/experience", { replace: true });
+		}
+	}, [
+		bootInitialized,
+		isActive,
+		pathname,
+		navigate,
+		onboarded,
+		preferencesInitialized,
+		preferencesCountry,
+		preferencesLanguage,
+	]);
 
 	return (
 		<SessionContext.Provider value={{ logout, updatePreferences }}>

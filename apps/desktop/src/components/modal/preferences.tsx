@@ -25,9 +25,10 @@ import { useUpdater } from "@/hooks/useUpdater";
 import { useGlobalStore } from "@/stores/global";
 
 const accountFormSchema = z.object({
-	country: z.enum([...i18n.countries] as [Country, ...Country[]]),
-	language: z.enum([...i18n.locales] as [Locale, ...Locale[]]),
+	country: z.enum(i18n.countries),
+	language: z.enum(i18n.locales),
 });
+
 type AccountFormValues = z.infer<typeof accountFormSchema>;
 
 export function PreferencesDialog() {
@@ -91,7 +92,7 @@ export function PreferencesDialog() {
 				.finally(() => {
 					setSubmitted(false);
 					if (country !== values.country) {
-						navigate(`/browse/${values.country}`, { flushSync: true });
+						navigate("/browse", { flushSync: true });
 					}
 				});
 		},

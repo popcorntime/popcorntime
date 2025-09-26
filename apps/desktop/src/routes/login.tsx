@@ -38,7 +38,7 @@ export function LoginRoute() {
 
 	useEffect(() => {
 		if (!appInitialized) return;
-		navigate("/");
+		navigate("/browse");
 	}, [appInitialized, navigate]);
 
 	return (

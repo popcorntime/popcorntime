@@ -23,11 +23,10 @@ import {
 	StarsIcon,
 	Tv,
 } from "lucide-react";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { CommandCenter } from "@/components/command-center";
-import { useCountry } from "@/hooks/useCountry";
 import { useSession } from "@/hooks/useSession";
 import { useGlobalStore } from "@/stores/global";
 import type { MediaKind } from "@/tauri/types";
@@ -40,12 +39,11 @@ export function Header() {
 	const openPreferences = useGlobalStore(state => state.dialogs.preferences.toggle);
 	const openWatchPreferences = useGlobalStore(state => state.dialogs.watchPreferences.toggle);
 	const direction = useGlobalStore(state => state.i18n.direction);
-
-	const { country } = useCountry();
 	const { t } = useTranslation();
-	const { kind } = useParams<{
-		kind: Lowercase<MediaKind>;
-	}>();
+	const [searchParams] = useSearchParams();
+	const kind = useMemo(() => {
+		return (searchParams.get("kind") || "MOVIE") as MediaKind;
+	}, [searchParams]);
 
 	const openLogsDir = useCallback(async () => {
 		const appLogDirPath = await appLogDir();
@@ -90,10 +88,10 @@ export function Header() {
 						<Link
 							className={cn(
 								buttonVariants({ variant: "link" }),
-								kind === "movie" && "text-accent-foreground bg-accent",
+								kind === "MOVIE" && "text-accent-foreground bg-accent",
 								"flex gap-2"
 							)}
-							to={`/browse/${country}/movie`}
+							to={`/browse?kind=MOVIE`}
 						>
 							<Film className="h-4 w-4" />
 							<span>{t("browse.movies")}</span>
@@ -101,10 +99,10 @@ export function Header() {
 						<Link
 							className={cn(
 								buttonVariants({ variant: "link" }),
-								kind === "tv_show" && "text-accent-foreground bg-accent",
+								kind === "TV_SHOW" && "text-accent-foreground bg-accent",
 								"flex gap-2"
 							)}
-							to={`/browse/${country}/tv_show`}
+							to={`/browse/?kind=TV_SHOW`}
 						>
 							<Tv className="h-4 w-4" />
 							<span>{t("browse.tv-shows")}</span>

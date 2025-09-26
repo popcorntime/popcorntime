@@ -1,4 +1,4 @@
-import { HashRouter, Navigate, Route, Routes } from "react-router";
+import { HashRouter, Route, Routes } from "react-router";
 import { useErrorHandler } from "@/hooks/useErrorHandler";
 import { initReactI18n } from "@/i18n";
 import { BrowseLayout, DefaultLayout } from "@/layout";
@@ -8,6 +8,7 @@ import { LoginRoute } from "@/routes/login";
 import { MaintenanceRoute } from "@/routes/maintenance";
 import { NotFoundRoute } from "@/routes/not-found";
 import {
+	OnboardingExperienceRoute,
 	OnboardingManifestRoute,
 	OnboardingTimelineRoute,
 	OnboardingWelcomeRoute,
@@ -33,15 +34,15 @@ export function App() {
 							<Route index element={<OnboardingWelcomeRoute />} />
 							<Route path="/onboarding/manifest" element={<OnboardingManifestRoute />} />
 							<Route path="/onboarding/timeline" element={<OnboardingTimelineRoute />} />
+							<Route path="/onboarding/experience" element={<OnboardingExperienceRoute />} />
 						</Route>
 						<Route path="/login" element={<LoginRoute />} />
 						<Route path="/maintenance" element={<MaintenanceRoute />} />
 						<Route path="*" element={<NotFoundRoute />} />
 					</Route>
-					<Route path="/browse/:country/:kind" element={<BrowseLayout />}>
+					<Route path="/browse" element={<BrowseLayout />}>
 						<Route index element={<BrowseRoute />} />
 					</Route>
-					<Route path="/browse/:country" element={<Navigate to="movie" replace />} />
 				</Routes>
 			</Providers>
 		</HashRouter>

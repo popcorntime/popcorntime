@@ -1,7 +1,7 @@
 import { useSidebar, useSidebarGroup } from "@popcorntime/ui/components/sidebar";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import useInfiniteScroll from "react-infinite-scroll-hook";
-import { useLocation, useParams } from "react-router";
+import { useLocation, useParams, useSearchParams } from "react-router";
 import placeholderImg from "@/assets/placeholder.svg";
 import { BrowseMedias } from "@/components/browse";
 import { BrowseSidebarGroup } from "@/components/browse/sidebar";
@@ -21,7 +21,11 @@ export function BrowseRoute() {
 	const [dataAccumulator, setDataAccumulator] = useState<MediaSearch[]>([]);
 	const { setOpen: setOpenSidebar } = useSidebar();
 	const { pathname } = useLocation();
-	const { kind } = useParams<{ kind: "movie" | "tv_show" }>();
+	const [searchParams] = useSearchParams();
+
+	const kind = useMemo(() => {
+		return (searchParams.get("kind") || "MOVIE") as MediaKind;
+	}, [searchParams]);
 
 	const args = useMemo(() => {
 		return {

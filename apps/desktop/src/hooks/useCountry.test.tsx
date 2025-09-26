@@ -22,14 +22,11 @@ afterEach(() => {
 	resetGlobalStore();
 });
 
-const renderWithProvider = (initialEntry: string = "/") =>
+const renderWithProvider = (initialEntry: string = "/browse") =>
 	render(
 		<MemoryRouter initialEntries={[initialEntry]}>
 			<Routes>
-				<Route path="/" element={<LayoutWithCountry />}>
-					<Route index element={<div data-testid="default" />} />
-				</Route>
-				<Route path="/browse/:country/:kind" element={<LayoutWithCountry />}>
+				<Route path="/browse" element={<LayoutWithCountry />}>
 					<Route index element={<div data-testid="browse" />} />
 				</Route>
 			</Routes>
@@ -43,7 +40,7 @@ describe("useCountry", () => {
 			s.preferences.language = "fr";
 		});
 
-		const r = renderWithProvider("/browse/ca/movies");
+		const r = renderWithProvider("/browse?country=CA");
 		await act(async () => {});
 
 		expect(r.getByTestId("country").textContent).toBe("CA");

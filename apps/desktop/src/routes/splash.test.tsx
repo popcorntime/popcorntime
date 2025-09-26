@@ -23,7 +23,7 @@ function renderWithRouter(initialPath = "/") {
 				/>
 				<Route path="/onboarding" element={<div data-testid="onboarding" />} />
 				<Route path="/login" element={<div data-testid="login" />} />
-				<Route path="/browse/:country" element={<div data-testid="browse" />} />
+				<Route path="/browse" element={<div data-testid="browse" />} />
 			</Routes>
 			<LocationProbe />
 		</MemoryRouter>
@@ -114,7 +114,7 @@ describe("SplashRoute", () => {
 		await act(async () => {});
 
 		expect(screen.getByTestId("browse")).toBeInTheDocument();
-		expect(screen.getByTestId("loc")).toHaveTextContent("/browse/ca");
+		expect(screen.getByTestId("loc")).toHaveTextContent("/browse");
 		r.unmount();
 	});
 
@@ -139,7 +139,7 @@ describe("SplashRoute", () => {
 		);
 
 		expect(screen.getByTestId("browse")).toBeInTheDocument();
-		expect(screen.getByTestId("loc")).toHaveTextContent("/browse/fr");
+		expect(screen.getByTestId("loc")).toHaveTextContent("/browse");
 
 		r.unmount();
 	});

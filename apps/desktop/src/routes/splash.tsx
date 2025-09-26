@@ -1,23 +1,36 @@
-import { i18n } from "@popcorntime/i18n/types";
-import { Navigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 import { SplashScreen } from "@/components/splash-screen";
 import { useGlobalStore } from "@/stores/global";
+import { useEffect, useRef } from "react";
 
 export function SplashRoute() {
-	const isActive = useGlobalStore(s => s.session.isActive);
-	const onboarded = useGlobalStore(s => s.settings.onboarded);
-	const appInitialized = useGlobalStore(s => s.app.initialized);
 	const bootInitialized = useGlobalStore(s => s.app.bootInitialized);
-	const country = useGlobalStore(s => s.preferences.country);
+	const appInitialized = useGlobalStore(s => s.app.initialized);
+	const onboarded = useGlobalStore(s => s.settings.onboarded);
+	const isActive = useGlobalStore(s => s.session.isActive);
+	const initialRedirectAttempted = useRef(false);
+	const navigate = useNavigate();
 
-	if (!bootInitialized) return <SplashScreen />;
-	if (!onboarded) return <Navigate to="/onboarding" replace />;
+	useEffect(() => {
+		if (!bootInitialized) return;
+		if (!onboarded) {
+			if (!initialRedirectAttempted.current) {
+				initialRedirectAttempted.current = true;
+				navigate("/onboarding", { flushSync: true });
+			}
+		} else if (isActive) {
+			if (!appInitialized) return;
+			if (!initialRedirectAttempted.current) {
+				initialRedirectAttempted.current = true;
+				navigate("/browse", { flushSync: true });
+			}
+		} else {
+			if (!initialRedirectAttempted.current) {
+				initialRedirectAttempted.current = true;
+				navigate("/login", { flushSync: true });
+			}
+		}
+	}, [bootInitialized, onboarded, isActive, appInitialized, navigate]);
 
-	if (isActive) {
-		if (!appInitialized) return <SplashScreen />;
-		const goto = (country ?? i18n.defaultCountry).toLowerCase();
-		return <Navigate to={`/browse/${goto}`} replace />;
-	}
-
-	return <Navigate to="/login" replace />;
+	return <SplashScreen />;
 }

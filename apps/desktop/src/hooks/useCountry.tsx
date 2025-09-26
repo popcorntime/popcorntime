@@ -1,6 +1,6 @@
 import { type Country, i18n } from "@popcorntime/i18n";
 import { createContext, type ReactNode, useContext, useMemo } from "react";
-import { useParams } from "react-router";
+import { useSearchParams } from "react-router";
 import { useGlobalStore } from "@/stores/global";
 
 export type Context = {
@@ -13,15 +13,13 @@ const CountryContext = createContext<Context>({
 
 export const CountryProvider = ({ children }: { children: ReactNode }) => {
 	const preferedCountry = useGlobalStore(state => state.preferences?.country);
-	const params = useParams<{
-		country: Country;
-	}>();
+	const [searchParams, _] = useSearchParams();
 
 	const country = useMemo(() => {
-		return (params.country?.toUpperCase() ??
+		return (searchParams.get("country")?.toUpperCase() ??
 			preferedCountry?.toUpperCase() ??
 			i18n.defaultCountry.toUpperCase()) as Country;
-	}, [params.country, preferedCountry]);
+	}, [searchParams, preferedCountry]);
 
 	return (
 		<CountryContext.Provider
