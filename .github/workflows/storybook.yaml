@@ -1,0 +1,83 @@
+name: Storybook
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+  pull_request:
+    paths:
+      - ".github/workflows/storybook.yaml"
+      - "packages/popcorntime-ui/**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/init-env-node
+      
+      - name: Build Storybook
+        run: pnpm --filter @popcorntime/ui storybook:build
+      
+      - name: Upload Storybook build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: storybook-static
+          path: packages/popcorntime-ui/storybook-static/
+          retention-days: 7
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/init-env-node
+      
+      - name: Download Storybook build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: storybook-static
+          path: packages/popcorntime-ui/storybook-static/
+      
+      - name: Install Playwright
+        run: npx playwright install --with-deps chromium
+      
+      - name: Run Storybook tests
+        run: |
+          # Start a simple server to serve the static files
+          npx serve packages/popcorntime-ui/storybook-static -p 6006 &
+          sleep 5
+          # Run test runner against the static build
+          cd packages/popcorntime-ui
+          pnpm storybook:test --url http://localhost:6006
+        continue-on-error: true  # Allow tests to fail initially while stories are being developed
+
+  accessibility:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/init-env-node
+      
+      - name: Download Storybook build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: storybook-static
+          path: packages/popcorntime-ui/storybook-static/
+      
+      - name: Install axe-core
+        run: npm install -g @axe-core/cli serve
+      
+      - name: Run accessibility audit
+        run: |
+          # Start server for static files
+          npx serve packages/popcorntime-ui/storybook-static -p 6006 &
+          sleep 5
+          # Run axe accessibility tests on main stories
+          axe http://localhost:6006/iframe.html?args=&id=components-button--default --exit
+        continue-on-error: true  # Allow a11y tests to be informational initially
