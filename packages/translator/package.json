@@ -1,26 +1,26 @@
 {
-  "name": "@popcorntime/translator",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "main": "src/index.ts",
-  "bin": {
-    "translate": "./src/index.ts"
-  },
-  "scripts": {
-    "translate": "tsx src/index.ts"
-  },
-  "devDependencies": {
-    "@popcorntime/typescript-config": "workspace:*",
-    "tsx": "^4.20.5",
-    "typescript": "catalog:"
-  },
-  "dependencies": {
-    "@google-cloud/translate": "^9.2.0",
-    "@popcorntime/i18n": "workspace:*",
-    "@types/jsonpath": "^0.2.4",
-    "dotenv": "^16.6.1",
-    "jsonpath": "^1.1.1",
-    "openai": "^4.104.0"
-  }
+	"name": "@popcorntime/translator",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"main": "src/index.ts",
+	"bin": {
+		"translate": "./src/index.ts"
+	},
+	"scripts": {
+		"translate": "tsx src/index.ts"
+	},
+	"devDependencies": {
+		"@popcorntime/typescript-config": "workspace:*",
+		"tsx": "^4.20.5",
+		"typescript": "catalog:"
+	},
+	"dependencies": {
+		"@google-cloud/translate": "^9.2.0",
+		"@popcorntime/i18n": "workspace:*",
+		"@types/jsonpath": "^0.2.4",
+		"dotenv": "^16.6.1",
+		"jsonpath": "^1.1.1",
+		"openai": "^4.104.0"
+	}
 }

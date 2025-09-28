@@ -436,6 +436,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.21(postcss@8.5.6)
+      chromatic:
+        specifier: ^13.2.1
+        version: 13.2.1
       globals:
         specifier: ^16.4.0
         version: 16.4.0
@@ -2590,6 +2593,18 @@ packages:
   chownr@3.0.0:
     resolution: {integrity: sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==}
     engines: {node: '>=18'}
+
+  chromatic@13.2.1:
+    resolution: {integrity: sha512-J/b5JbwtkjXHocVgnJO1MXV1zuyFZlFEGoVEHeyNPRLqaEgGRwVXtoMJIVioeeUlavrg5OCnb//6RagS/fi5Yw==}
+    hasBin: true
+    peerDependencies:
+      '@chromatic-com/cypress': ^0.*.* || ^1.0.0
+      '@chromatic-com/playwright': ^0.*.* || ^1.0.0
+    peerDependenciesMeta:
+      '@chromatic-com/cypress':
+        optional: true
+      '@chromatic-com/playwright':
+        optional: true
 
   ci-info@3.9.0:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
@@ -7296,6 +7311,8 @@ snapshots:
   check-error@2.1.1: {}
 
   chownr@3.0.0: {}
+
+  chromatic@13.2.1: {}
 
   ci-info@3.9.0: {}
 

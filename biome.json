@@ -2,7 +2,14 @@
 	"$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["apps/**", "!**/dist", "!**/tauri/types.ts"]
+		"includes": [
+			"apps/**",
+			"packages/**",
+			"!**/dist",
+			"!**/tauri/types.ts",
+			"!packages/translator/*",
+			"!**/*.stories.tsx"
+		]
 	},
 	"formatter": {
 		"enabled": true,
