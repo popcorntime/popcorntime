@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { fn } from '@storybook/test'
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { fn } from 'storybook/test'
 import { ToggleGroup, ToggleGroupItem } from './toggle-group'
 import { Bold, Italic, Underline, Film, Tv, Star, Grid, List, LayoutGrid } from 'lucide-react'
 

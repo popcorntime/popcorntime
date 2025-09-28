@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { Avatar, AvatarFallback, AvatarImage } from './avatar'
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { Avatar, AvatarFallback, AvatarImage } from '@popcorntime/ui/components/avatar'
 
 const meta = {
   title: 'Components/Avatar',

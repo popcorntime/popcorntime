@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react'
-import { fn } from '@storybook/test'
+import type { Meta, StoryObj } from '@storybook/react-vite'
+import { fn } from 'storybook/test'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -10,8 +10,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from './alert-dialog'
-import { Button } from './button'
+} from '@popcorntime/ui/components/alert-dialog.js'
+import { Button } from '@popcorntime/ui/components/button.js'
 
 const meta = {
   title: 'Components/AlertDialog',

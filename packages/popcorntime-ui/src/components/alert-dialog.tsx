@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
-
 import { cn } from "@popcorntime/ui/lib/utils"
 import { buttonVariants } from "@popcorntime/ui/components/button"
 
