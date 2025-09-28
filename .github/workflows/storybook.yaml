@@ -1,0 +1,34 @@
+name: Storybook
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+  pull_request:
+    paths:
+      - ".github/workflows/storybook.yaml"
+      - "packages/popcorntime-ui/**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  chromatic-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/init-env-node
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          zip: true
+          onlyChanged: true
+          skip: "dependabot/**"
+          workingDir: packages/popcorntime-ui
+          autoAcceptChanges: false
+          exitOnceUploaded: true

@@ -1,0 +1,98 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as ButtonStories from './button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+A versatile button component with multiple variants and sizes, built with Radix UI slot for composition.
+
+The Button component is one of the most important interactive elements in your UI. It supports various visual styles, sizes, and can be composed with other elements using the `asChild` prop.
+
+## Features
+
+- **Multiple variants**: Choose from default, destructive, outline, secondary, accent, ghost, and link styles
+- **Flexible sizing**: From small to extra large, including specialized icon button sizes
+- **Composition ready**: Use `asChild` to render as any element while maintaining button styling
+- **Accessibility focused**: Proper focus management and keyboard navigation
+- **Icon support**: Built-in spacing and sizing for icons
+
+## Usage
+
+```tsx
+import { Button } from '@popcorntime/ui/components/button'
+
+function Example() {
+  return (
+    <Button variant="default" size="lg">
+      Click me
+    </Button>
+  )
+}
+```
+
+## Examples
+
+### Basic Button
+
+<Canvas of={ButtonStories.Default} />
+
+### All Variants
+
+<Canvas of={ButtonStories.Variants} />
+
+### Different Sizes
+
+<Canvas of={ButtonStories.Sizes} />
+
+### Icon Buttons
+
+<Canvas of={ButtonStories.IconSizes} />
+
+### With Icons
+
+<Canvas of={ButtonStories.WithIcon} />
+
+### Disabled State
+
+<Canvas of={ButtonStories.Disabled} />
+
+## Props
+
+<Controls of={ButtonStories.Default} />
+
+## Design Guidelines
+
+### When to use
+
+- **Primary actions**: Use the default variant for the main action on a page
+- **Secondary actions**: Use outline or ghost variants for less important actions
+- **Destructive actions**: Use the destructive variant for delete or removal actions
+- **Navigation**: Use the link variant for navigation-like actions
+
+### Best Practices
+
+1. **Label clarity**: Use clear, action-oriented labels like "Save", "Delete", or "Continue"
+2. **Icon consistency**: When using icons, ensure they're consistent in style and size
+3. **Loading states**: Consider adding loading indicators for async actions
+4. **Touch targets**: Ensure buttons meet minimum touch target sizes (44px on mobile)
+
+### Accessibility
+
+- The button component automatically includes proper ARIA attributes
+- Use semantic HTML button elements for actions
+- Provide descriptive labels, especially for icon-only buttons
+- Ensure sufficient color contrast ratios
+- Support keyboard navigation (Space and Enter keys)
+
+## Composition with asChild
+
+The `asChild` prop allows you to compose the Button with other elements:
+
+```tsx
+<Button asChild>
+  <a href="/profile">Go to Profile</a>
+</Button>
+```
+
+This renders an anchor tag with button styling, maintaining semantic meaning while providing visual consistency.
