@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { fn } from '@storybook/test'
+import { fn, userEvent, within, expect } from '@storybook/test'
 import {
   Dialog,
   DialogContent,
@@ -70,6 +70,33 @@ export const Default: Story = {
       </DialogContent>
     </Dialog>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvasBody = within(canvasElement.ownerDocument.body);
+
+    await step("should open dialog when trigger is clicked", async () => {
+      const trigger = await canvasBody.findByRole("button", { name: /open dialog/i });
+      expect(trigger).toBeInTheDocument();
+      
+      await userEvent.click(trigger);
+      
+      // Dialog should open
+      expect(await canvasBody.findByRole("dialog")).toBeInTheDocument();
+      expect(await canvasBody.findByText("Dialog Title")).toBeInTheDocument();
+    });
+
+    await step("should have proper dialog structure", async () => {
+      expect(await canvasBody.findByRole("button", { name: /cancel/i })).toBeInTheDocument();
+      expect(await canvasBody.findByRole("button", { name: /continue/i })).toBeInTheDocument();
+    });
+
+    await step("should close dialog when cancel is clicked", async () => {
+      const cancelButton = await canvasBody.findByRole("button", { name: /cancel/i });
+      await userEvent.click(cancelButton);
+      
+      // Dialog should be closed (wait a moment for animation)
+      await new Promise(resolve => setTimeout(resolve, 100));
+    });
+  },
 }
 
 export const WithForm: Story = {

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within, expect } from '@storybook/test'
 import { fn } from '@storybook/test'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './tabs'
 import { Button } from './button'
@@ -75,6 +76,45 @@ export const Default: Story = {
       </TabsContent>
     </Tabs>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step("should render tabs with account selected by default", async () => {
+      const accountTab = await canvas.findByRole("tab", { name: /account/i });
+      const passwordTab = await canvas.findByRole("tab", { name: /password/i });
+      
+      expect(accountTab).toBeInTheDocument();
+      expect(passwordTab).toBeInTheDocument();
+      
+      // Account tab should be selected (has aria-selected="true")
+      expect(accountTab).toHaveAttribute("aria-selected", "true");
+      expect(passwordTab).toHaveAttribute("aria-selected", "false");
+    });
+
+    await step("should switch to password tab when clicked", async () => {
+      const passwordTab = await canvas.findByRole("tab", { name: /password/i });
+      
+      await userEvent.click(passwordTab);
+      
+      expect(passwordTab).toHaveAttribute("aria-selected", "true");
+      
+      // Should see password form elements
+      expect(await canvas.findByLabelText(/current password/i)).toBeInTheDocument();
+      expect(await canvas.findByLabelText(/new password/i)).toBeInTheDocument();
+    });
+
+    await step("should switch back to account tab", async () => {
+      const accountTab = await canvas.findByRole("tab", { name: /account/i });
+      
+      await userEvent.click(accountTab);
+      
+      expect(accountTab).toHaveAttribute("aria-selected", "true");
+      
+      // Should see account form elements
+      expect(await canvas.findByDisplayValue("John Doe")).toBeInTheDocument();
+      expect(await canvas.findByDisplayValue("@johndoe")).toBeInTheDocument();
+    });
+  },
 }
 
 export const WithIcons: Story = {

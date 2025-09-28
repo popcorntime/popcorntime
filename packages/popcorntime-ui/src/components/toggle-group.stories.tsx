@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within, expect } from '@storybook/test'
 import { fn } from '@storybook/test'
 import { ToggleGroup, ToggleGroupItem } from './toggle-group'
 import { Bold, Italic, Underline, Film, Tv, Star, Grid, List, LayoutGrid } from 'lucide-react'
@@ -124,6 +125,47 @@ export const Multiple: Story = {
         story: 'Toggle group allowing multiple selections, like checkboxes',
       },
     },
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step("should have bold and italic selected by default", async () => {
+      const boldButton = await canvas.findByRole("button", { name: /bold/i });
+      const italicButton = await canvas.findByRole("button", { name: /italic/i });
+      const underlineButton = await canvas.findByRole("button", { name: /underline/i });
+      
+      expect(boldButton).toHaveAttribute("data-state", "on");
+      expect(italicButton).toHaveAttribute("data-state", "on");
+      expect(underlineButton).toHaveAttribute("data-state", "off");
+    });
+
+    await step("should toggle underline on", async () => {
+      const underlineButton = await canvas.findByRole("button", { name: /underline/i });
+      
+      await userEvent.click(underlineButton);
+      
+      expect(underlineButton).toHaveAttribute("data-state", "on");
+      
+      // Bold and italic should still be on
+      const boldButton = await canvas.findByRole("button", { name: /bold/i });
+      const italicButton = await canvas.findByRole("button", { name: /italic/i });
+      expect(boldButton).toHaveAttribute("data-state", "on");
+      expect(italicButton).toHaveAttribute("data-state", "on");
+    });
+
+    await step("should toggle bold off", async () => {
+      const boldButton = await canvas.findByRole("button", { name: /bold/i });
+      
+      await userEvent.click(boldButton);
+      
+      expect(boldButton).toHaveAttribute("data-state", "off");
+      
+      // Others should maintain their state
+      const italicButton = await canvas.findByRole("button", { name: /italic/i });
+      const underlineButton = await canvas.findByRole("button", { name: /underline/i });
+      expect(italicButton).toHaveAttribute("data-state", "on");
+      expect(underlineButton).toHaveAttribute("data-state", "on");
+    });
   },
 }
 

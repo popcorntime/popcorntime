@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { fn } from '@storybook/test'
+import { fn, userEvent, within, expect } from '@storybook/test'
 import { Button } from './button'
 
 const meta = {
@@ -51,6 +51,20 @@ export const Default: Story = {
   args: {
     children: 'Default Button',
   },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    
+    await step("should render button with correct text", async () => {
+      const button = await canvas.findByRole("button", { name: /default button/i });
+      expect(button).toBeInTheDocument();
+      expect(button).toBeEnabled();
+    });
+
+    await step("should be clickable", async () => {
+      const button = await canvas.findByRole("button", { name: /default button/i });
+      await userEvent.click(button);
+    });
+  },
 }
 
 export const Variants: Story = {
@@ -71,6 +85,31 @@ export const Variants: Story = {
         story: 'All available button variants',
       },
     },
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    
+    await step("should render all button variants", async () => {
+      const buttons = await canvas.findAllByRole("button");
+      expect(buttons).toHaveLength(7);
+      
+      // Check each variant exists
+      expect(await canvas.findByRole("button", { name: /^default$/i })).toBeInTheDocument();
+      expect(await canvas.findByRole("button", { name: /destructive/i })).toBeInTheDocument();
+      expect(await canvas.findByRole("button", { name: /outline/i })).toBeInTheDocument();
+      expect(await canvas.findByRole("button", { name: /secondary/i })).toBeInTheDocument();
+      expect(await canvas.findByRole("button", { name: /accent/i })).toBeInTheDocument();
+      expect(await canvas.findByRole("button", { name: /ghost/i })).toBeInTheDocument();
+      expect(await canvas.findByRole("button", { name: /link/i })).toBeInTheDocument();
+    });
+
+    await step("should be able to click each variant", async () => {
+      const buttons = await canvas.findAllByRole("button");
+      for (const button of buttons) {
+        await userEvent.click(button);
+        expect(button).toBeEnabled();
+      }
+    });
   },
 }
 
@@ -136,6 +175,26 @@ export const Disabled: Story = {
         story: 'Disabled state for different variants',
       },
     },
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    
+    await step("should render disabled buttons", async () => {
+      const buttons = await canvas.findAllByRole("button");
+      expect(buttons).toHaveLength(3);
+      
+      // All buttons should be disabled
+      buttons.forEach(button => {
+        expect(button).toBeDisabled();
+      });
+    });
+
+    await step("disabled buttons should not be clickable", async () => {
+      const disabledButton = await canvas.findByRole("button", { name: /disabled default/i });
+      expect(disabledButton).toBeDisabled();
+      // Clicking disabled button should not throw error
+      await userEvent.click(disabledButton);
+    });
   },
 }
 

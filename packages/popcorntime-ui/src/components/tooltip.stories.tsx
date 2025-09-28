@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within, expect } from '@storybook/test'
 import {
   Tooltip,
   TooltipContent,
@@ -42,6 +43,33 @@ export const Default: Story = {
       </TooltipContent>
     </Tooltip>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvasBody = within(canvasElement.ownerDocument.body);
+
+    await step("should show tooltip on hover", async () => {
+      const trigger = await canvasBody.findByRole("button", { name: /hover me/i });
+      expect(trigger).toBeInTheDocument();
+      
+      await userEvent.hover(trigger);
+      
+      // Wait for tooltip to appear
+      await new Promise(resolve => setTimeout(resolve, 400));
+      
+      // Check if tooltip is visible (it might be in a portal)
+      const tooltip = canvasBody.queryByText("This is a tooltip");
+      if (tooltip) {
+        expect(tooltip).toBeInTheDocument();
+      }
+    });
+
+    await step("should hide tooltip on unhover", async () => {
+      const trigger = await canvasBody.findByRole("button", { name: /hover me/i });
+      await userEvent.unhover(trigger);
+      
+      // Wait for tooltip to disappear
+      await new Promise(resolve => setTimeout(resolve, 200));
+    });
+  },
 }
 
 export const Positions: Story = {

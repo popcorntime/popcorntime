@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within, expect } from '@storybook/test'
 import { fn } from '@storybook/test'
 import { Checkbox } from './checkbox'
 
@@ -42,6 +43,28 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {},
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+    
+    await step("should render unchecked checkbox", async () => {
+      const checkbox = await canvas.findByRole("checkbox");
+      expect(checkbox).toBeInTheDocument();
+      expect(checkbox).not.toBeChecked();
+      expect(checkbox).toBeEnabled();
+    });
+
+    await step("should be clickable", async () => {
+      const checkbox = await canvas.findByRole("checkbox");
+      await userEvent.click(checkbox);
+      expect(checkbox).toBeChecked();
+    });
+
+    await step("should be unclickable", async () => {
+      const checkbox = await canvas.findByRole("checkbox");
+      await userEvent.click(checkbox);
+      expect(checkbox).not.toBeChecked();
+    });
+  },
 }
 
 export const Checked: Story = {

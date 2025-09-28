@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within, expect } from '@storybook/test'
 import { fn } from '@storybook/test'
 import {
   Command,
@@ -84,6 +85,28 @@ export const Default: Story = {
       </Command>
     </div>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvas = within(canvasElement);
+
+    await step("should render command component with input", async () => {
+      const input = await canvas.findByPlaceholderText("Type a command or search...");
+      expect(input).toBeInTheDocument();
+      expect(input).toBeEnabled();
+    });
+
+    await step("should show suggestions and settings groups", async () => {
+      expect(await canvas.findByText("Suggestions")).toBeInTheDocument();
+      expect(await canvas.findByText("Settings")).toBeInTheDocument();
+      expect(await canvas.findByText("Calendar")).toBeInTheDocument();
+      expect(await canvas.findByText("Profile")).toBeInTheDocument();
+    });
+
+    await step("should allow typing in search", async () => {
+      const input = await canvas.findByPlaceholderText("Type a command or search...");
+      await userEvent.type(input, "cal");
+      expect(input).toHaveValue("cal");
+    });
+  },
 }
 
 export const Dialog: Story = {

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { userEvent, within, expect } from '@storybook/test'
 import {
   Menubar,
   MenubarContent,
@@ -78,6 +79,29 @@ export const Default: Story = {
       </MenubarMenu>
     </Menubar>
   ),
+  play: async ({ canvasElement, step }) => {
+    const canvasBody = within(canvasElement.ownerDocument.body);
+
+    await step("should open the File menu", async () => {
+      await userEvent.click(
+        await canvasBody.findByRole("menuitem", { name: /file/i }),
+      );
+      expect(await canvasBody.findByRole("menu")).toBeInTheDocument();
+    });
+
+    await step("should have correct menu items", async () => {
+      const items = await canvasBody.findAllByRole("menuitem");
+      expect(items.length).toBeGreaterThan(3);
+      expect(await canvasBody.findByRole("menuitem", { name: /new tab/i })).toBeInTheDocument();
+      expect(await canvasBody.findByRole("menuitem", { name: /share/i })).toBeInTheDocument();
+    });
+
+    await step("clicking menu item should close the menu", async () => {
+      const shareItem = await canvasBody.findByRole("menuitem", { name: /share/i });
+      await userEvent.click(shareItem);
+      // Menu should close after clicking an item
+    });
+  },
 }
 
 export const PopcornTimeHeader: Story = {
@@ -165,6 +189,32 @@ export const PopcornTimeHeader: Story = {
         story: 'PopcornTime application header with menubar navigation',
       },
     },
+  },
+  play: async ({ canvasElement, step }) => {
+    const canvasBody = within(canvasElement.ownerDocument.body);
+
+    await step("should open the Media menu", async () => {
+      await userEvent.click(
+        await canvasBody.findByRole("menuitem", { name: /media/i }),
+      );
+      expect(await canvasBody.findByRole("menu")).toBeInTheDocument();
+    });
+
+    const items = await canvasBody.findAllByRole("menuitem");
+    expect(items.length).toBeGreaterThan(4);
+
+    await step("should have PopcornTime-specific menu items", async () => {
+      expect(await canvasBody.findByRole("menuitem", { name: /browse movies/i })).toBeInTheDocument();
+      expect(await canvasBody.findByRole("menuitem", { name: /browse tv shows/i })).toBeInTheDocument();
+      expect(await canvasBody.findByRole("menuitem", { name: /favorites/i })).toBeInTheDocument();
+      expect(await canvasBody.findByRole("menuitem", { name: /downloads/i })).toBeInTheDocument();
+    });
+
+    await step("clicking menu item should close the menu", async () => {
+      await userEvent.click(
+        await canvasBody.findByRole("menuitem", { name: /browse movies/i })
+      );
+    });
   },
 }
 
