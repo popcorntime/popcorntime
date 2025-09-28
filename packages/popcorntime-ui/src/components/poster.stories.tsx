@@ -31,7 +31,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   args: {
     media: {
-      poster: '/12345.jpg',
+      poster: '/o/gcWBYozxHjVf2oBjmddg.jpg',
       title: 'The Matrix',
       overview: 'A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.',
     },
@@ -51,7 +51,7 @@ export const Default: Story = {
 export const WithFreeBadge: Story = {
   args: {
     media: {
-      poster: '/67890.jpg',
+      poster: '/o/gcWBYozxHjVf2oBjmddg.jpg',
       title: 'Inception',
       overview: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
     },
@@ -86,7 +86,7 @@ export const NoPoster: Story = {
       free: 'Free',
       kind: 'Movie',
     },
-    placeholder: 'https://via.placeholder.com/300x450/374151/f3f4f6?text=No+Poster',
+    placeholder: 'https://placehold.co/300x450/374151/f3f4f6?text=No+Poster',
   },
   render: (args) => (
     <div className="w-48">
@@ -105,7 +105,7 @@ export const NoPoster: Story = {
 export const TVShow: Story = {
   args: {
     media: {
-      poster: '/tv123.jpg',
+      poster: '/o/LSelmJnbp3xCb8RZDe4d.jpg',
       title: 'Stranger Things',
       overview: 'When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces in order to get him back.',
     },
@@ -133,22 +133,22 @@ export const MovieGrid: Story = {
   render: () => {
     const movies = [
       { 
-        poster: '/movie1.jpg',
+        poster: '/o/gcWBYozxHjVf2oBjmddg.jpg',
         title: 'The Dark Knight', 
         overview: 'Batman raises the stakes in his war on crime with the help of Lt. Jim Gordon and DA Harvey Dent.',
       },
       { 
-        poster: '/movie2.jpg',
+        poster: '/o/Gym3XOrLUrUbGxT29L33.jpg',
         title: 'Pulp Fiction', 
         overview: 'The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence.',
       },
       { 
-        poster: '/movie3.jpg',
+        poster: '/o/LSelmJnbp3xCb8RZDe4d.jpg',
         title: 'Fight Club', 
         overview: 'An insomniac office worker and a devil-may-care soap maker form an underground fight club.',
       },
       { 
-        poster: '/movie4.jpg',
+        poster: '/o/TFKZLN5U1OpxkMvOcVsU.jpg',
         title: 'Goodfellas', 
         overview: 'The story of Henry Hill and his life in the mob, covering his relationship with his wife.',
       },
@@ -213,7 +213,7 @@ export const MixedContent: Story = {
   render: () => {
     const content = [
       { 
-        poster: '/action1.jpg',
+        poster: '/o/gcWBYozxHjVf2oBjmddg.jpg',
         title: 'Mad Max: Fury Road', 
         overview: 'In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler.',
         type: 'Movie',
@@ -227,7 +227,7 @@ export const MixedContent: Story = {
         loading: true
       },
       { 
-        poster: '/series1.jpg',
+        poster: '/o/Gym3XOrLUrUbGxT29L33.jpg',
         title: 'Breaking Bad', 
         overview: 'A high school chemistry teacher turned methamphetamine manufacturer.',
         type: 'TV Show',
@@ -261,7 +261,7 @@ export const MixedContent: Story = {
                     kind: item.type,
                   }}
                   withFreeBadge={item.free}
-                  placeholder="https://via.placeholder.com/300x450/374151/f3f4f6?text=No+Image"
+                  placeholder="https://placehold.co/300x450/374151/f3f4f6?text=No+Image"
                 />
               )}
               <div className="text-center">
@@ -287,7 +287,7 @@ export const MixedContent: Story = {
 export const ResponsiveGrid: Story = {
   render: () => {
     const popularContent = Array.from({ length: 20 }).map((_, i) => ({
-      poster: `/popular${i + 1}.jpg`,
+      poster: `/o/gcWBYozxHjVf2oBjmddg.jpg`,
       title: `Popular Title ${i + 1}`,
       overview: `This is the overview for popular content item ${i + 1}. It contains interesting information about the plot.`,
       type: i % 3 === 0 ? 'TV Show' : 'Movie',
@@ -315,7 +315,7 @@ export const ResponsiveGrid: Story = {
                 }}
                 withFreeBadge={item.free}
                 isAboveTheFold={i < 8}
-                placeholder="https://via.placeholder.com/300x450/374151/f3f4f6?text=Poster"
+                placeholder="https://placehold.co/300x450/374151/f3f4f6?text=Poster"
               />
               <div className="text-center space-y-1">
                 <h3 className="font-medium text-xs leading-tight line-clamp-2">{item.title}</h3>
@@ -344,7 +344,7 @@ export const DirectPicture: Story = {
       <div className="grid grid-cols-3 gap-4">
         <div className="space-y-2">
           <MediaPosterAsPicture 
-            posterId="12345"
+            posterId="gcWBYozxHjVf2oBjmddg"
             title="Movie with Poster ID"
             loading="eager"
             className="w-full aspect-[2/3] rounded-lg"
@@ -356,7 +356,7 @@ export const DirectPicture: Story = {
           <MediaPosterAsPicture 
             title="Movie without Poster ID"
             loading="lazy"
-            placeholder="https://via.placeholder.com/300x450/374151/f3f4f6?text=Fallback"
+            placeholder="https://placehold.co/300x450/374151/f3f4f6?text=Fallback"
             className="w-full aspect-[2/3] rounded-lg"
           />
           <p className="text-sm text-center">Fallback Image</p>
@@ -364,7 +364,7 @@ export const DirectPicture: Story = {
 
         <div className="space-y-2">
           <MediaPosterAsPicture 
-            posterId="67890"
+            posterId="Gym3XOrLUrUbGxT29L33"
             title="Lazy Loaded Movie"
             loading="lazy"
             className="w-full aspect-[2/3] rounded-lg"
