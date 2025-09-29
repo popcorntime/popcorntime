@@ -73,7 +73,8 @@
     "languageTitle": "Roghnaigh do theanga",
     "languageDescription": "Roghnaigh do theanga comhéadan agus tabhair tús áite do ábhar {{inCountry}}",
     "changeCountry": "Athraigh tír",
-    "default": "Tír dhúchasach réamhshocraithe"
+    "default": "Tír dhúchasach réamhshocraithe",
+    "showAll": "Taispeáin gach teanga"
   },
   "onboardingProviders": {
     "title": "Roghnaigh do sheirbhísí sruthaithe",
@@ -85,8 +86,9 @@
       "subscription": "Síntiús",
       "all": "Gach"
     },
-    "skip": "Léim",
+    "skip": "Déanfaidh mé é níos déanaí.",
     "continue": "Lean ar aghaidh",
+    "selectCountry": "Athraigh tír",
     "clearAll": "Glan gach rud",
     "clearSearch": "Glan cuardach",
     "selected": "Roghnaithe {{count}} soláthraí(í)",

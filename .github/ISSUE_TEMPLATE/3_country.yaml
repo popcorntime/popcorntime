@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ⚠️ Before submitting, please [search existing issues](https://github.com/popcorntime/issues?q=is%3Aissue+label%3Acountry) to check if this country has already been requested.
+        ⚠️ Before submitting, please [search existing issues](https://github.com/popcorntime/popcorntime/issues?q=is%3Aissue%20label%3Acountry) to check if this country has already been requested.
 
   - type: input
     id: country

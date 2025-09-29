@@ -73,7 +73,8 @@
     "languageTitle": "Selecciona tu idioma",
     "languageDescription": "Seleccione su idioma de interfaz y dé prioridad al contenido {{inCountry}}",
     "changeCountry": "Cambiar país",
-    "default": "Configuración regional predeterminada"
+    "default": "Configuración regional predeterminada",
+    "showAll": "Mostrar todos los idiomas"
   },
   "onboardingProviders": {
     "title": "Selecciona tus servicios de streaming",
@@ -85,8 +86,9 @@
       "subscription": "Suscripción",
       "all": "Todo"
     },
-    "skip": "Saltar",
+    "skip": "Lo haré más tarde",
     "continue": "Continuar",
+    "selectCountry": "Cambiar país",
     "clearAll": "Borrar todo",
     "clearSearch": "Borrar búsqueda",
     "selected": "{{count}} proveedor(es) seleccionado(s)",

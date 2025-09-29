@@ -73,7 +73,8 @@
     "languageTitle": "Vælg dit sprog",
     "languageDescription": "Vælg dit grænsefladesprog og prioriter indhold {{inCountry}}",
     "changeCountry": "Skift land",
-    "default": "Standardindstilling af område"
+    "default": "Standardindstilling af område",
+    "showAll": "Vis alle sprog"
   },
   "onboardingProviders": {
     "title": "Vælg dine streamingtjenester",
@@ -85,8 +86,9 @@
       "subscription": "Abonnement",
       "all": "Alle"
     },
-    "skip": "Springe",
+    "skip": "Jeg gør det senere",
     "continue": "Fortsæt",
+    "selectCountry": "Skift land",
     "clearAll": "Ryd alt op",
     "clearSearch": "Ryd søgning",
     "selected": "{{count}} udbyder(e) valgt",

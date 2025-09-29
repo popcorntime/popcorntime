@@ -73,7 +73,8 @@
     "languageTitle": "Vali oma keel",
     "languageDescription": "Valige oma liidese keel ja eelistage sisu {{inCountry}}",
     "changeCountry": "Mአውጣ ሃገር",
-    "default": "ডিফল্ট লোকেল"
+    "default": "ডিফল্ট লোকেল",
+    "showAll": "Näita kõiki keeli"
   },
   "onboardingProviders": {
     "title": "Streaming አገልግሎቶችዎችን ይምረጡ",
@@ -85,8 +86,9 @@
       "subscription": "Tellimine",
       "all": "Kõik"
     },
-    "skip": "Jäta vahele",
+    "skip": "Ma later negeralehu",
     "continue": "Jiraaji",
+    "selectCountry": "Mitiw kilil",
     "clearAll": "Kustuta kõik",
     "clearSearch": "Otsi tühjaks",
     "selected": "{{count}} አቅራቢ(ሞች) ተመርጠዋል",

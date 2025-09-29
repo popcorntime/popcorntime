@@ -73,7 +73,8 @@
     "languageTitle": "अपनी भाषा चुनें",
     "languageDescription": "अपनी इंटरफ़ेस भाषा चुनें और सामग्री को {{inCountry}} प्राथमिकता दें",
     "changeCountry": "देश बदलें",
-    "default": "डिफ़ॉल्ट लोकेल"
+    "default": "डिफ़ॉल्ट लोकेल",
+    "showAll": "सभी भाषाएँ दिखाएँ"
   },
   "onboardingProviders": {
     "title": "अपनी स्ट्रीमिंग सेवाएँ चुनें",
@@ -85,8 +86,9 @@
       "subscription": "सदस्यता",
       "all": "सभी"
     },
-    "skip": "छोडना",
+    "skip": "बाद में कर लूंगा/लूंगी",
     "continue": "जारी रखें",
+    "selectCountry": "देश बदलें",
     "clearAll": "सभी साफ़ करें",
     "clearSearch": "खोज साफ़ करें",
     "selected": "{{count}} प्रदाता चुने गए",

@@ -73,7 +73,8 @@
     "languageTitle": "Valitse kielesi",
     "languageDescription": "Valitse käyttöliittymän kieli ja priorisoi sisältö {{inCountry}}",
     "changeCountry": "Vaihda maa",
-    "default": "Oletuslokaatio"
+    "default": "Oletuslokaatio",
+    "showAll": "Näytä kaikki kielet"
   },
   "onboardingProviders": {
     "title": "Valitse suoratoistopalvelusi",
@@ -85,8 +86,9 @@
       "subscription": "Tilauksesi",
       "all": "Kaikki"
     },
-    "skip": "Ohita",
+    "skip": "Teen sen myöhemmin",
     "continue": "Jatka",
+    "selectCountry": "Vaihda maa",
     "clearAll": "Tyhjennä kaikki",
     "clearSearch": "Tyhjennä haku",
     "selected": "{{count}} palveluntarjoaja(a) valittu",

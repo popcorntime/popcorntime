@@ -73,7 +73,8 @@
     "languageTitle": "اپنی زبان منتخب کریں",
     "languageDescription": "اپنی انٹرفیس زبان منتخب کریں اور مواد کو {{inCountry}} میں ترجیح دیں",
     "changeCountry": "ملک تبدیل کریں",
-    "default": "پہلا علاقہ"
+    "default": "پہلا علاقہ",
+    "showAll": "تمام زبانیں دکھائیں"
   },
   "onboardingProviders": {
     "title": "اپنی اسٹریمنگ سروسز منتخب کریں",
@@ -85,8 +86,9 @@
       "subscription": "سبسکرپشن",
       "all": "تمام"
     },
-    "skip": "چھوڑیں۔",
+    "skip": "میں بعد میں کر لوں گا۔",
     "continue": "جاری رکھیں",
+    "selectCountry": "ملک تبدیل کریں",
     "clearAll": "سب کچھ صاف کریں",
     "clearSearch": "تلاش صاف کریں",
     "selected": "{{count}} فراہم کنندہ منتخب کیا گیا",

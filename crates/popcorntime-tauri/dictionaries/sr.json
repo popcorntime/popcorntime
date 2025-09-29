@@ -73,7 +73,8 @@
     "languageTitle": "Odaberite svoj jezik",
     "languageDescription": "Izaberite jezik interfejsa i dajte prioritet sadržaju {{inCountry}}",
     "changeCountry": "Promeni državu",
-    "default": "Podrazumevani jezik"
+    "default": "Podrazumevani jezik",
+    "showAll": "Prikaži sve jezike"
   },
   "onboardingProviders": {
     "title": "Izaberite svoje streaming usluge",
@@ -85,8 +86,9 @@
       "subscription": "Pretplata",
       "all": "Сви"
     },
-    "skip": "Прескочи",
+    "skip": "Učiniću to kasnije",
     "continue": "Nastavi",
+    "selectCountry": "Promeni zemlju",
     "clearAll": "Obriši sve",
     "clearSearch": "Obriši pretragu",
     "selected": "{{count}} добављен(их) добављач(а)",

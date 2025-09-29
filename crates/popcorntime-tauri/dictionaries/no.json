@@ -73,7 +73,8 @@
     "languageTitle": "Velg ditt språk",
     "languageDescription": "Velg ditt grensesnittspråk og prioriter innhold {{inCountry}}",
     "changeCountry": "Endre land",
-    "default": "Standard språkområde"
+    "default": "Standard språkområde",
+    "showAll": "Vis alle språk"
   },
   "onboardingProviders": {
     "title": "Velg dine strømmetjenester",
@@ -85,8 +86,9 @@
       "subscription": "Abonnement",
       "all": "Alle"
     },
-    "skip": "Hopp over",
+    "skip": "Jeg gjør det senere",
     "continue": "Fortsett",
+    "selectCountry": "Bytt land",
     "clearAll": "Tøm alt",
     "clearSearch": "Tøm søk",
     "selected": "{{count}} leverandør(er) valgt",

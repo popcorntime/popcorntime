@@ -73,7 +73,8 @@
     "languageTitle": "Selecteer je taal",
     "languageDescription": "Selecteer je interface taal en geef prioriteit aan inhoud {{inCountry}}",
     "changeCountry": "Land wijzigen",
-    "default": "Standaard landinstelling"
+    "default": "Standaard landinstelling",
+    "showAll": "Toon alle talen"
   },
   "onboardingProviders": {
     "title": "Selecteer je streamingdiensten",
@@ -85,8 +86,9 @@
       "subscription": "Abonnement",
       "all": "Alle"
     },
-    "skip": "Overslaan",
+    "skip": "Ik doe het later.",
     "continue": "Doorgaan",
+    "selectCountry": "Land wijzigen",
     "clearAll": "Alles wissen",
     "clearSearch": "Zoekopdracht wissen",
     "selected": "{{count}} aanbieder(s) geselecteerd",

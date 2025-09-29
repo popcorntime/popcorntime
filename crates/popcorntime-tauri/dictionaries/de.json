@@ -73,7 +73,8 @@
     "languageTitle": "Sprache auswählen",
     "languageDescription": "Wählen Sie Ihre Schnittstellensprache und priorisieren Sie Inhalte {{inCountry}}",
     "changeCountry": "Land ändern",
-    "default": "Standardgebietsschema"
+    "default": "Standardgebietsschema",
+    "showAll": "Alle Sprachen anzeigen"
   },
   "onboardingProviders": {
     "title": "Wähle deine Streamingdienste aus",
@@ -85,8 +86,9 @@
       "subscription": "Abonnement",
       "all": "Alle"
     },
-    "skip": "Überspringen",
+    "skip": "Ich mache es später.",
     "continue": "Fortfahren",
+    "selectCountry": "Land ändern",
     "clearAll": "Alles löschen",
     "clearSearch": "Suche löschen",
     "selected": "{{count}} Anbieter ausgewählt",

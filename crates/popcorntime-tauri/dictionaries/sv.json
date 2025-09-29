@@ -73,7 +73,8 @@
     "languageTitle": "Välj ditt språk",
     "languageDescription": "Välj ditt gränssnittsspråk och prioritera innehåll {{inCountry}}",
     "changeCountry": "Byt land",
-    "default": "Standardplats"
+    "default": "Standardplats",
+    "showAll": "Visa alla språk"
   },
   "onboardingProviders": {
     "title": "Välj dina streamingtjänster",
@@ -85,8 +86,9 @@
       "subscription": "Prenumeration",
       "all": "Alla"
     },
-    "skip": "Hoppa",
+    "skip": "Jag gör det senare",
     "continue": "Fortsätt",
+    "selectCountry": "Ändra land",
     "clearAll": "Rensa alla",
     "clearSearch": "Rensa sökning",
     "selected": "{{count}} leverantör(er) valda",

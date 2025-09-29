@@ -73,7 +73,8 @@
     "languageTitle": "Dilinizi seçin",
     "languageDescription": "Arayüz dilinizi seçin ve {{inCountry}} içeriği öncelikli hale getirin",
     "changeCountry": "Ülkeyi değiştir",
-    "default": "Varsayılan yerel ayar"
+    "default": "Varsayılan yerel ayar",
+    "showAll": "Tüm dilleri göster"
   },
   "onboardingProviders": {
     "title": "Akış hizmetlerinizi seçin",
@@ -85,8 +86,9 @@
       "subscription": "Abonelik",
       "all": "Tüm"
     },
-    "skip": "Atlamak",
+    "skip": "Daha sonra yaparım",
     "continue": "Devam Et",
+    "selectCountry": "Ülkeyi değiştir",
     "clearAll": "Hepsini Temizle",
     "clearSearch": "Aramayı temizle",
     "selected": "{{count}} sağlayıcı seçildi",

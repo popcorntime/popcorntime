@@ -73,7 +73,8 @@
     "languageTitle": "اختر لغتك",
     "languageDescription": "اختر لغة الواجهة الخاصة بك وأولوي المحتوى {{inCountry}}",
     "changeCountry": "تغيير البلد",
-    "default": "اللغة الافتراضية"
+    "default": "اللغة الافتراضية",
+    "showAll": "عرض جميع اللغات"
   },
   "onboardingProviders": {
     "title": "اختر خدمات البث الخاصة بك",
@@ -85,8 +86,9 @@
       "subscription": "اشتراك",
       "all": "الجميع"
     },
-    "skip": "يتخطى",
+    "skip": "سأفعلها لاحقًا",
     "continue": "استمر",
+    "selectCountry": "تغيير البلد",
     "clearAll": "مسح الكل",
     "clearSearch": "مسح البحث",
     "selected": "{{count}} مزود(ون) تم اختيارهم",

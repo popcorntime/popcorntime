@@ -73,7 +73,8 @@
     "languageTitle": "زبان خود را انتخاب کنید",
     "languageDescription": "زبان رابط کاربری خود را انتخاب کنید و محتوای {{inCountry}} را در اولویت قرار دهید",
     "changeCountry": "تغییر کشور",
-    "default": "موقعیت پیش‌فرض"
+    "default": "موقعیت پیش‌فرض",
+    "showAll": "نمایش همه زبان‌ها"
   },
   "onboardingProviders": {
     "title": "سرویس‌های استریم خود را انتخاب کنید",
@@ -85,8 +86,9 @@
       "subscription": "اشتراک",
       "all": "همه"
     },
-    "skip": "پرش",
+    "skip": "بعداً انجامش می‌دم",
     "continue": "ادامه دهید",
+    "selectCountry": "تغییر کشور",
     "clearAll": "همه را پاک کن",
     "clearSearch": "جستجو را پاک کن",
     "selected": "{{count}} ارائه‌دهنده انتخاب شده است",
