@@ -1,5 +1,6 @@
 /target/
 release/
+!crates/popcorntime-tauri/icons/release/
 .rust-analyzer/
 
 # Logs

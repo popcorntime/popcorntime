@@ -1,5 +1,5 @@
 <div align="center">
-   <img align="center" width="128px" src="crates/popcorntime-tauri/icons/128x128@2x.png" />
+   <img align="center" width="128px" src="crates/popcorntime-tauri/icons/release/128x128@2x.png" />
 	<h1 align="center"><b>Popcorn Time™</b></h1>
 	<p align="center">
 		Watch Movies, TV Shows and more...
