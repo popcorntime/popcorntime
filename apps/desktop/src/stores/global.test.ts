@@ -145,26 +145,6 @@ describe("dialogs behavior", () => {
 		s.preferences.setPreferences({ country: "CA", language: "en" });
 		expect(useGlobalStore.getState().dialogs.preferences.isOpen).toBe(false);
 	});
-
-	it("auto-opens preferences when session active & app initialized but missing prefs", () => {
-		const s = useGlobalStore.getState();
-		setAllReady();
-
-		expect(useGlobalStore.getState().app.initialized).toBe(true);
-		expect(useGlobalStore.getState().dialogs.preferences.isOpen).toBe(false);
-
-		s.session.setIsActive(true);
-		expect(useGlobalStore.getState().dialogs.preferences.isOpen).toBe(true);
-
-		s.preferences.setPreferences({ country: "CA", language: "en" });
-		expect(useGlobalStore.getState().dialogs.preferences.isOpen).toBe(false);
-
-		// should be closable
-		s.dialogs.preferences.toggle();
-		expect(useGlobalStore.getState().dialogs.preferences.isOpen).toBe(true);
-		s.dialogs.preferences.toggle();
-		expect(useGlobalStore.getState().dialogs.preferences.isOpen).toBe(false);
-	});
 });
 
 describe("session/logout reset", () => {

@@ -113,14 +113,16 @@ describe("SessionProvider with mockIPC", () => {
 		expect(useGlobalStore.getState().preferences.initialized).toBe(true);
 		expect(useGlobalStore.getState().providers.initialized).toBe(false);
 		expect(useGlobalStore.getState().app.initialized).toBe(false);
-		expect(useGlobalStore.getState().dialogs.preferences.isOpen).toBe(true);
+		expect(useGlobalStore.getState().dialogs.preferences.isOpen).toBe(false);
+		expect(screen.getByTestId("loc")).toHaveTextContent("/onboarding/preferences");
 
 		await act(async () => s.preferences.setPreferences({ country: "US", language: "fr" }));
+
+		expect(screen.getByTestId("loc")).toHaveTextContent("/onboarding/providers");
 
 		expect(useGlobalStore.getState().preferences.country).toBe("US");
 		expect(useGlobalStore.getState().preferences.language).toBe("fr");
 
-		expect(useGlobalStore.getState().dialogs.preferences.isOpen).toBe(false);
 		expect(useGlobalStore.getState().providers.initialized).toBe(true);
 		expect(useGlobalStore.getState().app.initialized).toBe(true);
 
