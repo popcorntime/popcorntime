@@ -42,9 +42,9 @@
   },
   "menu": {
     "preferences": "Keel ja piirkond",
-    "watchPreferences": "መልካም እንቅስቃሴ ምርጫዎች",
+    "watchPreferences": "Vaatamise eelistused",
     "manifest": "Manifesto",
-    "logs": "Debug ምልክቶች",
+    "logs": "Logid",
     "signOut": "Logi välja"
   },
   "preferences": {
