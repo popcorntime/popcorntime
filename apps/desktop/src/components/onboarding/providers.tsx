@@ -11,6 +11,7 @@ import { useTauri } from "@/hooks/useTauri";
 import { useGlobalStore } from "@/stores/global";
 import type { WatchPriceType } from "@/tauri/types";
 import { ProviderIcon } from "../provider";
+import { useProviders } from "@/hooks/useProviders";
 
 type ProviderCategory = "popular" | "free" | "flatrate" | "all";
 type ProviderFilter =
@@ -37,9 +38,11 @@ export function OnboardingProviders() {
 	const providers = useGlobalStore(state => state.providers.providers);
 	const direction = useGlobalStore(state => state.i18n.direction);
 	const country = useGlobalStore(state => state.preferences.country);
+	const { getProviders } = useProviders();
 	const providersLoading = useGlobalStore(state => state.providers.isLoading);
 	const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
 	const [searchQuery, setSearchQuery] = useState("");
+	const [isLoading, setIsLoading] = useState(false);
 	const [activeCategory, setActiveCategory] = useState<ProviderCategory>("popular");
 	const { t } = useTranslation();
 	const navigate = useNavigate();
@@ -95,16 +98,21 @@ export function OnboardingProviders() {
 		if (selectedProviders.length === 0) {
 			navigate("/browse");
 		} else {
+			setIsLoading(true);
 			api
 				.setFavoritesMultipleProviders({
 					country,
 					providersKey: selectedProviders,
 				})
+				// FIXME: would probably be better to make an optimistic update instead
+				// of reloading all providers
+				.then(getProviders.bind(null, country))
 				.finally(() => {
+					setIsLoading(false);
 					navigate("/browse");
 				});
 		}
-	}, [selectedProviders, navigate, api, country]);
+	}, [selectedProviders, navigate, getProviders, api, country, setIsLoading]);
 
 	return (
 		<div className="h-screen max-h-screen flex flex-col">
@@ -160,7 +168,7 @@ export function OnboardingProviders() {
 				<div className="mx-auto w-full max-w-6xl px-6 py-6">
 					<div className="space-y-6 pb-28">
 						<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-							{providersLoading && (
+							{providersLoading && !isLoading && (
 								<div className="col-span-full flex items-center justify-center py-12">
 									<Spinner className="w-8 h-8 text-primary" />
 								</div>
@@ -241,16 +249,18 @@ export function OnboardingProviders() {
 							<Button variant="link" onClick={handleChangeCountry}>
 								{t("onboardingProviders.selectCountry")}
 							</Button>
-							<Button onClick={handleContinue} className="flex items-center">
+							<Button disabled={isLoading} onClick={handleContinue} className="flex items-center">
 								<span>
 									{selectedProviders.length > 0
 										? t("onboardingProviders.continue")
 										: t("onboardingProviders.skip")}
 								</span>
-								{direction === "rtl" ? (
-									<ArrowLeft className="w-4 h-4" />
+								{isLoading ? (
+									<Spinner className="size-4 text-primary-foreground" />
+								) : direction === "rtl" ? (
+									<ArrowLeft className="size-4" />
 								) : (
-									<ArrowRight className="w-4 h-4" />
+									<ArrowRight className="size-4" />
 								)}
 							</Button>
 						</div>
