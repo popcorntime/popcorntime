@@ -72,27 +72,27 @@
     "countryDescription": "Vali oma riik, et näha saadaval olevaid keeli",
     "languageTitle": "Vali oma keel",
     "languageDescription": "Valige oma liidese keel ja eelistage sisu {{inCountry}}",
-    "changeCountry": "Mአውጣ ሃገር",
+    "changeCountry": "Muuda riiki",
     "default": "Vaikimisi lokaat",
     "showAll": "Näita kõiki keeli"
   },
   "onboardingProviders": {
-    "title": "Streaming አገልግሎቶችዎችን ይምረጡ",
+    "title": "Vali voogedastusteenused",
     "description": "Vali need platvormid, millele sul on juurdepääs, et saaksime näidata, mida vaadata.",
-    "searchPlaceholder": "ፈልግ አቅራቢዎች...",
+    "searchPlaceholder": "Otsi pakkujaid...",
     "category": {
-      "popular": "ታዋቂ",
+      "popular": "Populaarne",
       "free": "Tasuta",
       "subscription": "Tellimine",
       "all": "Kõik"
     },
-    "skip": "Ma later negeralehu",
-    "continue": "Jiraaji",
-    "selectCountry": "Mitiw kilil",
+    "skip": "Jäta vahele",
+    "continue": "Jätka",
+    "selectCountry": "Vali maakond",
     "clearAll": "Kustuta kõik",
     "clearSearch": "Otsi tühjaks",
     "selected": "{{count}} pakkuja(t) valitud",
-    "noFound": "\"{{query}}\" ለሚለው ምንም አቅራቢዎች አልተገኙም።"
+    "noFound": "\"{{query}}\" kohta ei leitud ühtegi pakkujat."
   },
   "priceType": {
     "buy": "Osta",
