@@ -91,7 +91,7 @@
     "selectCountry": "Mitiw kilil",
     "clearAll": "Kustuta kõik",
     "clearSearch": "Otsi tühjaks",
-    "selected": "{{count}} አቅራቢ(ሞች) ተመርጠዋል",
+    "selected": "{{count}} pakkuja(t) valitud",
     "noFound": "\"{{query}}\" ለሚለው ምንም አቅራቢዎች አልተገኙም።"
   },
   "priceType": {
