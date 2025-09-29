@@ -7,11 +7,11 @@ import { ArrowLeft, ArrowRight, Check, Gift, Search, TrendingUp, Tv } from "luci
 import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
+import { useProviders } from "@/hooks/useProviders";
 import { useTauri } from "@/hooks/useTauri";
 import { useGlobalStore } from "@/stores/global";
 import type { WatchPriceType } from "@/tauri/types";
 import { ProviderIcon } from "../provider";
-import { useProviders } from "@/hooks/useProviders";
 
 type ProviderCategory = "popular" | "free" | "flatrate" | "all";
 type ProviderFilter =
