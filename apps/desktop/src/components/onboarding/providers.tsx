@@ -3,7 +3,7 @@ import { Button } from "@popcorntime/ui/components/button";
 import { Input } from "@popcorntime/ui/components/input";
 import { Spinner } from "@popcorntime/ui/components/spinner";
 import { cn } from "@popcorntime/ui/lib/utils";
-import { ArrowRight, Check, Gift, Search, TrendingUp, Tv } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Gift, Search, TrendingUp, Tv } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
@@ -35,6 +35,7 @@ export const providerCategories: Record<ProviderCategory, ProviderCategoryInfo> 
 
 export function OnboardingProviders() {
 	const providers = useGlobalStore(state => state.providers.providers);
+	const direction = useGlobalStore(state => state.i18n.direction);
 	const country = useGlobalStore(state => state.preferences.country);
 	const providersLoading = useGlobalStore(state => state.providers.isLoading);
 	const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
@@ -85,6 +86,7 @@ export function OnboardingProviders() {
 	};
 
 	const handleReset = () => setSelectedProviders([]);
+	const handleChangeCountry = () => navigate("/onboarding/preferences");
 
 	const handleContinue = useCallback(() => {
 		if (!country) {
@@ -93,10 +95,14 @@ export function OnboardingProviders() {
 		if (selectedProviders.length === 0) {
 			navigate("/browse");
 		} else {
-			api.setFavoritesMultipleProviders({
-				country,
-				providerKey: selectedProviders,
-			});
+			api
+				.setFavoritesMultipleProviders({
+					country,
+					providersKey: selectedProviders,
+				})
+				.finally(() => {
+					navigate("/browse");
+				});
 		}
 	}, [selectedProviders, navigate, api, country]);
 
@@ -105,7 +111,7 @@ export function OnboardingProviders() {
 			<header className="sticky top-0 z-10 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
 				<div className="mx-auto w-full max-w-6xl px-6 py-6 mt-10">
 					<div className="text-center space-y-3">
-						<div className="flex w-14 h-14 mx-auto bg-primary/20 rounded-full  items-center justify-center">
+						<div className="hidden lg:flex w-14 h-14 mx-auto bg-primary/20 rounded-full  items-center justify-center">
 							<Tv className="w-7 h-7 text-primary" />
 						</div>
 						<h2 className="text-3xl font-bold text-foreground">{t("onboardingProviders.title")}</h2>
@@ -113,7 +119,7 @@ export function OnboardingProviders() {
 							{t("onboardingProviders.description")}
 						</p>
 
-						<div className="mt-4 grid gap-3">
+						<div className="mt-4 grid gap-3 lg:gap-6">
 							<div className="relative max-w-md mx-auto w-full">
 								<Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4" />
 								<Input
@@ -232,11 +238,20 @@ export function OnboardingProviders() {
 						</div>
 
 						<div className="flex gap-2">
-							<Button onClick={handleContinue}>
-								{selectedProviders.length > 0
-									? t("onboardingProviders.continue")
-									: t("onboardingProviders.skip")}
-								<ArrowRight className="w-4 h-4 ml-2" />
+							<Button variant="link" onClick={handleChangeCountry}>
+								{t("onboardingProviders.selectCountry")}
+							</Button>
+							<Button onClick={handleContinue} className="flex items-center">
+								<span>
+									{selectedProviders.length > 0
+										? t("onboardingProviders.continue")
+										: t("onboardingProviders.skip")}
+								</span>
+								{direction === "rtl" ? (
+									<ArrowLeft className="w-4 h-4" />
+								) : (
+									<ArrowRight className="w-4 h-4" />
+								)}
 							</Button>
 						</div>
 					</div>

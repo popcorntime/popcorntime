@@ -46,7 +46,6 @@ export const SessionProvider = ({ children }: { children: ReactNode }) => {
 	const onboarded = useGlobalStore(state => state.settings.onboarded);
 	const preferencesInitialized = useGlobalStore(state => state.preferences.initialized);
 	const preferencesCountry = useGlobalStore(state => state.preferences.country);
-	const providers = useGlobalStore(state => state.providers.providers);
 
 	const { api, on } = useTauri();
 	const { pathname } = useLocation();
@@ -185,18 +184,6 @@ export const SessionProvider = ({ children }: { children: ReactNode }) => {
 			navigate("/onboarding/preferences");
 		}
 	}, [withPreferencesReady, pathname, navigate, preferencesCountry]);
-
-	useEffect(() => {
-		const favoriteProvidersCount = providers.filter(p => p.favorite).length;
-		if (
-			withPreferencesReady &&
-			preferencesCountry &&
-			favoriteProvidersCount === 0 &&
-			pathname !== "/onboarding/providers"
-		) {
-			navigate("/onboarding/providers");
-		}
-	}, [withPreferencesReady, pathname, navigate, preferencesCountry, providers]);
 
 	return (
 		<SessionContext.Provider value={{ logout, updatePreferences }}>

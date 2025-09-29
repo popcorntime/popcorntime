@@ -118,8 +118,6 @@ describe("SessionProvider with mockIPC", () => {
 
 		await act(async () => s.preferences.setPreferences({ country: "US", language: "fr" }));
 
-		expect(screen.getByTestId("loc")).toHaveTextContent("/onboarding/providers");
-
 		expect(useGlobalStore.getState().preferences.country).toBe("US");
 		expect(useGlobalStore.getState().preferences.language).toBe("fr");
 

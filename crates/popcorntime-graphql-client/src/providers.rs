@@ -13,7 +13,7 @@ pub struct SetFavoriteProviderInput<'a> {
 #[serde(rename_all = "camelCase")]
 pub struct SetFavoriteMultipleProvidersInput {
   pub country: Country,
-  pub provider_key: Vec<String>,
+  pub providers_key: Vec<String>,
 }
 
 #[derive(cynic::QueryVariables, Debug, specta::Type, Deserialize)]
@@ -59,7 +59,7 @@ pub struct SetFavoriteProviderMutation {
 )]
 #[serde(rename_all = "camelCase")]
 pub struct SetFavoriteMultipleProvidersMutation {
-  #[arguments(country: $country, providersKey: $provider_key)]
+  #[arguments(country: $country, providersKey: $providers_key)]
   pub set_favorite_multiple_providers: bool,
 }
 
@@ -92,7 +92,7 @@ mod tests {
     let operation =
       SetFavoriteMultipleProvidersMutation::build(SetFavoriteMultipleProvidersInput {
         country: Country("US".to_string()),
-        provider_key: vec!["netflix".to_string(), "hulu".to_string()],
+        providers_key: vec!["netflix".to_string(), "hulu".to_string()],
       });
     insta::assert_snapshot!(operation.query);
   }
