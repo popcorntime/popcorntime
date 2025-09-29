@@ -73,7 +73,7 @@
     "languageTitle": "Vali oma keel",
     "languageDescription": "Valige oma liidese keel ja eelistage sisu {{inCountry}}",
     "changeCountry": "Mአውጣ ሃገር",
-    "default": "ডিফল্ট লোকেল",
+    "default": "Vaikimisi lokaat",
     "showAll": "Näita kõiki keeli"
   },
   "onboardingProviders": {
