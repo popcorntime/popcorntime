@@ -1,5 +1,13 @@
-import type { Country, Locale } from "@popcorntime/i18n/types";
-import { createContext, type ReactNode, useCallback, useContext, useEffect, useRef } from "react";
+import { type Country, i18n, type Locale } from "@popcorntime/i18n/types";
+import {
+	createContext,
+	type ReactNode,
+	useCallback,
+	useContext,
+	useEffect,
+	useMemo,
+	useRef,
+} from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router";
 import { toast } from "sonner";
@@ -38,7 +46,7 @@ export const SessionProvider = ({ children }: { children: ReactNode }) => {
 	const onboarded = useGlobalStore(state => state.settings.onboarded);
 	const preferencesInitialized = useGlobalStore(state => state.preferences.initialized);
 	const preferencesCountry = useGlobalStore(state => state.preferences.country);
-	const preferencesLanguage = useGlobalStore(state => state.preferences.language);
+	const providers = useGlobalStore(state => state.providers.providers);
 
 	const { api, on } = useTauri();
 	const { pathname } = useLocation();
@@ -149,8 +157,9 @@ export const SessionProvider = ({ children }: { children: ReactNode }) => {
 				if (prefs) {
 					// FIXME: inject Country and Locale into specta
 					const country = prefs?.updatePreferences?.country as Country | undefined;
-					const language = prefs?.updatePreferences?.language as Locale | undefined;
-					if (country && language) {
+					const language =
+						(prefs?.updatePreferences?.language as Locale | undefined) ?? i18n.defaultLocale;
+					if (country) {
 						setPreferences({ country, language });
 					}
 				}
@@ -166,27 +175,28 @@ export const SessionProvider = ({ children }: { children: ReactNode }) => {
 		[api.updateUserPreferences, setPreferences, t]
 	);
 
+	const withPreferencesReady = useMemo(
+		() => bootInitialized && isActive && onboarded && preferencesInitialized,
+		[bootInitialized, isActive, onboarded, preferencesInitialized]
+	);
+
 	useEffect(() => {
-		if (
-			bootInitialized &&
-			isActive &&
-			onboarded &&
-			preferencesInitialized &&
-			(!preferencesCountry || !preferencesLanguage) &&
-			pathname !== "/onboarding/experience"
-		) {
-			navigate("/onboarding/experience", { replace: true });
+		if (withPreferencesReady && !preferencesCountry && pathname !== "/onboarding/preferences") {
+			navigate("/onboarding/preferences");
 		}
-	}, [
-		bootInitialized,
-		isActive,
-		pathname,
-		navigate,
-		onboarded,
-		preferencesInitialized,
-		preferencesCountry,
-		preferencesLanguage,
-	]);
+	}, [withPreferencesReady, pathname, navigate, preferencesCountry]);
+
+	useEffect(() => {
+		const favoriteProvidersCount = providers.filter(p => p.favorite).length;
+		if (
+			withPreferencesReady &&
+			preferencesCountry &&
+			favoriteProvidersCount === 0 &&
+			pathname !== "/onboarding/providers"
+		) {
+			navigate("/onboarding/providers");
+		}
+	}, [withPreferencesReady, pathname, navigate, preferencesCountry, providers]);
 
 	return (
 		<SessionContext.Provider value={{ logout, updatePreferences }}>

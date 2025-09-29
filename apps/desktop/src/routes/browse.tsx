@@ -1,7 +1,7 @@
 import { useSidebar, useSidebarGroup } from "@popcorntime/ui/components/sidebar";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import useInfiniteScroll from "react-infinite-scroll-hook";
-import { useLocation, useParams, useSearchParams } from "react-router";
+import { useLocation, useSearchParams } from "react-router";
 import placeholderImg from "@/assets/placeholder.svg";
 import { BrowseMedias } from "@/components/browse";
 import { BrowseSidebarGroup } from "@/components/browse/sidebar";

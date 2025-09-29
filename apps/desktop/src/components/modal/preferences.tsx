@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { type Country, i18n, type Locale } from "@popcorntime/i18n";
+import { type Country, i18n } from "@popcorntime/i18n";
 import { Button } from "@popcorntime/ui/components/button";
 import {
 	Dialog,

@@ -18,28 +18,6 @@ export type CountryPath = {
 		  >;
 }[Country];
 
-function buildCountryVariations() {
-	const result: Partial<Record<Country, Variation>> = {};
-	const localeVariation: Partial<Record<Locale, Variation>> = {};
-
-	for (const country of Object.keys(rawLocales) as Country[]) {
-		const defaultLocale = rawLocales[country].default;
-		const order = localeVariation[defaultLocale] || 1;
-
-		result[country] = order as Variation;
-
-		if (order < 5) {
-			localeVariation[defaultLocale] = (order + 1) as Variation;
-		} else {
-			localeVariation[defaultLocale] = 1;
-		}
-	}
-
-	return result as Record<Country, Variation>;
-}
-
-export const countryVariations = buildCountryVariations();
-
 export const locales = Array.from(
 	new Set(Object.values(rawLocales).flatMap(data => data.languages))
 ) as Locale[];

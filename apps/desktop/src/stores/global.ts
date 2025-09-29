@@ -382,6 +382,18 @@ useGlobalStore.subscribe(
 	}
 );
 
+useGlobalStore.subscribe(
+	state => state.preferences.country,
+	country => {
+		if (country) {
+			useGlobalStore.setState(state => {
+				state.providers.initialized = false;
+				state.providers.providers = [];
+			});
+		}
+	}
+);
+
 // all dependencies are ready
 useGlobalStore.subscribe(
 	state =>

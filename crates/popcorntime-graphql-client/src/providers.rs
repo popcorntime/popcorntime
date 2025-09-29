@@ -11,6 +11,13 @@ pub struct SetFavoriteProviderInput<'a> {
 
 #[derive(cynic::QueryVariables, Debug, specta::Type, Deserialize)]
 #[serde(rename_all = "camelCase")]
+pub struct SetFavoriteMultipleProvidersInput {
+  pub country: Country,
+  pub provider_key: Vec<String>,
+}
+
+#[derive(cynic::QueryVariables, Debug, specta::Type, Deserialize)]
+#[serde(rename_all = "camelCase")]
 pub struct ProvidersInput<'a> {
   pub country: Country,
   #[specta(optional)]
@@ -45,6 +52,17 @@ pub struct SetFavoriteProviderMutation {
   pub set_favorite_provider: bool,
 }
 
+#[derive(cynic::QueryFragment, Debug, specta::Type, Serialize)]
+#[cynic(
+  graphql_type = "MutationRoot",
+  variables = "SetFavoriteMultipleProvidersInput"
+)]
+#[serde(rename_all = "camelCase")]
+pub struct SetFavoriteMultipleProvidersMutation {
+  #[arguments(country: $country, providersKey: $provider_key)]
+  pub set_favorite_multiple_providers: bool,
+}
+
 #[cfg(test)]
 mod tests {
   use super::*;
@@ -66,6 +84,16 @@ mod tests {
       provider_key: "netflix",
       favorite: true,
     });
+    insta::assert_snapshot!(operation.query);
+  }
+
+  #[test]
+  fn add_favorite_multiple_mutation_gql_output() {
+    let operation =
+      SetFavoriteMultipleProvidersMutation::build(SetFavoriteMultipleProvidersInput {
+        country: Country("US".to_string()),
+        provider_key: vec!["netflix".to_string(), "hulu".to_string()],
+      });
     insta::assert_snapshot!(operation.query);
   }
 

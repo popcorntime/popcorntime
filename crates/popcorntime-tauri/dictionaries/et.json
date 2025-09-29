@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "Keel ja piirkond",
     "watchPreferences": "መልካም እንቅስቃሴ ምርጫዎች",
+    "manifest": "Manifesto",
+    "logs": "Debug ምልክቶች",
     "signOut": "Logi välja"
   },
   "preferences": {
@@ -64,6 +66,31 @@
     "toast": "Teie vaatamise eelistused on edukalt uuendatud.",
     "add": "Lisa",
     "remove": "ያስወግዱ"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Vali oma riik",
+    "countryDescription": "Vali oma riik, et näha saadaval olevaid keeli",
+    "languageTitle": "Vali oma keel",
+    "languageDescription": "Valige oma liidese keel ja eelistage sisu {{inCountry}}",
+    "changeCountry": "Mአውጣ ሃገር",
+    "default": "ডিফল্ট লোকেল"
+  },
+  "onboardingProviders": {
+    "title": "Streaming አገልግሎቶችዎችን ይምረጡ",
+    "description": "Vali need platvormid, millele sul on juurdepääs, et saaksime näidata, mida vaadata.",
+    "searchPlaceholder": "ፈልግ አቅራቢዎች...",
+    "category": {
+      "popular": "ታዋቂ",
+      "free": "Tasuta",
+      "subscription": "Tellimine",
+      "all": "Kõik"
+    },
+    "skip": "Jäta vahele",
+    "continue": "Jiraaji",
+    "clearAll": "Kustuta kõik",
+    "clearSearch": "Otsi tühjaks",
+    "selected": "{{count}} አቅራቢ(ሞች) ተመርጠዋል",
+    "noFound": "\"{{query}}\" ለሚለው ምንም አቅራቢዎች አልተገኙም።"
   },
   "priceType": {
     "buy": "Osta",

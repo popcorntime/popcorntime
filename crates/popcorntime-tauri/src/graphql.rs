@@ -113,6 +113,26 @@ pub async fn set_favorites_provider<'a>(
 #[tauri::command(async)]
 #[specta::specta]
 #[instrument(skip(api_client, auth_service), err(Debug))]
+pub async fn set_favorites_multiple_providers(
+  api_client: State<'_, ApiClient>,
+  auth_service: State<'_, AuthorizationService>,
+  params: providers::SetFavoriteMultipleProvidersInput,
+) -> Result<Option<providers::SetFavoriteMultipleProvidersMutation>, Error> {
+  auth_service.validate().await?;
+
+  api_client
+    .query(
+      providers::SetFavoriteMultipleProvidersMutation::build(params),
+      true,
+    )
+    .await
+    .map(|res| res.data)
+    .map_err(Into::into)
+}
+
+#[tauri::command(async)]
+#[specta::specta]
+#[instrument(skip(api_client, auth_service), err(Debug))]
 pub async fn set_media_reaction(
   api_client: State<'_, ApiClient>,
   auth_service: State<'_, AuthorizationService>,

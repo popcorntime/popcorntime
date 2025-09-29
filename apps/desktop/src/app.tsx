@@ -8,8 +8,9 @@ import { LoginRoute } from "@/routes/login";
 import { MaintenanceRoute } from "@/routes/maintenance";
 import { NotFoundRoute } from "@/routes/not-found";
 import {
-	OnboardingExperienceRoute,
 	OnboardingManifestRoute,
+	OnboardingPreferencesRoute,
+	OnboardingProvidersRoute,
 	OnboardingTimelineRoute,
 	OnboardingWelcomeRoute,
 } from "@/routes/onboarding";
@@ -34,7 +35,8 @@ export function App() {
 							<Route index element={<OnboardingWelcomeRoute />} />
 							<Route path="/onboarding/manifest" element={<OnboardingManifestRoute />} />
 							<Route path="/onboarding/timeline" element={<OnboardingTimelineRoute />} />
-							<Route path="/onboarding/experience" element={<OnboardingExperienceRoute />} />
+							<Route path="/onboarding/providers" element={<OnboardingProvidersRoute />} />
+							<Route path="/onboarding/preferences" element={<OnboardingPreferencesRoute />} />
 						</Route>
 						<Route path="/login" element={<LoginRoute />} />
 						<Route path="/maintenance" element={<MaintenanceRoute />} />

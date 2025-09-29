@@ -55,6 +55,14 @@ async setFavoritesProvider(params: SetFavoriteProviderInput) : Promise<Result<Se
     else return { status: "error", error: e  as any };
 }
 },
+async setFavoritesMultipleProviders(params: SetFavoriteMultipleProvidersInput) : Promise<Result<SetFavoriteMultipleProvidersMutation | null, { message: string; code: Code }>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("set_favorites_multiple_providers", { params }) };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
 async setMediaReaction(params: SetReactionInput) : Promise<Result<SetReactionMutation | null, { message: string; code: Code }>> {
     try {
     return { status: "ok", data: await TAURI_INVOKE("set_media_reaction", { params }) };
@@ -160,6 +168,8 @@ export type SearchInput = { after?: string | null; arguments?: SearchArguments |
 export type SearchOutput = { search: MediaSearchConnection }
 export type SessionServerReady = { authorization_url: string }
 export type SessionUpdate = null
+export type SetFavoriteMultipleProvidersInput = { country: Country; providerKey: string[] }
+export type SetFavoriteMultipleProvidersMutation = { setFavoriteMultipleProviders: boolean }
 export type SetFavoriteProviderInput = { country: Country; providerKey: string; favorite: boolean }
 export type SetFavoriteProviderMutation = { setFavoriteProvider: boolean }
 export type SetReactionInput = { mediaId: number; reaction: UserReactionType | null }

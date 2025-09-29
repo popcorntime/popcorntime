@@ -259,6 +259,7 @@ type MutationRoot {
   setReaction(mediaId: Int!, reaction: UserReactionType): Boolean!
   updatePreferences(country: Country!, language: Language!): UserPreferences
   setFavoriteProvider(country: Country!, providerKey: String!, favorite: Boolean!): Boolean!
+  setFavoriteMultipleProviders(country: Country!, providersKey: [String!]!): Boolean!
 }
 
 """

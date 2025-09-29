@@ -1,7 +1,7 @@
-import { Navigate, useNavigate } from "react-router";
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router";
 import { SplashScreen } from "@/components/splash-screen";
 import { useGlobalStore } from "@/stores/global";
-import { useEffect, useRef } from "react";
 
 export function SplashRoute() {
 	const bootInitialized = useGlobalStore(s => s.app.bootInitialized);
