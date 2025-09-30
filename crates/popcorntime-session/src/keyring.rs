@@ -43,8 +43,8 @@ impl KeyringVault {
 
   fn load_from_keyring(&self) -> Result<SecretBundle> {
     match self.credential.get_secret() {
-      Ok(s) => {
-        let bundle: SecretBundle = serde_json::from_slice(&s)?;
+      Ok(slice) => {
+        let bundle: SecretBundle = serde_json::from_slice(&slice)?;
         self.cache.try_write()?.replace(bundle.clone());
         Ok(bundle)
       }
