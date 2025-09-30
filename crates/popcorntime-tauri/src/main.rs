@@ -2,7 +2,7 @@
 use anyhow::Context;
 use popcorntime_error::Code;
 use popcorntime_graphql_client::client::ApiClient;
-use popcorntime_session::AuthorizationService;
+use popcorntime_session::{AuthorizationService, SessionUpdateEvent};
 use popcorntime_tauri::event::{SessionServerReady, SessionUpdate};
 #[cfg(debug_assertions)]
 use specta_typescript::Typescript;
@@ -88,28 +88,25 @@ fn main() {
           tracing::info!(version = %app_handle.package_info().version,
                                    name = %app_handle.package_info().name, "starting app");
 
-          let auth_service = AuthorizationService::new(&config_dir)?;
+          let auth_service =
+            AuthorizationService::new(&config_dir, app_handle.config().identifier.as_str())?;
+          app_handle.manage(ApiClient::new(auth_service.try_access_token())?);
 
-          // initialize default API client
-          app_handle.manage(ApiClient::new(None)?);
-
-          // watch config in background
-          auth_service.watch_config_in_background({
-            let app_handle = app_handle.clone();
-            move |app_settings| {
-              let api_client = app_handle.state::<ApiClient>();
-              match api_client.update_access_token(app_settings.access_token.clone()) {
-                Ok(_) => {
-                  tracing::debug!("[ApiClient] Access token updated");
-                }
-                Err(err) => {
-                  tracing::error!("[ApiClient] Failed to update access token: {:?}", err);
-                }
+          let app_handle_isolated = app_handle.clone();
+          auth_service.on_access_token_update(
+            move |SessionUpdateEvent { access_token, .. }| {
+              // update api client access token
+              let api_client = app_handle_isolated.state::<ApiClient>();
+              if let Err(err) = api_client.update_access_token(access_token) {
+                tracing::error!("Failed to update api client access_token: {:?}", err);
               }
-              // send frontend event
-              SessionUpdate.emit(&app_handle).context(Code::InvalidEvent)
-            }
-          })?;
+
+              // signal frontend
+              SessionUpdate
+                .emit(&app_handle_isolated)
+                .context(Code::InvalidEvent)
+            },
+          )?;
 
           let app_handle_isolated = app_handle.clone();
           app.deep_link().on_open_url(move |event| {

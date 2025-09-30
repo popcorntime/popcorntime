@@ -126,7 +126,7 @@ sessionUpdate: "session-update"
 /** user-defined types **/
 
 export type Availability = { providerId: string; providerName: string; logo: string | null; availableTo: Date | null; urlHash: string; audioLanguages: Language[] | null; subtitleLanguages: Language[] | null; pricesType: WatchPriceType[] | null }
-export type Code = "errors.unknown" | "errors.graphql.server" | "errors.database.not_available" | "errors.session.invalid" | "errors.events.invalid" | "errors.graphql.no_data"
+export type Code = "errors.unknown" | "errors.graphql.server" | "errors.database.not_available" | "errors.session.invalid" | "errors.session.keyring" | "errors.events.invalid" | "errors.graphql.no_data"
 export type Country = string
 export type Date = string
 export type DateTime = string
