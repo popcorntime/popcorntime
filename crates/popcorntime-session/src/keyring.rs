@@ -45,10 +45,7 @@ impl KeyringVault {
     match self.credential.get_secret() {
       Ok(s) => {
         let bundle: SecretBundle = serde_json::from_slice(&s)?;
-        self
-          .cache
-          .try_write()
-          .map(|mut cache| cache.replace(bundle.clone()))?;
+        self.cache.try_write()?.replace(bundle.clone());
         Ok(bundle)
       }
       Err(keyring::Error::NoEntry) => Ok(SecretBundle::default()),
