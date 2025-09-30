@@ -49,5 +49,4 @@ specta-typescript.workspace = true
 cynic.workspace = true
 
 [target.'cfg(target_os = "macos")'.dependencies]
-popcorntime-tauri-trafficlights.workspace = true
 popcorntime-tauri-splash.workspace = true

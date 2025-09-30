@@ -3909,7 +3909,6 @@ dependencies = [
  "popcorntime-graphql-client",
  "popcorntime-session",
  "popcorntime-tauri-splash",
- "popcorntime-tauri-trafficlights",
  "serde",
  "serde_json",
  "specta",
@@ -3933,16 +3932,6 @@ dependencies = [
 
 [[package]]
 name = "popcorntime-tauri-splash"
-version = "0.0.1"
-dependencies = [
- "objc2 0.6.2",
- "objc2-app-kit",
- "objc2-foundation 0.3.1",
- "tauri",
-]
-
-[[package]]
-name = "popcorntime-tauri-trafficlights"
 version = "0.0.1"
 dependencies = [
  "objc2 0.6.2",

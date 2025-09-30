@@ -65,5 +65,4 @@ popcorntime-session = { path = "crates/popcorntime-session" }
 popcorntime-error = { path = "crates/popcorntime-error" }
 popcorntime-graphql-client = { path = "crates/popcorntime-graphql-client" }
 popcorntime-graphql-macros = { path = "crates/popcorntime-graphql-client/macros" }
-popcorntime-tauri-trafficlights = { path = "crates/popcorntime-tauri-trafficlights" }
 popcorntime-tauri-splash = { path = "crates/popcorntime-tauri-splash" }
