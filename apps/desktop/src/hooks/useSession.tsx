@@ -52,12 +52,10 @@ export const SessionProvider = ({ children }: { children: ReactNode }) => {
 			setActive(true);
 		} catch (e) {
 			setActive(false);
-			if (
-				!isPublicRoute(pathRef.current) &&
-				isTauriError(e) &&
-				e.code === "errors.session.invalid"
-			) {
-				navigateRef.current("/login", { replace: true });
+			if (isTauriError(e) && e.code === "errors.session.invalid") {
+				if (!isPublicRoute(pathRef.current)) {
+					navigateRef.current("/login", { replace: true });
+				}
 			} else {
 				throw e;
 			}
