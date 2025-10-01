@@ -196,7 +196,7 @@ export function OnboardingPreferences() {
 			</header>
 
 			<main className="flex-1 overflow-y-auto">
-				<div className="mx-auto w-full max-w-6xl px-6 py-6">
+				<div className="mx-auto w-full max-w-xl xl:max-w-4xl px-6 py-6">
 					<div className="space-y-6">{steps[currentStep].content}</div>
 				</div>
 			</main>

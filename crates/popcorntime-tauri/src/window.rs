@@ -74,7 +74,7 @@ fn window_builder<'a>(
   .maximizable(false)
   .title(handle.package_info().name.clone())
   .min_inner_size(800.0, 500.0)
-  .inner_size(1160.0, 720.0)
+  .inner_size(800.0, 720.0)
   .focused(true)
   .on_page_load(on_page_load_script)
   .disable_drag_drop_handler()
