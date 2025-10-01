@@ -22,9 +22,7 @@ export function PreferencesLoaderMount() {
 			.then(prefs => {
 				const country = prefs?.preferences?.country as Country | undefined;
 				const language = prefs?.preferences?.language as Locale | undefined;
-				if (country && language) {
-					preferencesSucceeded({ country, language });
-				}
+				preferencesSucceeded({ country, language });
 			})
 			.catch(preferencesFailed);
 	}, [isActive, api.userPreferences]);
