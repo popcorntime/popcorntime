@@ -9,7 +9,7 @@ afterEach(() => {
 	resetGlobalStore();
 });
 
-describe("PreferencesLoaderMount", () => {
+describe("SettingsLoaderMount", () => {
 	it("handle valid onboarding", async () => {
 		mockIPC((cmd, _args) => {
 			if (cmd === "is_onboarded") return false;

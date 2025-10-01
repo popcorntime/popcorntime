@@ -64,8 +64,7 @@ describe("PreferencesLoaderMount", () => {
 		expect(useGlobalStore.getState().preferences.status).toBe("idle");
 
 		// now, mark session as active
-		useGlobalStore.getState().sessionSucceeded(true);
-		await act(async () => {});
+		await act(async () => useGlobalStore.getState().sessionSucceeded(true));
 
 		expect(useGlobalStore.getState().preferences.status).toBe("ready");
 		r.unmount();
