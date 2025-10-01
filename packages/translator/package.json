@@ -12,7 +12,7 @@
 	},
 	"devDependencies": {
 		"@popcorntime/typescript-config": "workspace:*",
-		"tsx": "^4.20.5",
+		"tsx": "^4.20.6",
 		"typescript": "catalog:"
 	},
 	"dependencies": {
