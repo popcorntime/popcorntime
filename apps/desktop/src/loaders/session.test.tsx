@@ -19,7 +19,7 @@ describe("SessionLoaderMount", () => {
 		await act(async () => {});
 
 		expect(useGlobalStore.getState().session.status).toBe("ready");
-		expect(useGlobalStore.getState().session.error).toBe(undefined);
+		expect(useGlobalStore.getState().session.error).toBeUndefined();
 		expect(useGlobalStore.getState().session.isActive).toBe(false);
 	});
 
@@ -32,7 +32,7 @@ describe("SessionLoaderMount", () => {
 		await act(async () => {});
 
 		expect(useGlobalStore.getState().session.status).toBe("ready");
-		expect(useGlobalStore.getState().session.error).toBe(undefined);
+		expect(useGlobalStore.getState().session.error).toBeUndefined();
 		expect(useGlobalStore.getState().session.isActive).toBe(true);
 	});
 });

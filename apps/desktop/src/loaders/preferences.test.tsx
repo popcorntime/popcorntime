@@ -32,6 +32,27 @@ describe("PreferencesLoaderMount", () => {
 		r.unmount();
 	});
 
+	it("handle empty preferences", async () => {
+		mockIPC((cmd, _args) => {
+			if (cmd === "user_preferences")
+				return {
+					preferences: null,
+				} satisfies PreferencesOutput;
+		});
+
+		// mark session as active
+		useGlobalStore.getState().sessionSucceeded(true);
+
+		const r = render(<PreferencesLoaderMount />);
+		await act(async () => {});
+
+		expect(useGlobalStore.getState().preferences.status).toBe("ready");
+		expect(useGlobalStore.getState().preferences.country).toBeUndefined();
+		expect(useGlobalStore.getState().preferences.language).toBeUndefined();
+
+		r.unmount();
+	});
+
 	it("handle invalid preferences", async () => {
 		mockIPC((cmd, _args) => {
 			if (cmd === "user_preferences")
