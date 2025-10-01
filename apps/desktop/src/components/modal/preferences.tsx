@@ -35,7 +35,7 @@ export function PreferencesDialog() {
 	const togglePreferences = useGlobalStore(state => state.togglePreferences);
 
 	const preferences = useGlobalStore(useShallow(state => state.preferences));
-	const initialized = useGlobalStore(state => state.session.status);
+	const sessionStatus = useGlobalStore(state => state.session.status);
 	const [submitted, setSubmitted] = useState(false);
 	const { api } = useTauri();
 	const { t } = useTranslation();
@@ -61,7 +61,7 @@ export function PreferencesDialog() {
 	}, [shouldOpen, hide]);
 
 	useEffect(() => {
-		if (initialized === "ready") {
+		if (sessionStatus === "ready") {
 			if (preferences.country) {
 				form.setValue("country", preferences.country);
 			}
@@ -69,7 +69,7 @@ export function PreferencesDialog() {
 				form.setValue("language", preferences.language);
 			}
 		}
-	}, [form, preferences, initialized]);
+	}, [form, preferences, sessionStatus]);
 
 	const onSubmit = useCallback(
 		(values: AccountFormValues) => {
@@ -105,7 +105,7 @@ export function PreferencesDialog() {
 		[submitted, api.updateUserPreferences, t, country, navigate, togglePreferences]
 	);
 
-	if (!initialized || !open) {
+	if (!sessionStatus || !shouldOpen) {
 		return null;
 	}
 
