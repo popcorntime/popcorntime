@@ -16,29 +16,22 @@ export function LoginRoute() {
 	}
 
 	useEffect(() => {
-		let disposed = false;
 		let unlisten: (() => void) | undefined;
 
-		(async () => {
-			const fn = await on.sessionServerReady.listen(event => {
+		on.sessionServerReady
+			.listen(event => {
 				open(event.payload.authorization_url);
+			})
+			.then(fn => {
+				unlisten = fn;
 			});
-			if (disposed) {
-				fn();
-				return;
-			}
-			unlisten = fn;
-		})();
 
-		return () => {
-			disposed = true;
-			if (unlisten) unlisten();
-		};
+		return unlisten;
 	}, [on.sessionServerReady]);
 
 	useEffect(() => {
 		if (appBoot !== "booted") return;
-		navigate("/browse", { replace: true });
+		navigate("/", { replace: true });
 	}, [appBoot, navigate]);
 
 	return (
