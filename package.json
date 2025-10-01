@@ -16,6 +16,7 @@
     "tauri": "tauri",
     "translate": "pnpm --filter @popcorntime/translator translate",
     "test": "turbo run test --no-daemon",
+    "test-storybook": "turbo run test-storybook --no-daemon",
     "type-check": "turbo run type-check --no-daemon",
     "format": "biome check . --write",
     "format-check": "biome check ."
