@@ -20,4 +20,5 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: ./.github/actions/init-env-node
+      - run: pnpm dlx playwright install chromium
       - run: pnpm test-storybook
