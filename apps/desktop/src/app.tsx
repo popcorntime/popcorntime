@@ -18,6 +18,7 @@ import {
 	OnboardingTimelineRoute,
 	OnboardingWelcomeRoute,
 } from "@/routes/onboarding";
+import { RequireSession } from "@/routes/require-session";
 import { SplashRoute } from "@/routes/splash";
 
 import "@/css/styles.css";
@@ -26,33 +27,45 @@ import "flag-icons/css/flag-icons.min.css";
 
 initReactI18n();
 
+function Loaders() {
+	return (
+		<>
+			<SettingsLoaderMount />
+			<SessionLoaderMount />
+			<PreferencesLoaderMount />
+			<ProvidersLoaderMount />
+		</>
+	);
+}
+
 export function App() {
 	useErrorHandler();
 
 	return (
 		<HashRouter>
 			<Providers>
-				<SettingsLoaderMount />
-				<SessionLoaderMount />
-				<PreferencesLoaderMount />
-				<ProvidersLoaderMount />
-
+				<Loaders />
 				<Routes>
 					<Route element={<DefaultLayout />}>
 						<Route index element={<SplashRoute />} />
 						<Route path="/onboarding">
 							<Route index element={<OnboardingWelcomeRoute />} />
-							<Route path="/onboarding/manifest" element={<OnboardingManifestRoute />} />
-							<Route path="/onboarding/timeline" element={<OnboardingTimelineRoute />} />
-							<Route path="/onboarding/providers" element={<OnboardingProvidersRoute />} />
-							<Route path="/onboarding/preferences" element={<OnboardingPreferencesRoute />} />
+							<Route path="manifest" element={<OnboardingManifestRoute />} />
+							<Route path="timeline" element={<OnboardingTimelineRoute />} />
+							<Route element={<RequireSession />}>
+								<Route path="providers" element={<OnboardingProvidersRoute />} />
+								<Route path="preferences" element={<OnboardingPreferencesRoute />} />
+							</Route>
 						</Route>
 						<Route path="/login" element={<LoginRoute />} />
 						<Route path="/maintenance" element={<MaintenanceRoute />} />
 						<Route path="*" element={<NotFoundRoute />} />
 					</Route>
-					<Route path="/browse" element={<BrowseLayout />}>
-						<Route index element={<BrowseRoute />} />
+
+					<Route element={<RequireSession />}>
+						<Route path="/browse" element={<BrowseLayout />}>
+							<Route index element={<BrowseRoute />} />
+						</Route>
 					</Route>
 				</Routes>
 			</Providers>
