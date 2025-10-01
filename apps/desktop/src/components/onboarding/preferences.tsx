@@ -11,7 +11,7 @@ import { useGlobalStore } from "@/stores/global";
 
 export function OnboardingPreferences() {
 	const [selectedCountry, setSelectedCountry] = useState<Country | null>(null);
-	const setPreferences = useGlobalStore(state => state.preferences.setPreferences);
+	const preferencesSucceeded = useGlobalStore(state => state.preferencesSucceeded);
 	const direction = useGlobalStore(state => state.i18n.direction);
 	const [selectedLocale, setSelectedLocale] = useState<Locale | null>(null);
 	const [showAllLocales, setShowAllLocales] = useState(false);
@@ -33,11 +33,11 @@ export function OnboardingPreferences() {
 			setIsLoading(true);
 			api.updateUserPreferences({ country: selectedCountry, language: langCode }).then(() => {
 				setIsLoading(false);
-				setPreferences({ country: selectedCountry, language: langCode });
+				preferencesSucceeded({ country: selectedCountry, language: langCode });
 				navigate("/onboarding/providers");
 			});
 		},
-		[selectedCountry, api, navigate, setPreferences]
+		[selectedCountry, api, navigate, preferencesSucceeded]
 	);
 
 	const handleBackToCountry = () => {

@@ -32,6 +32,24 @@ export const useProviders = () => {
 		[country, api.setFavoritesProvider, providers]
 	);
 
+	const setFavoritesMultipleProviders = useCallback(
+		async (providersKey: string[]) => {
+			await api.setFavoritesMultipleProviders({ country, providersKey });
+
+			// optimistic update
+			const updatedProviders = providers.map(p => {
+				if (providersKey.includes(p.key)) {
+					return { ...p, favorite: true };
+				}
+				return p;
+			});
+
+			const { providersSucceeded } = useGlobalStore.getState();
+			providersSucceeded(updatedProviders);
+		},
+		[country, api.setFavoritesProvider, providers]
+	);
+
 	const addToFavorites = useCallback(
 		async (providerKey: string) => {
 			setFavorites(providerKey, true);
@@ -49,5 +67,6 @@ export const useProviders = () => {
 	return {
 		addToFavorites,
 		removeFromFavorites,
+		setFavoritesMultipleProviders,
 	};
 };

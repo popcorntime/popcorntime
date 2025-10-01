@@ -38,15 +38,14 @@ export function OnboardingProviders() {
 	const providers = useGlobalStore(state => state.providers.providers);
 	const direction = useGlobalStore(state => state.i18n.direction);
 	const country = useGlobalStore(state => state.preferences.country);
-	const { getProviders } = useProviders();
-	const providersLoading = useGlobalStore(state => state.providers.isLoading);
+	const { setFavoritesMultipleProviders } = useProviders();
+	const providersStatus = useGlobalStore(state => state.providers.status);
 	const [selectedProviders, setSelectedProviders] = useState<string[]>([]);
 	const [searchQuery, setSearchQuery] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [activeCategory, setActiveCategory] = useState<ProviderCategory>("popular");
 	const { t } = useTranslation();
 	const navigate = useNavigate();
-	const { api } = useTauri();
 
 	const filteredProviders = useMemo(() => {
 		const categoryInfo = providerCategories[activeCategory];
@@ -99,20 +98,12 @@ export function OnboardingProviders() {
 			navigate("/browse");
 		} else {
 			setIsLoading(true);
-			api
-				.setFavoritesMultipleProviders({
-					country,
-					providersKey: selectedProviders,
-				})
-				// FIXME: would probably be better to make an optimistic update instead
-				// of reloading all providers
-				.then(getProviders.bind(null, country))
-				.finally(() => {
-					setIsLoading(false);
-					navigate("/browse");
-				});
+			setFavoritesMultipleProviders(selectedProviders).finally(() => {
+				setIsLoading(false);
+				navigate("/browse");
+			});
 		}
-	}, [selectedProviders, navigate, getProviders, api, country, setIsLoading]);
+	}, [selectedProviders, navigate, setFavoritesMultipleProviders, country, setIsLoading]);
 
 	return (
 		<div className="h-screen max-h-screen flex flex-col">
@@ -168,7 +159,7 @@ export function OnboardingProviders() {
 				<div className="mx-auto w-full max-w-6xl px-6 py-6">
 					<div className="space-y-6 pb-28">
 						<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-							{providersLoading && !isLoading && (
+							{providersStatus === "loading" && !isLoading && (
 								<div className="col-span-full flex items-center justify-center py-12">
 									<Spinner className="w-8 h-8 text-primary" />
 								</div>

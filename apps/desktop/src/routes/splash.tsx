@@ -7,6 +7,7 @@ export function SplashRoute() {
 	const appBoot = useGlobalStore(s => s.app.boot);
 	const onboarded = useGlobalStore(s => s.settings.onboarded);
 	const isActive = useGlobalStore(s => s.session.isActive);
+	const preferredCountry = useGlobalStore(s => s.preferences.country);
 	const initialRedirectAttempted = useRef(false);
 	const navigate = useNavigate();
 
@@ -21,7 +22,11 @@ export function SplashRoute() {
 			if (appBoot !== "booted") return;
 			if (!initialRedirectAttempted.current) {
 				initialRedirectAttempted.current = true;
-				navigate("/browse", { flushSync: true });
+				if (!preferredCountry) {
+					navigate("/onboarding/preferences", { flushSync: true });
+				} else {
+					navigate("/browse", { flushSync: true });
+				}
 			}
 		} else {
 			if (!initialRedirectAttempted.current) {
@@ -29,7 +34,7 @@ export function SplashRoute() {
 				navigate("/login", { flushSync: true });
 			}
 		}
-	}, [appBoot, onboarded, isActive, navigate]);
+	}, [appBoot, onboarded, isActive, navigate, preferredCountry]);
 
 	return <SplashScreen />;
 }
