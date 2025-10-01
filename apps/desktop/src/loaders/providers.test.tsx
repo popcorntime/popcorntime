@@ -97,7 +97,7 @@ describe("ProvidersLoaderMount", () => {
 	it("handle invalid providers", async () => {
 		mockIPC((cmd, _args) => {
 			if (cmd === "providers")
-				throw { message: "Failed to get proviers", code: "errors.graphql.server" };
+				throw { message: "Failed to get providers", code: "errors.graphql.server" };
 		});
 
 		useGlobalStore.getState().sessionSucceeded(true);
