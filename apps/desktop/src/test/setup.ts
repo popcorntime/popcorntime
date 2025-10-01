@@ -28,11 +28,11 @@ i18n
 vi.mock("sonner", () => ({ toast }));
 vi.mock("zustand");
 
-vi.mock("@tauri-apps/plugin-shell", async () => {
-	const actual = await vi.importActual("@tauri-apps/plugin-shell");
+vi.mock("@tauri-apps/plugin-opener", async () => {
+	const actual = await vi.importActual("@tauri-apps/plugin-opener");
 	return {
 		...actual,
-		open: pluginShellOpen,
+		openUrl: pluginShellOpen,
 	};
 });
 

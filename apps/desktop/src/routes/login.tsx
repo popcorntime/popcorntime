@@ -1,5 +1,5 @@
 import { Button, buttonVariants } from "@popcorntime/ui/components/button";
-import { open } from "@tauri-apps/plugin-shell";
+import { openUrl } from "@tauri-apps/plugin-opener";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router";
 import logo from "@/assets/logo.png";
@@ -20,7 +20,7 @@ export function LoginRoute() {
 
 		on.sessionServerReady
 			.listen(event => {
-				open(event.payload.authorization_url);
+				openUrl(event.payload.authorization_url);
 			})
 			.then(fn => {
 				unlisten = fn;

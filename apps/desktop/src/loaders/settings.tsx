@@ -4,11 +4,9 @@ import { useGlobalStore } from "@/stores/global";
 
 export function SettingsLoaderMount() {
 	const { api } = useTauri();
-	const isActive = useGlobalStore(s => s.session.isActive);
 	const status = useGlobalStore(s => s.settings.status);
 
 	useEffect(() => {
-		if (!isActive) return;
 		if (status !== "idle") return;
 
 		const { settingsRequested, settingsSucceeded, settingsFailed } = useGlobalStore.getState();
@@ -17,7 +15,7 @@ export function SettingsLoaderMount() {
 			.isOnboarded()
 			.then(onboarded => settingsSucceeded({ onboarded }))
 			.catch(settingsFailed);
-	}, [api, isActive, status]);
+	}, [api, status]);
 
 	return null;
 }

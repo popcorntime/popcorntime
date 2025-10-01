@@ -18,7 +18,6 @@
 		"@tauri-apps/plugin-log": "catalog:",
 		"@tauri-apps/plugin-opener": "catalog:",
 		"@tauri-apps/plugin-process": "catalog:",
-		"@tauri-apps/plugin-shell": "catalog:",
 		"@tauri-apps/plugin-updater": "catalog:",
 		"flag-icons": "catalog:",
 		"fuse.js": "catalog:",

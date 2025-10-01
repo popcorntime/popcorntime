@@ -32,7 +32,6 @@ log = "^0.4"
 tauri.workspace = true
 tauri-plugin-opener.workspace = true
 tauri-plugin-log.workspace = true
-tauri-plugin-shell.workspace = true
 tauri-plugin-fs.workspace = true
 tauri-plugin-deep-link.workspace = true
 tauri-plugin-updater.workspace = true
