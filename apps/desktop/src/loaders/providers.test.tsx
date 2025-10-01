@@ -65,7 +65,7 @@ function renderWithHarness() {
 }
 
 describe("ProvidersLoaderMount", () => {
-	it("handle valid proviers", async () => {
+	it("handle valid providers", async () => {
 		mockIPC((cmd, args) => {
 			if (cmd === "providers") {
 				const {
