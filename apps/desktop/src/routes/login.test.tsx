@@ -26,7 +26,7 @@ function renderWithRouter() {
 						</div>
 					}
 				/>
-				<Route path="/browse" element={<div data-testid="browse" />} />
+				<Route path="/" element={<div data-testid="splash" />} />
 			</Routes>
 			<LocationProbe />
 		</MemoryRouter>
@@ -80,7 +80,7 @@ describe("LoginRoute", () => {
 		r.unmount();
 	});
 
-	it("redirect back to browse", async () => {
+	it("redirect back to splash", async () => {
 		const r = renderWithRouter();
 		await act(async () => {});
 
@@ -93,7 +93,7 @@ describe("LoginRoute", () => {
 			})
 		);
 
-		expect(screen.getByTestId("browse")).toBeInTheDocument();
+		expect(screen.getByTestId("splash")).toBeInTheDocument();
 		expect(screen.getByTestId("loc")).toHaveTextContent("/");
 
 		r.unmount();
