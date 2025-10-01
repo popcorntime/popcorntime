@@ -6,9 +6,9 @@ import { cn } from "@popcorntime/ui/lib/utils";
 import { ArrowUp, SlidersHorizontal } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { useShallow } from "zustand/shallow";
 import { type SortOrder, useGlobalStore } from "@/stores/global";
 import type { MediaSearch, SortKey } from "@/tauri/types";
-import { useShallow } from "zustand/shallow";
 
 const SORTS = [
 	{ key: "POSITION", label: "popularity", defaultSort: "ASC" },

@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import useInfiniteScroll from "react-infinite-scroll-hook";
 import { useParams } from "react-router";
+import { useShallow } from "zustand/shallow";
 import placeholderImg from "@/assets/placeholder.svg";
 import { BrowseMedias } from "@/components/browse";
 import { useCountry } from "@/hooks/useCountry";
 import { useSearch } from "@/hooks/useSearch";
 import { useGlobalStore } from "@/stores/global";
 import type { MediaKind, MediaSearch, SearchInput } from "@/tauri/types";
-import { useShallow } from "zustand/shallow";
 
 export function BrowseRoute() {
 	const { country } = useCountry();
