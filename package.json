@@ -16,6 +16,7 @@
     "tauri": "tauri",
     "translate": "pnpm --filter @popcorntime/translator translate",
     "test": "turbo run test --no-daemon",
+    "test-storybook": "turbo run test-storybook --no-daemon",
     "type-check": "turbo run type-check --no-daemon",
     "format": "biome check . --write",
     "format-check": "biome check ."
@@ -26,6 +27,6 @@
     "@tauri-apps/cli": "^2.8.4",
     "prettier": "^3.6.2",
     "turbo": "^2.5.8",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   }
 }

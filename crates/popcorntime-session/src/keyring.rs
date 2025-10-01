@@ -41,10 +41,10 @@ impl KeyringVault {
     })
   }
 
-  pub fn get(&self) -> Result<SecretBundle> {
+  fn load_from_keyring(&self) -> Result<SecretBundle> {
     match self.credential.get_secret() {
-      Ok(s) => {
-        let bundle: SecretBundle = serde_json::from_slice(&s)?;
+      Ok(slice) => {
+        let bundle: SecretBundle = serde_json::from_slice(&slice)?;
         self.cache.try_write()?.replace(bundle.clone());
         Ok(bundle)
       }
@@ -53,12 +53,26 @@ impl KeyringVault {
     }
   }
 
+  pub fn get(&self) -> Result<SecretBundle> {
+    if let Some(cached) = self.cache.try_read()?.as_ref() {
+      return Ok(cached.clone());
+    }
+
+    self.load_from_keyring()
+  }
+
   pub fn set(&self, bundle: SecretBundle) -> Result<()> {
     let bundled = serde_json::to_vec(&bundle)?;
-    self.credential.set_secret(&bundled).map_err(Into::into)
+    self.credential.set_secret(&bundled)?;
+    self.cache.try_write()?.replace(bundle);
+
+    Ok(())
   }
 
   pub fn delete(&self) -> Result<()> {
-    self.credential.delete_credential().map_err(Into::into)
+    self.credential.delete_credential()?;
+    self.cache.try_write()?.take();
+
+    Ok(())
   }
 }
