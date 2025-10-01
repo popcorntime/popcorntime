@@ -3739,6 +3739,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "popcorntime-settings"
+version = "0.0.1"
+
+[[package]]
 name = "popcorntime-tauri"
 version = "0.0.1"
 dependencies = [

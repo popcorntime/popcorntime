@@ -6,299 +6,377 @@ import { getLangDir } from "rtl-detect";
 import { create } from "zustand";
 import { subscribeWithSelector } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
+import { isTauriError, type TauriError } from "@/hooks/useTauri";
 import { devtools } from "@/stores/devtools";
 import type { Provider, SearchArguments, SortKey } from "@/tauri/types";
 
 export type SortOrder = "ASC" | "DESC";
-type UpdateStatus = "available" | "manual" | "no-update";
 type UpdateProgress = "downloading" | "downloaded" | "installing" | "installed";
+type Status = "idle" | "loading" | "ready" | "error";
+type BootPhase = "cold" | "booting" | "booted";
 
-export interface GlobalState {
-	i18n: {
-		/** Application locale */
-		locale: Locale;
-		direction: "ltr" | "rtl";
-		/**
-		 * Update application locale
-		 * @param locale Locale
-		 */
-		setLocale: (locale: Locale) => void;
-	};
-	session: {
-		/** Session initialized */
-		initialized: boolean;
-		setInitialized: () => void;
-
-		/** Session active */
-		isActive: boolean;
-		setIsActive: (isActive: boolean) => void;
-		/** Session is currenly validating */
-		isLoading: boolean;
-		setIsLoading: (isLoading: boolean) => void;
-	};
-	preferences: {
-		/** Preferences initialized */
-		initialized: boolean;
-		setInitialized: () => void;
-		country?: Country;
-		language?: Locale;
-		setPreferences: (preferences?: { country: Country; language: Locale }) => void;
-	};
-	settings: {
-		/** Session initialized */
-		initialized: boolean;
-
-		/** Whether onboarding flow has been completed */
-		onboarded: boolean;
-		setOnboarded: (onboarded: boolean) => void;
-	};
-	app: {
-		/** Application is ready and browsing can start */
-		initialized: boolean;
-		/** Depedency are ready */
-		bootInitialized: boolean;
-		/** Current application version */
-		version: string | undefined;
-		setVersion: (version: string) => void;
-		/** Determine if we are running nightly version */
-		nightly: boolean;
-		setNightly: (nightly: boolean) => void;
-	};
-	updater: {
-		status: UpdateStatus;
-		setStatus: (status: UpdateStatus) => void;
-		progress?: UpdateProgress;
-		setProgress: (progress?: UpdateProgress) => void;
-		availableUpdate?: Update;
-		setAvailableUpdate: (update?: Update) => void;
-		lastChecked?: Date;
-		setLastChecked: (date?: Date) => void;
-	};
-	providers: {
-		initialized: boolean;
-		setInitialized: () => void;
-		isLoading: boolean;
-		setIsLoading: (isLoading: boolean) => void;
-		providers: Provider[];
-		haveFavorites: boolean;
-		setProviders: (providers: Provider[]) => void;
-	};
-	browse: {
-		/** Search query */
-		query?: string;
-		setQuery: (query?: string) => void;
-		/** Current browsing cursor */
-		cursor?: string;
-		setCursor: (cursor?: string) => void;
-		/** Current browsing args */
-		args?: SearchArguments;
-		setArgs: (args?: SearchArguments) => void;
-		/** Current browsing sort key */
-		sortKey: SortKey;
-		setSortKey: (sortKey: SortKey) => void;
-		/** Current browsing sort key */
-		sortOrder: SortOrder;
-		setSortOrder: (sortKey: SortOrder) => void;
-		/** Whether to show only favorite providers content */
-		preferFavorites: boolean;
-		togglePreferFavorites: () => void;
-	};
-	dialogs: {
-		media: {
-			/** Slug the dialog should load */
-			slug?: string;
-			open: (slug?: string) => void;
-			/** Dialog is open */
-			isOpen: boolean;
-			toggle: () => void;
-		};
-		preferences: {
-			/** Dialog is open */
-			isOpen: boolean;
-			toggle: () => void;
-		};
-		watchPreferences: {
-			/** Dialog is open */
-			isOpen: boolean;
-			toggle: () => void;
-		};
-	};
+interface i18nState {
+	locale: Locale;
+	direction: "ltr" | "rtl";
 }
 
-export const useGlobalStore = create<GlobalState>()(
+interface SessionState {
+	status: Status;
+	isActive: boolean;
+	error?: TauriError;
+}
+
+interface PreferencesState {
+	status: Status;
+	country?: Country;
+	language?: Locale;
+	error?: TauriError;
+}
+
+interface SettingsState {
+	status: Status;
+	onboarded: boolean;
+	error?: TauriError;
+}
+
+interface ProvidersState {
+	status: Status;
+	providers: Provider[];
+	haveFavorites: boolean;
+	error?: TauriError;
+}
+
+interface AppState {
+	boot: BootPhase;
+	version?: string;
+	nightly: boolean;
+}
+
+interface UpdaterState {
+	progress?: UpdateProgress;
+	availableUpdate?: Update;
+	lastChecked?: Date;
+	error?: TauriError;
+}
+
+interface DialogMediaState {
+	slug?: string;
+	isOpen: boolean;
+}
+
+interface DialogPreferencesState {
+	isOpen: boolean;
+}
+
+interface DialogWatchPreferencesState {
+	isOpen: boolean;
+}
+
+interface DialogsState {
+	media: DialogMediaState;
+	preferences: DialogPreferencesState;
+	watchPreferences: DialogWatchPreferencesState;
+}
+
+interface BrowseState {
+	query?: string;
+	args?: SearchArguments;
+	sortKey: SortKey;
+	sortOrder: SortOrder;
+	preferFavorites: boolean;
+}
+
+interface GlobalState {
+	i18n: i18nState;
+	session: SessionState;
+	preferences: PreferencesState;
+	settings: SettingsState;
+	providers: ProvidersState;
+	app: AppState;
+	updater: UpdaterState;
+	dialogs: DialogsState;
+	browse: BrowseState;
+}
+
+interface BrowseUpdateInput {
+	query?: string;
+	sortKey?: SortKey;
+	sortOrder?: SortOrder;
+	preferFavorites?: boolean;
+	args?: SearchArguments;
+}
+
+interface GlobalMutations {
+	setLocale: (locale: Locale) => void;
+	setAppVersion(version: string, nightly: boolean): void;
+
+	sessionRequested(): void;
+	sessionSucceeded(isActive: boolean): void;
+	sessionCleared(): void;
+	sessionFailed(err: unknown): void;
+
+	preferencesRequested(): void;
+	preferencesSucceeded(prefs?: { country?: Country; language?: Locale }): void;
+	preferencesFailed(err: unknown): void;
+
+	settingsRequested(): void;
+	settingsSucceeded(partial?: { onboarded?: boolean }): void;
+	settingsFailed(err: unknown): void;
+
+	providersRequested(): void;
+	providersSucceeded(list: Provider[]): void;
+	providersFailed(err: unknown): void;
+
+	updaterSucceeded(update?: Update): void;
+	updaterProgress(progress: UpdateProgress): void;
+	updaterFailed(err: unknown): void;
+
+	openMedia(slug?: string): void;
+	closeMedia(): void;
+	togglePreferences(): void;
+	toggleWatchPreferences(): void;
+
+	browseUpdate: (input: BrowseUpdateInput) => void;
+	togglePreferFavorites: () => void;
+}
+
+export const useGlobalStore = create<GlobalState & GlobalMutations>()(
 	devtools(
 		subscribeWithSelector(
 			immer(set => ({
 				i18n: {
 					locale: i18n.defaultLocale,
 					direction: getLangDir(i18n.defaultLocale),
-					setLocale: (locale: Locale) =>
-						set(state => {
-							state.i18n.locale = locale;
-						}),
 				},
 				session: {
-					initialized: false,
+					status: "idle",
 					isActive: false,
-					isLoading: false,
-					setInitialized: () =>
-						set(state => {
-							state.session.initialized = true;
-						}),
-					setIsActive: (isActive: boolean) =>
-						set(state => {
-							state.session.isActive = isActive;
-						}),
-					setIsLoading: (isLoading: boolean) =>
-						set(state => {
-							state.session.isLoading = isLoading;
-						}),
 				},
 				settings: {
-					initialized: false,
+					status: "idle",
 					onboarded: false,
-					setOnboarded: (onboarded: boolean) =>
-						set(state => {
-							state.settings.onboarded = onboarded;
-							state.settings.initialized = true;
-						}),
 				},
 				preferences: {
-					initialized: false,
-					setInitialized: () =>
-						set(state => {
-							state.preferences.initialized = true;
-						}),
-					setPreferences: preferences =>
-						set(state => {
-							// FIXME: would worth moving into a subscription?
-							if (preferences?.language) {
-								state.i18n.locale = preferences.language;
-							}
-							state.preferences.country = preferences?.country;
-							state.preferences.language = preferences?.language;
-							state.dialogs.preferences.isOpen = false;
-						}),
+					status: "idle",
 				},
 				app: {
-					initialized: false,
-					bootInitialized: false,
-					version: undefined,
-					setVersion: (version: string) =>
-						set(state => {
-							state.app.version = version;
-						}),
+					boot: "cold",
 					nightly: false,
-					setNightly: (nightly: boolean) =>
-						set(state => {
-							state.app.nightly = nightly;
-						}),
-				},
-				updater: {
-					status: "no-update",
-					setStatus: (status: UpdateStatus) =>
-						set(state => {
-							state.updater.status = status;
-						}),
-					setProgress: (progress?: UpdateProgress) =>
-						set(state => {
-							state.updater.progress = progress;
-						}),
-					setAvailableUpdate: (update?: Update) =>
-						set(state => {
-							state.updater.availableUpdate = update;
-						}),
-					setLastChecked: (date?: Date) =>
-						set(state => {
-							state.updater.lastChecked = date;
-						}),
 				},
 				providers: {
-					initialized: false,
-					isLoading: false,
+					status: "idle",
 					providers: [],
 					haveFavorites: false,
-					setInitialized: () =>
-						set(state => {
-							state.providers.initialized = true;
-						}),
-					setIsLoading: (isLoading: boolean) =>
-						set(state => {
-							state.providers.isLoading = isLoading;
-						}),
-					setProviders: (providers: Provider[]) =>
-						set(state => {
-							state.providers.providers = providers;
-						}),
 				},
+
+				updater: {},
+
+				dialogs: {
+					media: {
+						isOpen: false,
+					},
+					preferences: {
+						isOpen: false,
+					},
+					watchPreferences: {
+						isOpen: false,
+					},
+				},
+
 				browse: {
 					sortKey: "POSITION",
 					sortOrder: "ASC",
 					preferFavorites: false,
-					setQuery: (query?: string) =>
-						set(state => {
-							state.browse.query = query;
-						}),
-					setCursor: (cursor?: string) =>
-						set(state => {
-							state.browse.cursor = cursor;
-						}),
-					setArgs: (args?: SearchArguments) =>
-						set(state => {
-							state.browse.args = args;
-						}),
-					setSortKey: (sortKey: SortKey) =>
-						set(state => {
-							state.browse.sortKey = sortKey;
-						}),
-					setSortOrder: (sortOrder: SortOrder) =>
-						set(state => {
-							state.browse.sortOrder = sortOrder;
-						}),
-					togglePreferFavorites: () =>
-						set(state => {
-							state.browse.preferFavorites = !state.browse.preferFavorites;
-						}),
+					args: undefined,
 				},
-				dialogs: {
-					media: {
-						slug: undefined,
-						isOpen: false,
-						open: (slug?: string) =>
-							set(state => {
-								state.dialogs.media.isOpen = true;
-								state.dialogs.media.slug = slug;
-							}),
-						toggle: () =>
-							set(state => {
-								state.dialogs.media.slug = undefined;
-								state.dialogs.media.isOpen = !state.dialogs.media.isOpen;
-							}),
-					},
-					preferences: {
-						isOpen: false,
-						toggle: () =>
-							set(state => {
-								if (
-									state.dialogs.preferences.isOpen &&
-									state.preferences.initialized &&
-									state.preferences.country === undefined &&
-									state.preferences.language === undefined
-								) {
-									// prevent closing preferences if not set
-									return;
-								}
-								state.dialogs.preferences.isOpen = !state.dialogs.preferences.isOpen;
-							}),
-					},
-					watchPreferences: {
-						isOpen: false,
-						toggle: () =>
-							set(state => {
-								state.dialogs.watchPreferences.isOpen = !state.dialogs.watchPreferences.isOpen;
-							}),
-					},
+
+				setLocale: (locale: Locale) =>
+					set(state => {
+						state.i18n.locale = locale;
+					}),
+
+				sessionRequested: () =>
+					set(state => {
+						state.session.status = "loading";
+						state.session.error = undefined;
+					}),
+
+				sessionSucceeded: (isActive: boolean) => {
+					set(state => {
+						state.session.status = "ready";
+						state.session.isActive = isActive;
+					});
 				},
+				sessionCleared: () =>
+					set(state => {
+						const initialState = useGlobalStore.getInitialState();
+						state.i18n = initialState.i18n;
+						state.session = initialState.session;
+						state.preferences = initialState.preferences;
+						state.providers = initialState.providers;
+						state.dialogs = initialState.dialogs;
+						// TODO: not sure if we want to reset app state on logout?
+						state.app = initialState.app;
+					}),
+
+				sessionFailed: (err: unknown) =>
+					set(state => {
+						if (isTauriError(err)) {
+							if (err.code === "errors.session.invalid") {
+								state.session.isActive = false;
+								state.session.error = undefined;
+								state.session.status = "ready";
+							} else {
+								state.session.status = "error";
+								state.session.error = err;
+							}
+						}
+					}),
+
+				settingsRequested: () =>
+					set(state => {
+						state.settings.status = "loading";
+						state.settings.error = undefined;
+					}),
+
+				settingsSucceeded: (partial?: { onboarded?: boolean }) =>
+					set(state => {
+						state.settings.status = "ready";
+						state.settings = {
+							...state.settings,
+							...partial,
+						};
+					}),
+
+				settingsFailed: (err: unknown) =>
+					set(state => {
+						state.settings.status = "error";
+						if (isTauriError(err)) {
+							state.settings.error = err;
+						}
+					}),
+
+				preferencesRequested: () =>
+					set(state => {
+						state.preferences.status = "loading";
+						state.preferences.error = undefined;
+					}),
+
+				preferencesSucceeded: (prefs?: { country?: Country; language?: Locale }) =>
+					set(state => {
+						state.preferences.status = "ready";
+						if (prefs?.country !== undefined) {
+							state.preferences.country = prefs.country;
+						}
+						if (prefs?.language !== undefined) {
+							state.preferences.language = prefs.language;
+							state.i18n.locale = prefs.language;
+						}
+					}),
+
+				preferencesFailed: (err: unknown) =>
+					set(state => {
+						state.preferences.status = "error";
+						if (isTauriError(err)) {
+							state.preferences.error = err;
+						}
+					}),
+
+				setAppVersion: (version: string, nightly: boolean) =>
+					set(state => {
+						state.app.version = version;
+						state.app.nightly = nightly;
+					}),
+
+				updaterProgress: (progress: UpdateProgress) =>
+					set(state => {
+						state.updater.progress = progress;
+					}),
+
+				updaterSucceeded: (update?: Update) =>
+					set(state => {
+						state.updater.progress = undefined;
+						state.updater.lastChecked = new Date();
+						state.updater.availableUpdate = update;
+						state.updater.error = undefined;
+					}),
+
+				updaterFailed: (err: unknown) =>
+					set(state => {
+						state.updater.availableUpdate = undefined;
+						state.updater.progress = undefined;
+						state.updater.lastChecked = new Date();
+						if (isTauriError(err)) {
+							state.updater.error = err;
+						}
+					}),
+
+				providersRequested: () =>
+					set(state => {
+						state.providers.status = "loading";
+						state.providers.error = undefined;
+					}),
+
+				providersSucceeded: (list: Provider[]) =>
+					set(state => {
+						state.providers.status = "ready";
+						state.providers.providers = list;
+						state.providers.haveFavorites = list.some(p => p.favorite);
+					}),
+
+				providersFailed: (err: unknown) =>
+					set(state => {
+						state.providers.status = "error";
+						if (isTauriError(err)) {
+							state.providers.error = err;
+						}
+					}),
+
+				openMedia: (slug?: string) =>
+					set(state => {
+						state.dialogs.media.slug = slug;
+						state.dialogs.media.isOpen = !!slug;
+					}),
+
+				closeMedia: () =>
+					set(state => {
+						state.dialogs.media.isOpen = false;
+						state.dialogs.media.slug = undefined;
+					}),
+
+				togglePreferences: () =>
+					set(state => {
+						state.dialogs.preferences.isOpen = !state.dialogs.preferences.isOpen;
+					}),
+
+				toggleWatchPreferences: () =>
+					set(state => {
+						state.dialogs.watchPreferences.isOpen = !state.dialogs.watchPreferences.isOpen;
+					}),
+
+				browseUpdate: (input: BrowseUpdateInput) =>
+					set(state => {
+						if (input.query !== undefined) {
+							state.browse.query = input.query;
+						}
+						if (input.args !== undefined) {
+							state.browse.args = input.args;
+						}
+						if (input.sortKey !== undefined) {
+							state.browse.sortKey = input.sortKey;
+						}
+						if (input.sortOrder !== undefined) {
+							state.browse.sortOrder = input.sortOrder;
+						}
+						if (input.preferFavorites !== undefined) {
+							state.browse.preferFavorites = input.preferFavorites;
+						}
+					}),
+
+				togglePreferFavorites: () =>
+					set(state => {
+						state.browse.preferFavorites = !state.browse.preferFavorites;
+					}),
 			}))
 		),
 		{
@@ -314,6 +392,53 @@ export const resetGlobalStore = () => {
 	useGlobalStore.setState(initial, true);
 };
 
+// all dependencies are ready
+useGlobalStore.subscribe(
+	state =>
+		state.app.boot === "booting" &&
+		state.providers.status === "ready" &&
+		state.preferences.status === "ready",
+	ready => {
+		if (ready && useGlobalStore.getState().app.boot !== "booted") {
+			useGlobalStore.setState(state => {
+				state.app.boot = "booted";
+			});
+		}
+	}
+);
+
+// we dont include providers & preferences as they are
+// not required for boot, only for browsing
+useGlobalStore.subscribe(
+	state => state.session.status === "ready" && state.settings.status === "ready",
+	ready => {
+		if (ready && useGlobalStore.getState().app.boot === "cold") {
+			useGlobalStore.setState(state => {
+				state.app.boot = "booting";
+			});
+		}
+	}
+);
+
+useGlobalStore.subscribe(
+	state => state.i18n.locale,
+	locale => {
+		const direction = getLangDir(locale);
+		i18next.changeLanguage(locale);
+
+		useGlobalStore.setState(state => {
+			state.i18n.direction = direction;
+		});
+
+		if (typeof document !== "undefined") {
+			document.documentElement.setAttribute("dir", direction);
+		}
+	}
+);
+
+// FIXME: this is a bit messy, we should probably move this logic to the browse store
+// or create a favorites store
+// keep browse args in sync with favorites
 function syncFavorites(favorites: Provider[]) {
 	const {
 		browse: { preferFavorites },
@@ -325,22 +450,6 @@ function syncFavorites(favorites: Provider[]) {
 		state.browse.args.providers = keys;
 	});
 }
-
-// i18n can be updated by preferences update as well
-// we keep it as a subscription to avoid circular updates
-useGlobalStore.subscribe(
-	state => state.i18n.locale,
-	locale => {
-		i18next.changeLanguage(locale);
-		const dir = getLangDir(locale);
-		if (typeof document !== "undefined") {
-			document.documentElement.setAttribute("dir", dir);
-		}
-		useGlobalStore.setState(state => {
-			state.i18n.direction = dir;
-		});
-	}
-);
 
 useGlobalStore.subscribe(
 	state => state.providers.providers,
@@ -380,64 +489,4 @@ useGlobalStore.subscribe(
 			});
 		}
 	}
-);
-
-// all dependencies are ready
-useGlobalStore.subscribe(
-	state =>
-		state.providers.initialized &&
-		state.session.initialized &&
-		state.preferences.initialized &&
-		state.settings.initialized,
-	ready => {
-		if (ready && !useGlobalStore.getState().app.initialized) {
-			useGlobalStore.setState(state => {
-				state.app.initialized = true;
-			});
-		}
-	},
-	{ equalityFn: Object.is }
-);
-
-// we dont include providers & preferences as they are
-// not required for boot, only for browsing
-useGlobalStore.subscribe(
-	state => state.session.initialized && state.settings.initialized,
-	ready => {
-		if (ready && !useGlobalStore.getState().app.bootInitialized) {
-			useGlobalStore.setState(state => {
-				state.app.bootInitialized = true;
-			});
-		}
-	},
-	{ equalityFn: Object.is }
-);
-
-useGlobalStore.subscribe(
-	state => state.session.isActive,
-	isActive => {
-		if (!isActive) {
-			// reset initial state on logout
-			// we could have a more elegant way to do that
-			resetGlobalStore();
-		}
-	}
-);
-
-// FIXME: should we open?
-useGlobalStore.subscribe(
-	state =>
-		state.app.bootInitialized &&
-		state.session.isActive &&
-		state.settings.onboarded &&
-		state.preferences.initialized &&
-		(!state.preferences.country || !state.preferences.language) &&
-		!state.dialogs.preferences.isOpen,
-	ready => {
-		if (!ready) return;
-		useGlobalStore.setState(state => {
-			state.dialogs.preferences.isOpen = true;
-		});
-	},
-	{ equalityFn: Object.is }
 );

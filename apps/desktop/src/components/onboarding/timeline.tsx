@@ -26,7 +26,7 @@ export function OnboardingTimeline() {
 	const { hide } = useUpdater();
 	const { api } = useTauri();
 	const [isWorking, setIsWorking] = useState(false);
-	const setOnboarded = useGlobalStore(state => state.settings.setOnboarded);
+	const settingsSucceeded = useGlobalStore(state => state.settingsSucceeded);
 
 	useEffect(() => {
 		hide(true);
@@ -39,10 +39,12 @@ export function OnboardingTimeline() {
 		setIsWorking(true);
 		api.setOnboarded().then(() => {
 			setIsWorking(false);
-			setOnboarded(true);
+			settingsSucceeded({
+				onboarded: true,
+			});
 			navigate("/");
 		});
-	}, [api.setOnboarded, navigate, setOnboarded]);
+	}, [api.setOnboarded, navigate, settingsSucceeded]);
 
 	return (
 		<div className="flex min-h-svh w-full flex-col justify-center gap-12">

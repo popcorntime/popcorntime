@@ -3,7 +3,6 @@ import i18n from "i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
 import { initReactI18next } from "react-i18next";
 import { pluginShellOpen, toast } from "@/test/mock";
-import { Code } from "@/utils/error";
 
 const dicts = import.meta.glob("../../crates/popcorntime-tauri/dictionaries/*.json", {
 	eager: true,
@@ -38,6 +37,6 @@ vi.mock("@tauri-apps/plugin-shell", async () => {
 });
 
 process.on("unhandledRejection", err => {
-	if ((err as { code?: string })?.code === Code.InvalidSession) return;
+	if ((err as { code?: string })?.code === "errors.session.invalid") return;
 	throw err;
 });

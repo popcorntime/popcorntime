@@ -28,18 +28,19 @@ import { useTranslation } from "react-i18next";
 import { Link, useParams } from "react-router";
 import { CommandCenter } from "@/components/command-center";
 import { useCountry } from "@/hooks/useCountry";
-import { useSession } from "@/hooks/useSession";
+import { useTauri } from "@/hooks/useTauri";
 import { useGlobalStore } from "@/stores/global";
 import type { MediaKind } from "@/tauri/types";
 
 export function Header() {
-	const { logout } = useSession();
 	const haveFavorites = useGlobalStore(state => state.providers.haveFavorites);
 	const preferFavorites = useGlobalStore(state => state.browse.preferFavorites);
-	const togglePreferFavorites = useGlobalStore(state => state.browse.togglePreferFavorites);
-	const openPreferences = useGlobalStore(state => state.dialogs.preferences.toggle);
-	const openWatchPreferences = useGlobalStore(state => state.dialogs.watchPreferences.toggle);
+	const togglePreferFavorites = useGlobalStore(state => state.togglePreferFavorites);
+	const togglePreferences = useGlobalStore(state => state.togglePreferences);
+	const toggleWatchPreferences = useGlobalStore(state => state.toggleWatchPreferences);
+	const sessionCleared = useGlobalStore(state => state.sessionCleared);
 	const direction = useGlobalStore(state => state.i18n.direction);
+	const { api } = useTauri();
 
 	const { country } = useCountry();
 	const { t } = useTranslation();
@@ -51,6 +52,10 @@ export function Header() {
 		const appLogDirPath = await appLogDir();
 		openPath(appLogDirPath);
 	}, []);
+
+	const logout = useCallback(() => {
+		api.logout().then(sessionCleared);
+	}, [api.logout, sessionCleared]);
 
 	return (
 		<header className="border-border bg-background/95 supports-[backdrop-filter]:bg-background/90 fixed top-0 z-50 h-14 w-full overscroll-none border-b backdrop-blur select-none">
@@ -141,11 +146,11 @@ export function Header() {
 								</MenubarTrigger>
 
 								<MenubarContent align={direction === "ltr" ? "end" : "start"} className="z-[400]">
-									<MenubarItem onClick={openPreferences} className="flex gap-2">
+									<MenubarItem onClick={togglePreferences} className="flex gap-2">
 										<Globe className="size-4 shrink-0" />
 										<span>{t("menu.preferences")}</span>
 									</MenubarItem>
-									<MenubarItem onClick={openWatchPreferences} className="flex gap-2">
+									<MenubarItem onClick={toggleWatchPreferences} className="flex gap-2">
 										<Clapperboard className="size-4 shrink-0" />
 										<span>{t("menu.watchPreferences")}</span>
 									</MenubarItem>

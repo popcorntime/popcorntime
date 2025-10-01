@@ -20,7 +20,7 @@ import { useShallow } from "zustand/shallow";
 import { CountryPopover } from "@/components/popover/country";
 import { LanguagePopover } from "@/components/popover/language";
 import { useCountry } from "@/hooks/useCountry";
-import { useSession } from "@/hooks/useSession";
+import { useTauri } from "@/hooks/useTauri";
 import { useUpdater } from "@/hooks/useUpdater";
 import { useGlobalStore } from "@/stores/global";
 
@@ -32,11 +32,12 @@ type AccountFormValues = z.infer<typeof accountFormSchema>;
 
 export function PreferencesDialog() {
 	const shouldOpen = useGlobalStore(state => state.dialogs.preferences.isOpen);
-	const toggle = useGlobalStore(state => state.dialogs.preferences.toggle);
+	const togglePreferences = useGlobalStore(state => state.togglePreferences);
+
 	const preferences = useGlobalStore(useShallow(state => state.preferences));
-	const initialized = useGlobalStore(state => state.session.initialized);
+	const initialized = useGlobalStore(state => state.session.status);
 	const [submitted, setSubmitted] = useState(false);
-	const { updatePreferences } = useSession();
+	const { api } = useTauri();
 	const { t } = useTranslation();
 	const { country } = useCountry();
 	const navigate = useNavigate();
@@ -60,7 +61,7 @@ export function PreferencesDialog() {
 	}, [shouldOpen, hide]);
 
 	useEffect(() => {
-		if (initialized) {
+		if (initialized === "ready") {
 			if (preferences.country) {
 				form.setValue("country", preferences.country);
 			}
@@ -76,26 +77,32 @@ export function PreferencesDialog() {
 				return;
 			}
 
-			setSubmitted(true);
-			updatePreferences({
+			const { preferencesSucceeded, preferencesFailed } = useGlobalStore.getState();
+			const preferences = {
 				country: values.country.toUpperCase() as Country,
 				language: values.language,
-			})
+			};
+
+			setSubmitted(true);
+			preferencesSucceeded(preferences);
+			api
+				.updateUserPreferences(preferences)
 				.then(() =>
 					toast.success(t("preferences.toast"), {
 						closeButton: true,
 						dismissible: true,
 					})
 				)
-				.catch(console.error)
+				.catch(preferencesFailed)
 				.finally(() => {
 					setSubmitted(false);
+					togglePreferences();
 					if (country !== values.country) {
 						navigate(`/browse/${values.country}`, { flushSync: true });
 					}
 				});
 		},
-		[submitted, updatePreferences, t, country, navigate]
+		[submitted, api.updateUserPreferences, t, country, navigate, togglePreferences]
 	);
 
 	if (!initialized || !open) {
@@ -103,7 +110,7 @@ export function PreferencesDialog() {
 	}
 
 	return (
-		<Dialog open={shouldOpen} onOpenChange={toggle}>
+		<Dialog open={shouldOpen} onOpenChange={togglePreferences}>
 			<DialogContent className="max-w-md">
 				<Form {...form}>
 					<form onSubmit={form.handleSubmit(onSubmit)}>

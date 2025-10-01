@@ -43,48 +43,41 @@ const UpdaterContext = createContext<Context>({
 
 export const UpdaterProvider = ({ children }: React.PropsWithChildren) => {
 	const { t } = useTranslation();
-	const setLastChecked = useGlobalStore(state => state.updater.setLastChecked);
-	const setStatus = useGlobalStore(state => state.updater.setStatus);
-	const setAvailableUpdate = useGlobalStore(state => state.updater.setAvailableUpdate);
-	const setProgress = useGlobalStore(state => state.updater.setProgress);
-	const setVersion = useGlobalStore(state => state.app.setVersion);
-	const setNightly = useGlobalStore(state => state.app.setNightly);
+	const updaterSucceeded = useGlobalStore(state => state.updaterSucceeded);
+	const updaterFailed = useGlobalStore(state => state.updaterFailed);
+	const updaterProgress = useGlobalStore(state => state.updaterProgress);
+	const setAppVersion = useGlobalStore(state => state.setAppVersion);
 
 	const progress = useGlobalStore(state => state.updater.progress);
-	const status = useGlobalStore(state => state.updater.status);
 	const availableUpdate = useGlobalStore(state => state.updater.availableUpdate);
 	const lastChecked = useGlobalStore(state => state.updater.lastChecked);
 	const nightly = useGlobalStore(state => state.app.nightly);
 
 	const check = useCallback(() => {
-		setLastChecked(new Date());
-		checkUpdate().then(update => {
-			if (update?.available) {
-				setStatus(UpdateStatus.Available);
-			} else {
-				setStatus(UpdateStatus.NoUpdate);
-			}
-			setAvailableUpdate(update ?? undefined);
-		});
-	}, [setAvailableUpdate, setLastChecked, setStatus]);
+		checkUpdate()
+			.then(update => {
+				updaterSucceeded(update ?? undefined);
+			})
+			.catch(updaterFailed);
+	}, [updaterSucceeded, updaterFailed]);
 
 	const installUpdate = useCallback(async () => {
 		if (availableUpdate) {
-			setProgress(UpdateProgress.Installing);
+			updaterProgress(UpdateProgress.Installing);
 			await availableUpdate.install();
-			setProgress(UpdateProgress.Installed);
+			updaterProgress(UpdateProgress.Installed);
 		}
-	}, [availableUpdate, setProgress]);
+	}, [availableUpdate, updaterProgress]);
 
 	const downloadUpdate = useCallback(async () => {
 		if (availableUpdate) {
-			setProgress(UpdateProgress.Downloading);
+			updaterProgress(UpdateProgress.Downloading);
 			await availableUpdate.download((progress: DownloadEvent) => {
-				setProgress(downloadStatusMap[progress.event]);
+				updaterProgress(downloadStatusMap[progress.event]);
 			});
-			setProgress(UpdateProgress.Downloaded);
+			updaterProgress(UpdateProgress.Downloaded);
 		}
-	}, [availableUpdate, setProgress]);
+	}, [availableUpdate, updaterProgress]);
 
 	const downloadAndInstall = useCallback(() => {
 		if (availableUpdate) {
@@ -140,23 +133,20 @@ export const UpdaterProvider = ({ children }: React.PropsWithChildren) => {
 			return;
 		}
 
-		switch (status) {
-			case UpdateStatus.Available:
-				toast(t("update.available", { version: availableUpdate?.version }), {
-					id: `update-available-${availableUpdate?.version}`,
-					closeButton: import.meta.env.DEV,
-					dismissible: import.meta.env.DEV,
-					duration: Infinity,
-					action: {
-						label: t("update.install"),
-						onClick: () => {
-							toast.dismiss(`update-available-${availableUpdate?.version}`);
-							downloadAndInstall();
-						},
-					},
-				});
-		}
-	}, [status, downloadAndInstall, availableUpdate, t]);
+		toast(t("update.available", { version: availableUpdate?.version }), {
+			id: `update-available-${availableUpdate?.version}`,
+			closeButton: import.meta.env.DEV,
+			dismissible: import.meta.env.DEV,
+			duration: Infinity,
+			action: {
+				label: t("update.install"),
+				onClick: () => {
+					toast.dismiss(`update-available-${availableUpdate?.version}`);
+					downloadAndInstall();
+				},
+			},
+		});
+	}, [downloadAndInstall, availableUpdate, t]);
 
 	useEffect(() => {
 		switch (progress) {
@@ -191,20 +181,11 @@ export const UpdaterProvider = ({ children }: React.PropsWithChildren) => {
 	}, [progress, t, availableUpdate?.version]);
 
 	useEffect(() => {
-		getName().then(name => {
-			setNightly(name.toLowerCase().includes("nightly"));
+		Promise.all([getName(), getVersion()]).then(([appName, version]) => {
+			const isNightly = appName.toLowerCase().includes("nightly");
+			setAppVersion(version, isNightly);
 		});
-
-		getVersion().then(version => {
-			let suffix = "";
-			if (import.meta.env.DEV) {
-				suffix = "-dev";
-			} else if (nightly) {
-				suffix = "-nightly";
-			}
-			setVersion(`${version}${suffix}`);
-		});
-	}, [nightly, setVersion, setNightly]);
+	}, [nightly, setAppVersion]);
 
 	return (
 		<UpdaterContext.Provider

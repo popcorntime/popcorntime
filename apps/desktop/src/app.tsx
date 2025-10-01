@@ -2,6 +2,10 @@ import { HashRouter, Navigate, Route, Routes } from "react-router";
 import { useErrorHandler } from "@/hooks/useErrorHandler";
 import { initReactI18n } from "@/i18n";
 import { BrowseLayout, DefaultLayout } from "@/layout";
+import { PreferencesLoaderMount } from "@/loaders/preferences";
+import { ProvidersLoaderMount } from "@/loaders/providers";
+import { SessionLoaderMount } from "@/loaders/session";
+import { SettingsLoaderMount } from "@/loaders/settings";
 import { Providers } from "@/providers";
 import { BrowseRoute } from "@/routes/browse";
 import { LoginRoute } from "@/routes/login";
@@ -26,6 +30,11 @@ export function App() {
 	return (
 		<HashRouter>
 			<Providers>
+				<SettingsLoaderMount />
+				<SessionLoaderMount />
+				<PreferencesLoaderMount />
+				<ProvidersLoaderMount />
+
 				<Routes>
 					<Route element={<DefaultLayout />}>
 						<Route index element={<SplashRoute />} />
