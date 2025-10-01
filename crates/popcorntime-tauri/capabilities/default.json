@@ -33,6 +33,12 @@
         },
         {
           "url": "https://go.popcorntime.app/*"
+        },
+        {
+          "url": "https://popcorntime.app/*"
+        },
+        {
+          "url": "https://github.com/popcorntime/*"
         }
       ]
     }
