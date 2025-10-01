@@ -1,10 +1,9 @@
-import { useSidebar, useSidebarGroup } from "@popcorntime/ui/components/sidebar";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import useInfiniteScroll from "react-infinite-scroll-hook";
-import { useLocation, useSearchParams } from "react-router";
+import { useSearchParams } from "react-router";
+import { useShallow } from "zustand/shallow";
 import placeholderImg from "@/assets/placeholder.svg";
 import { BrowseMedias } from "@/components/browse";
-import { BrowseSidebarGroup } from "@/components/browse/sidebar";
 import { useCountry } from "@/hooks/useCountry";
 import { useSearch } from "@/hooks/useSearch";
 import { useGlobalStore } from "@/stores/global";
@@ -12,15 +11,16 @@ import type { MediaKind, MediaSearch, SearchInput } from "@/tauri/types";
 
 export function BrowseRoute() {
 	const { country } = useCountry();
-	const initialized = useGlobalStore(state => state.app.initialized);
-	const globalArgs = useGlobalStore(state => state.browse.args);
-	const sortKey = useGlobalStore(state => state.browse.sortKey);
-	const sortOrder = useGlobalStore(state => state.browse.sortOrder);
-	const query = useGlobalStore(state => state.browse.query);
-	const openMediaDialog = useGlobalStore(state => state.dialogs.media.open);
+	const appBoot = useGlobalStore(state => state.app.boot);
+	const {
+		args: globalArgs,
+		sortKey,
+		sortOrder,
+		query,
+	} = useGlobalStore(useShallow(state => state.browse));
+
+	const openMedia = useGlobalStore(state => state.openMedia);
 	const [dataAccumulator, setDataAccumulator] = useState<MediaSearch[]>([]);
-	const { setOpen: setOpenSidebar } = useSidebar();
-	const { pathname } = useLocation();
 	const [searchParams] = useSearchParams();
 
 	const kind = useMemo(() => {
@@ -33,6 +33,7 @@ export function BrowseRoute() {
 			kind: kind?.toUpperCase() as MediaKind | undefined,
 		};
 	}, [globalArgs, kind]);
+
 	const prevQuery = useRef<{
 		q: typeof query;
 		a: typeof args;
@@ -44,10 +45,9 @@ export function BrowseRoute() {
 		k: sortKey,
 		o: sortOrder,
 	});
-	const prevPathname = useRef(pathname);
 
 	// Register the sidebar group for this route
-	useSidebarGroup(useMemo(() => <BrowseSidebarGroup />, []));
+	//useSidebarGroup(useMemo(() => <BrowseSidebarGroup />, []));
 
 	const [browseParams, setBrowseParams] = useState<SearchInput>({
 		first: 50,
@@ -155,15 +155,6 @@ export function BrowseRoute() {
 		};
 	}, [query, args, sortKey, sortOrder]);
 
-	// FIXME: allow filter for TV SHOW
-	useEffect(() => {
-		if (prevPathname.current === pathname) return;
-		prevPathname.current = pathname;
-		// always close the sidebar when browsing
-		// as tv show currently doesn't support it
-		setOpenSidebar(false);
-	}, [setOpenSidebar, pathname]);
-
 	const [sentryRef] = useInfiniteScroll({
 		loading: isLoading,
 		hasNextPage,
@@ -175,9 +166,9 @@ export function BrowseRoute() {
 		<BrowseMedias
 			sentryRef={sentryRef}
 			medias={dataAccumulator}
-			onOpen={openMediaDialog}
+			onOpen={openMedia}
 			placeholder={placeholderImg}
-			isReady={!isLoading && initialized && dataAccumulator.length > 0}
+			isReady={!isLoading && appBoot === "booted" && dataAccumulator.length > 0}
 			isLoading={isLoading}
 			onLoadMore={onLoadMore}
 		/>

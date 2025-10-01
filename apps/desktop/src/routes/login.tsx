@@ -8,7 +8,7 @@ import { useGlobalStore } from "@/stores/global";
 
 export function LoginRoute() {
 	const { api, on } = useTauri();
-	const appInitialized = useGlobalStore(state => state.app.initialized);
+	const appBoot = useGlobalStore(state => state.app.boot);
 	const navigate = useNavigate();
 
 	async function initialize_session_authorization() {
@@ -37,9 +37,9 @@ export function LoginRoute() {
 	}, [on.sessionServerReady]);
 
 	useEffect(() => {
-		if (!appInitialized) return;
-		navigate("/browse");
-	}, [appInitialized, navigate]);
+		if (appBoot !== "booted") return;
+		navigate("/browse", { replace: true });
+	}, [appBoot, navigate]);
 
 	return (
 		<main className="flex h-full">

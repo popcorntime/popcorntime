@@ -37,7 +37,7 @@ function MediaContentSkeleton() {
 function MediaContent() {
 	const locale = useGlobalStore(state => state.i18n.locale);
 	const slug = useGlobalStore(state => state.dialogs.media.slug);
-	const toggle = useGlobalStore(state => state.dialogs.media.toggle);
+	const closeMedia = useGlobalStore(state => state.closeMedia);
 	const { country } = useCountry();
 	const [isLoading, setIsLoading] = useState(false);
 	const { api } = useTauri();
@@ -229,7 +229,7 @@ function MediaContent() {
 					<Button
 						variant="ghost"
 						size="icon"
-						onClick={toggle}
+						onClick={closeMedia}
 						className="absolute top-4 right-4 z-[500] text-white/80 backdrop-blur-sm hover:bg-black/30 hover:text-white"
 					>
 						<X className="h-6 w-6" />
@@ -460,10 +460,10 @@ function MediaContent() {
 
 export function MediaDialog() {
 	const isOpen = useGlobalStore(state => state.dialogs.media.isOpen);
-	const toggle = useGlobalStore(state => state.dialogs.media.toggle);
+	const closeMedia = useGlobalStore(state => state.closeMedia);
 
 	return (
-		<Dialog open={isOpen} onOpenChange={toggle} modal>
+		<Dialog open={isOpen} onOpenChange={closeMedia} modal>
 			<DialogContent className="z-[300] h-full w-full max-w-2xl border-0 p-0 outline-none md:max-h-[90vh] lg:max-w-4xl">
 				<DialogTitle hidden></DialogTitle>
 				<DialogDescription hidden></DialogDescription>

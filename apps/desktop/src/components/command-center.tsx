@@ -235,7 +235,7 @@ function CommandCenterCommands() {
 function CommandCenterViewSearchResults() {
 	const { t } = useTranslation();
 	const query = useCommandCenterStore(state => state.query);
-	const open = useGlobalStore(state => state.dialogs.media.open);
+	const openMedia = useGlobalStore(state => state.openMedia);
 	const locale = useGlobalStore(state => state.i18n.locale);
 	const sortKey = useGlobalStore(state => state.browse.sortKey);
 	const { country } = useCountry();
@@ -274,7 +274,7 @@ function CommandCenterViewSearchResults() {
 					<CommandItem
 						className="m-2 cursor-pointer"
 						onSelect={() => {
-							open(media.slug);
+							openMedia(media.slug);
 						}}
 						key={media.id}
 						value={media.id.toString()}

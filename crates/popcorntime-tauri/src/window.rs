@@ -1,7 +1,5 @@
 #[cfg(target_os = "macos")]
 use popcorntime_tauri_splash::WindowSplashExt;
-#[cfg(target_os = "macos")]
-use popcorntime_tauri_trafficlights::WindowExt;
 use tauri::webview::PageLoadPayload;
 
 pub const MAIN_WINDOW_LABEL: &str = "main";
@@ -91,15 +89,12 @@ pub fn create_main(
 
   let window = window_builder(handle, window_relative_url)
     .hidden_title(true)
+    .decorations(true)
     .title_bar_style(tauri::TitleBarStyle::Overlay)
+    // FIXME: determine if we are aligned correctly in all screen resolutions
+    // scale factor is not taken into account here
+    .traffic_light_position(tauri::LogicalPosition::new(16.0, 25.0))
     .build()?;
-
-  let scale_factor = window.scale_factor()?;
-
-  window.setup_traffic_lights_inset(tauri::LogicalPosition::new(
-    8.0 * scale_factor,
-    12.5 * scale_factor,
-  ))?;
 
   window.setup_splashscreen()?;
 

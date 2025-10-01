@@ -15,20 +15,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  chromatic-ui:
+  test-storybook:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
       - uses: ./.github/actions/init-env-node
-      - name: Run Chromatic
-        uses: chromaui/action@latest
-        with:
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          zip: true
-          onlyChanged: true
-          skip: "dependabot/**"
-          workingDir: packages/popcorntime-ui
-          autoAcceptChanges: false
-          exitOnceUploaded: true
+      - run: pnpm dlx playwright install chromium
+      - run: pnpm test-storybook

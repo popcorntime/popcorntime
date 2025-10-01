@@ -4,22 +4,21 @@ import { SplashScreen } from "@/components/splash-screen";
 import { useGlobalStore } from "@/stores/global";
 
 export function SplashRoute() {
-	const bootInitialized = useGlobalStore(s => s.app.bootInitialized);
-	const appInitialized = useGlobalStore(s => s.app.initialized);
+	const appBoot = useGlobalStore(s => s.app.boot);
 	const onboarded = useGlobalStore(s => s.settings.onboarded);
 	const isActive = useGlobalStore(s => s.session.isActive);
 	const initialRedirectAttempted = useRef(false);
 	const navigate = useNavigate();
 
 	useEffect(() => {
-		if (!bootInitialized) return;
+		if (appBoot === "cold") return;
 		if (!onboarded) {
 			if (!initialRedirectAttempted.current) {
 				initialRedirectAttempted.current = true;
 				navigate("/onboarding", { flushSync: true });
 			}
 		} else if (isActive) {
-			if (!appInitialized) return;
+			if (appBoot !== "booted") return;
 			if (!initialRedirectAttempted.current) {
 				initialRedirectAttempted.current = true;
 				navigate("/browse", { flushSync: true });
@@ -30,7 +29,7 @@ export function SplashRoute() {
 				navigate("/login", { flushSync: true });
 			}
 		}
-	}, [bootInitialized, onboarded, isActive, appInitialized, navigate]);
+	}, [appBoot, onboarded, isActive, navigate]);
 
 	return <SplashScreen />;
 }

@@ -89,7 +89,7 @@ describe("LoginRoute", () => {
 
 		await act(async () =>
 			useGlobalStore.setState(s => {
-				s.app.initialized = true;
+				s.app.boot = "booted";
 			})
 		);
 

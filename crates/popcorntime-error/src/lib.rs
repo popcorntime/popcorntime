@@ -11,6 +11,8 @@ pub enum Code {
   DatabaseNotAvailable,
   #[serde(rename = "errors.session.invalid")]
   InvalidSession,
+  #[serde(rename = "errors.session.keyring")]
+  InvalidSessionKeyring,
   #[serde(rename = "errors.events.invalid")]
   InvalidEvent,
   #[serde(rename = "errors.graphql.no_data")]
@@ -26,6 +28,7 @@ impl std::fmt::Display for Code {
       Code::DatabaseNotAvailable => "errors.database.not_available",
       Code::GraphqlNoData => "errors.graphql.no_data",
       Code::InvalidEvent => "errors.events.invalid",
+      Code::InvalidSessionKeyring => "errors.session.keyring",
     };
     f.write_str(code)
   }

@@ -23,6 +23,9 @@ poem.workspace = true
 popcorntime-error.workspace = true
 
 oauth2 = "5.0.0"
-notify = "8.2.0"
 toml = "0.9.7"
-config = "0.15.13"
+keyring = { version = "3.6.3", features = [
+    "apple-native",
+    "windows-native",
+    "linux-native",
+] }

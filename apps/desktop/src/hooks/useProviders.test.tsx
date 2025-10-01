@@ -8,12 +8,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { CountryProvider } from "@/hooks/useCountry";
 import { useProviders } from "@/hooks/useProviders";
 import { resetGlobalStore, useGlobalStore } from "@/stores/global";
-import type {
-	Provider,
-	ProvidersInput,
-	ProvidersOutput,
-	SetFavoriteProviderInput,
-} from "@/tauri/types";
+import type { Provider, ProvidersOutput, SetFavoriteProviderInput } from "@/tauri/types";
 
 const initialProviders = [
 	{
@@ -51,16 +46,12 @@ let ALL = {
 } satisfies Partial<Record<Country, ProvidersOutput>>;
 
 function Harness() {
-	const { getProviders, addToFavorites, removeFromFavorites } = useProviders();
-	const isLoading = useGlobalStore(st => st.providers.isLoading);
+	const { addToFavorites, removeFromFavorites } = useProviders();
 	const providers = useGlobalStore(st => st.providers.providers);
 	const favorites = useMemo(() => providers?.filter(p => p.favorite), [providers]);
 
 	return (
 		<div>
-			<button type="button" onClick={() => getProviders("CA")}>
-				load
-			</button>
 			<button type="button" onClick={() => addToFavorites("disney_plus")}>
 				addFav
 			</button>
@@ -68,7 +59,6 @@ function Harness() {
 				rmFav
 			</button>
 
-			<div data-testid="loading">{String(isLoading)}</div>
 			<div data-testid="all">{JSON.stringify(providers ?? [])}</div>
 			<div data-testid="favs">{JSON.stringify(favorites ?? [])}</div>
 		</div>
@@ -86,7 +76,7 @@ function renderWithHarness() {
 }
 
 beforeEach(async () => {
-	useGlobalStore.getState().preferences.setPreferences({
+	useGlobalStore.getState().preferencesSucceeded({
 		country: "CA",
 		language: "en",
 	});
@@ -97,18 +87,9 @@ beforeEach(async () => {
 		},
 	} satisfies Partial<Record<Country, ProvidersOutput>>;
 
-	mockIPC((cmd, args: unknown) => {
-		if (cmd === "providers") {
-			const {
-				params: { country },
-			} = args as { params: ProvidersInput };
-			if (country !== "CA") {
-				console.warn("Unexpected country", country);
-				return {};
-			}
-			return ALL[country];
-		}
+	useGlobalStore.getState().providersSucceeded(ALL.CA.providers);
 
+	mockIPC((cmd, args: unknown) => {
 		if (cmd === "set_favorites_provider") {
 			const {
 				params: { country, providerKey, favorite },
@@ -140,31 +121,9 @@ afterEach(() => {
 });
 
 describe("useProviders", () => {
-	it("getProviders populates store", async () => {
-		const r = renderWithHarness();
-		await act(async () => {});
-
-		await userEvent.click(screen.getByText("load"));
-		await waitFor(() => {
-			const all = JSON.parse(screen.getByTestId("all").textContent || "[]");
-			const favs = JSON.parse(screen.getByTestId("favs").textContent || "[]");
-
-			expect(all.map((p: Provider) => p.key)).toEqual(["netflix", "hulu", "disney_plus"]);
-			expect(favs.map((p: Provider) => p.key)).toEqual(["netflix"]);
-		});
-
-		r.unmount();
-	});
-
 	it("add favorite", async () => {
 		const r = renderWithHarness();
 		await act(async () => {});
-
-		await userEvent.click(screen.getByText("load"));
-		await waitFor(() => {
-			const favs = JSON.parse(screen.getByTestId("favs").textContent || "[]");
-			expect(favs.map((p: Provider) => p.key)).toEqual(["netflix"]);
-		});
 
 		await userEvent.click(screen.getByText("addFav"));
 		await waitFor(() => {
@@ -180,12 +139,6 @@ describe("useProviders", () => {
 	it("remove favorite", async () => {
 		const r = renderWithHarness();
 		await act(async () => {});
-
-		await userEvent.click(screen.getByText("load"));
-		await waitFor(() => {
-			const favs = JSON.parse(screen.getByTestId("favs").textContent || "[]");
-			expect(favs.map((p: Provider) => p.key)).toEqual(["netflix"]);
-		});
 
 		await userEvent.click(screen.getByText("rmFav"));
 		await waitFor(() => {

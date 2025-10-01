@@ -1,64 +1,90 @@
 use anyhow::{Context, Result};
 use authorization::{AuthorizationBroker, AuthorizationBrokerEvent, AuthorizationBrokerResponse};
 use consts::{AUTH_SERVER, CLIENT_ID};
+use oauth2::RefreshToken;
 use popcorntime_error::Code;
 use session::AppSession;
 use std::{path::Path, sync::Arc};
-use storage::{InnerSessionStore, SessionStore};
-use tokio::sync::RwLock;
+use storage::SessionStore;
+use tokio::sync::{Mutex, RwLock, broadcast};
 
 pub mod authorization;
 pub mod consts;
 pub mod jwks;
+mod keyring;
 mod server;
 pub mod session;
 pub mod storage;
 
-#[derive(Debug, Clone)]
+#[derive(Clone)]
+pub struct SessionUpdateEvent {
+  pub access_token: Option<String>,
+  pub refresh_token: Option<String>,
+  pub expires_at: Option<time::OffsetDateTime>,
+}
+
+#[derive(Debug)]
 pub struct AuthorizationService {
   broker: Arc<AuthorizationBroker>,
   store: Arc<SessionStore>,
   snapshot: Arc<RwLock<AppSession>>,
+  refresh_gate: Arc<Mutex<()>>,
+  rx: broadcast::Receiver<SessionUpdateEvent>,
 }
 
 impl AuthorizationService {
-  pub fn new(storage_dir: &Path) -> Result<Self> {
-    let store = SessionStore::new(storage_dir)?;
+  pub fn new(storage_dir: &Path, namespace: &str) -> Result<Self> {
+    let (tx, rx) = broadcast::channel(16);
+    let store = SessionStore::new(storage_dir, namespace)?.with_broadcast(tx);
     let broker = AuthorizationBroker::new(CLIENT_ID, AUTH_SERVER)?;
-    let mut current_session = AppSession::new(&format!("{}/.well-known/jwks.json", AUTH_SERVER))?;
+    let current_store = store.get_with_secrets()?;
+    let current_session = AppSession::new(&format!("{}/.well-known/jwks.json", AUTH_SERVER))?
+      .with_access_token(current_store.access_token.clone())
+      .with_refresh_token(current_store.refresh_token.clone())
+      .with_expires_at(current_store.expires_at);
 
-    let current_store = store.get()?;
-    current_session.with_access_token(current_store.access_token.clone());
-    current_session.with_refresh_token(current_store.refresh_token.clone());
-    current_session.with_expires_at(current_store.expires_at);
     Ok(Self {
       broker: Arc::new(broker),
       store: Arc::new(store),
       snapshot: Arc::new(RwLock::new(current_session)),
+      refresh_gate: Arc::new(Mutex::new(())),
+      rx,
     })
   }
 
-  /// Watch the config file in the background and update the session store
-  /// - send initial value on-start
-  /// - send updated value on-write
-  pub fn watch_config_in_background(
+  pub fn on_access_token_update(
     &self,
-    send_event: impl Fn(InnerSessionStore) -> Result<()> + Send + Sync + 'static,
+    send_event: impl Fn(SessionUpdateEvent) -> Result<()> + Send + Sync + 'static,
   ) -> Result<()> {
+    // resubscribe to get a fully isolated receiver
+    let mut rx = self.rx.resubscribe();
     let snapshot = self.snapshot.clone();
-    self.store.watch_in_background(move |session| {
-      // async update
+    tokio::spawn(async move {
       let snapshot_isolated = snapshot.clone();
-      let session_isolated = session.clone();
-      tokio::spawn(async move {
-        let mut inner = snapshot_isolated.write().await;
-        inner.with_access_token(session_isolated.access_token.clone());
-        inner.with_refresh_token(session_isolated.refresh_token.clone());
-        inner.with_expires_at(session_isolated.expires_at);
-      });
 
-      send_event(session)
-    })
+      loop {
+        match rx.recv().await {
+          Ok(event) => {
+            // rebuild the inner session
+            let mut current_session = snapshot_isolated.write().await;
+            *current_session = current_session
+              .clone()
+              .with_access_token(event.access_token.clone())
+              .with_refresh_token(event.refresh_token.clone())
+              .with_expires_at(event.expires_at);
+
+            // send the event
+            if let Err(err) = send_event(event) {
+              tracing::error!("Failed to send session update event: {:?}", err);
+            }
+          }
+          Err(broadcast::error::RecvError::Lagged(_)) => continue,
+          Err(broadcast::error::RecvError::Closed) => break,
+        }
+      }
+    });
+
+    Ok(())
   }
 
   pub async fn authorize_in_background(
@@ -92,49 +118,65 @@ impl AuthorizationService {
     )
   }
 
+  /// Try to get the current access token
+  /// Locks may fail, so this may return None even if there is an access token
+  /// We currently only use this at startup to initialize the API client
+  /// It should be fine as there is no concurrency at that point
+  pub fn try_access_token(&self) -> Option<String> {
+    self.snapshot.try_read().ok().and_then(|s| s.access_token())
+  }
+
   pub fn set_onboarded(&self, onboarded: bool) -> Result<()> {
     let inner_settings = self.store.clone();
     inner_settings.update_onboarding_complete(onboarded)
   }
 
-  pub async fn validate(&self) -> Result<()> {
-    let mut session = self.snapshot.write().await;
-    let inner_settings = self.store.clone();
-
-    match session.validate().await {
-      Ok(_) => Ok(()),
-      Err(err) => {
-        // probably expired token
-        if err.is::<Code>() {
-          tracing::info!("Refreshing token");
-          let AuthorizationBrokerResponse {
-            access_token,
-            expires_in,
-            refresh_token,
-          } = self
-            .broker
-            .exchange_refresh_token(&session)
-            .await
-            .context(Code::InvalidSession)?;
-
-          // update storage -- a `AppSession` will be updated in the background
-          if let Err(err) = inner_settings.update_access_token(
-            access_token.clone(),
-            Some(refresh_token),
-            expires_in,
-          ) {
-            tracing::error!("Failed to update access_token: {:?}", err);
-          };
-
-          // make sure the access token is updated
-          // we dont want to relay on the watch_in_background to update the session
-          session.with_access_token(Some(access_token));
-
-          return session.validate().await;
-        }
-        Err(err)
-      }
+  async fn fast_validate(&self) -> Result<()> {
+    let session = self.snapshot.read().await;
+    if session.validate().await.is_ok() {
+      return Ok(());
     }
+
+    Err(anyhow::anyhow!("No valid access token found").context(Code::InvalidSession))
+  }
+
+  pub async fn validate(&self) -> Result<()> {
+    // fast path
+    if self.fast_validate().await.is_ok() {
+      return Ok(());
+    }
+
+    // prevent multiple validate
+    let _guard = self.refresh_gate.lock().await;
+
+    // if we were running in a lock
+    // another thread may have refreshed the token
+    if self.fast_validate().await.is_ok() {
+      return Ok(());
+    }
+
+    let refresh_input = { self.snapshot.read().await.refresh_token() }
+      .ok_or_else(|| anyhow::anyhow!("No valid tokens found").context(Code::InvalidSession))?;
+
+    let AuthorizationBrokerResponse {
+      access_token,
+      expires_in,
+      refresh_token,
+    } = self
+      .broker
+      .exchange_refresh_token(&RefreshToken::new(refresh_input))
+      .await
+      .context(Code::InvalidSession)?;
+
+    if let Err(err) = self.store.update_access_token(
+      access_token.clone(),
+      Some(refresh_token.clone()),
+      expires_in,
+    ) {
+      tracing::error!("Failed to update_access_token: {err:?}");
+    }
+
+    self.fast_validate().await
   }
 
   pub async fn logout(&self) -> Result<()> {

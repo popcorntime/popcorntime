@@ -1,3 +1,4 @@
+use crate::server::run_local_oauth_server;
 use anyhow::Result;
 use oauth2::basic::{BasicClient, BasicTokenType};
 use oauth2::{AuthUrl, ClientId, RedirectUrl, TokenUrl};
@@ -12,9 +13,6 @@ use std::time::Duration;
 use tokio::sync::mpsc;
 use tokio::time::timeout;
 use url::Url;
-
-use crate::server::run_local_oauth_server;
-use crate::session::AppSession;
 
 const PORT: u16 = 8085;
 // Thread timeout in seconds
@@ -108,18 +106,15 @@ impl AuthorizationBroker {
 
   pub async fn exchange_refresh_token(
     &self,
-    session: &AppSession,
+    refresh_token: &RefreshToken,
   ) -> Result<AuthorizationBrokerResponse> {
-    match session.refresh_token() {
-      Some(refresh_token) => self
-        .oauth2_client
-        .exchange_refresh_token(&RefreshToken::new(refresh_token.to_string()))
-        .request_async(self.reqwest_client.as_ref())
-        .await
-        .map(Into::into)
-        .map_err(Into::into),
-      None => Err(anyhow::anyhow!("No refresh token found")),
-    }
+    self
+      .oauth2_client
+      .exchange_refresh_token(refresh_token)
+      .request_async(self.reqwest_client.as_ref())
+      .await
+      .map(Into::into)
+      .map_err(Into::into)
   }
 
   pub async fn authorize_in_background(
@@ -133,7 +128,6 @@ impl AuthorizationBroker {
     }
 
     let (pkce_challenge, pkce_verifier) = PkceCodeChallenge::new_random_sha256();
-
     let (tx, mut rx) = mpsc::channel::<(AuthorizationCode, CsrfToken)>(1);
     let http_client = self.reqwest_client.clone();
     let oauth2_client = self.oauth2_client.clone();

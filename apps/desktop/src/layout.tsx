@@ -5,7 +5,6 @@ import { Header } from "@/components/header";
 import { MediaDialog } from "@/components/modal/media";
 import { PreferencesDialog } from "@/components/modal/preferences";
 import { WatchPreferencesDialog } from "@/components/modal/watch-preferences";
-import { CountryProvider } from "@/hooks/useCountry";
 
 export function DefaultLayout() {
 	return (
@@ -19,7 +18,7 @@ export function DefaultLayout() {
 
 export function BrowseLayout() {
 	return (
-		<CountryProvider>
+		<>
 			<div className="isolate flex w-full flex-col overscroll-none">
 				<Header />
 
@@ -36,6 +35,6 @@ export function BrowseLayout() {
 			<PreferencesDialog />
 			<WatchPreferencesDialog />
 			<MediaDialog />
-		</CountryProvider>
+		</>
 	);
 }

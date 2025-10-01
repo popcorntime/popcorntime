@@ -6,6 +6,7 @@ import { cn } from "@popcorntime/ui/lib/utils";
 import { ArrowUp, SlidersHorizontal } from "lucide-react";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
+import { useShallow } from "zustand/shallow";
 import { type SortOrder, useGlobalStore } from "@/stores/global";
 import type { MediaSearch, SortKey } from "@/tauri/types";
 
@@ -15,10 +16,8 @@ const SORTS = [
 ] as const;
 
 export function BrowseSortBy() {
-	const sortKey = useGlobalStore(state => state.browse.sortKey);
-	const sortOrder = useGlobalStore(state => state.browse.sortOrder);
-	const setSortKey = useGlobalStore(state => state.browse.setSortKey);
-	const setSortOrder = useGlobalStore(state => state.browse.setSortOrder);
+	const { sortKey, sortOrder } = useGlobalStore(useShallow(state => state.browse));
+	const browseUpdate = useGlobalStore(state => state.browseUpdate);
 	const { t } = useTranslation();
 
 	const sortKeys = useMemo(
@@ -53,11 +52,8 @@ export function BrowseSortBy() {
 					value={sortKey}
 					onValueChange={v => {
 						if (!v) return;
-						setSortKey(v as SortKey);
 						const sort = SORTS.find(s => s.key === v);
-						if (sort) {
-							setSortOrder(sort.defaultSort as SortOrder);
-						}
+						browseUpdate({ sortKey: v as SortKey, sortOrder: sort?.defaultSort as SortOrder });
 					}}
 					className="grid grid-cols-2"
 				>
@@ -71,7 +67,7 @@ export function BrowseSortBy() {
 							aria-label={s.label}
 							onClick={e => {
 								e.stopPropagation();
-								setSortOrder(sortOrder === "ASC" ? "DESC" : "ASC");
+								browseUpdate({ sortOrder: sortOrder === "ASC" ? "DESC" : "ASC" });
 							}}
 						>
 							<ArrowUp

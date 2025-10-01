@@ -40,7 +40,7 @@ describe("UpdaterProvider with mockIPC", () => {
 		await act(async () => {});
 
 		const s = useGlobalStore.getState();
-		expect(s.updater.status).toBe("available");
+		expect(s.updater.availableUpdate).toBeDefined();
 		expect(s.updater.availableUpdate?.version).toBe("9.9.9");
 
 		r.unmount();
@@ -50,6 +50,9 @@ describe("UpdaterProvider with mockIPC", () => {
 		const r = renderWithProvider();
 		await act(async () => {});
 
+		const s = useGlobalStore.getState();
+		expect(s.updater.availableUpdate).toBeDefined();
+		expect(s.updater.availableUpdate?.version).toBe("9.9.9");
 		expect(toast).toHaveBeenCalled();
 
 		r.unmount();
