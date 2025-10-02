@@ -94,12 +94,12 @@ export function OnboardingProviders() {
 			throw new Error("Country must be set before setting providers");
 		}
 		if (selectedProviders.length === 0) {
-			navigate("/browse");
+			navigate("/onboarding/tos");
 		} else {
 			setIsLoading(true);
 			setFavoritesMultipleProviders(selectedProviders).finally(() => {
 				setIsLoading(false);
-				navigate("/browse");
+				navigate("/onboarding/tos");
 			});
 		}
 	}, [selectedProviders, navigate, setFavoritesMultipleProviders, country, setIsLoading]);

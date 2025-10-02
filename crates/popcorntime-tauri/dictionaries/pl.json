@@ -106,6 +106,13 @@
     "selected": "{{count}} dostawca(-ów) wybranych",
     "noFound": "Nie znaleziono dostawców dla \"{{query}}\""
   },
+  "tos": {
+    "title": "Warunki korzystania z usługi",
+    "description": "Proszę zapoznać się z naszym Regulaminem przed rozpoczęciem korzystania z Popcorn Time.",
+    "read": "Przeczytaj pełny regulamin",
+    "accept": "Akceptuję Warunki świadczenia usług",
+    "continue": "Kontynuuj"
+  },
   "priceType": {
     "buy": "Kupić",
     "cinema": "Kino",

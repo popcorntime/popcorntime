@@ -106,6 +106,13 @@
     "selected": "{{count}} teenusepakkuja(t) valitud",
     "noFound": "Pakkujaid ei leitud päringule \"{{query}}\""
   },
+  "tos": {
+    "title": "Kasutustingimused",
+    "description": "Enne Popcorn Time'i kasutamist vaadake palun üle meie kasutustingimused.",
+    "read": "Lugege täielikke teenusetingimusi",
+    "accept": "Nõustun kasutustingimustega",
+    "continue": "Jätka"
+  },
   "priceType": {
     "buy": "Osta",
     "cinema": "Kino",

@@ -106,6 +106,13 @@
     "selected": "{{count}} valittu tarjoaja(a)",
     "noFound": "Ei tarjoajia löytynyt haulle \"{{query}}\""
   },
+  "tos": {
+    "title": "Käyttöehdot",
+    "description": "Ennen kuin käytät Popcorn Timea, tutustu käyttöehtoihimme.",
+    "read": "Lue täydelliset palveluehdot",
+    "accept": "Hyväksyn palveluehdot",
+    "continue": "Jatka"
+  },
   "priceType": {
     "buy": "Ostaa",
     "cinema": "Elokuvat",

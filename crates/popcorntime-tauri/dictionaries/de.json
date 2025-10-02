@@ -106,6 +106,13 @@
     "selected": "{{count}} Anbieter ausgewählt",
     "noFound": "Keine Anbieter für \"{{query}}\" gefunden"
   },
+  "tos": {
+    "title": "Nutzungsbedingungen",
+    "description": "Bevor Sie Popcorn Time verwenden, lesen Sie bitte unsere Nutzungsbedingungen.",
+    "read": "Lies die vollständigen Nutzungsbedingungen",
+    "accept": "Ich akzeptiere die Nutzungsbedingungen",
+    "continue": "Weiter"
+  },
   "priceType": {
     "buy": "Kaufen",
     "cinema": "Kino",

@@ -106,6 +106,13 @@
     "selected": "{{count}} sağlayıcı seçildi",
     "noFound": "\"{{query}}\" için sağlayıcı bulunamadı"
   },
+  "tos": {
+    "title": "Hizmet Şartları",
+    "description": "Popcorn Time'ı kullanmadan önce, lütfen Hizmet Şartlarımızı inceleyin.",
+    "read": "Hizmet Şartlarının tamamını okuyun",
+    "accept": "Hizmet Şartlarını kabul ediyorum",
+    "continue": "Devam Et"
+  },
   "priceType": {
     "buy": "Satın almak",
     "cinema": "Sinema",

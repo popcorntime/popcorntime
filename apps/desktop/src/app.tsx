@@ -16,6 +16,7 @@ import {
 	OnboardingPreferencesRoute,
 	OnboardingProvidersRoute,
 	OnboardingTimelineRoute,
+	OnboardingTOSRoute,
 	OnboardingWelcomeRoute,
 } from "@/routes/onboarding";
 import { RequireSession } from "@/routes/require-session";
@@ -55,6 +56,7 @@ export function App() {
 							<Route element={<RequireSession />}>
 								<Route path="providers" element={<OnboardingProvidersRoute />} />
 								<Route path="preferences" element={<OnboardingPreferencesRoute />} />
+								<Route path="tos" element={<OnboardingTOSRoute />} />
 							</Route>
 						</Route>
 						<Route path="/login" element={<LoginRoute />} />

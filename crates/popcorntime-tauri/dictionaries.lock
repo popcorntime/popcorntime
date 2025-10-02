@@ -497,7 +497,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "es": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -997,7 +1002,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "ar": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -1497,7 +1507,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "fa": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -1997,7 +2012,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "ur": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -2497,7 +2517,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "hi": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -2997,7 +3022,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "de": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -3497,7 +3527,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "nl": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -3997,7 +4032,12 @@
     "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "sv": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -4497,7 +4537,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "ga": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -4997,7 +5042,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "fi": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -5497,7 +5547,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "he": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -5997,7 +6052,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "no": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -6497,7 +6557,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "da": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -6997,7 +7062,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "it": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -7497,7 +7567,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "ja": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -7997,7 +8072,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "pl": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -8497,7 +8577,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "tr": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -8997,7 +9082,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "et": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -9497,7 +9587,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "el": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -9997,7 +10092,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "pt": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -10497,7 +10597,12 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   },
   "sr": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -10997,6 +11102,11 @@
     "$['settings']['open-logs']": "82048b56170d7b38ce4ce295e70d042162b51e740af2a072d4f80326d2893cb6",
     "$['settings']['update']": "d4dcf02d0fabb6a3baaa6eb4d656a3f60d67500d29e8a1529b68060ee5590f7a",
     "$['settings']['error']": "86fec96b87ac96d42860d9defe9f22239125d2ce247e723f7e299a0a964121dc",
-    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f"
+    "$['browse']['podcasts']": "b5285a0b7edf90c54399a555ee377f0df09f295bdeb42eb2952b3d7dce6bff9f",
+    "$['tos']['title']": "c497664adf7ec385f9378405d5a3cbae80ec4752b822eb92fd1b01d8dfbf0fe1",
+    "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
+    "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
+    "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
   }
 }

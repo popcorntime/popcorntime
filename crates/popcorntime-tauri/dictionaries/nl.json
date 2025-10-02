@@ -106,6 +106,13 @@
     "selected": "{{count}} aanbieder(s) geselecteerd",
     "noFound": "Geen providers gevonden voor \"{{query}}\""
   },
+  "tos": {
+    "title": "Servicevoorwaarden",
+    "description": "Voordat je Popcorn Time gebruikt, bekijk alsjeblieft onze Servicevoorwaarden.",
+    "read": "Lees de volledige Servicevoorwaarden",
+    "accept": "Ik accepteer de algemene voorwaarden",
+    "continue": "Doorgaan"
+  },
   "priceType": {
     "buy": "Kopen",
     "cinema": "Bioscoop",

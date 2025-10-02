@@ -106,6 +106,13 @@
     "selected": "{{count}} provider(s) selected",
     "noFound": "No providers found for \"{{query}}\""
   },
+  "tos": {
+    "title": "Terms of Service",
+    "description": "Before using Popcorn Time, please review our Terms of Service.",
+    "read": "Read the full Terms of Service",
+    "accept": "I accept the Terms of Service",
+    "continue": "Continue"
+  },
   "priceType": {
     "buy": "Buy",
     "cinema": "Cinema",

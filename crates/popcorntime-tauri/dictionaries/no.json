@@ -106,6 +106,13 @@
     "selected": "{{count}} leverandør(er) valgt",
     "noFound": "Ingen tilbydere funnet for \"{{query}}\""
   },
+  "tos": {
+    "title": "Vilkår for bruk",
+    "description": "Før du bruker Popcorn Time, vennligst les våre vilkår for bruk.",
+    "read": "Les hele tjenestevilkårene",
+    "accept": "Jeg godtar vilkårene for bruk",
+    "continue": "Fortsett"
+  },
   "priceType": {
     "buy": "Kjøpe",
     "cinema": "Kino",

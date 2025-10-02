@@ -106,6 +106,13 @@
     "selected": "Tá {{count}} soláthraí roghnaithe ann",
     "noFound": "Níor aimsíodh soláthraithe le haghaidh \"{{query}}\""
   },
+  "tos": {
+    "title": "Téarmaí Seirbhíse",
+    "description": "Sula n-úsáideann tú Popcorn Time, léigh ár dTéarmaí Seirbhíse le do thoil.",
+    "read": "Léigh Téarmaí Seirbhíse iomlána",
+    "accept": "Glacaim leis na Téarmaí Seirbhíse",
+    "continue": "Lean ar aghaidh"
+  },
   "priceType": {
     "buy": "Ceannaigh",
     "cinema": "Pictiúrlann",

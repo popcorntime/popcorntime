@@ -106,6 +106,13 @@
     "selected": /* Onboarding: Selected favorites watch providers */ "{{count}} provider(s) selected",
     "noFound": /* Onboarding: watch providers found */ "No providers found for \"{{query}}\"",
   },
+  "tos": {
+    "title": /* Onboarding: Terms of Service step title */ "Terms of Service",
+    "description": /* Onboarding: Terms of Service step description */ "Before using Popcorn Time, please review our Terms of Service.",
+    "read": /* Onboarding: Read the terms of service */ "Read the full Terms of Service",
+    "accept": /* Onboarding: Accept the terms of service */ "I accept the Terms of Service",
+    "continue": /* Onboarding: Continue */ "Continue",
+  },
   "priceType": {
     "buy": "Buy",
     "cinema": "Cinema",

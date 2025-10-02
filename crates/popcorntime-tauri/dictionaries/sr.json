@@ -106,6 +106,13 @@
     "selected": "{{count}} provajder(a) izabrano",
     "noFound": "Nema dostupnih provajdera za \"{{query}}\""
   },
+  "tos": {
+    "title": "Uslovi korišćenja",
+    "description": "Pre nego što počnete da koristite Popcorn Time, molimo vas da pregledate naše Uslove korišćenja.",
+    "read": "Pročitajte kompletne Uslove korišćenja",
+    "accept": "Prihvatam Uslove korišćenja",
+    "continue": "Nastavi"
+  },
   "priceType": {
     "buy": "Купи",
     "cinema": "Bioskop",

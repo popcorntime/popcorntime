@@ -106,6 +106,13 @@
     "selected": "{{count}} leverantör(er) valda",
     "noFound": "Inga leverantörer hittades för \"{{query}}\""
   },
+  "tos": {
+    "title": "Användarvillkor",
+    "description": "Innan du använder Popcorn Time, vänligen läs våra användarvillkor.",
+    "read": "Läs de fullständiga användarvillkoren",
+    "accept": "Jag accepterar användarvillkoren",
+    "continue": "Fortsätt"
+  },
   "priceType": {
     "buy": "Köpa",
     "cinema": "Bio",

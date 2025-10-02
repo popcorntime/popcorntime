@@ -106,6 +106,13 @@
     "selected": "{{count}} proveedor(es) seleccionado(s)",
     "noFound": "No se encontraron proveedores para \"{{query}}\""
   },
+  "tos": {
+    "title": "Términos de servicio",
+    "description": "Antes de usar Popcorn Time, por favor revisa nuestros Términos de Servicio.",
+    "read": "Lee los Términos de Servicio completos",
+    "accept": "Acepto los Términos de Servicio",
+    "continue": "Continuar"
+  },
   "priceType": {
     "buy": "Comprar",
     "cinema": "Cine",

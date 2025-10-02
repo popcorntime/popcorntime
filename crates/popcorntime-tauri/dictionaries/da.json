@@ -106,6 +106,13 @@
     "selected": "{{count}} udbyder(e) valgt",
     "noFound": "Ingen udbydere fundet for \"{{query}}\""
   },
+  "tos": {
+    "title": "Servicevilkår",
+    "description": "Før du bruger Popcorn Time, bedes du gennemgå vores servicevilkår.",
+    "read": "Læs de fulde servicevilkår",
+    "accept": "Jeg accepterer vilkårene for brug",
+    "continue": "Fortsæt"
+  },
   "priceType": {
     "buy": "Købe",
     "cinema": "Biograf",
