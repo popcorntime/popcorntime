@@ -52,7 +52,7 @@ No [Rust skills](https://www.rust-lang.org/) are required for most of these, if 
 Bring Popcorn Time to your language and region.
 
 We currently leverage our custom [translator](packages/translator/) CLI that takes  
-our [english dictionary](crates/popcorntime-tauri/dictionaries/en.json) and generates all required translations.
+our [english dictionary](packages/translator/src/en.jsonc) and generates all required translations.
 
 #### Requirements
 
