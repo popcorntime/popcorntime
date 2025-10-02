@@ -19,7 +19,7 @@ export function OnboardingTOS() {
 		api.updateSettings({ tosAccepted: true }).then(settings => {
 			setIsLoading(false);
 			settingsSucceeded(settings);
-			navigate("/onboarding/providers");
+			navigate("/browse");
 		});
 	}, [api, settingsSucceeded]);
 
