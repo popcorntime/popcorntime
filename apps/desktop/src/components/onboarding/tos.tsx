@@ -1,17 +1,11 @@
-import { Badge } from "@popcorntime/ui/components/badge";
 import { Button } from "@popcorntime/ui/components/button";
-import { Input } from "@popcorntime/ui/components/input";
 import { Spinner } from "@popcorntime/ui/components/spinner";
-import { cn } from "@popcorntime/ui/lib/utils";
-import { ArrowLeft, ArrowRight, Check, Gift, Leaf, Search, TrendingUp, Tv } from "lucide-react";
-import { useCallback, useMemo, useState } from "react";
+import { ArrowLeft, ArrowRight, Popcorn } from "lucide-react";
+import { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router";
-import { useProviders } from "@/hooks/useProviders";
-import { useGlobalStore } from "@/stores/global";
-import type { WatchPriceType } from "@/tauri/types";
-import { ProviderIcon } from "../provider";
+import { Link, useNavigate } from "react-router";
 import { useTauri } from "@/hooks/useTauri";
+import { useGlobalStore } from "@/stores/global";
 
 export function OnboardingTOS() {
 	const settingsSucceeded = useGlobalStore(state => state.settingsSucceeded);
@@ -35,7 +29,7 @@ export function OnboardingTOS() {
 				<div className="mx-auto w-full max-w-6xl px-6 py-6 mt-10">
 					<div className="text-center space-y-3">
 						<div className="hidden lg:flex w-14 h-14 mx-auto bg-primary/20 rounded-full  items-center justify-center">
-							<Leaf className="w-7 h-7 text-primary" />
+							<Popcorn className="w-7 h-7 text-primary" />
 						</div>
 						<h2 className="text-3xl font-bold text-foreground">{t("tos.title")}</h2>
 						<p className="text-muted-foreground text-pretty max-w-2xl mx-auto">
@@ -48,20 +42,20 @@ export function OnboardingTOS() {
 			<main className="flex-1 overflow-y-auto">
 				<div className="mx-auto w-full max-w-6xl px-6 py-6">
 					<div className="mx-auto max-w-[40rem]">
-						<div className="space-y-5">
-							<p className="italic">Last updated October 01, 2024</p>
-							<p>
-								We are WICKED TECHNOLOGY LIMITED (&quot;Company,&quot; &quot;we,&quot;
-								&quot;us,&quot; &quot;our&quot;), a company registered in the United Arab Emirates
-								at P.O.BOX 31291 Al Jazeera, Al Hamra, Ras Al Khaima.
+						<div className="space-y-5 text-muted-foreground">
+							<p className="italic leading-7 [&:not(:first-child)]:mt-6">
+								Last updated October 02, 2025
 							</p>
-							<p>
-								We operate the website popcorntime.app (the &quot;Site&quot;), the mobile
-								application Popcorn Time (the &quot;App&quot;), as well as any other related
-								products and services that refer or link to these legal terms (the &quot;Legal
-								Terms&quot;) (collectively, the &quot;Services&quot;).
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
+								We operate the website{" "}
+								<Link to="https://popcorntime.app" className="underline" target="_blank">
+									popcorntime.app
+								</Link>{" "}
+								(the &quot;Site&quot;), the mobile application Popcorn Time (the &quot;App&quot;),
+								as well as any other related products and services that refer or link to these legal
+								terms (the &quot;Legal Terms&quot;) (collectively, the &quot;Services&quot;).
 							</p>
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								These legal terms constitute a legally binding agreement made between you, whether
 								personally or on behalf of an entity (&quot;you&quot;), and WICKED TECHNOLOGY
 								LIMITED, concerning your access to and use of the Services. You agree that by
@@ -70,7 +64,7 @@ export function OnboardingTOS() {
 								EXPRESSLY PROHIBITED FROM USING THE SERVICES AND YOU MUST DISCONTINUE USE
 								IMMEDIATELY.
 							</p>
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								Supplemental terms and conditions or documents that may be posted on the Services
 								from time to time are hereby expressly incorporated herein by reference. We reserve
 								the right, in our sole discretion, to make changes or modifications to these Legal
@@ -82,17 +76,19 @@ export function OnboardingTOS() {
 								changes in any revised Legal Terms by your continued use of the Services after the
 								date such revised Legal Terms are posted.
 							</p>
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								The Services are intended for users who are at least 13 years of age. All users who
 								are minors in the jurisdiction in which they reside (generally under the age of 18)
 								must have the permission of, and be directly supervised by, their parent or guardian
 								to use the Services. If you are a minor, you must have your parent or guardian read
 								and agree to these Legal Terms prior to you using the Services.
 							</p>
-							<p>We recommend that you print a copy of these Legal Terms for your records.</p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
+								We recommend that you print a copy of these Legal Terms for your records.
+							</p>
 
-							<h3 className="font-bold">1. OUR SERVICES</h3>
-							<p>
+							<h3 className="font-bold text-xl">1. OUR SERVICES</h3>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								The information provided when using the Services is not intended for distribution to
 								or use by any person or entity in any jurisdiction or country where such
 								distribution or use would be contrary to law or regulation or which would subject us
@@ -101,7 +97,7 @@ export function OnboardingTOS() {
 								own initiative and are solely responsible for compliance with local laws, if and to
 								the extent local laws are applicable.
 							</p>
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								The Services are not tailored to comply with industry-specific regulations (Health
 								Insurance Portability and Accountability Act (HIPAA), Federal Information Security
 								Management Act (FISMA), etc.), so if your interactions would be subjected to such
@@ -109,9 +105,9 @@ export function OnboardingTOS() {
 								violate the Gramm-Leach-Bliley Act (GLBA).
 							</p>
 
-							<h3 className="font-bold">2. INTELLECTUAL PROPERTY RIGHTS</h3>
+							<h3 className="font-bold text-xl">2. INTELLECTUAL PROPERTY RIGHTS</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								We are the owner or the licensee of all intellectual property rights in our
 								Services, including all source code, databases, functionality, software, website
 								designs, audio, video, text, photographs, and graphics in the Services
@@ -119,18 +115,18 @@ export function OnboardingTOS() {
 								and logos contained therein (the &quot;Marks&quot;).
 							</p>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								Our Content and Marks are protected by copyright and trademark laws (and various
 								other intellectual property rights and unfair competition laws) and treaties in the
 								United States and around the world.
 							</p>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								The Content and Marks are provided in or through the Services &quot;AS IS&quot; for
 								your personal, non-commercial use or internal business purpose only.
 							</p>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								Subject to your compliance with these Legal Terms, including the &quot;PROHIBITED
 								ACTIVITIES&quot; section below, we grant you a non-exclusive, non-transferable,
 								revocable license to: access the Services; and download or print a copy of any
@@ -138,7 +134,7 @@ export function OnboardingTOS() {
 								personal, non-commercial use or internal business purpose.
 							</p>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								Except as set out in this section or elsewhere in our Legal Terms, no part of the
 								Services and no Content or Marks may be copied, reproduced, aggregated, republished,
 								uploaded, posted, publicly displayed, encoded, translated, transmitted, distributed,
@@ -146,7 +142,7 @@ export function OnboardingTOS() {
 								without our express prior written permission.
 							</p>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								If you wish to make any use of the Services, Content, or Marks other than as set out
 								in this section or elsewhere in our Legal Terms, please address your request to:
 								hello@popcorntime.app. If we ever grant you the permission to post, reproduce, or
@@ -155,26 +151,26 @@ export function OnboardingTOS() {
 								or proprietary notice appears or is visible on posting, reproducing, or displaying
 								our Content.
 							</p>
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								We reserve all rights not expressly granted to you in and to the Services, Content,
 								and Marks.
 							</p>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								Any breach of these Intellectual Property Rights will constitute a material breach
 								of our Legal Terms and your right to use our Services will terminate immediately.
 							</p>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								We respect the intellectual property rights of others. If you believe that any
 								material available on or through the Services infringes upon any copyright you own
 								or control, please immediately refer to the &quot;COPYRIGHT INFRINGEMENTS&quot;
 								section below.
 							</p>
 
-							<h3 className="font-bold">3. USER REPRESENTATIONS</h3>
+							<h3 className="font-bold text-xl">3. USER REPRESENTATIONS</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								By using the Services, you represent and warrant that: (1) all registration
 								information you submit will be true, accurate, current, and complete; (2) you will
 								maintain the accuracy of such information and promptly update such registration
@@ -187,30 +183,32 @@ export function OnboardingTOS() {
 								of the Services will not violate any applicable law or regulation.
 							</p>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								If you provide any information that is untrue, inaccurate, not current, or
 								incomplete, we have the right to suspend or terminate your account and refuse any
 								and all current or future use of the Services (or any portion thereof).
 							</p>
 
-							<h3 className="font-bold">4. USER REGISTRATION</h3>
+							<h3 className="font-bold text-xl">4. USER REGISTRATION</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								You are required to register to use the Services. You agree to keep your password
 								confidential and will be responsible for all use of your account and password.
 							</p>
 
-							<h3 className="font-bold">5. PROHIBITED ACTIVITIES</h3>
+							<h3 className="font-bold text-xl">5. PROHIBITED ACTIVITIES</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								You may not access or use the Services for any purpose other than that for which we
 								make the Services available. The Services may not be used in connection with any
 								commercial endeavors except those that are specifically endorsed or approved by us.
 							</p>
 
-							<p>As a user of the Services, you agree not to:</p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
+								As a user of the Services, you agree not to:
+							</p>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								Systematically retrieve data or other content from the Services to create or
 								compile, directly or indirectly, a collection, compilation, database, or directory
 								without written permission from us.
@@ -304,9 +302,9 @@ export function OnboardingTOS() {
 								</li>
 							</ul>
 
-							<h3 className="font-bold">6. PRIVACY POLICY</h3>
+							<h3 className="font-bold text-xl">6. PRIVACY POLICY</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								We care about data privacy and security. By using the Services, you agree to be
 								bound by our Privacy Policy posted on the Services, which is incorporated into these
 								Legal Terms. Please be advised the Services are hosted in the United States and
@@ -323,9 +321,9 @@ export function OnboardingTOS() {
 								information from the Services as quickly as is reasonably practical.
 							</p>
 
-							<h3 className="font-bold">7. COPYRIGHT INFRINGEMENTS</h3>
+							<h3 className="font-bold text-xl">7. COPYRIGHT INFRINGEMENTS</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								We respect the intellectual property rights of others. If you believe that any
 								material available on or through the Services infringes upon any copyright you own
 								or control, please immediately notify us using the contact information provided
@@ -337,9 +335,9 @@ export function OnboardingTOS() {
 								should consider first contacting an attorney.
 							</p>
 
-							<h3 className="font-bold">8. TERM AND TERMINATION</h3>
+							<h3 className="font-bold text-xl">8. TERM AND TERMINATION</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								These Legal Terms shall remain in full force and effect while you use the Services.
 							</p>
 							<p className="italic">
@@ -353,7 +351,7 @@ export function OnboardingTOS() {
 								WARNING, IN OUR SOLE DISCRETION.
 							</p>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								If we terminate or suspend your account for any reason, you are prohibited from
 								registering and creating a new account under your name, a fake or borrowed name, or
 								the name of any third party, even if you may be acting on behalf of the third party.
@@ -362,9 +360,9 @@ export function OnboardingTOS() {
 								injunctive redress.
 							</p>
 
-							<h3 className="font-bold">9. DISCLAIMER</h3>
+							<h3 className="font-bold text-xl">9. DISCLAIMER</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								THE SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. YOU AGREE THAT YOUR
 								USE OF THE SERVICES WILL BE AT YOUR SOLE RISK. TO THE FULLEST EXTENT PERMITTED BY
 								LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, IN CONNECTION WITH THE SERVICES
@@ -391,9 +389,9 @@ export function OnboardingTOS() {
 								SHOULD USE YOUR BEST JUDGMENT AND EXERCISE CAUTION WHERE APPROPRIATE.
 							</p>
 
-							<h3 className="font-bold">10. LIMITATIONS OF LIABILITY</h3>
+							<h3 className="font-bold text-xl">10. LIMITATIONS OF LIABILITY</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY
 								THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL,
 								OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, LOSS OF DATA, OR OTHER
@@ -408,8 +406,8 @@ export function OnboardingTOS() {
 								ADDITIONAL RIGHTS.
 							</p>
 
-							<h3 className="font-bold">11. USER DATA</h3>
-							<p>
+							<h3 className="font-bold text-xl">11. USER DATA</h3>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								We will maintain certain data that you transmit to the Services for the purpose of
 								managing the performance of the Services, as well as data relating to your use of
 								the Services. Although we perform regular routine backups of data, you are solely
@@ -419,18 +417,18 @@ export function OnboardingTOS() {
 								against us arising from any such loss or corruption of such data.
 							</p>
 
-							<h3 className="font-bold">12. CALIFORNIA USERS AND RESIDENTS</h3>
+							<h3 className="font-bold text-xl">12. CALIFORNIA USERS AND RESIDENTS</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								If any complaint with us is not satisfactorily resolved, you can contact the
 								Complaint Assistance Unit of the Division of Consumer Services of the California
 								Department of Consumer Affairs in writing at 1625 North Market Blvd., Suite N 112,
 								Sacramento, California 95834 or by telephone at (800) 952-5210 or (916) 445-1254.
 							</p>
 
-							<h3 className="font-bold">13. MISCELLANEOUS</h3>
+							<h3 className="font-bold text-xl">13. MISCELLANEOUS</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								These Legal Terms and any policies or operating rules posted by us on the Services
 								or in respect to the Services constitute the entire agreement and understanding
 								between you and us. Our failure to exercise or enforce any right or provision of
@@ -449,14 +447,14 @@ export function OnboardingTOS() {
 								and the lack of signing by the parties hereto to execute these Legal Terms.
 							</p>
 
-							<h3 className="font-bold">14. CONTACT US</h3>
+							<h3 className="font-bold text-xl">14. CONTACT US</h3>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								In order to resolve a complaint regarding the Services or to receive further
 								information regarding use of the Services, please contact us at:
 							</p>
 
-							<p>
+							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								WICKED TECHNOLOGY LIMITED
 								<br />
 								P.O.BOX 31291 Al Jazeera
