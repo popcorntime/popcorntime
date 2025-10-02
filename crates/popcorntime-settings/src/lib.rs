@@ -16,6 +16,8 @@ pub struct Settings {
   pub onboarding_complete: bool,
   #[serde(default)]
   pub enable_analytics: bool,
+  #[serde(default)]
+  pub tos_accepted: bool,
 }
 
 #[derive(Serialize, Deserialize, Debug, PartialEq, Eq, Clone, Default, Type)]

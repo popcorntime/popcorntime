@@ -26,6 +26,10 @@ pub async fn update_settings(
       if let Some(enable_analytics) = settings.enable_analytics {
         current_settings.enable_analytics = enable_analytics;
       }
+
+      if let Some(tos_accepted) = settings.tos_accepted {
+        current_settings.tos_accepted = tos_accepted;
+      }
     })
     .await
     .map_err(Into::into)
