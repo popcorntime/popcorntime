@@ -67,6 +67,33 @@
     "add": "Add",
     "remove": "Remove"
   },
+  "onboardingPreferences": {
+    "countryTitle": "Select your country",
+    "countryDescription": "Select your country to see available languages",
+    "languageTitle": "Select your language",
+    "languageDescription": "Select your interface language and prioritize content {{inCountry}}",
+    "changeCountry": "Change country",
+    "default": "Default locale",
+    "showAll": "Show all languages"
+  },
+  "onboardingProviders": {
+    "title": "Select your streaming services",
+    "description": "Choose the platforms you have access to so we can show you what to watch.",
+    "searchPlaceholder": "Search providers...",
+    "category": {
+      "popular": "Popular",
+      "free": "Free",
+      "subscription": "Subscription",
+      "all": "All"
+    },
+    "skip": "I'll do it later",
+    "continue": "Continue",
+    "selectCountry": "Change country",
+    "clearAll": "Clear all",
+    "clearSearch": "Clear search",
+    "selected": "{{count}} provider(s) selected",
+    "noFound": "No providers found for \"{{query}}\""
+  },
   "priceType": {
     "buy": "Buy",
     "cinema": "Cinema",

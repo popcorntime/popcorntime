@@ -1,4 +1,3 @@
-import { MediaKind } from "@popcorntime/graphql/types";
 import { countries } from "@popcorntime/i18n";
 import { Button } from "@popcorntime/ui/components/button";
 import {
@@ -57,7 +56,7 @@ function CommandCenterViewCountrySelection() {
 			{sortedCountries.map(country => (
 				<CommandItem
 					key={country}
-					onSelect={() => handleNavigation(`/browse/${country}`)}
+					onSelect={() => handleNavigation(`/browse?country=${country}`)}
 					className="group gap-2"
 				>
 					<span className="flex w-6 justify-center">
@@ -90,7 +89,7 @@ function CommandCenterCommand({ command }: { command: Command }) {
 
 	const handleOpenView = useCallback(
 		(view: CommandCenterView) => {
-			setQuery(undefined);
+			setQuery(null);
 			goto(view);
 		},
 		[goto, setQuery]
@@ -111,7 +110,7 @@ function CommandCenterCommand({ command }: { command: Command }) {
 					key={command.id}
 					value={command.id}
 					onSelect={() => {
-						handleNavigation(`/browse/${country}`);
+						handleNavigation(`/browse`);
 					}}
 				>
 					<TrendingUp />
@@ -125,7 +124,7 @@ function CommandCenterCommand({ command }: { command: Command }) {
 					key={command.id}
 					value={command.id}
 					onSelect={() => {
-						handleNavigation(`/browse/${country}?kind=${MediaKind.MOVIE}`);
+						handleNavigation(`/browse?kind=MOVIE`);
 					}}
 				>
 					<Film />
@@ -139,7 +138,7 @@ function CommandCenterCommand({ command }: { command: Command }) {
 					key={command.id}
 					value={command.id}
 					onSelect={() => {
-						handleNavigation(`/browse/${country}?kind=${MediaKind.TV_SHOW}`);
+						handleNavigation(`/browse?kind=TV_SHOW`);
 					}}
 				>
 					<Tv />
@@ -209,7 +208,7 @@ function CommandCenterCommands() {
 	);
 
 	const commands = useMemo(() => {
-		return filterCommandGroups(defaultCommands, query);
+		return filterCommandGroups(defaultCommands, query ?? undefined);
 	}, [query, filterCommandGroups]);
 
 	if (!commands || commands.length === 0) return null;
@@ -236,7 +235,7 @@ function CommandCenterCommands() {
 function CommandCenterViewSearchResults() {
 	const { t } = useTranslation();
 	const query = useCommandCenterStore(state => state.query);
-	const open = useGlobalStore(state => state.dialogs.media.open);
+	const openMedia = useGlobalStore(state => state.openMedia);
 	const locale = useGlobalStore(state => state.i18n.locale);
 	const sortKey = useGlobalStore(state => state.browse.sortKey);
 	const { country } = useCountry();
@@ -244,11 +243,10 @@ function CommandCenterViewSearchResults() {
 	const { data, isLoading } = useSearch({
 		country,
 		query,
-		limit: 20,
-		cursor: undefined,
+		last: 50,
 		language: locale,
-		sortKey,
 		enabled: !!query,
+		sortKey,
 	});
 
 	return (
@@ -276,7 +274,7 @@ function CommandCenterViewSearchResults() {
 					<CommandItem
 						className="m-2 cursor-pointer"
 						onSelect={() => {
-							open(media.slug);
+							openMedia(media.slug);
 						}}
 						key={media.id}
 						value={media.id.toString()}
@@ -293,9 +291,7 @@ function CommandCenterViewSearchResults() {
 								{media.title}
 							</div>
 							<div className="hover:text-accent-foreground flex">
-								<span>
-									{media.kind === MediaKind.MOVIE ? t("media.movie") : t("media.tv-show")}
-								</span>
+								<span>{media.kind === "MOVIE" ? t("media.movie") : t("media.tv-show")}</span>
 								{media.year && <span>, {media.year}</span>}
 							</div>
 						</div>
@@ -338,7 +334,7 @@ export function CommandCenter() {
 	const onClickClose = useCallback(() => {
 		// if on search result, clear results
 		if (query) {
-			setQuery(undefined);
+			setQuery(null);
 		} else {
 			toggle();
 		}

@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "Teanga & réigiún",
     "watchPreferences": "Roghanna féachana",
+    "manifest": "Manifiosta",
+    "logs": "Loga dífhabhtacha",
     "signOut": "Logáil amach"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "Tá do roghanna féachana nuashonraithe go rathúil.",
     "add": "Cuir leis",
     "remove": "Bain"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Roghnaigh do thír",
+    "countryDescription": "Roghnaigh do thír chun na teangacha atá ar fáil a fheiceáil",
+    "languageTitle": "Roghnaigh do theanga",
+    "languageDescription": "Roghnaigh do theanga comhéadan agus tabhair tús áite do ábhar {{inCountry}}",
+    "changeCountry": "Athraigh tír",
+    "default": "Tír dhúchasach réamhshocraithe",
+    "showAll": "Taispeáin gach teanga"
+  },
+  "onboardingProviders": {
+    "title": "Roghnaigh do sheirbhísí sruthaithe",
+    "description": "Roghnaigh na hardáin atá agat rochtain orthu ionas gur féidir linn a thaispeáint duit cad atá le féachaint.",
+    "searchPlaceholder": "Cuardaigh soláthraithe...",
+    "category": {
+      "popular": "Coitianta",
+      "free": "Saor in aisce",
+      "subscription": "Síntiús",
+      "all": "Gach"
+    },
+    "skip": "Déanfaidh mé é níos déanaí.",
+    "continue": "Lean ar aghaidh",
+    "selectCountry": "Athraigh tír",
+    "clearAll": "Glan gach rud",
+    "clearSearch": "Glan cuardach",
+    "selected": "Roghnaithe {{count}} soláthraí(í)",
+    "noFound": "Ní bhfuarthas soláthraithe do \"{{query}}\""
   },
   "priceType": {
     "buy": "Ceannaigh",

@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "زبان و منطقه",
     "watchPreferences": "ترجیحات تماشا",
+    "manifest": "مانیفست",
+    "logs": "گزارش‌های اشکال‌زدایی",
     "signOut": "خروج از حساب"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "تنظیمات ترجیحات تماشای شما با موفقیت به‌روز شد.",
     "add": "اضافه کردن",
     "remove": "حذف کنید"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "کشور خود را انتخاب کنید",
+    "countryDescription": "کشور خود را انتخاب کنید تا زبان‌های موجود را ببینید",
+    "languageTitle": "زبان خود را انتخاب کنید",
+    "languageDescription": "زبان رابط کاربری خود را انتخاب کنید و محتوای {{inCountry}} را در اولویت قرار دهید",
+    "changeCountry": "تغییر کشور",
+    "default": "موقعیت پیش‌فرض",
+    "showAll": "نمایش همه زبان‌ها"
+  },
+  "onboardingProviders": {
+    "title": "سرویس‌های استریم خود را انتخاب کنید",
+    "description": "پلتفرم‌هایی را که به آنها دسترسی دارید انتخاب کنید تا بتوانیم به شما نشان دهیم چه چیزی را تماشا کنید.",
+    "searchPlaceholder": "ارائه‌دهندگان جستجو...",
+    "category": {
+      "popular": "محبوب",
+      "free": "رایگان",
+      "subscription": "اشتراک",
+      "all": "همه"
+    },
+    "skip": "بعداً انجامش می‌دم",
+    "continue": "ادامه دهید",
+    "selectCountry": "تغییر کشور",
+    "clearAll": "همه را پاک کن",
+    "clearSearch": "جستجو را پاک کن",
+    "selected": "{{count}} ارائه‌دهنده انتخاب شده است",
+    "noFound": "هیچ ارائه‌دهنده‌ای برای \"{{query}}\" یافت نشد"
   },
   "priceType": {
     "buy": "خرید کنید",

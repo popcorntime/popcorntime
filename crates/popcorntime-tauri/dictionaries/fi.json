@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "Kieli ja alue",
     "watchPreferences": "Katseluvalinnat",
+    "manifest": "Manifesti",
+    "logs": "Virhelokin kirjaus",
     "signOut": "Kirjaudu ulos"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "Katseluasetuksesi on päivitetty onnistuneesti.",
     "add": "Lisätä",
     "remove": "Poista"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Valitse maasi",
+    "countryDescription": "Valitse maa nähdäksesi saatavilla olevat kielet",
+    "languageTitle": "Valitse kielesi",
+    "languageDescription": "Valitse käyttöliittymän kieli ja priorisoi sisältö {{inCountry}}",
+    "changeCountry": "Vaihda maa",
+    "default": "Oletuslokaatio",
+    "showAll": "Näytä kaikki kielet"
+  },
+  "onboardingProviders": {
+    "title": "Valitse suoratoistopalvelusi",
+    "description": "Valitse käytössäsi olevat alustat, jotta voimme näyttää, mitä katsoa.",
+    "searchPlaceholder": "Etsi palveluntarjoajia...",
+    "category": {
+      "popular": "Suosittu",
+      "free": "Ilmainen",
+      "subscription": "Tilauksesi",
+      "all": "Kaikki"
+    },
+    "skip": "Teen sen myöhemmin",
+    "continue": "Jatka",
+    "selectCountry": "Vaihda maa",
+    "clearAll": "Tyhjennä kaikki",
+    "clearSearch": "Tyhjennä haku",
+    "selected": "{{count}} palveluntarjoaja(a) valittu",
+    "noFound": "Palveluntarjoajia ei löytynyt haulle \"{{query}}\""
   },
   "priceType": {
     "buy": "Ostaa",

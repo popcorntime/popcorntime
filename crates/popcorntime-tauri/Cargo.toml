@@ -32,7 +32,6 @@ log = "^0.4"
 tauri.workspace = true
 tauri-plugin-opener.workspace = true
 tauri-plugin-log.workspace = true
-tauri-plugin-shell.workspace = true
 tauri-plugin-fs.workspace = true
 tauri-plugin-deep-link.workspace = true
 tauri-plugin-updater.workspace = true
@@ -43,6 +42,10 @@ popcorntime-session.workspace = true
 popcorntime-graphql-client.workspace = true
 popcorntime-error.workspace = true
 
+specta.workspace = true
+tauri-specta = { workspace = true, features = ["derive", "typescript"] }
+specta-typescript.workspace = true
+cynic.workspace = true
+
 [target.'cfg(target_os = "macos")'.dependencies]
-popcorntime-tauri-trafficlights.workspace = true
 popcorntime-tauri-splash.workspace = true

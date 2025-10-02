@@ -1,0 +1,16 @@
+---
+source: crates/popcorntime-graphql-client/src/reactions.rs
+expression: operation.query
+---
+query UserReactions($after: String, $before: String, $first: Int, $last: Int) {
+  reactions(after: $after, before: $before, first: $first, last: $last) {
+    nodes {
+      mediaId
+      reaction
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

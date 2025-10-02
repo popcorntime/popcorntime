@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "Језик и регион",
     "watchPreferences": "Preferencije gledanja",
+    "manifest": "Manifest",
+    "logs": "Дебаг логови",
     "signOut": "Odjavi se"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "Vaše preferencije gledanja su uspešno ažurirane.",
     "add": "Додај",
     "remove": "Уклони"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Izaberite svoju zemlju",
+    "countryDescription": "Izaberite svoju zemlju da biste videli dostupne jezike",
+    "languageTitle": "Odaberite svoj jezik",
+    "languageDescription": "Izaberite jezik interfejsa i dajte prioritet sadržaju {{inCountry}}",
+    "changeCountry": "Promeni državu",
+    "default": "Podrazumevani jezik",
+    "showAll": "Prikaži sve jezike"
+  },
+  "onboardingProviders": {
+    "title": "Izaberite svoje streaming usluge",
+    "description": "Izaberite platforme kojima imate pristup kako bismo vam mogli pokazati šta da gledate.",
+    "searchPlaceholder": "Pretraživači...",
+    "category": {
+      "popular": "Popularno",
+      "free": "Бесплатно",
+      "subscription": "Pretplata",
+      "all": "Сви"
+    },
+    "skip": "Učiniću to kasnije",
+    "continue": "Nastavi",
+    "selectCountry": "Promeni zemlju",
+    "clearAll": "Obriši sve",
+    "clearSearch": "Obriši pretragu",
+    "selected": "{{count}} добављен(их) добављач(а)",
+    "noFound": "Nema dostupnih provajdera za \"{{query}}\""
   },
   "priceType": {
     "buy": "Купи",

@@ -12,14 +12,12 @@
 	},
 	"dependencies": {
 		"@hookform/resolvers": "catalog:",
-		"@popcorntime/graphql": "workspace:*",
 		"@popcorntime/ui": "workspace:*",
 		"@tauri-apps/api": "catalog:",
 		"@tauri-apps/plugin-fs": "catalog:",
 		"@tauri-apps/plugin-log": "catalog:",
 		"@tauri-apps/plugin-opener": "catalog:",
 		"@tauri-apps/plugin-process": "catalog:",
-		"@tauri-apps/plugin-shell": "catalog:",
 		"@tauri-apps/plugin-updater": "catalog:",
 		"flag-icons": "catalog:",
 		"fuse.js": "catalog:",
@@ -39,7 +37,7 @@
 		"sonner": "catalog:",
 		"typewriter-effect": "^2.22.0",
 		"use-debounce": "^10.0.6",
-		"vault66-crt-effect": "^1.4.0",
+		"vault66-crt-effect": "^1.4.1",
 		"zod": "catalog:",
 		"zustand": "catalog:"
 	},

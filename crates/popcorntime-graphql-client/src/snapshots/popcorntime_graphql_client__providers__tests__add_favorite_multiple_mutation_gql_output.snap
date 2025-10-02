@@ -1,0 +1,7 @@
+---
+source: crates/popcorntime-graphql-client/src/providers.rs
+expression: operation.query
+---
+mutation SetFavoriteMultipleProvidersMutation($country: Country!, $providersKey: [String!]!) {
+  setFavoriteMultipleProviders(country: $country, providersKey: $providersKey)
+}

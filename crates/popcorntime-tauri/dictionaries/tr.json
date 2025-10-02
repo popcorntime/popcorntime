@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "Dil ve bölge",
     "watchPreferences": "İzleme tercihleri",
+    "manifest": "Manifesto",
+    "logs": "Hata ayıklama günlükleri",
     "signOut": "Oturum kapat"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "İzleme tercihlerin başarıyla güncellendi.",
     "add": "Eklemek",
     "remove": "Kaldır"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Ülkenizi seçin",
+    "countryDescription": "Ülkenizi seçerek mevcut dilleri görün",
+    "languageTitle": "Dilinizi seçin",
+    "languageDescription": "Arayüz dilinizi seçin ve {{inCountry}} içeriği öncelikli hale getirin",
+    "changeCountry": "Ülkeyi değiştir",
+    "default": "Varsayılan yerel ayar",
+    "showAll": "Tüm dilleri göster"
+  },
+  "onboardingProviders": {
+    "title": "Akış hizmetlerinizi seçin",
+    "description": "Hangi platformlara erişiminiz olduğunu seçin, böylece size ne izlemeniz gerektiğini gösterebiliriz.",
+    "searchPlaceholder": "Sağlayıcıları ara...",
+    "category": {
+      "popular": "Popüler",
+      "free": "Özgür",
+      "subscription": "Abonelik",
+      "all": "Tüm"
+    },
+    "skip": "Daha sonra yaparım",
+    "continue": "Devam Et",
+    "selectCountry": "Ülkeyi değiştir",
+    "clearAll": "Hepsini Temizle",
+    "clearSearch": "Aramayı temizle",
+    "selected": "{{count}} sağlayıcı seçildi",
+    "noFound": "\"{{query}}\" için sağlayıcı bulunamadı"
   },
   "priceType": {
     "buy": "Satın almak",

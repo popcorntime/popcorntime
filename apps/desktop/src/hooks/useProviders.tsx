@@ -1,4 +1,3 @@
-import type { ProviderSearchForCountry } from "@popcorntime/graphql/types";
 import type { Country } from "@popcorntime/i18n/types";
 import { useCallback } from "react";
 import { useCountry } from "@/hooks/useCountry";
@@ -11,84 +10,63 @@ export interface InvokeParams {
 }
 
 export const useProviders = () => {
-	const setInitialized = useGlobalStore(state => state.providers.setInitialized);
-	const setIsLoading = useGlobalStore(state => state.providers.setIsLoading);
-	const setProviders = useGlobalStore(state => state.providers.setProviders);
-	const setFavoriteProviders = useGlobalStore(state => state.providers.setFavorites);
 	const { country } = useCountry();
-	const { invoke } = useTauri();
+	const providers = useGlobalStore(s => s.providers.providers);
+	const { api } = useTauri();
 
-	const loadProviders = useCallback(
-		async (favorites: boolean, country: Country): Promise<ProviderSearchForCountry[]> => {
-			try {
-				return invoke<ProviderSearchForCountry[]>(
-					"providers",
-					{
-						params: { country: country, favorites },
-					},
-					{
-						hideToast: true,
-					}
-				);
-			} catch (err) {
-				console.error("failed to load providers", err);
-				return [];
-			}
+	const setFavorites = useCallback(
+		async (providerKey: string, favorite: boolean) => {
+			await api.setFavoritesProvider({ country, providerKey, favorite });
+
+			// optimistic update
+			const updatedProviders = providers.map(p => {
+				if (p.key === providerKey) {
+					return { ...p, favorite };
+				}
+				return p;
+			});
+
+			const { providersSucceeded } = useGlobalStore.getState();
+			providersSucceeded(updatedProviders);
 		},
-		[invoke]
+		[country, api.setFavoritesProvider, providers]
 	);
 
-	const getProviders = useCallback(
-		async (country: Country) => {
-			setIsLoading(true);
-			try {
-				const [fav, all] = await Promise.all([
-					loadProviders(true, country),
-					loadProviders(false, country),
-				]);
-				setFavoriteProviders(fav);
-				setProviders(all);
-			} catch (error) {
-				console.error("failed to load providers", error);
-			} finally {
-				setInitialized();
-				setIsLoading(false);
-			}
+	const setFavoritesMultipleProviders = useCallback(
+		async (providersKey: string[]) => {
+			await api.setFavoritesMultipleProviders({ country, providersKey });
+
+			// optimistic update
+			const updatedProviders = providers.map(p => {
+				if (providersKey.includes(p.key)) {
+					return { ...p, favorite: true };
+				}
+				return p;
+			});
+
+			const { providersSucceeded } = useGlobalStore.getState();
+			providersSucceeded(updatedProviders);
 		},
-		[setIsLoading, setFavoriteProviders, setProviders, loadProviders, setInitialized]
+		[country, api.setFavoritesProvider, providers]
 	);
 
 	const addToFavorites = useCallback(
 		async (providerKey: string) => {
-			setIsLoading(true);
-			await invoke<boolean>("add_favorites_provider", {
-				params: { country: country.toUpperCase(), providerKey },
-			});
-			setIsLoading(false);
-			// update favs
-			const favs = await loadProviders(true, country.toUpperCase() as Country);
-			setFavoriteProviders(favs);
+			setFavorites(providerKey, true);
 		},
-		[country, loadProviders, invoke, setFavoriteProviders, setIsLoading]
+		[setFavorites]
 	);
 
 	const removeFromFavorites = useCallback(
 		async (providerKey: string) => {
-			setIsLoading(true);
-			await invoke<boolean>("remove_favorites_provider", {
-				params: { country: country.toUpperCase(), providerKey },
-			});
-			setIsLoading(false);
-			// update favs
-			const favs = await loadProviders(true, country.toUpperCase() as Country);
-			setFavoriteProviders(favs);
+			setFavorites(providerKey, false);
 		},
-		[country, loadProviders, invoke, setFavoriteProviders, setIsLoading]
+		[setFavorites]
 	);
 
 	return {
-		getProviders,
 		addToFavorites,
 		removeFromFavorites,
+		setFavoritesMultipleProviders,
 	};
 };

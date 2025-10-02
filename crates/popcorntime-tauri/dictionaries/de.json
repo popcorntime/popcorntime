@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "Sprache & Region",
     "watchPreferences": "Sehgewohnheiten",
+    "manifest": "Manifest",
+    "logs": "Debug-Protokolle",
     "signOut": "Abmelden"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "Ihre Anzeigeeinstellungen wurden erfolgreich aktualisiert.",
     "add": "Hinzufügen",
     "remove": "Entfernen"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Wählen Sie Ihr Land",
+    "countryDescription": "Wähle dein Land, um verfügbare Sprachen zu sehen",
+    "languageTitle": "Sprache auswählen",
+    "languageDescription": "Wählen Sie Ihre Schnittstellensprache und priorisieren Sie Inhalte {{inCountry}}",
+    "changeCountry": "Land ändern",
+    "default": "Standardgebietsschema",
+    "showAll": "Alle Sprachen anzeigen"
+  },
+  "onboardingProviders": {
+    "title": "Wähle deine Streamingdienste aus",
+    "description": "Wähle die Plattformen aus, auf die du Zugriff hast, damit wir dir zeigen können, was du anschauen kannst.",
+    "searchPlaceholder": "Suchanbieter durchsuchen...",
+    "category": {
+      "popular": "Beliebt",
+      "free": "Frei",
+      "subscription": "Abonnement",
+      "all": "Alle"
+    },
+    "skip": "Ich mache es später.",
+    "continue": "Fortfahren",
+    "selectCountry": "Land ändern",
+    "clearAll": "Alles löschen",
+    "clearSearch": "Suche löschen",
+    "selected": "{{count}} Anbieter ausgewählt",
+    "noFound": "Keine Anbieter für \"{{query}}\" gefunden"
   },
   "priceType": {
     "buy": "Kaufen",

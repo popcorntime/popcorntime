@@ -1,0 +1,24 @@
+name: Storybook
+
+on:
+  push:
+    branches:
+      - dev
+      - main
+  pull_request:
+    paths:
+      - ".github/workflows/storybook.yaml"
+      - "packages/popcorntime-ui/**"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/init-env-node
+      - run: pnpm dlx playwright install chromium
+      - run: pnpm test-storybook

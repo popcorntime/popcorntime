@@ -1,34 +1,31 @@
-import { type MediaKind, type MediaSearch, SortKey } from "@popcorntime/graphql/types";
-import { BrowseMedias } from "@popcorntime/ui/blocks/browse";
-import { useSidebar, useSidebarGroup } from "@popcorntime/ui/components/sidebar";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
 import useInfiniteScroll from "react-infinite-scroll-hook";
-import { useLocation, useParams } from "react-router";
+import { useSearchParams } from "react-router";
+import { useShallow } from "zustand/shallow";
 import placeholderImg from "@/assets/placeholder.svg";
-import { BrowseSidebarGroup } from "@/components/browse/sidebar";
+import { BrowseMedias } from "@/components/browse";
 import { useCountry } from "@/hooks/useCountry";
-import { type SearchParams, useSearch } from "@/hooks/useSearch";
+import { useSearch } from "@/hooks/useSearch";
 import { useGlobalStore } from "@/stores/global";
-
-const SORTS = [
-	{ key: SortKey.POSITION, label: "popularity" },
-	{ key: SortKey.UPDATED_AT, label: "updated" },
-] as const;
+import type { MediaKind, MediaSearch, SearchInput } from "@/tauri/types";
 
 export function BrowseRoute() {
 	const { country } = useCountry();
-	const initialized = useGlobalStore(state => state.app.initialized);
-	const globalArgs = useGlobalStore(state => state.browse.args);
-	const sortKey = useGlobalStore(state => state.browse.sortKey);
-	const query = useGlobalStore(state => state.browse.query);
-	const openMediaDialog = useGlobalStore(state => state.dialogs.media.open);
-	const { t } = useTranslation();
+	const appBoot = useGlobalStore(state => state.app.boot);
+	const {
+		args: globalArgs,
+		sortKey,
+		sortOrder,
+		query,
+	} = useGlobalStore(useShallow(state => state.browse));
+
+	const openMedia = useGlobalStore(state => state.openMedia);
 	const [dataAccumulator, setDataAccumulator] = useState<MediaSearch[]>([]);
-	const { setOpen: setOpenSidebar } = useSidebar();
-	const { pathname } = useLocation();
-	const { kind } = useParams<{ kind: "movie" | "tv_show" }>();
-	const setSortKey = useGlobalStore(state => state.browse.setSortKey);
+	const [searchParams] = useSearchParams();
+
+	const kind = useMemo(() => {
+		return (searchParams.get("kind") || "MOVIE") as MediaKind;
+	}, [searchParams]);
 
 	const args = useMemo(() => {
 		return {
@@ -36,26 +33,24 @@ export function BrowseRoute() {
 			kind: kind?.toUpperCase() as MediaKind | undefined,
 		};
 	}, [globalArgs, kind]);
-	const prevQuery = useRef([query, args, sortKey]);
-	const prevPathname = useRef(pathname);
 
-	const sortKeys = useMemo(
-		() =>
-			SORTS.map(sort => {
-				return {
-					key: sort.key,
-					label: t(`sortBy.${sort.label}`),
-					current: sort.key === sortKey,
-				};
-			}),
-		[sortKey, t]
-	);
+	const prevQuery = useRef<{
+		query: typeof query;
+		args: typeof args;
+		sortKey: typeof sortKey;
+		sortOrder: typeof sortOrder;
+	}>({
+		query: query,
+		args: args,
+		sortKey: sortKey,
+		sortOrder: sortOrder,
+	});
 
 	// Register the sidebar group for this route
-	useSidebarGroup(useMemo(() => <BrowseSidebarGroup />, []));
+	//useSidebarGroup(useMemo(() => <BrowseSidebarGroup />, []));
 
-	const [browseParams, setBrowseParams] = useState<SearchParams>({
-		limit: 50,
+	const [browseParams, setBrowseParams] = useState<SearchInput>({
+		first: 50,
 		country: country,
 		sortKey: sortKey,
 		arguments: args,
@@ -85,12 +80,29 @@ export function BrowseRoute() {
 	const onLoadMore = useCallback(async () => {
 		if (!hasNextPage || !cursor) return;
 		setBrowseParams(prev => {
+			let innerCursor:
+				| { after?: string | null; first?: number | null }
+				| { before?: string | null; last?: number | null } = {
+				after: cursor,
+				first: prev.first ?? prev.last ?? 50,
+				before: undefined,
+				last: undefined,
+			};
+
+			if (sortOrder === "DESC") {
+				innerCursor = {
+					before: cursor,
+					last: prev.last ?? prev.first ?? 50,
+					first: undefined,
+					after: undefined,
+				};
+			}
 			return {
 				...prev,
-				cursor,
+				...innerCursor,
 			};
 		});
-	}, [hasNextPage, cursor]);
+	}, [sortOrder, hasNextPage, cursor]);
 
 	useEffect(() => {
 		if (data) {
@@ -103,32 +115,45 @@ export function BrowseRoute() {
 
 	useEffect(() => {
 		if (
-			prevQuery.current[0] === query &&
-			prevQuery.current[1] === args &&
-			prevQuery.current[2] === sortKey
-		)
+			prevQuery.current.query === query &&
+			prevQuery.current.args === args &&
+			prevQuery.current.sortKey === sortKey &&
+			prevQuery.current.sortOrder === sortOrder
+		) {
 			return;
-		prevQuery.current = [query, args, sortKey];
+		}
+
 		setBrowseParams(prev => {
+			let innerCursor: { first?: number | null } | { last?: number | null } = {
+				first: prev.first ?? prev.last ?? 50,
+			};
+
+			if (sortOrder === "DESC") {
+				innerCursor = {
+					last: prev.last ?? prev.first ?? 50,
+				};
+			}
+
 			return {
 				...prev,
 				query: query,
 				arguments: args,
 				sortKey: sortKey,
-				// reset cursor when query changes
-				cursor: undefined,
+				after: undefined,
+				before: undefined,
+				first: undefined,
+				last: undefined,
+				...innerCursor,
 			};
 		});
-	}, [query, args, sortKey]);
 
-	// FIXME: allow filter for TV SHOW
-	useEffect(() => {
-		if (prevPathname.current === pathname) return;
-		prevPathname.current = pathname;
-		// always close the sidebar when browsing
-		// as tv show currently doesn't support it
-		setOpenSidebar(false);
-	}, [setOpenSidebar, pathname]);
+		prevQuery.current = {
+			query,
+			args,
+			sortKey,
+			sortOrder,
+		};
+	}, [query, args, sortKey, sortOrder]);
 
 	const [sentryRef] = useInfiniteScroll({
 		loading: isLoading,
@@ -141,23 +166,11 @@ export function BrowseRoute() {
 		<BrowseMedias
 			sentryRef={sentryRef}
 			medias={dataAccumulator}
-			onOpen={openMediaDialog}
+			onOpen={openMedia}
 			placeholder={placeholderImg}
-			isReady={!isLoading && initialized && dataAccumulator.length > 0}
+			isReady={!isLoading && appBoot === "booted" && dataAccumulator.length > 0}
 			isLoading={isLoading}
 			onLoadMore={onLoadMore}
-			onSortChange={setSortKey}
-			sortKeys={sortKeys}
-			translations={{
-				free: t("media.free"),
-				kind: {
-					movie: t("media.movie"),
-					tvShow: t("media.tv-show"),
-				},
-				loading: t("browse.loading"),
-				loadMore: t("browse.load-more"),
-				sortBy: t("sortBy.label"),
-			}}
 		/>
 	);
 }

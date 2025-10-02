@@ -3,7 +3,6 @@ import i18n from "i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
 import { initReactI18next } from "react-i18next";
 import { pluginShellOpen, toast } from "@/test/mock";
-import { Code } from "@/utils/error";
 
 const dicts = import.meta.glob("../../crates/popcorntime-tauri/dictionaries/*.json", {
 	eager: true,
@@ -29,15 +28,15 @@ i18n
 vi.mock("sonner", () => ({ toast }));
 vi.mock("zustand");
 
-vi.mock("@tauri-apps/plugin-shell", async () => {
-	const actual = await vi.importActual("@tauri-apps/plugin-shell");
+vi.mock("@tauri-apps/plugin-opener", async () => {
+	const actual = await vi.importActual("@tauri-apps/plugin-opener");
 	return {
 		...actual,
-		open: pluginShellOpen,
+		openUrl: pluginShellOpen,
 	};
 });
 
 process.on("unhandledRejection", err => {
-	if ((err as { code?: string })?.code === Code.InvalidSession) return;
+	if ((err as { code?: string })?.code === "errors.session.invalid") return;
 	throw err;
 });

@@ -10,7 +10,19 @@ reqwest = { workspace = true, features = ["json"] }
 serde_json.workspace = true
 serde.workspace = true
 anyhow.workspace = true
-tokio = { workspace = true, features = ["macros", "rt"] }
-graphql_client = "0.14.0"
-popcorntime-error = { workspace = true }
-popcorntime-graphql-macros = { path = "macros" }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
+specta = { workspace = true, features = ["serde", "time", "derive"] }
+cynic = { workspace = true, features = ["http-reqwest"] }
+time = { workspace = true, features = [
+    "serde",
+    "macros",
+    "formatting",
+    "parsing",
+] }
+tracing.workspace = true
+
+[build-dependencies]
+cynic-codegen.workspace = true
+
+[dev-dependencies]
+insta = "1"

@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "שפה ואזור",
     "watchPreferences": "העדפות צפייה",
+    "manifest": "מניפסט",
+    "logs": "יומני ניפוי שגיאות",
     "signOut": "התנתק"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "העדפות הצפייה שלך עודכנו בהצלחה.",
     "add": "לְהוֹסִיף",
     "remove": "הסר"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "בחר את המדינה שלך",
+    "countryDescription": "בחר את המדינה שלך כדי לראות את השפות הזמינות",
+    "languageTitle": "בחר את השפה שלך",
+    "languageDescription": "בחר את שפת הממשק שלך ותן עדיפות לתוכן {{inCountry}}",
+    "changeCountry": "שנה מדינה",
+    "default": "ברירת מחדל של אזור",
+    "showAll": "הצג את כל השפות"
+  },
+  "onboardingProviders": {
+    "title": "בחר את שירותי הסטרימינג שלך",
+    "description": "בחר את הפלטפורמות שיש לך גישה אליהן כדי שנוכל להראות לך מה לצפות.",
+    "searchPlaceholder": "חיפוש ספקים...",
+    "category": {
+      "popular": "פופולרי",
+      "free": "לְשַׁחְרֵר",
+      "subscription": "מנוי",
+      "all": "כֹּל"
+    },
+    "skip": "אני אעשה את זה אחר כך",
+    "continue": "המשך",
+    "selectCountry": "שנה מדינה",
+    "clearAll": "נקה הכל",
+    "clearSearch": "נקה חיפוש",
+    "selected": "נבחרו {{count}} ספק(ים)",
+    "noFound": "לא נמצאו ספקים עבור \"{{query}}\""
   },
   "priceType": {
     "buy": "לִקְנוֹת",

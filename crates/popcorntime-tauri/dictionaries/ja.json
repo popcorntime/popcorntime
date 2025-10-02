@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "言語と地域",
     "watchPreferences": "視聴設定",
+    "manifest": "マニフェスト",
+    "logs": "デバッグログ",
     "signOut": "ログアウト"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "視聴設定が正常に更新されました。",
     "add": "追加",
     "remove": "削除"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "国を選択してください",
+    "countryDescription": "国を選択して利用可能な言語を確認してください",
+    "languageTitle": "言語を選択",
+    "languageDescription": "インターフェイス言語を選択し、{{inCountry}}のコンテンツを優先します。",
+    "changeCountry": "国を変更",
+    "default": "デフォルトロケール",
+    "showAll": "すべての言語を表示"
+  },
+  "onboardingProviders": {
+    "title": "ストリーミングサービスを選択",
+    "description": "アクセス可能なプラットフォームを選択してください。視聴できる作品をお見せします。",
+    "searchPlaceholder": "プロバイダーを検索中...",
+    "category": {
+      "popular": "人気",
+      "free": "無料",
+      "subscription": "サブスクリプション",
+      "all": "全て"
+    },
+    "skip": "後でやります",
+    "continue": "続行",
+    "selectCountry": "国を変更",
+    "clearAll": "すべてクリア",
+    "clearSearch": "検索をクリア",
+    "selected": "{{count}} 件のプロバイダーが選択されました",
+    "noFound": "\"{{query}}\" のプロバイダーが見つかりませんでした"
   },
   "priceType": {
     "buy": "買う",

@@ -278,7 +278,7 @@ Most of this is for internal use, but maybe you will find it interesting too.
 
 ### Icon generation
 
-When we update our app icon (`resources/app-icon.png`), run this to generate valid tauri version.
+When we update our app icon (`resources/app-icon-*.png`), run this to generate valid tauri version.
 
 ```bash
 pnpm tauri:icon

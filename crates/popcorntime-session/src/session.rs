@@ -31,25 +31,19 @@ impl AppSession {
     self.refresh_token.clone()
   }
 
-  pub fn with_access_token(&mut self, access_token: Option<String>) {
-    if access_token == self.access_token {
-      return;
-    }
+  pub fn with_access_token(mut self, access_token: Option<String>) -> Self {
     self.access_token = access_token;
+    self
   }
 
-  pub fn with_refresh_token(&mut self, refresh_token: Option<String>) {
-    if refresh_token == self.refresh_token {
-      return;
-    }
+  pub fn with_refresh_token(mut self, refresh_token: Option<String>) -> Self {
     self.refresh_token = refresh_token;
+    self
   }
 
-  pub fn with_expires_at(&mut self, expires_at: Option<time::OffsetDateTime>) {
-    if expires_at == self.expires_at {
-      return;
-    }
+  pub fn with_expires_at(mut self, expires_at: Option<time::OffsetDateTime>) -> Self {
     self.expires_at = expires_at;
+    self
   }
 
   pub async fn validate(&self) -> Result<()> {

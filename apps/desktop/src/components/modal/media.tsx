@@ -1,8 +1,12 @@
-import { type Movie, RatingSource, type TVShow, WatchPriceType } from "@popcorntime/graphql/types";
 import { type Country, getLocalesForCountry, type Locale } from "@popcorntime/i18n";
 import { Badge } from "@popcorntime/ui/components/badge";
 import { Button, buttonVariants } from "@popcorntime/ui/components/button";
-import { Dialog, DialogContent } from "@popcorntime/ui/components/dialog";
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogTitle,
+} from "@popcorntime/ui/components/dialog";
 import { MediaPosterAsPicture } from "@popcorntime/ui/components/poster";
 import { ScrollArea } from "@popcorntime/ui/components/scroll-area";
 import { Spinner } from "@popcorntime/ui/components/spinner";
@@ -10,7 +14,7 @@ import { Table, TableBody, TableCell, TableRow } from "@popcorntime/ui/component
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@popcorntime/ui/components/tabs";
 import { timeDisplay } from "@popcorntime/ui/lib/time";
 import { cn } from "@popcorntime/ui/lib/utils";
-import { Calendar, Clock, ExternalLink, Star, X } from "lucide-react";
+import { Calendar, Clock, ExternalLink, Star, ThumbsDown, ThumbsUp, X } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
@@ -20,6 +24,7 @@ import { useCountry } from "@/hooks/useCountry";
 import { useTauri } from "@/hooks/useTauri";
 import { NotFoundRoute } from "@/routes/not-found";
 import { useGlobalStore } from "@/stores/global";
+import type { Media, UserReactionType } from "@/tauri/types";
 
 function MediaContentSkeleton() {
 	return (
@@ -32,28 +37,44 @@ function MediaContentSkeleton() {
 function MediaContent() {
 	const locale = useGlobalStore(state => state.i18n.locale);
 	const slug = useGlobalStore(state => state.dialogs.media.slug);
-	const toggle = useGlobalStore(state => state.dialogs.media.toggle);
+	const closeMedia = useGlobalStore(state => state.closeMedia);
 	const { country } = useCountry();
 	const [isLoading, setIsLoading] = useState(false);
-	const { invoke } = useTauri();
-	const [media, setMedia] = useState<Movie | TVShow | null>(null);
+	const { api } = useTauri();
+	const [media, setMedia] = useState<Media | null>(null);
 	const { t } = useTranslation();
 	const officialLocales = useMemo(() => [...getLocalesForCountry(country)], [country]);
+
+	const setMediaReaction = useCallback(
+		(reaction: UserReactionType | null) => {
+			if (!media?.id) return;
+			setMedia(prev => (prev ? { ...prev, reaction } : prev));
+			try {
+				void api.setMediaReaction({
+					mediaId: media.id,
+					reaction,
+				});
+			} catch (error) {
+				console.error("Failed to set media reaction:", error);
+			}
+		},
+		[media?.id, api.setMediaReaction]
+	);
 
 	const fetch = useCallback(
 		async (slug: string) => {
 			setIsLoading(true);
-			const results = await invoke<Movie | TVShow>("media", {
-				params: {
-					country: country.toUpperCase() as Country,
-					slug,
-					language: locale,
-				},
+			const results = await api.media({
+				country: country.toUpperCase() as Country,
+				slug,
+				language: locale,
 			});
-			setMedia(results);
+			if (results) {
+				setMedia(results.media ?? null);
+			}
 			setIsLoading(false);
 		},
-		[country, locale, invoke]
+		[country, locale, api]
 	);
 
 	useEffect(() => {
@@ -84,16 +105,16 @@ function MediaContent() {
 
 		// sort bestProvider  with free provider first, then subscription then others by weight
 		bestProvider.sort((a, b) => {
-			if (a.pricesType?.includes(WatchPriceType.FREE)) {
+			if (a.pricesType?.includes("FREE")) {
 				return -1;
 			}
-			if (b.pricesType?.includes(WatchPriceType.FREE)) {
+			if (b.pricesType?.includes("FREE")) {
 				return 1;
 			}
-			if (a.pricesType?.includes(WatchPriceType.FLATRATE)) {
+			if (a.pricesType?.includes("FLATRATE")) {
 				return -1;
 			}
-			if (b.pricesType?.includes(WatchPriceType.FLATRATE)) {
+			if (b.pricesType?.includes("FLATRATE")) {
 				return 1;
 			}
 			// default
@@ -123,7 +144,7 @@ function MediaContent() {
 	}, [bestProviders]);
 
 	const imdbRating = useMemo(() => {
-		return media?.ratings?.find(rating => rating.source === RatingSource.IMDB && rating.rating > 0);
+		return media?.ratings?.find(rating => rating.source === "IMDB" && rating.rating > 0);
 	}, [media?.ratings]);
 
 	const allLanguages = useMemo(() => {
@@ -133,9 +154,9 @@ function MediaContent() {
 		return Array.from(
 			media.availabilities.reduce((acc, availability) => {
 				availability.audioLanguages
-					?.filter(l => officialLocales.includes(l))
+					?.filter(l => officialLocales.includes(l as Locale))
 					.forEach(lang => {
-						acc.add(lang);
+						acc.add(lang as Locale);
 					});
 				return acc;
 			}, new Set<Locale>())
@@ -149,10 +170,10 @@ function MediaContent() {
 		return Array.from(
 			media.availabilities.reduce((acc, availability) => {
 				availability.subtitleLanguages
-					?.filter(l => officialLocales.includes(l))
-					.filter((a: Locale) => !allLanguages.includes(a))
+					?.filter(l => officialLocales.includes(l as Locale))
+					.filter(a => !allLanguages.includes(a as Locale))
 					.forEach(lang => {
-						acc.add(lang);
+						acc.add(lang as Locale);
 					});
 				return acc;
 			}, new Set<Locale>())
@@ -208,7 +229,7 @@ function MediaContent() {
 					<Button
 						variant="ghost"
 						size="icon"
-						onClick={toggle}
+						onClick={closeMedia}
 						className="absolute top-4 right-4 z-[500] text-white/80 backdrop-blur-sm hover:bg-black/30 hover:text-white"
 					>
 						<X className="h-6 w-6" />
@@ -216,18 +237,18 @@ function MediaContent() {
 				</div>
 
 				<div className="absolute right-0 bottom-0 left-0 px-8">
-					<div className="flex h-full items-stretch gap-6">
+					<div className="flex h-full items-stretch gap-6 space-y-2">
 						<MediaPosterAsPicture
 							loading="lazy"
 							title={media.title}
 							posterId={posterId}
 							placeholder={placeholderImg}
-							className="w-32 rounded-md"
+							className="w-44 rounded-md"
 						/>
-						<div className="flex flex-1 flex-col pb-4">
-							<h1 className="mb-3 line-clamp-1 text-4xl leading-tight font-bold">{media.title}</h1>
+						<div className="flex flex-1 flex-col pb-4 gap-2">
+							<h1 className="line-clamp-1 text-4xl leading-tight font-bold">{media.title}</h1>
 
-							<div className="mb-4 flex flex-wrap items-center gap-6">
+							<div className="flex flex-wrap items-center gap-6">
 								<div className="flex items-center gap-2">
 									<Star className="h-5 w-5 fill-current text-yellow-400" />
 									{media.ranking?.score && (
@@ -251,7 +272,7 @@ function MediaContent() {
 								)}
 							</div>
 
-							<div className="mb-4 flex flex-wrap gap-2">
+							<div className="flex flex-wrap gap-2">
 								<Badge variant="default" className="font-medium capitalize backdrop-blur-sm">
 									{media.__typename === "Movie" ? t("media.movie") : t("media.tv-show")}
 								</Badge>
@@ -267,12 +288,29 @@ function MediaContent() {
 								))}
 							</div>
 
+							<div className="flex gap-2">
+								<Button
+									variant={media.reaction === "LIKE" ? "accent" : "ghost"}
+									onClick={() => setMediaReaction(media.reaction === "LIKE" ? null : "LIKE")}
+									size="iconXl"
+								>
+									<ThumbsUp />
+								</Button>
+								<Button
+									variant={media.reaction === "DISLIKE" ? "accent" : "ghost"}
+									onClick={() => setMediaReaction(media.reaction === "DISLIKE" ? null : "DISLIKE")}
+									size="iconXl"
+								>
+									<ThumbsDown />
+								</Button>
+							</div>
+
 							{bestProvider && (
 								<div className="mt-auto flex flex-col space-y-2 space-x-0 sm:flex-row sm:space-y-0 sm:space-x-2 rtl:space-x-reverse">
 									<Link
 										className={cn(
 											buttonVariants({ variant: "default", size: "xl" }),
-											"group bg-primary/40 dark:bg-primary/20 hover:bg-primary/90 hover:text-secondary flex w-full items-center justify-center gap-x-2 px-4 font-extrabold sm:w-auto sm:max-w-sm"
+											"group text-foreground/80 bg-primary/40 dark:bg-primary/20 hover:bg-primary/90 hover:text-secondary flex w-full items-center justify-center gap-x-2 px-4 font-extrabold sm:w-auto sm:max-w-sm"
 										)}
 										to={`https://go.popcorntime.app/${bestProvider.urlHash}?country=${country?.toUpperCase()}`}
 										target="_blank"
@@ -422,11 +460,13 @@ function MediaContent() {
 
 export function MediaDialog() {
 	const isOpen = useGlobalStore(state => state.dialogs.media.isOpen);
-	const toggle = useGlobalStore(state => state.dialogs.media.toggle);
+	const closeMedia = useGlobalStore(state => state.closeMedia);
 
 	return (
-		<Dialog open={isOpen} onOpenChange={toggle} modal>
+		<Dialog open={isOpen} onOpenChange={closeMedia} modal>
 			<DialogContent className="z-[300] h-full w-full max-w-2xl border-0 p-0 outline-none md:max-h-[90vh] lg:max-w-4xl">
+				<DialogTitle hidden></DialogTitle>
+				<DialogDescription hidden></DialogDescription>
 				<div
 					className={cn(
 						"flex min-h-[calc(100vh-(12rem))] flex-col transition-all duration-300",

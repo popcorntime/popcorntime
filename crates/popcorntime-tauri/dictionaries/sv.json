@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "Språk och region",
     "watchPreferences": "Tittarinställningar",
+    "manifest": "Manifest",
+    "logs": "Felsökningsloggar",
     "signOut": "Logga ut"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "Dina tittarpreferenser har uppdaterats framgångsrikt.",
     "add": "Tillägga",
     "remove": "Ta bort"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Välj ditt land",
+    "countryDescription": "Välj ditt land för att se tillgängliga språk",
+    "languageTitle": "Välj ditt språk",
+    "languageDescription": "Välj ditt gränssnittsspråk och prioritera innehåll {{inCountry}}",
+    "changeCountry": "Byt land",
+    "default": "Standardplats",
+    "showAll": "Visa alla språk"
+  },
+  "onboardingProviders": {
+    "title": "Välj dina streamingtjänster",
+    "description": "Välj de plattformar du har tillgång till så kan vi visa vad du kan titta på.",
+    "searchPlaceholder": "Sök leverantörer...",
+    "category": {
+      "popular": "Populär",
+      "free": "Gratis",
+      "subscription": "Prenumeration",
+      "all": "Alla"
+    },
+    "skip": "Jag gör det senare",
+    "continue": "Fortsätt",
+    "selectCountry": "Ändra land",
+    "clearAll": "Rensa alla",
+    "clearSearch": "Rensa sökning",
+    "selected": "{{count}} leverantör(er) valda",
+    "noFound": "Inga leverantörer hittades för \"{{query}}\""
   },
   "priceType": {
     "buy": "Köpa",

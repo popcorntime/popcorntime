@@ -23,7 +23,7 @@ function renderWithRouter(initialPath = "/") {
 				/>
 				<Route path="/onboarding" element={<div data-testid="onboarding" />} />
 				<Route path="/login" element={<div data-testid="login" />} />
-				<Route path="/browse/:country" element={<div data-testid="browse" />} />
+				<Route path="/browse" element={<div data-testid="browse" />} />
 			</Routes>
 			<LocationProbe />
 		</MemoryRouter>
@@ -37,8 +37,7 @@ afterEach(() => {
 describe("SplashRoute", () => {
 	it("shows Splash while boot is not initialized", async () => {
 		useGlobalStore.setState(s => {
-			s.app.initialized = false;
-			s.app.bootInitialized = false;
+			s.app.boot = "cold";
 			s.settings.onboarded = false;
 			s.session.isActive = false;
 		});
@@ -54,7 +53,8 @@ describe("SplashRoute", () => {
 
 	it("redirects to onboarding when not onboarded", async () => {
 		useGlobalStore.setState(s => {
-			s.app.bootInitialized = true;
+			s.app.boot = "booted";
+			s.settings.onboarded = false;
 		});
 
 		const r = renderWithRouter("/");
@@ -68,8 +68,7 @@ describe("SplashRoute", () => {
 
 	it("redirects to login when onboarded but session is not active", async () => {
 		useGlobalStore.setState(s => {
-			s.app.initialized = true;
-			s.app.bootInitialized = true;
+			s.app.boot = "booted";
 			s.settings.onboarded = true;
 		});
 
@@ -84,7 +83,7 @@ describe("SplashRoute", () => {
 
 	it("shows splash when active but app not initialized", async () => {
 		useGlobalStore.setState(s => {
-			s.app.bootInitialized = true;
+			s.app.boot = "booting";
 			s.settings.onboarded = true;
 			s.session.isActive = true;
 			// missing providers
@@ -101,8 +100,7 @@ describe("SplashRoute", () => {
 
 	it("redirects to browser when active and app initialized", async () => {
 		useGlobalStore.setState(s => {
-			s.app.initialized = true;
-			s.app.bootInitialized = true;
+			s.app.boot = "booted";
 			// prevent onboarding
 			s.settings.onboarded = true;
 			// prevent login
@@ -114,13 +112,13 @@ describe("SplashRoute", () => {
 		await act(async () => {});
 
 		expect(screen.getByTestId("browse")).toBeInTheDocument();
-		expect(screen.getByTestId("loc")).toHaveTextContent("/browse/ca");
+		expect(screen.getByTestId("loc")).toHaveTextContent("/browse");
 		r.unmount();
 	});
 
 	it("reacts when app initialization flips", async () => {
 		useGlobalStore.setState(s => {
-			s.app.bootInitialized = false;
+			s.app.boot = "cold";
 			s.settings.onboarded = true;
 		});
 
@@ -131,15 +129,14 @@ describe("SplashRoute", () => {
 
 		await act(async () =>
 			useGlobalStore.setState(s => {
-				s.app.bootInitialized = true;
-				s.app.initialized = true;
+				s.app.boot = "booted";
 				s.session.isActive = true;
 				s.preferences.country = "FR";
 			})
 		);
 
 		expect(screen.getByTestId("browse")).toBeInTheDocument();
-		expect(screen.getByTestId("loc")).toHaveTextContent("/browse/fr");
+		expect(screen.getByTestId("loc")).toHaveTextContent("/browse");
 
 		r.unmount();
 	});

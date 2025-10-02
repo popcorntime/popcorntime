@@ -10,6 +10,9 @@
     "test": {
       "dependsOn": ["^test"]
     },
+    "test-storybook": {
+      "dependsOn": ["^test-storybook"]
+    },    
     "type-check": {
       "dependsOn": ["^type-check"]
     },

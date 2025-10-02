@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "Język i region",
     "watchPreferences": "Preferencje oglądania",
+    "manifest": "Manifest",
+    "logs": "Dzienniki debugowania",
     "signOut": "Wyloguj się"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "Twoje preferencje oglądania zostały pomyślnie zaktualizowane.",
     "add": "Dodać",
     "remove": "Usuń"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Wybierz swój kraj",
+    "countryDescription": "Wybierz swój kraj, aby zobaczyć dostępne języki",
+    "languageTitle": "Wybierz swój język",
+    "languageDescription": "Wybierz język interfejsu i nadaj priorytet treściom {{inCountry}}",
+    "changeCountry": "Zmień kraj",
+    "default": "Domyślny język",
+    "showAll": "Pokaż wszystkie języki"
+  },
+  "onboardingProviders": {
+    "title": "Wybierz swoje usługi streamingowe",
+    "description": "Wybierz platformy, do których masz dostęp, abyśmy mogli pokazać Ci, co oglądać.",
+    "searchPlaceholder": "Wyszukaj dostawców...",
+    "category": {
+      "popular": "Popularne",
+      "free": "Bezpłatny",
+      "subscription": "Subskrypcja",
+      "all": "Wszystko"
+    },
+    "skip": "Zrobię to później",
+    "continue": "Kontynuuj",
+    "selectCountry": "Zmień kraj",
+    "clearAll": "Wyczyść wszystko",
+    "clearSearch": "Wyczyść wyszukiwanie",
+    "selected": "{{count}} dostawca(ów) wybrano",
+    "noFound": "Nie znaleziono dostawców dla \"{{query}}\""
   },
   "priceType": {
     "buy": "Kupić",

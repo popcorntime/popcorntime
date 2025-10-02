@@ -1,15 +1,20 @@
 <div align="center">
-   <img align="center" width="128px" src="crates/popcorntime-tauri/icons/128x128@2x.png" />
+   <img align="center" width="128px" src="crates/popcorntime-tauri/icons/release/128x128@2x.png" />
 	<h1 align="center"><b>Popcorn Time™</b></h1>
 	<p align="center">
 		Watch Movies, TV Shows and more...
     <br />
     <a href="https://popcorntime.app"><strong>popcorntime.app</strong></a>
+    <br />
+    <br />
+    (Unstable Nightly releases can be found <a href="https://popcorntime.app/download#nightly">here</a>)
   </p>
 
 ![popcorntime](/resources/screenshot.jpg)
 
-[![Lint Rust][b-lr]][l-lr] [![Lint TS][b-lt]][l-lt] [![Test TS][b-tt]][l-tt] [![FB][b-fb]][l-fb] [![DEEPWIKI][b-dw]][l-dw]
+[![Lint Rust][b-lr]][l-lr] [![Lint TS][b-lt]][l-lt] [![Test TS][b-tt]][l-tt] [![Test Rust][b-tr]][l-tr]
+<br/>
+[![Discord][b-ds]][l-ds] [![FB][b-fb]][l-fb] [![DEEPWIKI][b-dw]][l-dw]
 
 </div>
 
@@ -19,10 +24,14 @@
 [l-lt]: https://github.com/popcorntime/popcorntime/actions/workflows/lint-ts.yaml
 [b-tt]: https://github.com/popcorntime/popcorntime/actions/workflows/test-ts.yaml/badge.svg?branch=dev
 [l-tt]: https://github.com/popcorntime/popcorntime/actions/workflows/test-ts.yaml
+[b-tr]: https://github.com/popcorntime/popcorntime/actions/workflows/test-rust.yaml/badge.svg?branch=dev
+[l-tr]: https://github.com/popcorntime/popcorntime/actions/workflows/test-rust.yaml
 [b-fb]: https://img.shields.io/badge/Facebook-blue?logo=facebook&logoColor=white
 [l-fb]: https://facebook.com/popcorntimetv
 [b-dw]: https://deepwiki.com/badge.svg
 [l-dw]: https://deepwiki.com/popcorntime/popcorntime
+[b-ds]: https://img.shields.io/discord/1419277122987491401?label=Discord&color=5865F2
+[l-ds]: https://discord.gg/c57nkpMzW6
 
 This is a **complete rebuild of Popcorn Time**. Not a fork, not a patch - a fresh start with new goals and a clean foundation. This repository will be the home for ongoing development, documentation, and releases.
 
@@ -60,10 +69,9 @@ If you'd like to help, check out [CONTRIBUTING.md](CONTRIBUTING.md) for guidelin
 
 If you want to skip right to getting the code to actually compile, take a look at the [DEVELOPMENT.md](DEVELOPMENT.md) file.
 
-## Sponsorship 💜
+## Sponsors
 
-This project is community-driven. If you'd like to support development and help us move faster, you can sponsor us:
+Support Popcorn Time and get your logo here and on the [official site](https://popcorntime.app).  
+[Become a sponsor](https://github.com/sponsors/popcorntime).
 
-👉 [GitHub Sponsors](https://github.com/sponsors/popcorntime)
-
-Every contribution helps us dedicate more time to building the future of Popcorn Time.
+This is a community-driven project. Your contributions let us spend more time building and improving Popcorn Time.

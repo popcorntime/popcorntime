@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "भाषा और क्षेत्र",
     "watchPreferences": "देखने की प्राथमिकताएँ",
+    "manifest": "घोषणापत्र",
+    "logs": "डीबग लॉग्स",
     "signOut": "साइन आउट करें"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "आपकी देखने की प्राथमिकताएँ सफलतापूर्वक अपडेट हो गई हैं।",
     "add": "जोड़ना",
     "remove": "हटाएं"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "अपना देश चुनें",
+    "countryDescription": "अपने देश का चयन करें ताकि उपलब्ध भाषाओं को देखा जा सके।",
+    "languageTitle": "अपनी भाषा चुनें",
+    "languageDescription": "अपनी इंटरफ़ेस भाषा चुनें और सामग्री को {{inCountry}} प्राथमिकता दें",
+    "changeCountry": "देश बदलें",
+    "default": "डिफ़ॉल्ट लोकेल",
+    "showAll": "सभी भाषाएँ दिखाएँ"
+  },
+  "onboardingProviders": {
+    "title": "अपनी स्ट्रीमिंग सेवाएँ चुनें",
+    "description": "उन प्लेटफार्मों का चयन करें जिन तक आपकी पहुंच है ताकि हम आपको दिखा सकें कि क्या देखना है।",
+    "searchPlaceholder": "प्रदाता खोजें...",
+    "category": {
+      "popular": "लोकप्रिय",
+      "free": "मुक्त",
+      "subscription": "सदस्यता",
+      "all": "सभी"
+    },
+    "skip": "बाद में कर लूंगा/लूंगी",
+    "continue": "जारी रखें",
+    "selectCountry": "देश बदलें",
+    "clearAll": "सभी साफ़ करें",
+    "clearSearch": "खोज साफ़ करें",
+    "selected": "{{count}} प्रदाता चुने गए",
+    "noFound": "\"{{query}}\" के लिए कोई प्रदाता नहीं मिला"
   },
   "priceType": {
     "buy": "खरीदना",

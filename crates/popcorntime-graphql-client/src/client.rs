@@ -1,10 +1,10 @@
 use crate::consts::GRAPHQL_SERVER;
 use anyhow::Result;
-use graphql_client::{QueryBody, Response};
+use cynic::{Operation, http::ReqwestExt};
 use reqwest::header;
-use serde::{Serialize, de::DeserializeOwned};
 use std::{fmt::Debug, sync::Arc, time::Duration};
 use tokio::{runtime::Handle, sync::Mutex};
+use tracing::instrument;
 
 static USER_AGENT: &str = concat!(env!("CARGO_PKG_NAME"), "/", env!("CARGO_PKG_VERSION"),);
 
@@ -46,13 +46,22 @@ impl ApiClient {
     })
   }
 
-  pub async fn query<T: Serialize, R: DeserializeOwned>(
+  #[instrument(level = "trace", skip(self), err(Debug), ret(Debug))]
+  pub async fn query<ResponseData, Vars>(
     &self,
-    params: &QueryBody<T>,
+    operation: Operation<ResponseData, Vars>,
     disable_cache: bool,
-  ) -> anyhow::Result<Response<R>> {
-    let res = self.post(disable_cache).await.json(params).send().await?;
-    res.json().await.map_err(Into::into)
+  ) -> anyhow::Result<cynic::GraphQlResponse<ResponseData>>
+  where
+    Vars: serde::Serialize + Debug,
+    ResponseData: serde::de::DeserializeOwned + Debug + 'static,
+  {
+    self
+      .post(disable_cache)
+      .await
+      .run_graphql(operation)
+      .await
+      .map_err(Into::into)
   }
 
   async fn post(&self, disable_cache: bool) -> reqwest::RequestBuilder {

@@ -1,0 +1,75 @@
+name: New Country Request
+description: Request support for a new country in Popcorn Time
+labels: [country]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ Before submitting, please [search existing issues](https://github.com/popcorntime/popcorntime/issues?q=is%3Aissue%20label%3Acountry) to check if this country has already been requested.
+
+  - type: input
+    id: country
+    attributes:
+      label: Country Code
+      description: Provide the official 2-letter ISO country code (e.g., `FR` for France).
+      placeholder: |
+        Example: FR
+    validations:
+      required: true
+
+  - type: input
+    id: default_language
+    attributes:
+      label: Default Language
+      description: Provide the default language code for this country (ISO 639-1, e.g., `fr`).
+      placeholder: |
+        Example: fr
+    validations:
+      required: true
+
+  - type: textarea
+    id: languages
+    attributes:
+      label: Supported Languages
+      description: List all relevant languages spoken in this country.
+      placeholder: |
+        Example:
+        - fr
+        - en
+        - nl
+    validations:
+      required: true
+
+  - type: textarea
+    id: providers
+    attributes:
+      label: Providers
+      description: List a few streaming providers available in this country (local or international).
+      placeholder: |
+        Example:
+        - Netflix
+        - Amazon Prime
+        - Crave
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Select the type of providers you'd like to prioritize.
+      options:
+        - streaming
+        - free
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context (Optional)
+      description: Add any other context, links, or information useful for supporting this country.
+      placeholder: |
+        Example: Market size, missing popular services, user demand, etc.
+    validations:
+      required: false

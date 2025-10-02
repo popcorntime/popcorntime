@@ -1,34 +1,38 @@
 import { Button, buttonVariants } from "@popcorntime/ui/components/button";
-import { open } from "@tauri-apps/plugin-shell";
+import { openUrl } from "@tauri-apps/plugin-opener";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router";
 import logo from "@/assets/logo.png";
 import { useTauri } from "@/hooks/useTauri";
 import { useGlobalStore } from "@/stores/global";
 
-type Event = {
-	authorizeUrl: string;
-};
-
 export function LoginRoute() {
-	const { invoke, listen } = useTauri();
-	const appInitialized = useGlobalStore(state => state.app.initialized);
+	const { api, on } = useTauri();
+	const appBoot = useGlobalStore(state => state.app.boot);
 	const navigate = useNavigate();
 
 	async function initialize_session_authorization() {
-		await invoke("initialize_session_authorization");
+		api.initializeSessionAuthorization();
 	}
 
 	useEffect(() => {
-		return listen<Event>("popcorntime://session_server_ready", event => {
-			open(event.payload.authorizeUrl);
-		});
-	}, [listen]);
+		let unlisten: (() => void) | undefined;
+
+		on.sessionServerReady
+			.listen(event => {
+				openUrl(event.payload.authorization_url);
+			})
+			.then(fn => {
+				unlisten = fn;
+			});
+
+		return unlisten;
+	}, [on.sessionServerReady]);
 
 	useEffect(() => {
-		if (!appInitialized) return;
-		navigate("/");
-	}, [appInitialized, navigate]);
+		if (appBoot !== "booted") return;
+		navigate("/", { replace: true });
+	}, [appBoot, navigate]);
 
 	return (
 		<main className="flex h-full">

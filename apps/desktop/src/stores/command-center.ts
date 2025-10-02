@@ -22,8 +22,8 @@ export interface CommandCenterState {
 	toggle: () => void;
 	isLoading: boolean;
 	setIsLoading: (loading: boolean) => void;
-	query?: string;
-	setQuery: (query?: string) => void;
+	query?: string | null;
+	setQuery: (query?: string | null) => void;
 	view: View;
 	goto: (view: View) => void;
 	reset: () => void;

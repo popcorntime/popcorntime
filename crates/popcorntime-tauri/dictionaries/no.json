@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "Språk og region",
     "watchPreferences": "Se preferanser for visning",
+    "manifest": "Manifest",
+    "logs": "Feilrettingslogger",
     "signOut": "Logg ut"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "Dine seervalg har blitt oppdatert.",
     "add": "Legge til",
     "remove": "Fjern"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Velg ditt land",
+    "countryDescription": "Velg ditt land for å se tilgjengelige språk",
+    "languageTitle": "Velg ditt språk",
+    "languageDescription": "Velg ditt grensesnittspråk og prioriter innhold {{inCountry}}",
+    "changeCountry": "Endre land",
+    "default": "Standard språkområde",
+    "showAll": "Vis alle språk"
+  },
+  "onboardingProviders": {
+    "title": "Velg dine strømmetjenester",
+    "description": "Velg plattformene du har tilgang til, så vi kan vise deg hva du kan se.",
+    "searchPlaceholder": "Søkeleverandører...",
+    "category": {
+      "popular": "Populær",
+      "free": "Gratis",
+      "subscription": "Abonnement",
+      "all": "Alle"
+    },
+    "skip": "Jeg gjør det senere",
+    "continue": "Fortsett",
+    "selectCountry": "Bytt land",
+    "clearAll": "Tøm alt",
+    "clearSearch": "Tøm søk",
+    "selected": "{{count}} leverandør(er) valgt",
+    "noFound": "Ingen leverandører funnet for \"{{query}}\""
   },
   "priceType": {
     "buy": "Kjøpe",

@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "Idioma e região",
     "watchPreferences": "Preferências de visualização",
+    "manifest": "Manifesto",
+    "logs": "Registros de depuração",
     "signOut": "Sair"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "Suas preferências de visualização foram atualizadas com sucesso.",
     "add": "Adicionar",
     "remove": "Remover"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Selecione seu país",
+    "countryDescription": "Selecione seu país para ver os idiomas disponíveis",
+    "languageTitle": "Selecione seu idioma",
+    "languageDescription": "Selecione o idioma da sua interface e priorize o conteúdo {{inCountry}}",
+    "changeCountry": "Alterar país",
+    "default": "Local padrão",
+    "showAll": "Mostrar todos os idiomas"
+  },
+  "onboardingProviders": {
+    "title": "Selecione seus serviços de streaming",
+    "description": "Escolha as plataformas às quais você tem acesso para que possamos mostrar o que assistir.",
+    "searchPlaceholder": "Pesquisar provedores...",
+    "category": {
+      "popular": "Popular",
+      "free": "Livre",
+      "subscription": "Assinatura",
+      "all": "Todos"
+    },
+    "skip": "Vou fazer isso depois",
+    "continue": "Continuar",
+    "selectCountry": "Alterar país",
+    "clearAll": "Limpar tudo",
+    "clearSearch": "Limpar pesquisa",
+    "selected": "{{count}} provedor(es) selecionado(s)",
+    "noFound": "Nenhum provedor encontrado para \"{{query}}\""
   },
   "priceType": {
     "buy": "Comprar",

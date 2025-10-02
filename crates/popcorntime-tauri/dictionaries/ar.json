@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "اللغة والمنطقة",
     "watchPreferences": "تفضيلات المشاهدة",
+    "manifest": "بيان",
+    "logs": "سجلات التصحيح",
     "signOut": "تسجيل الخروج"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "تم تحديث تفضيلات المشاهدة الخاصة بك بنجاح.",
     "add": "يضيف",
     "remove": "إزالة"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "اختر بلدك",
+    "countryDescription": "حدد بلدك لرؤية اللغات المتاحة",
+    "languageTitle": "اختر لغتك",
+    "languageDescription": "اختر لغة الواجهة الخاصة بك وأولوي المحتوى {{inCountry}}",
+    "changeCountry": "تغيير البلد",
+    "default": "اللغة الافتراضية",
+    "showAll": "عرض جميع اللغات"
+  },
+  "onboardingProviders": {
+    "title": "اختر خدمات البث الخاصة بك",
+    "description": "اختر المنصات التي يمكنك الوصول إليها حتى نتمكن من عرض ما يمكنك مشاهدته عليك.",
+    "searchPlaceholder": "ابحث عن مقدمي الخدمات...",
+    "category": {
+      "popular": "شائع",
+      "free": "حر",
+      "subscription": "اشتراك",
+      "all": "الجميع"
+    },
+    "skip": "سأفعلها لاحقًا",
+    "continue": "استمر",
+    "selectCountry": "تغيير البلد",
+    "clearAll": "مسح الكل",
+    "clearSearch": "مسح البحث",
+    "selected": "{{count}} مزود(ون) تم اختيارهم",
+    "noFound": "لم يتم العثور على مزودين لـ\"{{query}}\""
   },
   "priceType": {
     "buy": "يشتري",

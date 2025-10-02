@@ -24,9 +24,9 @@ function GithubIcon({ className }: { className?: string }) {
 export function OnboardingTimeline() {
 	const navigate = useNavigate();
 	const { hide } = useUpdater();
-	const { invoke } = useTauri();
+	const { api } = useTauri();
 	const [isWorking, setIsWorking] = useState(false);
-	const setOnboarded = useGlobalStore(state => state.settings.setOnboarded);
+	const settingsSucceeded = useGlobalStore(state => state.settingsSucceeded);
 
 	useEffect(() => {
 		hide(true);
@@ -37,12 +37,14 @@ export function OnboardingTimeline() {
 
 	const startBrowsing = useCallback(() => {
 		setIsWorking(true);
-		invoke("set_onboarded", undefined).then(() => {
+		api.setOnboarded().then(() => {
 			setIsWorking(false);
-			setOnboarded(true);
+			settingsSucceeded({
+				onboarded: true,
+			});
 			navigate("/");
 		});
-	}, [invoke, navigate, setOnboarded]);
+	}, [api.setOnboarded, navigate, settingsSucceeded]);
 
 	return (
 		<div className="flex min-h-svh w-full flex-col justify-center gap-12">

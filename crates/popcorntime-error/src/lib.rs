@@ -1,12 +1,21 @@
 use std::{borrow::Cow, fmt::Debug};
 
-#[derive(Debug, Default, Copy, Clone, PartialOrd, PartialEq)]
+#[derive(Debug, Default, Copy, Clone, PartialOrd, PartialEq, specta::Type)]
 pub enum Code {
   #[default]
+  #[serde(rename = "errors.unknown")]
   Unknown,
+  #[serde(rename = "errors.graphql.server")]
   GraphqlServerError,
+  #[serde(rename = "errors.database.not_available")]
   DatabaseNotAvailable,
+  #[serde(rename = "errors.session.invalid")]
   InvalidSession,
+  #[serde(rename = "errors.session.keyring")]
+  InvalidSessionKeyring,
+  #[serde(rename = "errors.events.invalid")]
+  InvalidEvent,
+  #[serde(rename = "errors.graphql.no_data")]
   GraphqlNoData,
 }
 
@@ -18,6 +27,8 @@ impl std::fmt::Display for Code {
       Code::InvalidSession => "errors.session.invalid",
       Code::DatabaseNotAvailable => "errors.database.not_available",
       Code::GraphqlNoData => "errors.graphql.no_data",
+      Code::InvalidEvent => "errors.events.invalid",
+      Code::InvalidSessionKeyring => "errors.session.keyring",
     };
     f.write_str(code)
   }

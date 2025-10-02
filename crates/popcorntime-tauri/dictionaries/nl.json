@@ -43,6 +43,8 @@
   "menu": {
     "preferences": "Taal & regio",
     "watchPreferences": "Bekijk voorkeuren",
+    "manifest": "Manifest",
+    "logs": "Foutopsporingslogboeken",
     "signOut": "Afmelden"
   },
   "preferences": {
@@ -64,6 +66,33 @@
     "toast": "Je kijkvoorkeuren zijn succesvol bijgewerkt.",
     "add": "Toevoegen",
     "remove": "Verwijderen"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Selecteer je land",
+    "countryDescription": "Selecteer je land om beschikbare talen te zien",
+    "languageTitle": "Selecteer je taal",
+    "languageDescription": "Selecteer je interface taal en geef prioriteit aan inhoud {{inCountry}}",
+    "changeCountry": "Land wijzigen",
+    "default": "Standaard landinstelling",
+    "showAll": "Toon alle talen"
+  },
+  "onboardingProviders": {
+    "title": "Selecteer je streamingdiensten",
+    "description": "Kies de platforms waartoe je toegang hebt, zodat we je kunnen laten zien wat je kunt kijken.",
+    "searchPlaceholder": "Zoekproviders...",
+    "category": {
+      "popular": "Populair",
+      "free": "Vrij",
+      "subscription": "Abonnement",
+      "all": "Alle"
+    },
+    "skip": "Ik doe het later.",
+    "continue": "Doorgaan",
+    "selectCountry": "Land wijzigen",
+    "clearAll": "Alles wissen",
+    "clearSearch": "Zoekopdracht wissen",
+    "selected": "{{count}} aanbieder(s) geselecteerd",
+    "noFound": "Geen providers gevonden voor \"{{query}}\""
   },
   "priceType": {
     "buy": "Kopen",

@@ -1,4 +1,3 @@
-import type { MediaKind } from "@popcorntime/graphql/types";
 import { Button, buttonVariants } from "@popcorntime/ui/components/button";
 import {
 	Menubar,
@@ -24,34 +23,38 @@ import {
 	StarsIcon,
 	Tv,
 } from "lucide-react";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, useParams } from "react-router";
+import { Link, useSearchParams } from "react-router";
 import { CommandCenter } from "@/components/command-center";
-import { useCountry } from "@/hooks/useCountry";
-import { useSession } from "@/hooks/useSession";
+import { useTauri } from "@/hooks/useTauri";
 import { useGlobalStore } from "@/stores/global";
+import type { MediaKind } from "@/tauri/types";
 
 export function Header() {
-	const favorites = useGlobalStore(state => state.providers.favorites);
-	const { logout } = useSession();
+	const haveFavorites = useGlobalStore(state => state.providers.haveFavorites);
 	const preferFavorites = useGlobalStore(state => state.browse.preferFavorites);
-	const togglePreferFavorites = useGlobalStore(state => state.browse.togglePreferFavorites);
-	const openPreferences = useGlobalStore(state => state.dialogs.preferences.toggle);
-	const openWatchPreferences = useGlobalStore(state => state.dialogs.watchPreferences.toggle);
+	const togglePreferFavorites = useGlobalStore(state => state.togglePreferFavorites);
+	const togglePreferences = useGlobalStore(state => state.togglePreferences);
+	const toggleWatchPreferences = useGlobalStore(state => state.toggleWatchPreferences);
+	const sessionCleared = useGlobalStore(state => state.sessionCleared);
 	const direction = useGlobalStore(state => state.i18n.direction);
+	const { api } = useTauri();
 
-	const { country } = useCountry();
 	const { t } = useTranslation();
-	const { kind } = useParams<{
-		kind: Lowercase<MediaKind>;
-	}>();
+	const [searchParams] = useSearchParams();
+	const kind = useMemo(() => {
+		return (searchParams.get("kind") || "MOVIE") as MediaKind;
+	}, [searchParams]);
 
 	const openLogsDir = useCallback(async () => {
 		const appLogDirPath = await appLogDir();
-		console.log(appLogDirPath);
 		openPath(appLogDirPath);
 	}, []);
+
+	const logout = useCallback(() => {
+		api.logout().then(sessionCleared);
+	}, [api.logout, sessionCleared]);
 
 	return (
 		<header className="border-border bg-background/95 supports-[backdrop-filter]:bg-background/90 fixed top-0 z-50 h-14 w-full overscroll-none border-b backdrop-blur select-none">
@@ -63,7 +66,7 @@ export function Header() {
 						 * <SidebarTrigger className={cn(kind === 'tv_show' && 'invisible')} />
 						 */}
 
-						{favorites.length > 0 && kind && (
+						{haveFavorites && (
 							<Tooltip>
 								<TooltipTrigger asChild>
 									<Button
@@ -77,7 +80,7 @@ export function Header() {
 										onClick={togglePreferFavorites}
 									>
 										<StarsIcon />
-										<span className="sr-only">Toggle Sidebar</span>
+										<span className="sr-only">Toggle Favorites</span>
 									</Button>
 								</TooltipTrigger>
 								<TooltipContent side="bottom" className="flex items-center gap-2 py-1 text-xs ">
@@ -91,10 +94,10 @@ export function Header() {
 						<Link
 							className={cn(
 								buttonVariants({ variant: "link" }),
-								kind === "movie" && "text-accent-foreground bg-accent",
+								kind === "MOVIE" && "text-accent-foreground bg-accent",
 								"flex gap-2"
 							)}
-							to={`/browse/${country}/movie`}
+							to={`/browse?kind=MOVIE`}
 						>
 							<Film className="h-4 w-4" />
 							<span>{t("browse.movies")}</span>
@@ -102,10 +105,10 @@ export function Header() {
 						<Link
 							className={cn(
 								buttonVariants({ variant: "link" }),
-								kind === "tv_show" && "text-accent-foreground bg-accent",
+								kind === "TV_SHOW" && "text-accent-foreground bg-accent",
 								"flex gap-2"
 							)}
-							to={`/browse/${country}/tv_show`}
+							to={`/browse/?kind=TV_SHOW`}
 						>
 							<Tv className="h-4 w-4" />
 							<span>{t("browse.tv-shows")}</span>
@@ -142,11 +145,11 @@ export function Header() {
 								</MenubarTrigger>
 
 								<MenubarContent align={direction === "ltr" ? "end" : "start"} className="z-[400]">
-									<MenubarItem onClick={openPreferences} className="flex gap-2">
+									<MenubarItem onClick={togglePreferences} className="flex gap-2">
 										<Globe className="size-4 shrink-0" />
 										<span>{t("menu.preferences")}</span>
 									</MenubarItem>
-									<MenubarItem onClick={openWatchPreferences} className="flex gap-2">
+									<MenubarItem onClick={toggleWatchPreferences} className="flex gap-2">
 										<Clapperboard className="size-4 shrink-0" />
 										<span>{t("menu.watchPreferences")}</span>
 									</MenubarItem>

@@ -1,0 +1,10 @@
+---
+source: crates/popcorntime-graphql-client/src/preferences.rs
+expression: operation.query
+---
+query PreferencesOutput {
+  preferences {
+    language
+    country
+  }
+}

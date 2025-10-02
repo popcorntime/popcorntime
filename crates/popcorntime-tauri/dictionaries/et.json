@@ -42,7 +42,9 @@
   },
   "menu": {
     "preferences": "Keel ja piirkond",
-    "watchPreferences": "መልካም እንቅስቃሴ ምርጫዎች",
+    "watchPreferences": "Vaatamise eelistused",
+    "manifest": "Manifesto",
+    "logs": "Logid",
     "signOut": "Logi välja"
   },
   "preferences": {
@@ -63,11 +65,38 @@
     "update": "Einstellungen aktualisieren",
     "toast": "Teie vaatamise eelistused on edukalt uuendatud.",
     "add": "Lisa",
-    "remove": "ያስወግዱ"
+    "remove": "Eemalda"
+  },
+  "onboardingPreferences": {
+    "countryTitle": "Vali oma riik",
+    "countryDescription": "Vali oma riik, et näha saadaval olevaid keeli",
+    "languageTitle": "Vali oma keel",
+    "languageDescription": "Valige oma liidese keel ja eelistage sisu {{inCountry}}",
+    "changeCountry": "Muuda riiki",
+    "default": "Vaikimisi lokaat",
+    "showAll": "Näita kõiki keeli"
+  },
+  "onboardingProviders": {
+    "title": "Vali voogedastusteenused",
+    "description": "Vali need platvormid, millele sul on juurdepääs, et saaksime näidata, mida vaadata.",
+    "searchPlaceholder": "Otsi pakkujaid...",
+    "category": {
+      "popular": "Populaarne",
+      "free": "Tasuta",
+      "subscription": "Tellimine",
+      "all": "Kõik"
+    },
+    "skip": "Jäta vahele",
+    "continue": "Jätka",
+    "selectCountry": "Vali maakond",
+    "clearAll": "Kustuta kõik",
+    "clearSearch": "Otsi tühjaks",
+    "selected": "{{count}} pakkuja(t) valitud",
+    "noFound": "\"{{query}}\" kohta ei leitud ühtegi pakkujat."
   },
   "priceType": {
     "buy": "Osta",
-    "cinema": "ሲኒማ",
+    "cinema": "Kino",
     "flatrate": "Subscription",
     "free": "Tasuta",
     "rent": "Rentida"

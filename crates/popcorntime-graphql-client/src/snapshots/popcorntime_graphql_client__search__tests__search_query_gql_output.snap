@@ -1,0 +1,28 @@
+---
+source: crates/popcorntime-graphql-client/src/search.rs
+expression: operation.query
+---
+query SearchOutput($after: String, $arguments: SearchArguments, $before: String, $country: Country!, $first: Int, $language: Language, $last: Int, $query: String, $sortKey: SortKey!) {
+  search(after: $after, before: $before, first: $first, last: $last, country: $country, language: $language, sortKey: $sortKey, query: $query, arguments: $arguments) {
+    nodes {
+      id
+      slug
+      kind
+      title
+      overview
+      poster
+      backdrop
+      providers {
+        providerId
+        priceTypes
+      }
+      year
+      released
+      updatedAt
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

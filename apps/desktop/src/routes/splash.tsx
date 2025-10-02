@@ -1,23 +1,40 @@
-import { i18n } from "@popcorntime/i18n/types";
-import { Navigate } from "react-router";
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router";
 import { SplashScreen } from "@/components/splash-screen";
 import { useGlobalStore } from "@/stores/global";
 
 export function SplashRoute() {
-	const isActive = useGlobalStore(s => s.session.isActive);
+	const appBoot = useGlobalStore(s => s.app.boot);
 	const onboarded = useGlobalStore(s => s.settings.onboarded);
-	const appInitialized = useGlobalStore(s => s.app.initialized);
-	const bootInitialized = useGlobalStore(s => s.app.bootInitialized);
-	const country = useGlobalStore(s => s.preferences.country);
+	const isActive = useGlobalStore(s => s.session.isActive);
+	const preferredCountry = useGlobalStore(s => s.preferences.country);
+	const initialRedirectAttempted = useRef(false);
+	const navigate = useNavigate();
 
-	if (!bootInitialized) return <SplashScreen />;
-	if (!onboarded) return <Navigate to="/onboarding" replace />;
+	useEffect(() => {
+		if (appBoot === "cold") return;
+		if (!onboarded) {
+			if (!initialRedirectAttempted.current) {
+				initialRedirectAttempted.current = true;
+				navigate("/onboarding", { flushSync: true });
+			}
+		} else if (isActive) {
+			if (appBoot !== "booted") return;
+			if (!initialRedirectAttempted.current) {
+				initialRedirectAttempted.current = true;
+				if (!preferredCountry) {
+					navigate("/onboarding/preferences", { flushSync: true });
+				} else {
+					navigate("/browse", { flushSync: true });
+				}
+			}
+		} else {
+			if (!initialRedirectAttempted.current) {
+				initialRedirectAttempted.current = true;
+				navigate("/login", { flushSync: true });
+			}
+		}
+	}, [appBoot, onboarded, isActive, navigate, preferredCountry]);
 
-	if (isActive) {
-		if (!appInitialized) return <SplashScreen />;
-		const goto = (country ?? i18n.defaultCountry).toLowerCase();
-		return <Navigate to={`/browse/${goto}`} replace />;
-	}
-
-	return <Navigate to="/login" replace />;
+	return <SplashScreen />;
 }
