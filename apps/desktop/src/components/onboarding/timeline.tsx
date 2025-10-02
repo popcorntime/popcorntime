@@ -37,14 +37,12 @@ export function OnboardingTimeline() {
 
 	const startBrowsing = useCallback(() => {
 		setIsWorking(true);
-		api.setOnboarded().then(() => {
+		api.updateSettings({ onboardingComplete: true }).then(settings => {
 			setIsWorking(false);
-			settingsSucceeded({
-				onboarded: true,
-			});
+			settingsSucceeded(settings);
 			navigate("/");
 		});
-	}, [api.setOnboarded, navigate, settingsSucceeded]);
+	}, [api.updateSettings, navigate, settingsSucceeded]);
 
 	return (
 		<div className="flex min-h-svh w-full flex-col justify-center gap-12">

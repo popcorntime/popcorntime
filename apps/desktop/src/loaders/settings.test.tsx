@@ -21,7 +21,7 @@ describe("SettingsLoaderMount", () => {
 		await act(async () => {});
 
 		expect(useGlobalStore.getState().settings.status).toBe("ready");
-		expect(useGlobalStore.getState().settings.onboarded).toBe(false);
+		expect(useGlobalStore.getState().settings.onboardingComplete).toBe(false);
 
 		r.unmount();
 	});

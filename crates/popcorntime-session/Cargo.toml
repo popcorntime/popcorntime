@@ -19,11 +19,11 @@ serde_json.workspace = true
 uuid.workspace = true
 tauri.workspace = true
 poem.workspace = true
+toml.workspace = true
 
 popcorntime-error.workspace = true
 
 oauth2 = "5.0.0"
-toml = "0.9.7"
 keyring = { version = "3.6.3", features = [
     "apple-native",
     "windows-native",

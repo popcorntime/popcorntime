@@ -74,22 +74,6 @@ async setMediaReaction(params: SetReactionInput) : Promise<Result<SetReactionMut
 async showMainWindow() : Promise<void> {
     await TAURI_INVOKE("show_main_window");
 },
-async isOnboarded() : Promise<Result<boolean, { message: string; code: Code }>> {
-    try {
-    return { status: "ok", data: await TAURI_INVOKE("is_onboarded") };
-} catch (e) {
-    if(e instanceof Error) throw e;
-    else return { status: "error", error: e  as any };
-}
-},
-async setOnboarded() : Promise<Result<null, { message: string; code: Code }>> {
-    try {
-    return { status: "ok", data: await TAURI_INVOKE("set_onboarded") };
-} catch (e) {
-    if(e instanceof Error) throw e;
-    else return { status: "error", error: e  as any };
-}
-},
 async validate() : Promise<Result<null, { message: string; code: Code }>> {
     try {
     return { status: "ok", data: await TAURI_INVOKE("validate") };
@@ -109,6 +93,22 @@ async logout() : Promise<Result<null, { message: string; code: Code }>> {
 async initializeSessionAuthorization() : Promise<Result<null, { message: string; code: Code }>> {
     try {
     return { status: "ok", data: await TAURI_INVOKE("initialize_session_authorization") };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
+async settings() : Promise<Result<Settings, { message: string; code: Code }>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("settings") };
+} catch (e) {
+    if(e instanceof Error) throw e;
+    else return { status: "error", error: e  as any };
+}
+},
+async updateSettings(settings: SettingsInput) : Promise<Result<Settings, { message: string; code: Code }>> {
+    try {
+    return { status: "ok", data: await TAURI_INVOKE("update_settings", { settings }) };
 } catch (e) {
     if(e instanceof Error) throw e;
     else return { status: "error", error: e  as any };
@@ -174,6 +174,8 @@ export type SetFavoriteProviderInput = { country: Country; providerKey: string; 
 export type SetFavoriteProviderMutation = { setFavoriteProvider: boolean }
 export type SetReactionInput = { mediaId: number; reaction: UserReactionType | null }
 export type SetReactionMutation = { setReaction: boolean }
+export type Settings = { onboardingComplete?: boolean; enableAnalytics?: boolean }
+export type SettingsInput = { onboardingComplete?: boolean | null; enableAnalytics?: boolean | null }
 export type SortKey = "ID" | "RELEASED_AT" | "CREATED_AT" | "UPDATED_AT" | "POSITION"
 export type Tag = string
 export type Tvshow = { inProduction: boolean; id: number; __typename: string; title: string; slug: string; overview: string | null; tagline: string | null; languages: Language[]; poster: string | null; backdrop: string | null; released: string | null; year: number | null; country: Country | null; tags: Tag[]; trailers: string[]; genres: Genre[]; classification: string | null; countries: Country[]; kind: MediaKind; videos: MediaVideo[]; ratings: ExternalRating[]; ranking: Ranking | null; pochoclinReview: PochoclinReview | null; similars: MediaSimilar[]; similarsFree: MediaSimilar[]; charts: MediaCharts[]; availabilities: Availability[]; talents: People[]; reaction: UserReactionType | null }

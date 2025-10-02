@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Taal & regio",
     "watchPreferences": "Bekijk voorkeuren",
-    "manifest": "Manifest",
-    "logs": "Foutopsporingslogboeken",
+    "settings": "App-instellingen",
     "signOut": "Afmelden"
+  },
+  "settings": {
+    "toast": "Je instellingen zijn succesvol bijgewerkt.",
+    "settings": "Instellingen",
+    "description": "Configureer app-specifieke opties zoals analytics, thema's en andere lokale voorkeuren.",
+    "analytics": "Analytics",
+    "analytics-description": "Verzend anonieme gebruiksgegevens om de app te verbeteren en de ontwikkeling te begeleiden.",
+    "logs": "Logboeken",
+    "logs-description": "Bekijk toepassingslogboeken voor debuggen en probleemoplossing.",
+    "open-logs": "Open",
+    "update": "Instellingen bijwerken",
+    "error": "Instellingen bijwerken mislukt"
   },
   "preferences": {
     "preferences": "Voorkeuren",

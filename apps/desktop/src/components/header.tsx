@@ -9,13 +9,11 @@ import {
 } from "@popcorntime/ui/components/menubar";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@popcorntime/ui/components/tooltip";
 import { cn } from "@popcorntime/ui/lib/utils";
-import { appLogDir } from "@tauri-apps/api/path";
-import { openPath } from "@tauri-apps/plugin-opener";
+
 import {
-	Bug,
 	CircleUserIcon,
 	Clapperboard,
-	FileText,
+	Cog,
 	Film,
 	Globe,
 	Headphones,
@@ -36,6 +34,7 @@ export function Header() {
 	const preferFavorites = useGlobalStore(state => state.browse.preferFavorites);
 	const togglePreferFavorites = useGlobalStore(state => state.togglePreferFavorites);
 	const togglePreferences = useGlobalStore(state => state.togglePreferences);
+	const toggleSettings = useGlobalStore(state => state.toggleSettings);
 	const toggleWatchPreferences = useGlobalStore(state => state.toggleWatchPreferences);
 	const sessionCleared = useGlobalStore(state => state.sessionCleared);
 	const direction = useGlobalStore(state => state.i18n.direction);
@@ -46,11 +45,6 @@ export function Header() {
 	const kind = useMemo(() => {
 		return (searchParams.get("kind") || "MOVIE") as MediaKind;
 	}, [searchParams]);
-
-	const openLogsDir = useCallback(async () => {
-		const appLogDirPath = await appLogDir();
-		openPath(appLogDirPath);
-	}, []);
 
 	const logout = useCallback(() => {
 		api.logout().then(sessionCleared);
@@ -153,16 +147,10 @@ export function Header() {
 										<Clapperboard className="size-4 shrink-0" />
 										<span>{t("menu.watchPreferences")}</span>
 									</MenubarItem>
-									<MenubarItem asChild>
-										<Link to="/onboarding/manifest?next=/" className="flex gap-2">
-											<FileText className="size-4 shrink-0" />
-											<span>{t("menu.manifest")}</span>
-										</Link>
-									</MenubarItem>
 									<MenubarSeparator />
-									<MenubarItem onClick={openLogsDir} className="flex gap-2">
-										<Bug className="size-4 shrink-0" />
-										<span>{t("menu.logs")}</span>
+									<MenubarItem onClick={toggleSettings} className="flex gap-2">
+										<Cog className="size-4 shrink-0" />
+										<span>{t("menu.settings")}</span>
 									</MenubarItem>
 									<MenubarItem onClick={logout} className="flex gap-2">
 										<LogOut className="size-4 shrink-0" />

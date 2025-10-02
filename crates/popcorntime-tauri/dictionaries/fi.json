@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Kieli ja alue",
     "watchPreferences": "Katseluvalinnat",
-    "manifest": "Manifesti",
-    "logs": "Virhelokin kirjaus",
+    "settings": "Sovelluksen asetukset",
     "signOut": "Kirjaudu ulos"
+  },
+  "settings": {
+    "toast": "Asetuksesi on päivitetty onnistuneesti.",
+    "settings": "Asetukset",
+    "description": "Määritä sovelluskohtaisia asetuksia, kuten analytiikkaa, teemoja ja muita paikallisia mieltymyksiä.",
+    "analytics": "Analytiikka",
+    "analytics-description": "Lähetä anonyymeja käyttötietoja auttamaan sovelluksen parantamisessa ja kehityksen ohjaamisessa.",
+    "logs": "Lokit",
+    "logs-description": "Tarkastele sovelluksen lokitietoja virheenkorjaukseen ja vianmääritykseen.",
+    "open-logs": "Avata",
+    "update": "Päivitä asetukset",
+    "error": "Asetusten päivittäminen epäonnistui"
   },
   "preferences": {
     "preferences": "Asetukset",

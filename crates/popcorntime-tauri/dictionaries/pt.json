@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Idioma e região",
     "watchPreferences": "Preferências de visualização",
-    "manifest": "Manifesto",
-    "logs": "Registros de depuração",
+    "settings": "Configurações do aplicativo",
     "signOut": "Sair"
+  },
+  "settings": {
+    "toast": "Suas configurações foram atualizadas com sucesso.",
+    "settings": "Configurações",
+    "description": "Configure opções específicas do aplicativo como análises, temas e outras preferências locais.",
+    "analytics": "Analytics",
+    "analytics-description": "Envie dados de uso anônimos para ajudar a melhorar o aplicativo e orientar o desenvolvimento.",
+    "logs": "Registros",
+    "logs-description": "Visualizar logs do aplicativo para depuração e solução de problemas.",
+    "open-logs": "Abrir",
+    "update": "Configurações de atualização",
+    "error": "Falha ao atualizar as configurações"
   },
   "preferences": {
     "preferences": "Preferências",

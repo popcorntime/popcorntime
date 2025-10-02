@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Language & region",
     "watchPreferences": "Watch preferences",
-    "manifest": "Manifesto",
-    "logs": "Debug logs",
+    "settings": "App settings",
     "signOut": "Sign out"
+  },
+  "settings": {
+    "toast": "Your settings have been successfully updated.",
+    "settings": "Settings",
+    "description": "Configure app-specific options like analytics, themes, and other local preferences.",
+    "analytics": "Analytics",
+    "analytics-description": "Send anonymous usage data to help improve the app and guide development.",
+    "logs": "Logs",
+    "logs-description": "View application logs for debugging and troubleshooting.",
+    "open-logs": "Open",
+    "update": "Update settings",
+    "error": "Failed to update settings"
   },
   "preferences": {
     "preferences": "Preferences",

@@ -485,7 +485,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "es": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -973,7 +984,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "ar": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -1461,7 +1483,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "fa": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -1949,7 +1982,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "ur": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -2437,7 +2481,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "hi": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -2925,7 +2980,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "de": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -3413,7 +3479,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "nl": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -3901,7 +3978,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "sv": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -4389,7 +4477,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "ga": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -4877,7 +4976,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "fi": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -5365,7 +5475,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "he": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -5853,7 +5974,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "no": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -6341,7 +6473,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "da": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -6829,7 +6972,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "it": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -7317,7 +7471,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "ja": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -7805,7 +7970,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "pl": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -8293,7 +8469,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "tr": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -8781,7 +8968,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "et": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -9269,7 +9467,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "el": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -9757,7 +9966,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "pt": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -10245,7 +10465,18 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   },
   "sr": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -10733,6 +10964,17 @@
     "$['onboardingProviders']['selected']": "eef30365e9cc4bd8da360e251728fa69114d8cdf133b093249ee07223b2a7abb",
     "$['onboardingProviders']['noFound']": "dc3a0116c7c3d33dffde52310d11c2b039904039d5e13b4c915f621c7167ecf4",
     "$['onboardingPreferences']['showAll']": "ebd10fbf3cb038b4a7355c15c166c2deef946af74a1969b55f51faf5dc9cf501",
-    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4"
+    "$['onboardingProviders']['selectCountry']": "e19b22ef6d936dbebc4cdb5ca340aa74af6b18c5b10115959c640d85a600a9d4",
+    "$['menu']['settings']": "d43fb8a961ff2d1f037995587ed8883ac4b733ecaf1b0b74201123ada13df810",
+    "$['settings']['toast']": "36ffa4529bb50637e9f0d1e3d1c209ae8246236ea4e856d95ddcf993b5db4e2c",
+    "$['settings']['settings']": "74a883a037bc227f91891ab654a753d3a99f31ab06ae5b5d2b6e594a692b41f8",
+    "$['settings']['description']": "86095b212ba6d2fc7e54c102b3de1f62e698aee75939b54e12de918f6c060a5c",
+    "$['settings']['analytics']": "94c116ee118a72998db6cd10b586a9ef112a1891ff8ced8c7b2944ff62453b5f",
+    "$['settings']['analytics-description']": "b1cc043af19eedc5e22078ed0ef859091b321f0e2921ab915651e52c3ba42c8e",
+    "$['settings']['logs']": "ea2100dc89ae9fe21fa9b08ab1bf18662dca1e53a3eebd7d03afebcaf5d57515",
+    "$['settings']['logs-description']": "af971f78c75f6b9a8ae534b23a094723837e42415c1246923b746df5c80b84d7",
+    "$['settings']['open-logs']": "ed077f3d8125d60dca1979c7133601bd187d47c73ed9975028f677e49e709942",
+    "$['settings']['update']": "46ed69579c396feaa780e716e778b9dea387bebfe925e9d661ec6882c96525e9",
+    "$['settings']['error']": "63f6bf5375c13518fbc291863e4715083eeb5d50fa2c2aa00cdf3958267f693b"
   }
 }

@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Langue et région",
     "watchPreferences": "Préférences de visionnage",
-    "manifest": "Manifeste",
-    "logs": "Journaux de débogage",
+    "settings": "Paramètres de l'application",
     "signOut": "Se déconnecter"
+  },
+  "settings": {
+    "toast": "Vos paramètres ont été mis à jour avec succès.",
+    "settings": "Paramètres",
+    "description": "Configurez des options spécifiques à l'application comme les analyses, les thèmes et d'autres préférences locales.",
+    "analytics": "Analytique",
+    "analytics-description": "Envoyer des données d'utilisation anonymes pour aider à améliorer l'application et orienter son développement.",
+    "logs": "Journaux",
+    "logs-description": "Afficher les journaux de l'application pour le débogage et le dépannage.",
+    "open-logs": "Ouvrir",
+    "update": "Paramètres de mise à jour",
+    "error": "Échec de la mise à jour des paramètres"
   },
   "preferences": {
     "preferences": "Préférences",

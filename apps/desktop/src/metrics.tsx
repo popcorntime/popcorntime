@@ -4,30 +4,31 @@ import { useEffect } from "react";
 import { useGlobalStore } from "@/stores/global";
 
 export function MetricsProvider({ children }: React.PropsWithChildren) {
-	const allowAnalytics = useGlobalStore(s => s.settings.allowAnalytics);
-	const key = import.meta.env.VITE_PUBLIC_POSTHOG_KEY;
-	const host = import.meta.env.VITE_PUBLIC_POSTHOG_HOST;
+	const enableAnalytics = useGlobalStore(s => s.settings.enableAnalytics);
 
 	useEffect(() => {
-		posthog.init(key, {
-			api_host: host,
+		posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_KEY, {
+			api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
 			capture_pageview: true,
 			persistence: "localStorage",
 			opt_out_capturing_by_default: true,
 			disable_session_recording: true,
 			loaded: ph => {
-				if (allowAnalytics) ph.opt_in_capturing();
+				if (enableAnalytics) {
+					ph.opt_in_capturing();
+				}
 			},
 		});
-	}, [key, host]);
+	}, [enableAnalytics]);
 
 	useEffect(() => {
-		if (allowAnalytics) posthog.opt_in_capturing();
-		else {
+		if (enableAnalytics) {
+			posthog.opt_in_capturing();
+		} else {
 			posthog.opt_out_capturing();
 			posthog.reset();
 		}
-	}, [allowAnalytics]);
+	}, [enableAnalytics]);
 
 	return <PostHogProvider client={posthog}>{children}</PostHogProvider>;
 }

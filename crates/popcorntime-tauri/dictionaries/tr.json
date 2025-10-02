@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Dil ve bölge",
     "watchPreferences": "İzleme tercihleri",
-    "manifest": "Manifesto",
-    "logs": "Hata ayıklama günlükleri",
+    "settings": "Uygulama ayarları",
     "signOut": "Oturum kapat"
+  },
+  "settings": {
+    "toast": "Ayarlarınız başarıyla güncellendi.",
+    "settings": "Ayarlar",
+    "description": "Uygulamaya özgü seçenekleri, analitik, temalar ve diğer yerel tercihler gibi yapılandırın.",
+    "analytics": "Analitikler",
+    "analytics-description": "Uygulamayı geliştirmek ve geliştirme sürecine rehberlik etmek için anonim kullanım verilerini gönder.",
+    "logs": "Günlükler",
+    "logs-description": "Uygulama günlüklerini hata ayıklama ve sorun giderme için görüntüle.",
+    "open-logs": "Açık",
+    "update": "Ayarları güncelle",
+    "error": "Ayarlar güncellenemedi"
   },
   "preferences": {
     "preferences": "Tercihler",

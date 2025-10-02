@@ -5,13 +5,13 @@ import { Header } from "@/components/header";
 import { MediaDialog } from "@/components/modal/media";
 import { PreferencesDialog } from "@/components/modal/preferences";
 import { WatchPreferencesDialog } from "@/components/modal/watch-preferences";
+import { SettingsDialog } from "./components/modal/settings";
 
 export function DefaultLayout() {
 	return (
 		<>
 			<div className="absolute top-0 left-0 isolate z-40 h-14 w-full" data-tauri-drag-region></div>
 			<Outlet />
-			<PreferencesDialog />
 		</>
 	);
 }
@@ -35,6 +35,7 @@ export function BrowseLayout() {
 			<PreferencesDialog />
 			<WatchPreferencesDialog />
 			<MediaDialog />
+			<SettingsDialog />
 		</>
 	);
 }

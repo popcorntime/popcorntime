@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Sprog og region",
     "watchPreferences": "Seerpræferencer",
-    "manifest": "Manifest",
-    "logs": "Fejlretningslogfiler",
+    "settings": "App-indstillinger",
     "signOut": "Log ud"
+  },
+  "settings": {
+    "toast": "Dine indstillinger er blevet opdateret med succes.",
+    "settings": "Indstillinger",
+    "description": "Konfigurer app-specifikke indstillinger som analyser, temaer og andre lokale præferencer.",
+    "analytics": "Analyser",
+    "analytics-description": "Send anonyme brugsdata for at hjælpe med at forbedre appen og guide udviklingen.",
+    "logs": "Logfiler",
+    "logs-description": "Se applikationslogfiler for fejlfinding og problemløsning.",
+    "open-logs": "Åben",
+    "update": "Opdater indstillinger",
+    "error": "Kunne ikke opdatere indstillingerne"
   },
   "preferences": {
     "preferences": "Indstillinger",

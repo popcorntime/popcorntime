@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Lingua e regione",
     "watchPreferences": "Preferenze di visione",
-    "manifest": "Manifesto",
-    "logs": "Log di debug",
+    "settings": "Impostazioni dell'app",
     "signOut": "Esci"
+  },
+  "settings": {
+    "toast": "Le tue impostazioni sono state aggiornate con successo.",
+    "settings": "Impostazioni",
+    "description": "Configura opzioni specifiche dell'app come analisi, temi e altre preferenze locali.",
+    "analytics": "Analisi",
+    "analytics-description": "Invia dati di utilizzo anonimi per aiutare a migliorare l'app e guidare lo sviluppo.",
+    "logs": "Registri",
+    "logs-description": "Visualizza i registri dell'applicazione per il debug e la risoluzione dei problemi.",
+    "open-logs": "Aprire",
+    "update": "Aggiorna impostazioni",
+    "error": "Impossibile aggiornare le impostazioni"
   },
   "preferences": {
     "preferences": "Preferenze",

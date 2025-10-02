@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Språk och region",
     "watchPreferences": "Tittarinställningar",
-    "manifest": "Manifest",
-    "logs": "Felsökningsloggar",
+    "settings": "Appinställningar",
     "signOut": "Logga ut"
+  },
+  "settings": {
+    "toast": "Dina inställningar har uppdaterats framgångsrikt.",
+    "settings": "Inställningar",
+    "description": "Konfigurera app-specifika alternativ som analys, teman och andra lokala inställningar.",
+    "analytics": "Analys",
+    "analytics-description": "Skicka anonym användardata för att hjälpa till att förbättra appen och vägleda utvecklingen.",
+    "logs": "Loggar",
+    "logs-description": "Visa applikationsloggar för felsökning och avhjälpning.",
+    "open-logs": "Öppna",
+    "update": "Uppdatera inställningar",
+    "error": "Misslyckades med att uppdatera inställningarna"
   },
   "preferences": {
     "preferences": "Inställningar",

@@ -16,7 +16,6 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
 import { z } from "zod";
-import { useShallow } from "zustand/shallow";
 import { CountryPopover } from "@/components/popover/country";
 import { LanguagePopover } from "@/components/popover/language";
 import { useCountry } from "@/hooks/useCountry";
@@ -35,8 +34,7 @@ export function PreferencesDialog() {
 	const shouldOpen = useGlobalStore(state => state.dialogs.preferences.isOpen);
 	const togglePreferences = useGlobalStore(state => state.togglePreferences);
 
-	const preferences = useGlobalStore(useShallow(state => state.preferences));
-	const sessionStatus = useGlobalStore(state => state.session.status);
+	const preferences = useGlobalStore(state => state.preferences);
 	const [submitted, setSubmitted] = useState(false);
 	const { api } = useTauri();
 	const { t } = useTranslation();
@@ -47,8 +45,8 @@ export function PreferencesDialog() {
 	const form = useForm<AccountFormValues>({
 		resolver: zodResolver(accountFormSchema),
 		defaultValues: {
-			country: i18n.defaultCountry,
-			language: i18n.defaultLocale,
+			country: preferences.country ?? i18n.defaultCountry,
+			language: preferences.language ?? i18n.defaultLocale,
 		},
 	});
 
@@ -60,17 +58,6 @@ export function PreferencesDialog() {
 			}
 		};
 	}, [shouldOpen, hide]);
-
-	useEffect(() => {
-		if (sessionStatus === "ready") {
-			if (preferences.country) {
-				form.setValue("country", preferences.country);
-			}
-			if (preferences.language) {
-				form.setValue("language", preferences.language);
-			}
-		}
-	}, [form, preferences, sessionStatus]);
 
 	const onSubmit = useCallback(
 		(values: AccountFormValues) => {
@@ -106,7 +93,7 @@ export function PreferencesDialog() {
 		[submitted, api.updateUserPreferences, t, country, navigate, togglePreferences]
 	);
 
-	if (!sessionStatus || !shouldOpen) {
+	if (preferences.status !== "ready" || !shouldOpen) {
 		return null;
 	}
 

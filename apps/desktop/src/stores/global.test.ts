@@ -10,7 +10,7 @@ const setAllReady = () => {
 	s.providersSucceeded([]);
 	s.sessionSucceeded(true);
 	s.preferencesSucceeded({ country: "US", language: "en" });
-	s.settingsSucceeded({ onboarded: true });
+	s.settingsSucceeded({ onboardingComplete: true });
 };
 
 beforeEach(() => {
@@ -55,7 +55,7 @@ describe("boot & app flags", () => {
 	it("sets app booting", () => {
 		expect(useGlobalStore.getState().app.boot).toBe("cold");
 		useGlobalStore.getState().sessionSucceeded(false);
-		useGlobalStore.getState().settingsSucceeded({ onboarded: false });
+		useGlobalStore.getState().settingsSucceeded({ onboardingComplete: false });
 		expect(useGlobalStore.getState().app.boot).toBe("booting");
 	});
 

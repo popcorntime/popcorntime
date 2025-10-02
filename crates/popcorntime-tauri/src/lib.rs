@@ -4,4 +4,5 @@ pub mod event;
 pub mod graphql;
 pub mod logs;
 pub mod session;
+pub mod settings;
 pub mod window;

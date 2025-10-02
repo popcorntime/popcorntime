@@ -41,6 +41,7 @@ tauri-plugin-single-instance = { workspace = true, features = ["deep-link"] }
 popcorntime-session.workspace = true
 popcorntime-graphql-client.workspace = true
 popcorntime-error.workspace = true
+popcorntime-settings.workspace = true
 
 specta.workspace = true
 tauri-specta = { workspace = true, features = ["derive", "typescript"] }

@@ -3,6 +3,7 @@ use anyhow::Context;
 use popcorntime_error::Code;
 use popcorntime_graphql_client::client::ApiClient;
 use popcorntime_session::{AuthorizationService, SessionUpdateEvent};
+use popcorntime_settings::AppHandleSettingsExt;
 use popcorntime_tauri::event::{SessionServerReady, SessionUpdate};
 #[cfg(debug_assertions)]
 use specta_typescript::Typescript;
@@ -23,11 +24,11 @@ fn main() {
       popcorntime_tauri::graphql::set_favorites_multiple_providers,
       popcorntime_tauri::graphql::set_media_reaction,
       popcorntime_tauri::window::show_main_window,
-      popcorntime_tauri::session::is_onboarded,
-      popcorntime_tauri::session::set_onboarded,
       popcorntime_tauri::session::validate,
       popcorntime_tauri::session::logout,
       popcorntime_tauri::session::initialize_session_authorization,
+      popcorntime_tauri::settings::settings,
+      popcorntime_tauri::settings::update_settings,
     ])
     .events(collect_events![SessionServerReady, SessionUpdate]);
 
@@ -77,18 +78,21 @@ fn main() {
             (
               paths.app_data_dir().expect("missing app data dir"),
               paths.app_cache_dir().expect("missing app cache dir"),
-              paths.config_dir().expect("missing config dir"),
+              paths.app_config_dir().expect("missing config dir"),
             )
           };
 
           std::fs::create_dir_all(&app_data_dir).expect("failed to create app data dir");
           std::fs::create_dir_all(&app_cache_dir).expect("failed to create cache dir");
-          let config_dir = config_dir.join(app_handle.config().identifier.as_str());
           std::fs::create_dir_all(&config_dir).expect("failed to create config dir");
 
           tracing::info!(version = %app_handle.package_info().version,
                                    name = %app_handle.package_info().name, "starting app");
 
+          // initialize settings (load in state)
+          app_handle.settings_load_in_state()?;
+
+          // auth service
           let auth_service =
             AuthorizationService::new(&config_dir, app_handle.config().identifier.as_str())?;
           app_handle.manage(ApiClient::new(auth_service.try_access_token())?);
@@ -109,6 +113,7 @@ fn main() {
             },
           )?;
 
+          // deep links
           let app_handle_isolated = app_handle.clone();
           app.deep_link().on_open_url(move |event| {
             tracing::info!(

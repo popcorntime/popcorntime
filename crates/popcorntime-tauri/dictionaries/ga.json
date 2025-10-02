@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Teanga & réigiún",
     "watchPreferences": "Roghanna féachana",
-    "manifest": "Manifiosta",
-    "logs": "Loga dífhabhtacha",
+    "settings": "Socruithe Aipe",
     "signOut": "Logáil amach"
+  },
+  "settings": {
+    "toast": "Tá do shocruithe nuashonraithe go rathúil.",
+    "settings": "Socruithe",
+    "description": "Cumraigh roghanna ar leith don aip cosúil le hanailísíocht, téamaí, agus roghanna áitiúla eile.",
+    "analytics": "Anailís",
+    "analytics-description": "Seol sonraí úsáide gan ainm chun cabhrú leis an aip a fheabhsú agus forbairt a threorú.",
+    "logs": "Logaí",
+    "logs-description": "Féach ar logaí feidhmchláir chun dífhabhtú agus fabhtcheartú a dhéanamh.",
+    "open-logs": "Oscail",
+    "update": "Nuashonraigh socruithe",
+    "error": "Theip ar shocruithe a nuashonrú"
   },
   "preferences": {
     "preferences": "Roghanna",

@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Idioma y región",
     "watchPreferences": "Preferencias de visualización",
-    "manifest": "Manifiesto",
-    "logs": "Registros de depuración",
+    "settings": "Configuración de la aplicación",
     "signOut": "Cerrar sesión"
+  },
+  "settings": {
+    "toast": "Tus configuraciones se han actualizado correctamente.",
+    "settings": "Configuración",
+    "description": "Configura opciones específicas de la aplicación como analíticas, temas y otras preferencias locales.",
+    "analytics": "Analíticas",
+    "analytics-description": "Enviar datos de uso anónimos para ayudar a mejorar la aplicación y guiar su desarrollo.",
+    "logs": "Registros",
+    "logs-description": "Ver registros de la aplicación para depuración y resolución de problemas.",
+    "open-logs": "Abierto",
+    "update": "Configuración de actualización",
+    "error": "Error al actualizar la configuración"
   },
   "preferences": {
     "preferences": "Preferencias",

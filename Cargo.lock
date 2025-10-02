@@ -3731,6 +3731,13 @@ dependencies = [
 [[package]]
 name = "popcorntime-settings"
 version = "0.0.1"
+dependencies = [
+ "anyhow",
+ "serde",
+ "specta",
+ "tauri",
+ "toml 0.9.7",
+]
 
 [[package]]
 name = "popcorntime-tauri"
@@ -3744,6 +3751,7 @@ dependencies = [
  "popcorntime-error",
  "popcorntime-graphql-client",
  "popcorntime-session",
+ "popcorntime-settings",
  "popcorntime-tauri-splash",
  "serde",
  "serde_json",

@@ -38,7 +38,7 @@ describe("SplashRoute", () => {
 	it("shows Splash while boot is not initialized", async () => {
 		useGlobalStore.setState(s => {
 			s.app.boot = "cold";
-			s.settings.onboarded = false;
+			s.settings.onboardingComplete = false;
 			s.session.isActive = false;
 		});
 
@@ -54,7 +54,7 @@ describe("SplashRoute", () => {
 	it("redirects to onboarding when not onboarded", async () => {
 		useGlobalStore.setState(s => {
 			s.app.boot = "booted";
-			s.settings.onboarded = false;
+			s.settings.onboardingComplete = false;
 		});
 
 		const r = renderWithRouter("/");
@@ -69,7 +69,7 @@ describe("SplashRoute", () => {
 	it("redirects to login when onboarded but session is not active", async () => {
 		useGlobalStore.setState(s => {
 			s.app.boot = "booted";
-			s.settings.onboarded = true;
+			s.settings.onboardingComplete = true;
 		});
 
 		const r = renderWithRouter("/");
@@ -84,7 +84,7 @@ describe("SplashRoute", () => {
 	it("shows splash when active but app not initialized", async () => {
 		useGlobalStore.setState(s => {
 			s.app.boot = "booting";
-			s.settings.onboarded = true;
+			s.settings.onboardingComplete = true;
 			s.session.isActive = true;
 			// missing providers
 		});
@@ -102,7 +102,7 @@ describe("SplashRoute", () => {
 		useGlobalStore.setState(s => {
 			s.app.boot = "booted";
 			// prevent onboarding
-			s.settings.onboarded = true;
+			s.settings.onboardingComplete = true;
 			// prevent login
 			s.session.isActive = true;
 			s.preferences.country = "CA";
@@ -119,7 +119,7 @@ describe("SplashRoute", () => {
 	it("reacts when app initialization flips", async () => {
 		useGlobalStore.setState(s => {
 			s.app.boot = "cold";
-			s.settings.onboarded = true;
+			s.settings.onboardingComplete = true;
 		});
 
 		const r = renderWithRouter("/");

@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "言語と地域",
     "watchPreferences": "視聴設定",
-    "manifest": "マニフェスト",
-    "logs": "デバッグログ",
+    "settings": "アプリ設定",
     "signOut": "ログアウト"
+  },
+  "settings": {
+    "toast": "設定が正常に更新されました。",
+    "settings": "設定",
+    "description": "アプリ固有のオプションを設定して、分析、テーマ、その他のローカル設定を調整します。",
+    "analytics": "アナリティクス",
+    "analytics-description": "アプリを改善し、開発を進めるために匿名の使用データを送信します。",
+    "logs": "ログ",
+    "logs-description": "デバッグおよびトラブルシューティングのためにアプリケーションログを表示します。",
+    "open-logs": "開ける",
+    "update": "設定を更新する",
+    "error": "設定の更新に失敗しました"
   },
   "preferences": {
     "preferences": "設定",

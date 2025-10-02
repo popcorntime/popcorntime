@@ -12,8 +12,8 @@ export function SettingsLoaderMount() {
 		const { settingsRequested, settingsSucceeded, settingsFailed } = useGlobalStore.getState();
 		settingsRequested();
 		api
-			.isOnboarded()
-			.then(onboarded => settingsSucceeded({ onboarded }))
+			.settings()
+			.then(settings => settingsSucceeded(settings))
 			.catch(settingsFailed);
 	}, [api, status]);
 

@@ -8,7 +8,7 @@ import { subscribeWithSelector } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
 import { isTauriError, type TauriError } from "@/hooks/useTauri";
 import { devtools } from "@/stores/devtools";
-import type { Provider, SearchArguments, SortKey } from "@/tauri/types";
+import type { Provider, SearchArguments, Settings, SortKey } from "@/tauri/types";
 
 export type SortOrder = "ASC" | "DESC";
 type UpdateProgress = "downloading" | "downloaded" | "installing" | "installed";
@@ -33,11 +33,10 @@ interface PreferencesState {
 	error?: TauriError;
 }
 
-interface SettingsState {
+type SettingsState = {
 	status: Status;
-	onboarded: boolean;
 	error?: TauriError;
-}
+} & Settings;
 
 interface ProvidersState {
 	status: Status;
@@ -72,9 +71,14 @@ interface DialogWatchPreferencesState {
 	isOpen: boolean;
 }
 
+interface DialogSettingsState {
+	isOpen: boolean;
+}
+
 interface DialogsState {
 	media: DialogMediaState;
 	preferences: DialogPreferencesState;
+	settings: DialogSettingsState;
 	watchPreferences: DialogWatchPreferencesState;
 }
 
@@ -120,7 +124,7 @@ interface GlobalMutations {
 	preferencesFailed(err: unknown): void;
 
 	settingsRequested(): void;
-	settingsSucceeded(partial?: { onboarded?: boolean }): void;
+	settingsSucceeded(settings: Settings): void;
 	settingsFailed(err: unknown): void;
 
 	providersRequested(): void;
@@ -135,6 +139,7 @@ interface GlobalMutations {
 	closeMedia(): void;
 	togglePreferences(): void;
 	toggleWatchPreferences(): void;
+	toggleSettings(): void;
 
 	browseUpdate: (input: BrowseUpdateInput) => void;
 	togglePreferFavorites: () => void;
@@ -154,7 +159,8 @@ export const useGlobalStore = create<GlobalState & GlobalMutations>()(
 				},
 				settings: {
 					status: "idle",
-					onboarded: false,
+					enableAnalytics: false,
+					onboardingComplete: false,
 				},
 				preferences: {
 					status: "idle",
@@ -173,6 +179,9 @@ export const useGlobalStore = create<GlobalState & GlobalMutations>()(
 
 				dialogs: {
 					media: {
+						isOpen: false,
+					},
+					settings: {
 						isOpen: false,
 					},
 					preferences: {
@@ -239,12 +248,12 @@ export const useGlobalStore = create<GlobalState & GlobalMutations>()(
 						state.settings.error = undefined;
 					}),
 
-				settingsSucceeded: (partial?: { onboarded?: boolean }) =>
+				settingsSucceeded: (settings: Settings) =>
 					set(state => {
 						state.settings.status = "ready";
 						state.settings = {
 							...state.settings,
-							...partial,
+							...settings,
 						};
 					}),
 
@@ -376,6 +385,11 @@ export const useGlobalStore = create<GlobalState & GlobalMutations>()(
 				togglePreferFavorites: () =>
 					set(state => {
 						state.browse.preferFavorites = !state.browse.preferFavorites;
+					}),
+
+				toggleSettings: () =>
+					set(state => {
+						state.dialogs.settings.isOpen = !state.dialogs.settings.isOpen;
 					}),
 			}))
 		),

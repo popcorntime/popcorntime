@@ -5,7 +5,7 @@ import { useGlobalStore } from "@/stores/global";
 
 export function SplashRoute() {
 	const appBoot = useGlobalStore(s => s.app.boot);
-	const onboarded = useGlobalStore(s => s.settings.onboarded);
+	const onboarded = useGlobalStore(s => s.settings.onboardingComplete);
 	const isActive = useGlobalStore(s => s.session.isActive);
 	const preferredCountry = useGlobalStore(s => s.preferences.country);
 	const initialRedirectAttempted = useRef(false);

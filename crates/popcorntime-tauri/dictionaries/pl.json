@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Język i region",
     "watchPreferences": "Preferencje oglądania",
-    "manifest": "Manifest",
-    "logs": "Dzienniki debugowania",
+    "settings": "Ustawienia aplikacji",
     "signOut": "Wyloguj się"
+  },
+  "settings": {
+    "toast": "Twoje ustawienia zostały pomyślnie zaktualizowane.",
+    "settings": "Ustawienia",
+    "description": "Skonfiguruj opcje specyficzne dla aplikacji, takie jak analityka, motywy i inne preferencje lokalne.",
+    "analytics": "Analityka",
+    "analytics-description": "Wyślij anonimowe dane użytkowania, aby pomóc w ulepszaniu aplikacji i kierować jej rozwojem.",
+    "logs": "Dzienniki",
+    "logs-description": "Zobacz dzienniki aplikacji w celu debugowania i rozwiązywania problemów.",
+    "open-logs": "Otwarte",
+    "update": "Zaktualizuj ustawienia",
+    "error": "Nie udało się zaktualizować ustawień"
   },
   "preferences": {
     "preferences": "Preferencje",

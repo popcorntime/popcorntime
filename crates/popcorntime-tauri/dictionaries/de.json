@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Sprache & Region",
     "watchPreferences": "Sehgewohnheiten",
-    "manifest": "Manifest",
-    "logs": "Debug-Protokolle",
+    "settings": "App-Einstellungen",
     "signOut": "Abmelden"
+  },
+  "settings": {
+    "toast": "Ihre Einstellungen wurden erfolgreich aktualisiert.",
+    "settings": "Einstellungen",
+    "description": "Konfigurieren Sie app-spezifische Optionen wie Analysen, Themen und andere lokale Einstellungen.",
+    "analytics": "Analytik",
+    "analytics-description": "Sende anonyme Nutzungsdaten, um die App zu verbessern und die Entwicklung zu steuern.",
+    "logs": "Protokolle",
+    "logs-description": "Anwendungsprotokolle zur Fehlerbehebung und Fehlersuche anzeigen.",
+    "open-logs": "Offen",
+    "update": "Einstellungen aktualisieren",
+    "error": "Aktualisierung der Einstellungen fehlgeschlagen"
   },
   "preferences": {
     "preferences": "Einstellungen",

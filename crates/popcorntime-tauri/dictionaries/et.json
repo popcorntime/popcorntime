@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Keel ja piirkond",
     "watchPreferences": "Vaatamise eelistused",
-    "manifest": "Manifesto",
-    "logs": "Logid",
+    "settings": "Rakenduse seaded",
     "signOut": "Logi välja"
+  },
+  "settings": {
+    "toast": "Seerotaatewochin keffilachehu.",
+    "settings": "አቀማመጦች",
+    "description": "የመተግበሪያ ልዩ አማራጮችን እንደ ትንታኔዎች፣ ገጽታዎች እና ሌሎች አካባቢ ተመሳሳይ ቅድመ አላባት ያቀናብሩ።",
+    "analytics": "Analüüsid",
+    "analytics-description": "Saada anonüümset kasutusandmeid, et aidata rakenduse täiustamisel ja arenduse suunamisel.",
+    "logs": "Logid",
+    "logs-description": "Rakibata galmee raawwii barnootaa fi rakkoo hiikuu ilaaluu.",
+    "open-logs": "Avatud",
+    "update": "አማራጮችን አዘምን",
+    "error": "ቅኝቱን ማሻሻል አልተቻለም"
   },
   "preferences": {
     "preferences": "ቅደም ተከተል፦",

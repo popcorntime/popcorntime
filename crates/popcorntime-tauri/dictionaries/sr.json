@@ -43,9 +43,20 @@
   "menu": {
     "preferences": "Језик и регион",
     "watchPreferences": "Preferencije gledanja",
-    "manifest": "Manifest",
-    "logs": "Дебаг логови",
+    "settings": "Podešavanja aplikacije",
     "signOut": "Odjavi se"
+  },
+  "settings": {
+    "toast": "Vaša podešavanja su uspešno ažurirana.",
+    "settings": "Podešavanja",
+    "description": "Konfigurišite opcije specifične za aplikaciju kao što su analitika, teme i druge lokalne postavke.",
+    "analytics": "Analitika",
+    "analytics-description": "Pošaljite anonimne podatke o korišćenju kako biste pomogli u poboljšanju aplikacije i usmeravanju razvoja.",
+    "logs": "Дневници",
+    "logs-description": "Pregledajte logove aplikacije za otklanjanje grešaka i rešavanje problema.",
+    "open-logs": "Отворено",
+    "update": "Ажурирање подешавања",
+    "error": "Nije uspelo ažuriranje podešavanja"
   },
   "preferences": {
     "preferences": "Preferencije",

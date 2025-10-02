@@ -36,20 +36,6 @@ pub async fn validate(service: State<'_, AuthorizationService>) -> Result<(), Er
 #[tauri::command(async)]
 #[specta::specta]
 #[instrument(skip(service), err(Debug))]
-pub async fn is_onboarded(service: State<'_, AuthorizationService>) -> Result<bool, Error> {
-  service.is_onboarded().map_err(Into::into)
-}
-
-#[tauri::command(async)]
-#[specta::specta]
-#[instrument(skip(service), err(Debug))]
-pub async fn set_onboarded(service: State<'_, AuthorizationService>) -> Result<(), Error> {
-  service.set_onboarded(true).map_err(Into::into)
-}
-
-#[tauri::command(async)]
-#[specta::specta]
-#[instrument(skip(service), err(Debug))]
 pub async fn logout(service: State<'_, AuthorizationService>) -> Result<(), Error> {
   service.logout().await.map_err(Into::into)
 }
