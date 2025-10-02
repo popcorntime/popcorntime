@@ -69,6 +69,7 @@ describe("SplashRoute", () => {
 	it("redirects to login when onboarded but session is not active", async () => {
 		useGlobalStore.setState(s => {
 			s.app.boot = "booted";
+			s.session.status = "ready";
 			s.settings.onboardingComplete = true;
 		});
 

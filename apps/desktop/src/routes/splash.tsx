@@ -1,12 +1,13 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
+import { useShallow } from "zustand/shallow";
 import { SplashScreen } from "@/components/splash-screen";
 import { useGlobalStore } from "@/stores/global";
 
 export function SplashRoute() {
 	const appBoot = useGlobalStore(s => s.app.boot);
 	const onboarded = useGlobalStore(s => s.settings.onboardingComplete);
-	const isActive = useGlobalStore(s => s.session.isActive);
+	const { isActive, status: sessionStatus } = useGlobalStore(useShallow(s => s.session));
 	const preferredCountry = useGlobalStore(s => s.preferences.country);
 	const initialRedirectAttempted = useRef(false);
 	const navigate = useNavigate();
@@ -29,12 +30,13 @@ export function SplashRoute() {
 				}
 			}
 		} else {
-			if (!initialRedirectAttempted.current) {
+			// make sure session is fully loaded
+			if (!initialRedirectAttempted.current && sessionStatus === "ready") {
 				initialRedirectAttempted.current = true;
 				navigate("/login", { flushSync: true });
 			}
 		}
-	}, [appBoot, onboarded, isActive, navigate, preferredCountry]);
+	}, [appBoot, onboarded, isActive, navigate, preferredCountry, sessionStatus]);
 
 	return <SplashScreen />;
 }
