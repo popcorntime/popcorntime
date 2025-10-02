@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router";
+import { useShallow } from "zustand/shallow";
 import { SplashScreen } from "@/components/splash-screen";
 import { useGlobalStore } from "@/stores/global";
-import { useShallow } from "zustand/shallow";
 
 export function SplashRoute() {
 	const appBoot = useGlobalStore(s => s.app.boot);
