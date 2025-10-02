@@ -12,31 +12,31 @@
     "load-more": "Daha fazla yükle",
     "populars": "Popülerler",
     "movies": "Filmler",
-    "tv-shows": "TV Dizileri"
+    "tv-shows": "Diziler"
   },
   "sidebar": {
     "back": "Geri dön",
-    "charts": "Çizelgeler {{inCountry}}"
+    "charts": "Grafikler {{inCountry}}"
   },
   "media": {
     "free": "Özgür",
     "movie": "Film",
-    "tv-show": "TV Dizisi"
+    "tv-show": "Dizi"
   },
   "mediaQuickActions": {
-    "watch-on": "{{platform}}'da İzle",
+    "watch-on": "{{platform}} üzerinden izle",
     "rent-on": "{{platform}} üzerinde kirala",
-    "buy-on": "{{platform}}'da satın al",
+    "buy-on": "{{platform}} üzerinden satın al",
     "buy-rent-on": "{{platform}} üzerinden satın al veya kirala",
-    "free-on": "{{platform}} üzerinde ücretsiz izle"
+    "free-on": "{{platform}}'da Ücretsiz İzle"
   },
   "commandCenter": {
-    "home": "Ana sayfaya dön"
+    "home": "Ana ekrana dön"
   },
   "search": {
     "search": "Ara",
     "results": "Sonuçlar",
-    "viewAll": "Tümünü Görüntüle",
+    "viewAll": "Tümünü görüntüle",
     "noResults": "Sonuç bulunamadı",
     "placeholder": "Ara..."
   },
@@ -44,16 +44,16 @@
     "preferences": "Dil ve bölge",
     "watchPreferences": "İzleme tercihleri",
     "settings": "Uygulama ayarları",
-    "signOut": "Oturum kapat"
+    "signOut": "Oturumu kapat"
   },
   "settings": {
     "toast": "Ayarlarınız başarıyla güncellendi.",
     "settings": "Ayarlar",
-    "description": "Uygulamaya özgü seçenekleri, analitik, temalar ve diğer yerel tercihler gibi yapılandırın.",
+    "description": "Uygulamaya özel seçenekleri, analizler, temalar ve diğer yerel tercihleri gibi ayarları yapılandırın.",
     "analytics": "Analitikler",
-    "analytics-description": "Uygulamayı geliştirmek ve geliştirme sürecine rehberlik etmek için anonim kullanım verilerini gönder.",
+    "analytics-description": "Uygulamayı geliştirmeye ve gelişimi yönlendirmeye yardımcı olmak için anonim kullanım verilerini gönder.",
     "logs": "Günlükler",
-    "logs-description": "Uygulama günlüklerini hata ayıklama ve sorun giderme için görüntüle.",
+    "logs-description": "Uygulama günlüklerini hata ayıklama ve sorun giderme için görüntüleyin.",
     "open-logs": "Açık",
     "update": "Ayarları güncelle",
     "error": "Ayarlar güncellenemedi"
@@ -61,46 +61,46 @@
   "preferences": {
     "preferences": "Tercihler",
     "description": "Tercih ettiğiniz dili ve ülkeyi seçerek size özel içeriklerin keyfini çıkarın.",
-    "update": "Tercihleri güncelle",
+    "update": "Tercihleri Güncelle",
     "error": "Tercihler güncellenemedi",
     "signOut": "Oturumu kapat",
     "toast": "Tercihleriniz başarıyla güncellendi.",
     "language": "Dil",
-    "language-description": "Seçtiğiniz dile göre içerik ve uygulama arayüzü uyarlanacaktır.",
+    "language-description": "Seçtiğiniz dile göre içerik ve uygulama arayüzü uyum sağlayacaktır.",
     "country": "Ülke",
     "country-description": "Ülkenizi ayarlayarak içerik önerilerini kişiselleştirin ve deneyiminizi özelleştirin."
   },
   "watchPreferences": {
     "label": "İzleme Tercihleri",
-    "description": "Bize nerede izlemeyi sevdiğinizi söyleyin ki sizin için doğru seçenekleri vurgulayabilelim.",
-    "update": "Tercihleri güncelle",
+    "description": "Nerede izlemeyi sevdiğinizi bize söyleyin, böylece sizin için doğru seçenekleri vurgulayabilelim.",
+    "update": "İzleme tercihlerini güncelle",
     "toast": "İzleme tercihlerin başarıyla güncellendi.",
-    "add": "Eklemek",
+    "add": "Ekle",
     "remove": "Kaldır"
   },
   "onboardingPreferences": {
     "countryTitle": "Ülkenizi seçin",
-    "countryDescription": "Ülkenizi seçerek mevcut dilleri görün",
-    "languageTitle": "Dilinizi seçin",
-    "languageDescription": "Arayüz dilinizi seçin ve {{inCountry}} içeriği öncelikli hale getirin",
+    "countryDescription": "Ülkenizi seçin, mevcut dilleri görün.",
+    "languageTitle": "Dilini seç",
+    "languageDescription": "Arayüz dilinizi seçin ve içeriği {{inCountry}} önceliklendirin.",
     "changeCountry": "Ülkeyi değiştir",
     "default": "Varsayılan yerel ayar",
     "showAll": "Tüm dilleri göster"
   },
   "onboardingProviders": {
     "title": "Akış hizmetlerinizi seçin",
-    "description": "Hangi platformlara erişiminiz olduğunu seçin, böylece size ne izlemeniz gerektiğini gösterebiliriz.",
-    "searchPlaceholder": "Sağlayıcıları ara...",
+    "description": "Hangi platformlara erişiminiz olduğunu seçin, böylece size ne izleyeceğinizi gösterebiliriz.",
+    "searchPlaceholder": "Sağlayıcılar aranıyor...",
     "category": {
       "popular": "Popüler",
-      "free": "Özgür",
+      "free": "Ücretsiz",
       "subscription": "Abonelik",
-      "all": "Tüm"
+      "all": "Hepsi"
     },
-    "skip": "Daha sonra yaparım",
+    "skip": "Daha sonra yapacağım",
     "continue": "Devam Et",
     "selectCountry": "Ülkeyi değiştir",
-    "clearAll": "Hepsini Temizle",
+    "clearAll": "Tümünü temizle",
     "clearSearch": "Aramayı temizle",
     "selected": "{{count}} sağlayıcı seçildi",
     "noFound": "\"{{query}}\" için sağlayıcı bulunamadı"
@@ -113,26 +113,26 @@
     "rent": "Kira"
   },
   "update": {
-    "available": "Popcorn Time {{version}} mevcut...",
+    "available": "Popcorn Time {{version}} kullanılabilir...",
     "downloading": "Güncelleme indiriliyor...",
     "downloaded": "Güncelleme indirildi...",
     "installing": "Güncelleme yükleniyor...",
     "installed": "Uygulamayı güncellemeyi uygulamak için yeniden başlatın",
     "install": "Yükle",
     "relaunch": "Yeniden Başlat",
-    "error": "Güncellemeyi yükleme başarısız oldu"
+    "error": "Güncelleme yüklenemedi"
   },
   "ranking": {
-    "pt-title": "Belirli bir ülkedeki medyanın ne kadar iyi yankı bulduğunu yansıtan ülkeye özgü bir derecelendirme.",
-    "pt-desc": "Daha yüksek puanlar, hem yüksek puan alan hem de kolayca erişilebilen içeriği yansıtır. 90/100 puanı, popüler ve yaygın olarak mevcut olan en kaliteli içeriği gösterir. Puanlar, bölgesel tercihlerin değişimine ayak uydurmak için günlük olarak güncellenir."
+    "pt-title": "{{inCountry}}'de bir medya ne kadar iyi yankı bulduğunu yansıtan ülkeye özgü bir derecelendirme.",
+    "pt-desc": "Daha yüksek puanlar, hem yüksek puan alan hem de kolay erişilebilir içeriği yansıtır. 90/100 puanı, popüler ve geniş çapta erişilebilir, üst düzey kalitede içeriği gösterir. Puanlar, değişen bölgesel tercihlere uyum sağlamak için günlük olarak güncellenir."
   },
   "sortBy": {
     "label": "Sırala",
     "popularity": "Popülerlik",
-    "updated": "Güncellendi"
+    "updated": "Güncellenen"
   },
   "mediaActions": {
-    "open": "Açık"
+    "open": "Aç"
   },
   "mediaTabs": {
     "links": "Bağlantılar",
@@ -148,18 +148,18 @@
     "DOCUMENTARY": "Belgesel",
     "DRAMA": "Dram",
     "FAMILY": "Aile",
-    "FANTASY": "Fantezi",
-    "HISTORY": "Tarih",
+    "FANTASY": "Fantastik",
+    "HISTORY": "Tarihçe",
     "HORROR": "Korku",
     "MUSIC": "Müzik",
     "MYSTERY": "Gizem",
     "OTHER": "Diğer",
-    "ROMANCE": "Romantizm",
-    "SCIENCE_FICTION": "Bilimkurgu",
+    "ROMANCE": "Romantik",
+    "SCIENCE_FICTION": "Bilim Kurgu",
     "THRILLER": "Gerilim",
     "TV_MOVIE": "TV Filmi",
     "WAR": "Savaş",
-    "WESTERN": "Batılı"
+    "WESTERN": "Western"
   },
   "country": {
     "ad": "Andora",

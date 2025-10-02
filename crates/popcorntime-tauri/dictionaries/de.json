@@ -10,35 +10,35 @@
   "browse": {
     "loading": "Laden...",
     "load-more": "Mehr laden",
-    "populars": "Beliebt",
+    "populars": "Beliebte Filme und Serien",
     "movies": "Filme",
-    "tv-shows": "TV-Serien"
+    "tv-shows": "Serien"
   },
   "sidebar": {
-    "back": "Zurück gehen",
+    "back": "Zurück",
     "charts": "Charts {{inCountry}}"
   },
   "media": {
     "free": "Frei",
     "movie": "Film",
-    "tv-show": "Fernsehserie"
+    "tv-show": "Serie"
   },
   "mediaQuickActions": {
     "watch-on": "Auf {{platform}} ansehen",
-    "rent-on": "Auf {{platform}} mieten",
-    "buy-on": "Auf {{platform}} kaufen",
+    "rent-on": "Mieten auf {{platform}}",
+    "buy-on": "Kaufen auf {{platform}}",
     "buy-rent-on": "Kaufen oder mieten auf {{platform}}",
     "free-on": "Kostenlos ansehen auf {{platform}}"
   },
   "commandCenter": {
-    "home": "Zurück zur Startseite"
+    "home": "Zurück zum Hauptbildschirm"
   },
   "search": {
     "search": "Suche",
     "results": "Ergebnisse",
-    "viewAll": "Alle ansehen",
+    "viewAll": "Alle anzeigen",
     "noResults": "Keine Ergebnisse",
-    "placeholder": "Suche..."
+    "placeholder": "Suchen..."
   },
   "menu": {
     "preferences": "Sprache & Region",
@@ -47,40 +47,40 @@
     "signOut": "Abmelden"
   },
   "settings": {
-    "toast": "Ihre Einstellungen wurden erfolgreich aktualisiert.",
+    "toast": "Deine Einstellungen wurden erfolgreich aktualisiert.",
     "settings": "Einstellungen",
     "description": "Konfigurieren Sie app-spezifische Optionen wie Analysen, Themen und andere lokale Einstellungen.",
     "analytics": "Analytik",
-    "analytics-description": "Sende anonyme Nutzungsdaten, um die App zu verbessern und die Entwicklung zu steuern.",
+    "analytics-description": "Sende anonyme Nutzungsdaten, um die App zu verbessern und die Entwicklung zu unterstützen.",
     "logs": "Protokolle",
-    "logs-description": "Anwendungsprotokolle zur Fehlerbehebung und Fehlersuche anzeigen.",
+    "logs-description": "Anwendungsprotokolle zur Fehlersuche und Problemlösung anzeigen.",
     "open-logs": "Offen",
     "update": "Einstellungen aktualisieren",
-    "error": "Aktualisierung der Einstellungen fehlgeschlagen"
+    "error": "Fehler beim Aktualisieren der Einstellungen"
   },
   "preferences": {
     "preferences": "Einstellungen",
-    "description": "Wählen Sie Ihre bevorzugte Sprache und Ihr Land aus, um maßgeschneiderte Inhalte zu genießen.",
+    "description": "Wählen Sie Ihre bevorzugte Sprache und Ihr Land, um maßgeschneiderte Inhalte zu genießen.",
     "update": "Einstellungen aktualisieren",
     "error": "Fehler beim Aktualisieren der Einstellungen",
     "signOut": "Abmelden",
-    "toast": "Ihre Einstellungen wurden erfolgreich aktualisiert.",
+    "toast": "Deine Einstellungen wurden erfolgreich aktualisiert.",
     "language": "Sprache",
-    "language-description": "Der Inhalt und die Benutzeroberfläche der Anwendung passen sich an die von Ihnen ausgewählte Sprache an.",
+    "language-description": "Inhalt und Anwendungsoberfläche passen sich an die von Ihnen ausgewählte Sprache an.",
     "country": "Land",
-    "country-description": "Stellen Sie Ihr Land ein, um Inhaltempfehlungen zu personalisieren und Ihr Erlebnis anzupassen."
+    "country-description": "Stellen Sie Ihr Land ein, um Inhaltsvorschläge zu personalisieren und Ihr Erlebnis anzupassen."
   },
   "watchPreferences": {
-    "label": "Seheinstellungen",
-    "description": "Sag uns, wo du gerne schaust, damit wir die richtigen Optionen für dich hervorheben können.",
-    "update": "Einstellungen aktualisieren",
-    "toast": "Ihre Anzeigeeinstellungen wurden erfolgreich aktualisiert.",
+    "label": "Sehgewohnheiten",
+    "description": "Sag uns, wo du gerne schaust, damit wir dir die passenden Optionen hervorheben können.",
+    "update": "Aktualisiere Einstellungen",
+    "toast": "Ihre Wiedergabepräferenzen wurden erfolgreich aktualisiert.",
     "add": "Hinzufügen",
     "remove": "Entfernen"
   },
   "onboardingPreferences": {
-    "countryTitle": "Wählen Sie Ihr Land",
-    "countryDescription": "Wähle dein Land, um verfügbare Sprachen zu sehen",
+    "countryTitle": "Wähle dein Land aus",
+    "countryDescription": "Wählen Sie Ihr Land aus, um verfügbare Sprachen anzuzeigen.",
     "languageTitle": "Sprache auswählen",
     "languageDescription": "Wählen Sie Ihre Schnittstellensprache und priorisieren Sie Inhalte {{inCountry}}",
     "changeCountry": "Land ändern",
@@ -88,20 +88,20 @@
     "showAll": "Alle Sprachen anzeigen"
   },
   "onboardingProviders": {
-    "title": "Wähle deine Streamingdienste aus",
-    "description": "Wähle die Plattformen aus, auf die du Zugriff hast, damit wir dir zeigen können, was du anschauen kannst.",
-    "searchPlaceholder": "Suchanbieter durchsuchen...",
+    "title": "Wählen Sie Ihre Streaming-Dienste aus",
+    "description": "Wähle die Plattformen, auf die du Zugriff hast, damit wir dir zeigen können, was du anschauen kannst.",
+    "searchPlaceholder": "Suchanbieter suchen...",
     "category": {
       "popular": "Beliebt",
-      "free": "Frei",
+      "free": "Kostenlos",
       "subscription": "Abonnement",
       "all": "Alle"
     },
-    "skip": "Ich mache es später.",
-    "continue": "Fortfahren",
+    "skip": "Ich mach's später.",
+    "continue": "Weiter",
     "selectCountry": "Land ändern",
     "clearAll": "Alles löschen",
-    "clearSearch": "Suche löschen",
+    "clearSearch": "Suchanfrage löschen",
     "selected": "{{count}} Anbieter ausgewählt",
     "noFound": "Keine Anbieter für \"{{query}}\" gefunden"
   },
@@ -114,17 +114,17 @@
   },
   "update": {
     "available": "Popcorn Time {{version}} ist verfügbar...",
-    "downloading": "Aktualisierung wird heruntergeladen...",
+    "downloading": "Update wird heruntergeladen...",
     "downloaded": "Update heruntergeladen...",
     "installing": "Aktualisierung wird installiert...",
-    "installed": "Starten Sie die App neu, um das Update anzuwenden.",
+    "installed": "Starte die App neu, um das Update anzuwenden.",
     "install": "Installieren",
     "relaunch": "Neustart",
     "error": "Fehler beim Installieren des Updates"
   },
   "ranking": {
-    "pt-title": "Eine länderspezifische Bewertung, die widerspiegelt, wie gut ein Medium {{inCountry}} ankommt.",
-    "pt-desc": "Höhere Bewertungen spiegeln Inhalte wider, die sowohl hoch bewertet als auch leicht zugänglich sind. Eine Bewertung von 90/100 weist auf erstklassige Inhalte hin, die beliebt und weit verbreitet sind. Die Bewertungen werden täglich aktualisiert, um den sich ändernden regionalen Vorlieben gerecht zu werden."
+    "pt-title": "Ein länderspezifisches Bewertungssystem, das widerspiegelt, wie gut ein Medium {{inCountry}} ankommt.",
+    "pt-desc": "Höhere Bewertungen spiegeln Inhalte wider, die sowohl hoch bewertet als auch leicht zugänglich sind. Eine Bewertung von 90/100 weist auf erstklassige Inhalte hin, die populär und weit verbreitet sind. Die Bewertungen werden täglich aktualisiert, um mit den sich ändernden regionalen Vorlieben im Einklang zu bleiben."
   },
   "sortBy": {
     "label": "Sortieren nach",
@@ -132,7 +132,7 @@
     "updated": "Aktualisiert"
   },
   "mediaActions": {
-    "open": "Offen"
+    "open": "Öffnen"
   },
   "mediaTabs": {
     "links": "Links",
@@ -140,24 +140,24 @@
     "similars": "Ähnliche"
   },
   "genres": {
-    "ACTION": "Aktion",
+    "ACTION": "Action",
     "ADVENTURE": "Abenteuer",
     "ANIMATION": "Animation",
     "COMEDY": "Komödie",
-    "CRIME": "Verbrechen",
-    "DOCUMENTARY": "Dokumentarfilm",
+    "CRIME": "Krimi",
+    "DOCUMENTARY": "Dokumentation",
     "DRAMA": "Drama",
     "FAMILY": "Familie",
     "FANTASY": "Fantasie",
     "HISTORY": "Geschichte",
     "HORROR": "Horror",
     "MUSIC": "Musik",
-    "MYSTERY": "Geheimnis",
-    "OTHER": "Andere",
-    "ROMANCE": "Romantik",
-    "SCIENCE_FICTION": "Science-Fiction",
+    "MYSTERY": "Mystery",
+    "OTHER": "Sonstige",
+    "ROMANCE": "Romanze",
+    "SCIENCE_FICTION": "Sci-Fi",
     "THRILLER": "Thriller",
-    "TV_MOVIE": "Fernsehfilm",
+    "TV_MOVIE": "TV-Film",
     "WAR": "Krieg",
     "WESTERN": "Western"
   },

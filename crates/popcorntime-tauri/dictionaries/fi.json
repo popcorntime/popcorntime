@@ -12,51 +12,51 @@
     "load-more": "Lataa lisää",
     "populars": "Suositut",
     "movies": "Elokuvat",
-    "tv-shows": "TV-sarjat"
+    "tv-shows": "Sarjat"
   },
   "sidebar": {
     "back": "Palaa takaisin",
-    "charts": "Listat {{inCountry}}"
+    "charts": "Kaaviot {{inCountry}}"
   },
   "media": {
     "free": "Ilmainen",
     "movie": "Elokuva",
-    "tv-show": "TV-ohjelma"
+    "tv-show": "Sarja"
   },
   "mediaQuickActions": {
-    "watch-on": "Katso {{platform}}illa",
-    "rent-on": "Vuokraa {{platform}}-palvelussa",
-    "buy-on": "Osta {{platform}}illa",
-    "buy-rent-on": "Osta tai vuokraa {{platform}}-palvelusta",
-    "free-on": "Katso ilmaiseksi {{platform}}-palvelussa"
+    "watch-on": "Katso {{platform}}-palvelussa",
+    "rent-on": "Vuokraa {{platform}}ista",
+    "buy-on": "Osta {{platform}}-palvelusta",
+    "buy-rent-on": "Osta tai vuokraa palvelusta {{platform}}",
+    "free-on": "Katso ilmaiseksi {{platform}}illa"
   },
   "commandCenter": {
-    "home": "Takaisin kotiin"
+    "home": "Palaa kotiin"
   },
   "search": {
-    "search": "Etsi",
+    "search": "Haku",
     "results": "Tulokset",
     "viewAll": "Näytä kaikki",
     "noResults": "Ei tuloksia",
-    "placeholder": "Etsi..."
+    "placeholder": "Hae..."
   },
   "menu": {
     "preferences": "Kieli ja alue",
-    "watchPreferences": "Katseluvalinnat",
+    "watchPreferences": "Katseluasetukset",
     "settings": "Sovelluksen asetukset",
     "signOut": "Kirjaudu ulos"
   },
   "settings": {
     "toast": "Asetuksesi on päivitetty onnistuneesti.",
     "settings": "Asetukset",
-    "description": "Määritä sovelluskohtaisia asetuksia, kuten analytiikkaa, teemoja ja muita paikallisia mieltymyksiä.",
+    "description": "Määritä sovelluskohtaiset asetukset, kuten analytiikka, teemat ja muut paikalliset asetukset.",
     "analytics": "Analytiikka",
-    "analytics-description": "Lähetä anonyymeja käyttötietoja auttamaan sovelluksen parantamisessa ja kehityksen ohjaamisessa.",
+    "analytics-description": "Lähetä anonyymejä käyttötietoja sovelluksen parantamiseksi ja kehityksen ohjaamiseksi.",
     "logs": "Lokit",
-    "logs-description": "Tarkastele sovelluksen lokitietoja virheenkorjaukseen ja vianmääritykseen.",
+    "logs-description": "Näytä sovelluksen lokit virheenkorjausta ja vianmääritystä varten.",
     "open-logs": "Avata",
     "update": "Päivitä asetukset",
-    "error": "Asetusten päivittäminen epäonnistui"
+    "error": "Asetusten päivitys epäonnistui"
   },
   "preferences": {
     "preferences": "Asetukset",
@@ -68,33 +68,33 @@
     "language": "Kieli",
     "language-description": "Sisältö ja sovelluksen käyttöliittymä mukautuvat valitsemaasi kieleen.",
     "country": "Maa",
-    "country-description": "Aseta maasi henkilökohtaista sisällönsuositusten mukauttamista ja kokemuksesi räätälöintiä varten."
+    "country-description": "Aseta maa henkilökohtaistaaksesi sisältösuositukset ja mukauttaaksesi kokemustasi."
   },
   "watchPreferences": {
-    "label": "Katseluasetukset",
-    "description": "Kerro meille, missä tykkäät katsoa, jotta voimme korostaa oikeat vaihtoehdot sinulle.",
-    "update": "Päivitä asetukset",
+    "label": "Katseluvalinnat",
+    "description": "Kerro, missä tykkäät katsoa, niin voimme korostaa sinulle oikeat vaihtoehdot.",
+    "update": "Päivitä katseluasetukset",
     "toast": "Katseluasetuksesi on päivitetty onnistuneesti.",
-    "add": "Lisätä",
+    "add": "Lisää",
     "remove": "Poista"
   },
   "onboardingPreferences": {
     "countryTitle": "Valitse maasi",
-    "countryDescription": "Valitse maa nähdäksesi saatavilla olevat kielet",
+    "countryDescription": "Valitse maasi nähdäksesi saatavilla olevat kielet",
     "languageTitle": "Valitse kielesi",
     "languageDescription": "Valitse käyttöliittymän kieli ja priorisoi sisältö {{inCountry}}",
     "changeCountry": "Vaihda maa",
-    "default": "Oletuslokaatio",
+    "default": "Oletuspaikannus",
     "showAll": "Näytä kaikki kielet"
   },
   "onboardingProviders": {
     "title": "Valitse suoratoistopalvelusi",
-    "description": "Valitse käytössäsi olevat alustat, jotta voimme näyttää, mitä katsoa.",
-    "searchPlaceholder": "Etsi palveluntarjoajia...",
+    "description": "Valitse alustat, joihin sinulla on pääsy, niin voimme näyttää, mitä katsoa.",
+    "searchPlaceholder": "Etsi tarjoajia...",
     "category": {
-      "popular": "Suosittu",
+      "popular": "Suositut",
       "free": "Ilmainen",
-      "subscription": "Tilauksesi",
+      "subscription": "Tilaukset",
       "all": "Kaikki"
     },
     "skip": "Teen sen myöhemmin",
@@ -102,8 +102,8 @@
     "selectCountry": "Vaihda maa",
     "clearAll": "Tyhjennä kaikki",
     "clearSearch": "Tyhjennä haku",
-    "selected": "{{count}} palveluntarjoaja(a) valittu",
-    "noFound": "Palveluntarjoajia ei löytynyt haulle \"{{query}}\""
+    "selected": "{{count}} valittu tarjoaja(a)",
+    "noFound": "Ei tarjoajia löytynyt haulle \"{{query}}\""
   },
   "priceType": {
     "buy": "Ostaa",
@@ -117,22 +117,22 @@
     "downloading": "Ladataan päivitystä...",
     "downloaded": "Päivitys ladattu...",
     "installing": "Asennetaan päivitystä...",
-    "installed": "Käynnistä sovellus uudelleen päivityksen soveltamiseksi",
+    "installed": "Käynnistä sovellus uudelleen päivittääksesi sen.",
     "install": "Asenna",
     "relaunch": "Käynnistä uudelleen",
-    "error": "Päivityksen asentaminen epäonnistui"
+    "error": "Päivityksen asennus epäonnistui"
   },
   "ranking": {
-    "pt-title": "Maakohtainen arviointi, joka heijastaa, kuinka hyvin media resonoi {{inCountry}}.",
-    "pt-desc": "Korkeammat pisteet heijastavat sisältöä, joka on sekä korkealle arvioitu että helposti saatavilla. Pistemäärä 90/100 osoittaa huippulaatuista sisältöä, joka on suosittua ja laajasti saatavilla. Pisteet päivitetään päivittäin pysyäkseen ajan tasalla alueellisten mieltymysten muuttuessa."
+    "pt-title": "Maa-kohtainen arviointi, joka heijastaa kuinka hyvin media resonoi {{inCountry}}.",
+    "pt-desc": "Korkeammat pisteet heijastavat sisältöä, joka on sekä erittäin arvostettua että helposti saatavilla. Pistemäärä 90/100 osoittaa huippulaatuista sisältöä, joka on suosittu ja laajalti saatavilla. Pisteet päivitetään päivittäin, jotta ne pysyvät ajan tasalla muuttuvien alueellisten mieltymysten kanssa."
   },
   "sortBy": {
-    "label": "Lajittele",
+    "label": "Järjestä mukaan",
     "popularity": "Suosio",
     "updated": "Päivitetty"
   },
   "mediaActions": {
-    "open": "Avata"
+    "open": "Avaa"
   },
   "mediaTabs": {
     "links": "Linkit",
@@ -144,7 +144,7 @@
     "ADVENTURE": "Seikkailu",
     "ANIMATION": "Animaatio",
     "COMEDY": "Komedia",
-    "CRIME": "Rikollisuus",
+    "CRIME": "Rikos",
     "DOCUMENTARY": "Dokumentti",
     "DRAMA": "Draama",
     "FAMILY": "Perhe",
@@ -153,13 +153,13 @@
     "HORROR": "Kauhu",
     "MUSIC": "Musiikki",
     "MYSTERY": "Mysteeri",
-    "OTHER": "Muu",
-    "ROMANCE": "Romantiikkaa",
+    "OTHER": "Muut",
+    "ROMANCE": "Romantiikka",
     "SCIENCE_FICTION": "Sci-Fi",
-    "THRILLER": "Trilleri",
-    "TV_MOVIE": "TV elokuva",
+    "THRILLER": "Jännitys",
+    "TV_MOVIE": "TV-elokuva",
     "WAR": "Sota",
-    "WESTERN": "Länsi"
+    "WESTERN": "Lännenelokuva"
   },
   "country": {
     "ad": "Andorra",

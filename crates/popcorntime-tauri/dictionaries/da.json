@@ -1,6 +1,6 @@
 {
   "header": {
-    "popular": "Populær",
+    "popular": "Populære",
     "free": "Gratis",
     "soon": "Soon™"
   },
@@ -12,7 +12,7 @@
     "load-more": "Indlæs mere",
     "populars": "Populære",
     "movies": "Film",
-    "tv-shows": "TV-serier"
+    "tv-shows": "Serier"
   },
   "sidebar": {
     "back": "Gå tilbage",
@@ -21,7 +21,7 @@
   "media": {
     "free": "Gratis",
     "movie": "Film",
-    "tv-show": "Tv-serie"
+    "tv-show": "Serie"
   },
   "mediaQuickActions": {
     "watch-on": "Se på {{platform}}",
@@ -31,7 +31,7 @@
     "free-on": "Se gratis på {{platform}}"
   },
   "commandCenter": {
-    "home": "Tilbage til forsiden"
+    "home": "Tilbage til hjem"
   },
   "search": {
     "search": "Søg",
@@ -41,19 +41,19 @@
     "placeholder": "Søg..."
   },
   "menu": {
-    "preferences": "Sprog og region",
-    "watchPreferences": "Seerpræferencer",
+    "preferences": "Sprog og område",
+    "watchPreferences": "Se præferencer",
     "settings": "App-indstillinger",
     "signOut": "Log ud"
   },
   "settings": {
     "toast": "Dine indstillinger er blevet opdateret med succes.",
     "settings": "Indstillinger",
-    "description": "Konfigurer app-specifikke indstillinger som analyser, temaer og andre lokale præferencer.",
+    "description": "Konfigurér app-specifikke indstillinger som analyse, temaer og andre lokale præferencer.",
     "analytics": "Analyser",
-    "analytics-description": "Send anonyme brugsdata for at hjælpe med at forbedre appen og guide udviklingen.",
+    "analytics-description": "Send anonym brugsdata for at hjælpe med at forbedre appen og vejlede udviklingen.",
     "logs": "Logfiler",
-    "logs-description": "Se applikationslogfiler for fejlfinding og problemløsning.",
+    "logs-description": "Vis applikationslogfiler til fejlfinding og problemløsning.",
     "open-logs": "Åben",
     "update": "Opdater indstillinger",
     "error": "Kunne ikke opdatere indstillingerne"
@@ -66,16 +66,16 @@
     "signOut": "Log ud",
     "toast": "Dine præferencer er blevet opdateret med succes.",
     "language": "Sprog",
-    "language-description": "Indhold og applikationsgrænseflade vil tilpasse sig dit valgte sprog.",
+    "language-description": "Indhold og applikationsgrænseflade vil tilpasse sig det valgte sprog.",
     "country": "Land",
-    "country-description": "Indstil dit land for at personliggøre indholdsanbefalinger og tilpasse din oplevelse."
+    "country-description": "Indstil dit land for at tilpasse indholds anbefalinger og skræddersy din oplevelse."
   },
   "watchPreferences": {
     "label": "Seerpræferencer",
-    "description": "Fortæl os, hvor du gerne vil se, så vi kan fremhæve de rigtige muligheder for dig.",
-    "update": "Opdater præferencer",
-    "toast": "Dine seerpræferencer er blevet opdateret med succes.",
-    "add": "Tilføje",
+    "description": "Fortæl os, hvor du foretrækker at se, så vi kan fremhæve de rigtige muligheder for dig.",
+    "update": "Opdater visningspræferencer",
+    "toast": "Dine seerindstillinger er blevet opdateret med succes.",
+    "add": "Tilføj",
     "remove": "Fjern"
   },
   "onboardingPreferences": {
@@ -84,7 +84,7 @@
     "languageTitle": "Vælg dit sprog",
     "languageDescription": "Vælg dit grænsefladesprog og prioriter indhold {{inCountry}}",
     "changeCountry": "Skift land",
-    "default": "Standardindstilling af område",
+    "default": "Standard landelokalisering",
     "showAll": "Vis alle sprog"
   },
   "onboardingProviders": {
@@ -92,7 +92,7 @@
     "description": "Vælg de platforme, du har adgang til, så vi kan vise dig, hvad du skal se.",
     "searchPlaceholder": "Søgeudbydere...",
     "category": {
-      "popular": "Populær",
+      "popular": "Populære",
       "free": "Gratis",
       "subscription": "Abonnement",
       "all": "Alle"
@@ -100,7 +100,7 @@
     "skip": "Jeg gør det senere",
     "continue": "Fortsæt",
     "selectCountry": "Skift land",
-    "clearAll": "Ryd alt op",
+    "clearAll": "Ryd alle",
     "clearSearch": "Ryd søgning",
     "selected": "{{count}} udbyder(e) valgt",
     "noFound": "Ingen udbydere fundet for \"{{query}}\""
@@ -114,7 +114,7 @@
   },
   "update": {
     "available": "Popcorn Time {{version}} er tilgængelig...",
-    "downloading": "Henter opdatering...",
+    "downloading": "Downloader opdatering...",
     "downloaded": "Opdatering downloadet...",
     "installing": "Installerer opdatering...",
     "installed": "Genstart appen for at anvende opdateringen",
@@ -124,7 +124,7 @@
   },
   "ranking": {
     "pt-title": "En landespecifik vurdering, der afspejler, hvor godt et medie resonerer {{inCountry}}.",
-    "pt-desc": "Højere scorer afspejler indhold, der både er højt bedømt og let tilgængeligt. En score på 90/100 indikerer indhold af topkvalitet, der er populært og bredt tilgængeligt. Scorerne opdateres dagligt for at følge med i ændrede regionale præferencer."
+    "pt-desc": "Højere score afspejler indhold, der både er højt vurderet og let tilgængeligt. En score på 90/100 angiver indhold af topkvalitet, der er populært og bredt tilgængeligt. Scorerne opdateres dagligt for at følge med i de skiftende regionale præferencer."
   },
   "sortBy": {
     "label": "Sorter efter",
@@ -132,7 +132,7 @@
     "updated": "Opdateret"
   },
   "mediaActions": {
-    "open": "Åben"
+    "open": "Åbn"
   },
   "mediaTabs": {
     "links": "Links",
@@ -140,26 +140,26 @@
     "similars": "Lignende"
   },
   "genres": {
-    "ACTION": "Handling",
+    "ACTION": "Action",
     "ADVENTURE": "Eventyr",
     "ANIMATION": "Animation",
     "COMEDY": "Komedie",
-    "CRIME": "Forbrydelse",
+    "CRIME": "Krimi",
     "DOCUMENTARY": "Dokumentar",
     "DRAMA": "Drama",
     "FAMILY": "Familie",
-    "FANTASY": "Fantasi",
+    "FANTASY": "Fantasy",
     "HISTORY": "Historie",
-    "HORROR": "Rædsel",
+    "HORROR": "Gyser",
     "MUSIC": "Musik",
-    "MYSTERY": "Mysterium",
+    "MYSTERY": "Mysterie",
     "OTHER": "Andre",
     "ROMANCE": "Romantik",
     "SCIENCE_FICTION": "Sci-Fi",
     "THRILLER": "Thriller",
-    "TV_MOVIE": "TV film",
+    "TV_MOVIE": "TV-film",
     "WAR": "Krig",
-    "WESTERN": "Vestlig"
+    "WESTERN": "Vesterland"
   },
   "country": {
     "ad": "Andorra",

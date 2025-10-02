@@ -484,6 +484,9 @@ importers:
       dotenv:
         specifier: ^16.6.1
         version: 16.6.1
+      jsonc-parser:
+        specifier: ^3.3.1
+        version: 3.3.1
       jsonpath:
         specifier: ^1.1.1
         version: 1.1.1

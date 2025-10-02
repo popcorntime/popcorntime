@@ -1,34 +1,34 @@
 {
   "header": {
-    "popular": "Populaarne",
+    "popular": "Populaarsed",
     "free": "Tasuta",
     "soon": "Varsti™"
   },
   "splash": {
-    "loading": "በመነሳት ላይ..."
+    "loading": "Kufu..."
   },
   "browse": {
-    "loading": "Laadimine...",
-    "load-more": "ተጨማሪ ጭን",
+    "loading": "Laadin...",
+    "load-more": "ተጨማሪ ጫን",
     "populars": "Populaarsed",
     "movies": "Filimoch",
-    "tv-shows": "ቴሌቪዥን ፕሮግራሞች"
+    "tv-shows": "Series"
   },
   "sidebar": {
-    "back": "Tagasi mine",
-    "charts": "Edetabelid {{inCountry}}"
+    "back": "Tagasi",
+    "charts": "Diagrammid {{inCountry}}"
   },
   "media": {
     "free": "Tasuta",
     "movie": "Film",
-    "tv-show": "የቲቪ ትርዒት"
+    "tv-show": "Seriis"
   },
   "mediaQuickActions": {
-    "watch-on": "Vaata {{platform}} peal",
-    "rent-on": "ኪራይ በ{{platform}}",
-    "buy-on": "{{platform}}-ላይ ግዙ",
-    "buy-rent-on": "መግዛት ወይም መከራየት በ{{platform}}",
-    "free-on": "በነፃ ተመልከት በ{{platform}}"
+    "watch-on": "Vaata {{platform}}-il",
+    "rent-on": "Rendi platvormil {{platform}}",
+    "buy-on": "Osta platvormil {{platform}}",
+    "buy-rent-on": "Osta või laenuta {{platform}} kaudu",
+    "free-on": "Vaata tasuta {{platform}}-il"
   },
   "commandCenter": {
     "home": "Tagasi koju"
@@ -36,74 +36,74 @@
   "search": {
     "search": "Otsi",
     "results": "Results",
-    "viewAll": "አላላፊ ሁሉን ይመልከቱ",
-    "noResults": "Ingen resultat",
-    "placeholder": "ፈልግ..."
+    "viewAll": "Kuva kõik",
+    "noResults": "Tulemusi ei leitud",
+    "placeholder": "Otsi..."
   },
   "menu": {
     "preferences": "Keel ja piirkond",
-    "watchPreferences": "Vaatamise eelistused",
+    "watchPreferences": "Vaata eelistusi",
     "settings": "Rakenduse seaded",
     "signOut": "Logi välja"
   },
   "settings": {
-    "toast": "Seerotaatewochin keffilachehu.",
-    "settings": "አቀማመጦች",
-    "description": "የመተግበሪያ ልዩ አማራጮችን እንደ ትንታኔዎች፣ ገጽታዎች እና ሌሎች አካባቢ ተመሳሳይ ቅድመ አላባት ያቀናብሩ።",
-    "analytics": "Analüüsid",
-    "analytics-description": "Saada anonüümset kasutusandmeid, et aidata rakenduse täiustamisel ja arenduse suunamisel.",
+    "toast": "Teie seaded on edukalt uuendatud.",
+    "settings": "Seaded",
+    "description": "Konfigureeri rakendusepõhiseid valikuid nagu analüütika, teemad ja muud kohalikud eelistused.",
+    "analytics": "Analüütika",
+    "analytics-description": "Saada anonüümseid kasutusandmeid, et aidata rakendust täiustada ja arendust suunata.",
     "logs": "Logid",
-    "logs-description": "Rakibata galmee raawwii barnootaa fi rakkoo hiikuu ilaaluu.",
+    "logs-description": "Vaata rakenduse logisid vigade leidmiseks ja lahendamiseks.",
     "open-logs": "Avatud",
-    "update": "አማራጮችን አዘምን",
-    "error": "ቅኝቱን ማሻሻል አልተቻለም"
+    "update": "Seadete värskendamine",
+    "error": "Seadete värskendamine ebaõnnestus"
   },
   "preferences": {
-    "preferences": "ቅደም ተከተል፦",
-    "description": "Valitud sisu nautimiseks valige oma eelistatud keel ja riik.",
+    "preferences": "Eelistused",
+    "description": "Valige oma eelistatud keel ja riik, et nautida kohandatud sisu.",
     "update": "Eelistuste uuendamine",
     "error": "Ebaõnnestus eelistusi uuendada",
     "signOut": "Logi välja",
-    "toast": "Teferotchawotchihu be'ijigubet'i t'ik'ik'ilewalachew.",
+    "toast": "Teie eelistused on edukalt uuendatud.",
     "language": "Keel",
-    "language-description": "ይዘት እና የመተግበሪያ ገጽታ ወደ ተመርጡት ቋንቋ ይማራሉ።",
+    "language-description": "Sisu ja rakenduse liides kohanduvad teie valitud keelega.",
     "country": "Riik",
-    "country-description": "Maaşaa'u inqilal kaadrigaaga si aad u habayso talooyinka waxyaabaha ku habboon oo aad u habayso waayo-aragnimadaada."
+    "country-description": "Seadke oma riik, et isikupärastada sisu soovitusi ja kohandada oma kogemust."
   },
   "watchPreferences": {
-    "label": "እንደምትመርጡት ይመልከቱ",
-    "description": "እኛ ትክክለኛውን አማራጭ እንድንሳይህ የሚወድዱትን የማየት ቦታ ንገሩን።",
-    "update": "Einstellungen aktualisieren",
-    "toast": "Teie vaatamise eelistused on edukalt uuendatud.",
+    "label": "Vaata eelistusi",
+    "description": "Ütle meile, kus sulle meeldib vaadata, et saaksime sulle sobivad valikud esile tõsta.",
+    "update": "Uuenda vaatamise eelistusi",
+    "toast": "Teie vaatamiseelistused on edukalt uuendatud.",
     "add": "Lisa",
     "remove": "Eemalda"
   },
   "onboardingPreferences": {
     "countryTitle": "Vali oma riik",
-    "countryDescription": "Vali oma riik, et näha saadaval olevaid keeli",
+    "countryDescription": "Vali oma riik, et näha saadaolevaid keeli",
     "languageTitle": "Vali oma keel",
     "languageDescription": "Valige oma liidese keel ja eelistage sisu {{inCountry}}",
     "changeCountry": "Muuda riiki",
-    "default": "Vaikimisi lokaat",
+    "default": "Vaikimisi piirkonna seadistus",
     "showAll": "Näita kõiki keeli"
   },
   "onboardingProviders": {
-    "title": "Vali voogedastusteenused",
-    "description": "Vali need platvormid, millele sul on juurdepääs, et saaksime näidata, mida vaadata.",
-    "searchPlaceholder": "Otsi pakkujaid...",
+    "title": "Valige oma voogedastusteenused",
+    "description": "Vali platvormid, millele sul on juurdepääs, et saaksime näidata, mida vaadata.",
+    "searchPlaceholder": "Otsingupakkujad...",
     "category": {
-      "popular": "Populaarne",
+      "popular": "Populaarsed",
       "free": "Tasuta",
-      "subscription": "Tellimine",
+      "subscription": "Tellimused",
       "all": "Kõik"
     },
-    "skip": "Jäta vahele",
+    "skip": "Teen seda hiljem",
     "continue": "Jätka",
-    "selectCountry": "Vali maakond",
+    "selectCountry": "Muuda riiki",
     "clearAll": "Kustuta kõik",
-    "clearSearch": "Otsi tühjaks",
-    "selected": "{{count}} pakkuja(t) valitud",
-    "noFound": "\"{{query}}\" kohta ei leitud ühtegi pakkujat."
+    "clearSearch": "Tühjenda otsing",
+    "selected": "{{count}} teenusepakkuja(t) valitud",
+    "noFound": "Pakkujaid ei leitud päringule \"{{query}}\""
   },
   "priceType": {
     "buy": "Osta",
@@ -114,52 +114,52 @@
   },
   "update": {
     "available": "Popcorn Time {{version}} on saadaval...",
-    "downloading": "Värskenduse allalaadimine...",
-    "downloaded": "Uuendus alla laaditud...",
+    "downloading": "Allalaadimise värskendus...",
+    "downloaded": "Uuendus on alla laaditud...",
     "installing": "Uuenduse installimine...",
-    "installed": "Taaskanda app-ka si aad cusboonaysiinta ugu dhaqan geliso",
-    "install": "Paigalda",
+    "installed": "Taaskäivita rakendus, et värskendus jõustuks",
+    "install": "Installi",
     "relaunch": "Taaskäivita",
-    "error": "ብሉን ማደስ አልተገኘም የማለት ነው ማለት አልተሳካም"
+    "error": "Uuenduse installimine ebaõnnestus"
   },
   "ranking": {
-    "pt-title": "{{inCountry}} kaju vastav hinnang, mis peegeldab, kui hästi meedia resonants.",
-    "pt-desc": "ከፍተኛ ነጥቦች እንደንገድ የተሞላ እና በቀላሉ የሚገኝ ይዘት የሚያሳይ ነው። ከ 90/100 የሚደርስ ነጥብ ምርጥ ጥራት ይዘት እና በበርካታ የሚገኝ ታዋቂ ይዘት እንደሆነ ያሳያል። ነጥቦቹ እንደ አካባቢያዊ ምርጫዎች ለሚለዋወጡ መሰረት ዕለታዊ እየተሻሻሉ ነው።"
+    "pt-title": "Riigipõhine hinnang, mis kajastab, kui hästi meedia resoneerub {{inCountry}}.",
+    "pt-desc": "Kõrgemad hinded kajastavad sisu, mis on nii kõrgelt hinnatud kui ka kergesti kättesaadav. Hinne 90/100 näitab tippkvaliteediga sisu, mis on populaarne ja laialdaselt kättesaadav. Hinded uuendatakse iga päev, et arvestada muutuvate piirkondlike eelistustega."
   },
   "sortBy": {
-    "label": "መደብ በ",
-    "popularity": "ታዋቂነት",
+    "label": "Sorteeri järgi",
+    "popularity": "Populaarsus",
     "updated": "Uuendatud"
   },
   "mediaActions": {
-    "open": "Avatud"
+    "open": "Ava"
   },
   "mediaTabs": {
     "links": "Lingid",
-    "overview": "አጠቃላይ ገጽታ",
-    "similars": "እኩል ያላቸው"
+    "overview": "Ülevaade",
+    "similars": "Sarnased"
   },
   "genres": {
-    "ACTION": "Tegevus",
+    "ACTION": "Märul",
     "ADVENTURE": "Seiklus",
     "ANIMATION": "Animatsioon",
     "COMEDY": "Komöödia",
-    "CRIME": "Kuritegevus",
+    "CRIME": "Kuritegu",
     "DOCUMENTARY": "Dokumentaalfilm",
     "DRAMA": "Draama",
-    "FAMILY": "Perekond",
+    "FAMILY": "Pere",
     "FANTASY": "Fantaasia",
     "HISTORY": "Ajalugu",
     "HORROR": "Õudus",
     "MUSIC": "Muusika",
     "MYSTERY": "Müsteerium",
-    "OTHER": "Muud",
+    "OTHER": "Muu",
     "ROMANCE": "Romantika",
-    "SCIENCE_FICTION": "Ulmeline",
+    "SCIENCE_FICTION": "Ulme",
     "THRILLER": "Põnevik",
-    "TV_MOVIE": "Telefilm",
+    "TV_MOVIE": "TV-film",
     "WAR": "Sõda",
-    "WESTERN": "Lääne"
+    "WESTERN": "Läänefilm"
   },
   "country": {
     "ad": "Andorra",

@@ -9,29 +9,29 @@
   },
   "browse": {
     "loading": "Cargando...",
-    "load-more": "Cargar más",
+    "load-more": "Cargar más contenido",
     "populars": "Populares",
     "movies": "Películas",
-    "tv-shows": "Programas de TV"
+    "tv-shows": "Series"
   },
   "sidebar": {
-    "back": "Volver atrás",
+    "back": "Regresar",
     "charts": "Gráficos {{inCountry}}"
   },
   "media": {
     "free": "Gratis",
     "movie": "Película",
-    "tv-show": "Programa de TV"
+    "tv-show": "Serie"
   },
   "mediaQuickActions": {
     "watch-on": "Ver en {{platform}}",
     "rent-on": "Alquilar en {{platform}}",
     "buy-on": "Comprar en {{platform}}",
-    "buy-rent-on": "Comprar o alquilar en {{platform}}",
+    "buy-rent-on": "Compra o alquila en {{platform}}",
     "free-on": "Ver gratis en {{platform}}"
   },
   "commandCenter": {
-    "home": "Volver a inicio"
+    "home": "Volver al centro de mando hogar"
   },
   "search": {
     "search": "Buscar",
@@ -47,32 +47,32 @@
     "signOut": "Cerrar sesión"
   },
   "settings": {
-    "toast": "Tus configuraciones se han actualizado correctamente.",
+    "toast": "Tus configuraciones se han actualizado con éxito.",
     "settings": "Configuración",
     "description": "Configura opciones específicas de la aplicación como analíticas, temas y otras preferencias locales.",
     "analytics": "Analíticas",
-    "analytics-description": "Enviar datos de uso anónimos para ayudar a mejorar la aplicación y guiar su desarrollo.",
+    "analytics-description": "Enviar datos de uso anónimos para ayudar a mejorar la app y orientar su desarrollo.",
     "logs": "Registros",
     "logs-description": "Ver registros de la aplicación para depuración y resolución de problemas.",
     "open-logs": "Abierto",
-    "update": "Configuración de actualización",
-    "error": "Error al actualizar la configuración"
+    "update": "Actualizar configuración",
+    "error": "No se pudo actualizar la configuración."
   },
   "preferences": {
     "preferences": "Preferencias",
-    "description": "Selecciona tu idioma y país preferidos para disfrutar de contenido adaptado.",
+    "description": "Selecciona tu idioma y país preferidos para disfrutar de contenido personalizado.",
     "update": "Actualizar preferencias",
     "error": "Fallo al actualizar las preferencias",
     "signOut": "Cerrar sesión",
     "toast": "Tus preferencias se han actualizado correctamente.",
     "language": "Idioma",
-    "language-description": "El contenido y la interfaz de la aplicación se adaptarán al idioma seleccionado.",
+    "language-description": "El contenido y la interfaz de la aplicación se adaptarán al idioma que selecciones.",
     "country": "País",
-    "country-description": "Establece tu país para personalizar las recomendaciones de contenido y adaptar tu experiencia."
+    "country-description": "Configura tu país para personalizar las recomendaciones de contenido y adaptar tu experiencia."
   },
   "watchPreferences": {
-    "label": "Preferencias de Visualización",
-    "description": "Dinos dónde te gusta ver para que podamos destacar las opciones adecuadas para ti.",
+    "label": "Preferencias de visualización",
+    "description": "Dinos dónde te gusta ver contenido para que podamos destacar las opciones adecuadas para ti.",
     "update": "Actualizar preferencias",
     "toast": "Tus preferencias de visualización se han actualizado con éxito.",
     "add": "Agregar",
@@ -82,7 +82,7 @@
     "countryTitle": "Selecciona tu país",
     "countryDescription": "Selecciona tu país para ver los idiomas disponibles",
     "languageTitle": "Selecciona tu idioma",
-    "languageDescription": "Seleccione su idioma de interfaz y dé prioridad al contenido {{inCountry}}",
+    "languageDescription": "Selecciona tu idioma de interfaz y prioriza el contenido {{inCountry}}",
     "changeCountry": "Cambiar país",
     "default": "Configuración regional predeterminada",
     "showAll": "Mostrar todos los idiomas"
@@ -120,11 +120,11 @@
     "installed": "Reinicia la aplicación para aplicar la actualización",
     "install": "Instalar",
     "relaunch": "Relanzar",
-    "error": "Error al instalar la actualización"
+    "error": "No se pudo instalar la actualización"
   },
   "ranking": {
-    "pt-title": "Una calificación específica del país que refleja qué tan bien resuena un medio {{inCountry}}.",
-    "pt-desc": "Puntajes más altos reflejan contenido que es tanto altamente valorado como fácilmente accesible. Un puntaje de 90/100 indica contenido de máxima calidad que es popular y ampliamente disponible. Los puntajes se actualizan diariamente para estar al día con las preferencias regionales cambiantes."
+    "pt-title": "Una calificación específica del país que refleja qué tan bien resuena un contenido {{inCountry}}.",
+    "pt-desc": "Las puntuaciones más altas reflejan contenido que es tanto altamente valorado como fácilmente accesible. Una puntuación de 90/100 indica contenido de primera calidad que es popular y está ampliamente disponible. Las puntuaciones se actualizan diariamente para mantenerse al día con las preferencias regionales cambiantes."
   },
   "sortBy": {
     "label": "Ordenar por",
@@ -132,11 +132,11 @@
     "updated": "Actualizado"
   },
   "mediaActions": {
-    "open": "Abierto"
+    "open": "Abrir"
   },
   "mediaTabs": {
-    "links": "Campo de golf",
-    "overview": "Descripción general",
+    "links": "Enlaces",
+    "overview": "Resumen",
     "similars": "Similares"
   },
   "genres": {
@@ -144,22 +144,22 @@
     "ADVENTURE": "Aventura",
     "ANIMATION": "Animación",
     "COMEDY": "Comedia",
-    "CRIME": "Delito",
+    "CRIME": "Crimen",
     "DOCUMENTARY": "Documental",
     "DRAMA": "Drama",
-    "FAMILY": "Familia",
+    "FAMILY": "Familiar",
     "FANTASY": "Fantasía",
     "HISTORY": "Historia",
     "HORROR": "Horror",
     "MUSIC": "Música",
     "MYSTERY": "Misterio",
-    "OTHER": "Otro",
+    "OTHER": "Otros",
     "ROMANCE": "Romance",
     "SCIENCE_FICTION": "Ciencia ficción",
     "THRILLER": "Suspenso",
-    "TV_MOVIE": "Película para televisión",
+    "TV_MOVIE": "Película de TV",
     "WAR": "Guerra",
-    "WESTERN": "Occidental"
+    "WESTERN": "Western"
   },
   "country": {
     "ad": "Andorra",

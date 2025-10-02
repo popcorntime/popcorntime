@@ -9,19 +9,19 @@
   },
   "browse": {
     "loading": "Chargement...",
-    "load-more": "Charger plus",
+    "load-more": "Charger plus de contenu",
     "populars": "Populaires",
     "movies": "Films",
-    "tv-shows": "Émissions de télévision"
+    "tv-shows": "Séries"
   },
   "sidebar": {
-    "back": "Retourner",
+    "back": "Retour en arrière",
     "charts": "Classements {{inCountry}}"
   },
   "media": {
     "free": "Gratuit",
     "movie": "Film",
-    "tv-show": "Émission TV"
+    "tv-show": "Série"
   },
   "mediaQuickActions": {
     "watch-on": "Regarder sur {{platform}}",
@@ -38,7 +38,7 @@
     "results": "Résultats",
     "viewAll": "Voir tout",
     "noResults": "Aucun résultat",
-    "placeholder": "Recherche..."
+    "placeholder": "Rechercher..."
   },
   "menu": {
     "preferences": "Langue et région",
@@ -49,18 +49,18 @@
   "settings": {
     "toast": "Vos paramètres ont été mis à jour avec succès.",
     "settings": "Paramètres",
-    "description": "Configurez des options spécifiques à l'application comme les analyses, les thèmes et d'autres préférences locales.",
+    "description": "Configurez les options spécifiques de l'application comme l'analytique, les thèmes et d'autres préférences locales.",
     "analytics": "Analytique",
     "analytics-description": "Envoyer des données d'utilisation anonymes pour aider à améliorer l'application et orienter son développement.",
     "logs": "Journaux",
     "logs-description": "Afficher les journaux de l'application pour le débogage et le dépannage.",
     "open-logs": "Ouvrir",
-    "update": "Paramètres de mise à jour",
+    "update": "Mettre à jour les paramètres",
     "error": "Échec de la mise à jour des paramètres"
   },
   "preferences": {
     "preferences": "Préférences",
-    "description": "Sélectionnez votre langue et votre pays préférés pour profiter d'un contenu personnalisé.",
+    "description": "Sélectionnez votre langue et votre pays préférés pour profiter de contenus sur mesure.",
     "update": "Mettre à jour les préférences",
     "error": "Échec de la mise à jour des préférences",
     "signOut": "Se déconnecter",
@@ -72,7 +72,7 @@
   },
   "watchPreferences": {
     "label": "Préférences de visionnage",
-    "description": "Dites-nous où vous aimez regarder pour que nous puissions mettre en avant les bonnes options pour vous.",
+    "description": "Dites-nous où vous aimez regarder afin que nous puissions mettre en avant les bonnes options pour vous.",
     "update": "Mettre à jour les préférences",
     "toast": "Vos préférences de visionnage ont été mises à jour avec succès.",
     "add": "Ajouter",
@@ -84,7 +84,7 @@
     "languageTitle": "Sélectionnez votre langue",
     "languageDescription": "Sélectionnez votre langue d'interface et priorisez le contenu {{inCountry}}",
     "changeCountry": "Changer de pays",
-    "default": "Langue par défaut",
+    "default": "Paramètre régional par défaut",
     "showAll": "Afficher toutes les langues"
   },
   "onboardingProviders": {
@@ -92,10 +92,10 @@
     "description": "Choisissez les plateformes auxquelles vous avez accès afin que nous puissions vous montrer quoi regarder.",
     "searchPlaceholder": "Rechercher des fournisseurs...",
     "category": {
-      "popular": "Populaire",
+      "popular": "Populaires",
       "free": "Gratuit",
       "subscription": "Abonnement",
-      "all": "Tous"
+      "all": "Tout"
     },
     "skip": "Je le ferai plus tard",
     "continue": "Continuer",
@@ -117,14 +117,14 @@
     "downloading": "Téléchargement de la mise à jour...",
     "downloaded": "Mise à jour téléchargée...",
     "installing": "Installation de la mise à jour...",
-    "installed": "Redémarrez l'application pour appliquer la mise à jour",
+    "installed": "Relancez l'application pour appliquer la mise à jour",
     "install": "Installer",
     "relaunch": "Relancer",
     "error": "Échec de l'installation de la mise à jour"
   },
   "ranking": {
-    "pt-title": "Un classement spécifique au pays reflétant à quel point un média résonne {{inCountry}}.",
-    "pt-desc": "Des scores plus élevés reflètent un contenu à la fois très bien noté et facilement accessible. Un score de 90/100 indique un contenu de qualité supérieure, populaire et largement disponible. Les scores sont mis à jour quotidiennement pour rester en phase avec les préférences régionales changeantes."
+    "pt-title": "Une note spécifique au pays reflétant à quel point un média résonne {{inCountry}}.",
+    "pt-desc": "Des scores plus élevés reflètent un contenu à la fois très bien noté et facilement accessible. Un score de 90/100 indique un contenu de qualité supérieure qui est populaire et largement disponible. Les scores sont mis à jour quotidiennement pour rester en accord avec les préférences régionales changeantes."
   },
   "sortBy": {
     "label": "Trier par",
@@ -136,7 +136,7 @@
   },
   "mediaTabs": {
     "links": "Links",
-    "overview": "Vue d'ensemble",
+    "overview": "Aperçu",
     "similars": "Similaires"
   },
   "genres": {
@@ -148,8 +148,8 @@
     "DOCUMENTARY": "Documentaire",
     "DRAMA": "Drame",
     "FAMILY": "Famille",
-    "FANTASY": "Fantaisie",
-    "HISTORY": "Histoire",
+    "FANTASY": "Fantastique",
+    "HISTORY": "Historique",
     "HORROR": "Horreur",
     "MUSIC": "Musique",
     "MYSTERY": "Mystère",
@@ -159,7 +159,7 @@
     "THRILLER": "Thriller",
     "TV_MOVIE": "Téléfilm",
     "WAR": "Guerre",
-    "WESTERN": "Occidental"
+    "WESTERN": "Western"
   },
   "country": {
     "ad": "Andorre",

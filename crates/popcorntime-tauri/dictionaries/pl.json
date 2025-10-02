@@ -12,7 +12,7 @@
     "load-more": "Załaduj więcej",
     "populars": "Popularne",
     "movies": "Filmy",
-    "tv-shows": "Seriale TV"
+    "tv-shows": "Seriale"
   },
   "sidebar": {
     "back": "Wróć",
@@ -21,17 +21,17 @@
   "media": {
     "free": "Bezpłatny",
     "movie": "Film",
-    "tv-show": "Serial telewizyjny"
+    "tv-show": "Serial"
   },
   "mediaQuickActions": {
     "watch-on": "Oglądaj na {{platform}}",
-    "rent-on": "Wynajmij na {{platform}}",
+    "rent-on": "Wypożycz na {{platform}}",
     "buy-on": "Kup na {{platform}}",
     "buy-rent-on": "Kup lub wypożycz na {{platform}}",
     "free-on": "Oglądaj za darmo na {{platform}}"
   },
   "commandCenter": {
-    "home": "Wróć do strony głównej"
+    "home": "Wróć do centrum dowodzenia"
   },
   "search": {
     "search": "Szukaj",
@@ -49,18 +49,18 @@
   "settings": {
     "toast": "Twoje ustawienia zostały pomyślnie zaktualizowane.",
     "settings": "Ustawienia",
-    "description": "Skonfiguruj opcje specyficzne dla aplikacji, takie jak analityka, motywy i inne preferencje lokalne.",
+    "description": "Skonfiguruj opcje specyficzne dla aplikacji, takie jak analityka, motywy i inne lokalne preferencje.",
     "analytics": "Analityka",
-    "analytics-description": "Wyślij anonimowe dane użytkowania, aby pomóc w ulepszaniu aplikacji i kierować jej rozwojem.",
+    "analytics-description": "Wysyłaj anonimowe dane o użytkowaniu, aby pomóc ulepszać aplikację i kierować jej rozwojem.",
     "logs": "Dzienniki",
-    "logs-description": "Zobacz dzienniki aplikacji w celu debugowania i rozwiązywania problemów.",
+    "logs-description": "Wyświetl dzienniki aplikacji do debugowania i rozwiązywania problemów.",
     "open-logs": "Otwarte",
-    "update": "Zaktualizuj ustawienia",
+    "update": "Aktualizuj ustawienia",
     "error": "Nie udało się zaktualizować ustawień"
   },
   "preferences": {
     "preferences": "Preferencje",
-    "description": "Wybierz preferowany język i kraj, aby cieszyć się dostosowaną treścią.",
+    "description": "Wybierz preferowany język i kraj, aby cieszyć się dostosowaną zawartością.",
     "update": "Zaktualizuj preferencje",
     "error": "Nie udało się zaktualizować preferencji",
     "signOut": "Wyloguj się",
@@ -68,14 +68,14 @@
     "language": "Język",
     "language-description": "Treść i interfejs aplikacji dostosują się do wybranego języka.",
     "country": "Kraj",
-    "country-description": "Ustaw swój kraj, aby spersonalizować rekomendacje treści i dostosować swoje wrażenia."
+    "country-description": "Ustaw swój kraj, aby spersonalizować rekomendacje treści i dostosować swoje doświadczenie."
   },
   "watchPreferences": {
     "label": "Preferencje oglądania",
-    "description": "Powiedz nam, gdzie lubisz oglądać, abyśmy mogli wyróżnić odpowiednie opcje dla Ciebie.",
-    "update": "Zaktualizuj preferencje",
+    "description": "Powiedz nam, gdzie lubisz oglądać, abyśmy mogli podkreślić odpowiednie opcje dla Ciebie.",
+    "update": "Zaktualizuj preferencje oglądania",
     "toast": "Twoje preferencje oglądania zostały pomyślnie zaktualizowane.",
-    "add": "Dodać",
+    "add": "Dodaj",
     "remove": "Usuń"
   },
   "onboardingPreferences": {
@@ -84,25 +84,25 @@
     "languageTitle": "Wybierz swój język",
     "languageDescription": "Wybierz język interfejsu i nadaj priorytet treściom {{inCountry}}",
     "changeCountry": "Zmień kraj",
-    "default": "Domyślny język",
+    "default": "Domyślna lokalizacja kraju",
     "showAll": "Pokaż wszystkie języki"
   },
   "onboardingProviders": {
     "title": "Wybierz swoje usługi streamingowe",
-    "description": "Wybierz platformy, do których masz dostęp, abyśmy mogli pokazać Ci, co oglądać.",
+    "description": "Wybierz platformy, do których masz dostęp, abyśmy mogli pokazać, co oglądać.",
     "searchPlaceholder": "Wyszukaj dostawców...",
     "category": {
       "popular": "Popularne",
-      "free": "Bezpłatny",
+      "free": "Darmowe",
       "subscription": "Subskrypcja",
-      "all": "Wszystko"
+      "all": "Wszystkie"
     },
     "skip": "Zrobię to później",
     "continue": "Kontynuuj",
     "selectCountry": "Zmień kraj",
     "clearAll": "Wyczyść wszystko",
     "clearSearch": "Wyczyść wyszukiwanie",
-    "selected": "{{count}} dostawca(ów) wybrano",
+    "selected": "{{count}} dostawca(-ów) wybranych",
     "noFound": "Nie znaleziono dostawców dla \"{{query}}\""
   },
   "priceType": {
@@ -119,12 +119,12 @@
     "installing": "Instalowanie aktualizacji...",
     "installed": "Uruchom ponownie aplikację, aby zastosować aktualizację",
     "install": "Zainstaluj",
-    "relaunch": "Ponowne uruchomienie",
+    "relaunch": "Uruchom ponownie",
     "error": "Nie udało się zainstalować aktualizacji"
   },
   "ranking": {
-    "pt-title": "Ocena specyficzna dla kraju odzwierciedlająca, jak dobrze media rezonują {{inCountry}}.",
-    "pt-desc": "Wyższe oceny odzwierciedlają treści, które są zarówno wysoko oceniane, jak i łatwo dostępne. Ocena 90/100 wskazuje na treści najwyższej jakości, które są popularne i szeroko dostępne. Oceny są aktualizowane codziennie, aby być zgodne z zmieniającymi się preferencjami regionalnymi."
+    "pt-title": "Ocena specyficzna dla danego kraju odzwierciedlająca, jak dobrze media rezonują {{inCountry}}.",
+    "pt-desc": "Wyższe oceny odzwierciedlają treści, które są wysoko oceniane i łatwo dostępne. Wynik 90/100 wskazuje na treści najwyższej jakości, które są popularne i szeroko dostępne. Oceny są aktualizowane codziennie, aby dostosować się do zmieniających się preferencji regionalnych."
   },
   "sortBy": {
     "label": "Sortuj według",
@@ -132,33 +132,33 @@
     "updated": "Zaktualizowano"
   },
   "mediaActions": {
-    "open": "Otwarte"
+    "open": "Otwórz"
   },
   "mediaTabs": {
-    "links": "Spinki do mankietów",
+    "links": "Linki",
     "overview": "Przegląd",
     "similars": "Podobne"
   },
   "genres": {
-    "ACTION": "Działanie",
-    "ADVENTURE": "Przygoda",
-    "ANIMATION": "Ożywienie",
+    "ACTION": "Akcja",
+    "ADVENTURE": "Przygodowy",
+    "ANIMATION": "Animacja",
     "COMEDY": "Komedia",
-    "CRIME": "Przestępczość",
+    "CRIME": "Kryminał",
     "DOCUMENTARY": "Dokumentalny",
     "DRAMA": "Dramat",
-    "FAMILY": "Rodzina",
-    "FANTASY": "Kaprys",
+    "FAMILY": "Rodzinny",
+    "FANTASY": "Fantasyka",
     "HISTORY": "Historia",
-    "HORROR": "Przerażenie",
+    "HORROR": "Horror",
     "MUSIC": "Muzyka",
     "MYSTERY": "Tajemnica",
-    "OTHER": "Inny",
+    "OTHER": "Inne",
     "ROMANCE": "Romans",
-    "SCIENCE_FICTION": "Science fiction",
-    "THRILLER": "Kryminał",
+    "SCIENCE_FICTION": "Sci-Fi",
+    "THRILLER": "Thriller",
     "TV_MOVIE": "Film telewizyjny",
-    "WAR": "Wojna",
+    "WAR": "Wojenny",
     "WESTERN": "Western"
   },
   "country": {

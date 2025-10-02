@@ -1,7 +1,7 @@
 {
   "header": {
     "popular": "Coitianta",
-    "free": "Saor",
+    "free": "Saor in aisce",
     "soon": "Go luath™"
   },
   "splash": {
@@ -9,25 +9,25 @@
   },
   "browse": {
     "loading": "Ag Lódáil...",
-    "load-more": "Lódáil níos mó",
+    "load-more": "Lódáil tuilleadh",
     "populars": "Coitianta",
     "movies": "Scannáin",
-    "tv-shows": "Seónna Teilifíse"
+    "tv-shows": "Sraith"
   },
   "sidebar": {
     "back": "Téigh ar ais",
     "charts": "Cairteacha {{inCountry}}"
   },
   "media": {
-    "free": "Saor",
+    "free": "Saor in aisce",
     "movie": "Scannán",
-    "tv-show": "Seó Teilifíse"
+    "tv-show": "Sraith"
   },
   "mediaQuickActions": {
     "watch-on": "Féach ar {{platform}}",
     "rent-on": "Cíos ar {{platform}}",
     "buy-on": "Ceannaigh ar {{platform}}",
-    "buy-rent-on": "Ceannaigh nó faigh ar cíos ar {{platform}}",
+    "buy-rent-on": "Ceannaigh nó ar cíos ar {{platform}}",
     "free-on": "Féach Saor in Aisce ar {{platform}}"
   },
   "commandCenter": {
@@ -36,44 +36,44 @@
   "search": {
     "search": "Cuardaigh",
     "results": "Torthaí",
-    "viewAll": "Féach ar gach rud",
+    "viewAll": "Féach ar fad",
     "noResults": "Gan torthaí",
     "placeholder": "Cuardaigh..."
   },
   "menu": {
     "preferences": "Teanga & réigiún",
     "watchPreferences": "Roghanna féachana",
-    "settings": "Socruithe Aipe",
-    "signOut": "Logáil amach"
+    "settings": "Socruithe Aipeanna",
+    "signOut": "Sín amach"
   },
   "settings": {
     "toast": "Tá do shocruithe nuashonraithe go rathúil.",
     "settings": "Socruithe",
-    "description": "Cumraigh roghanna ar leith don aip cosúil le hanailísíocht, téamaí, agus roghanna áitiúla eile.",
-    "analytics": "Anailís",
+    "description": "Cumraigh roghanna ar leith don aip cosúil le hanailísíocht, téamaí, agus sainroghanna áitiúla eile.",
+    "analytics": "Anailísíocht",
     "analytics-description": "Seol sonraí úsáide gan ainm chun cabhrú leis an aip a fheabhsú agus forbairt a threorú.",
     "logs": "Logaí",
-    "logs-description": "Féach ar logaí feidhmchláir chun dífhabhtú agus fabhtcheartú a dhéanamh.",
+    "logs-description": "Amharc ar logaí an fheidhmchláir chun dífhabhtú agus réiteach fadhbanna a dhéanamh.",
     "open-logs": "Oscail",
-    "update": "Nuashonraigh socruithe",
-    "error": "Theip ar shocruithe a nuashonrú"
+    "update": "Nuashonraigh na socruithe",
+    "error": "Theip nuashonrú na socruithe"
   },
   "preferences": {
     "preferences": "Roghanna",
-    "description": "Roghnaigh do theanga agus do thír is fearr leat chun taitneamh a bhaint as ábhar saincheaptha.",
-    "update": "Nuashonraigh sainroghanna",
+    "description": "Roghnaigh do theanga agus do thír is fearr leat chun ábhar saincheaptha a fháil.",
+    "update": "Nuashonraigh roghanna",
     "error": "Theip ar nuashonrú na sainroghanna",
     "signOut": "Logáil amach",
     "toast": "Tá do roghanna nuashonraithe go rathúil.",
     "language": "Teanga",
-    "language-description": "Gheobhaidh ábhar agus comhéadan an fheidhmchláir oiriúnú do do theanga roghnaithe.",
+    "language-description": "Beidh ábhar agus comhéadan na feidhmchláir ag oiriúnú do do theanga roghnaithe.",
     "country": "Tír",
     "country-description": "Socraigh do thír chun moltaí ábhair a phearsanú agus do thaithí a oiriúnú."
   },
   "watchPreferences": {
-    "label": "Roghanna Féachana",
-    "description": "Inis dúinn cá maith leat féachaint ionas gur féidir linn na roghanna cearta a aibhsiú duit.",
-    "update": "Nuashonraigh sainroghanna",
+    "label": "Roghanna Faire",
+    "description": "Inis dúinn cá maith leat féachaint ionas gur féidir linn na roghanna cearta a chur in iúl duit.",
+    "update": "Nuashonraigh roghanna féachana",
     "toast": "Tá do roghanna féachana nuashonraithe go rathúil.",
     "add": "Cuir leis",
     "remove": "Bain"
@@ -82,9 +82,9 @@
     "countryTitle": "Roghnaigh do thír",
     "countryDescription": "Roghnaigh do thír chun na teangacha atá ar fáil a fheiceáil",
     "languageTitle": "Roghnaigh do theanga",
-    "languageDescription": "Roghnaigh do theanga comhéadan agus tabhair tús áite do ábhar {{inCountry}}",
+    "languageDescription": "Roghnaigh do theanga comhéadan agus tabhair tosaíocht do ábhar {{inCountry}}",
     "changeCountry": "Athraigh tír",
-    "default": "Tír dhúchasach réamhshocraithe",
+    "default": "Réigiún réamhshocraithe",
     "showAll": "Taispeáin gach teanga"
   },
   "onboardingProviders": {
@@ -95,15 +95,15 @@
       "popular": "Coitianta",
       "free": "Saor in aisce",
       "subscription": "Síntiús",
-      "all": "Gach"
+      "all": "Uile"
     },
-    "skip": "Déanfaidh mé é níos déanaí.",
+    "skip": "Déanfaidh mé é níos déanaí",
     "continue": "Lean ar aghaidh",
     "selectCountry": "Athraigh tír",
-    "clearAll": "Glan gach rud",
+    "clearAll": "Glan gach ceann",
     "clearSearch": "Glan cuardach",
-    "selected": "Roghnaithe {{count}} soláthraí(í)",
-    "noFound": "Ní bhfuarthas soláthraithe do \"{{query}}\""
+    "selected": "Tá {{count}} soláthraí roghnaithe ann",
+    "noFound": "Níor aimsíodh soláthraithe le haghaidh \"{{query}}\""
   },
   "priceType": {
     "buy": "Ceannaigh",
@@ -114,17 +114,17 @@
   },
   "update": {
     "available": "Tá Popcorn Time {{version}} ar fáil...",
-    "downloading": "Ag íoslódáil nuashonrú...",
+    "downloading": "Ag íoslódáil nuashonraithe...",
     "downloaded": "Nuashonrú íoslódáilte...",
     "installing": "Ag suiteáil nuashonraithe...",
-    "installed": "Atosaigh an aip chun an nuashonrú a chur i bhfeidhm",
+    "installed": "Atosaigh an aip chun an nuashonrú a chur i bhfeidhm.",
     "install": "Suiteáil",
     "relaunch": "Athsheoladh",
-    "error": "Níor éirigh leis an nuashonrú a shuiteáil"
+    "error": "Theip suiteáil nuashonraithe"
   },
   "ranking": {
-    "pt-title": "Rátáil sonrach do thír a léiríonn cé chomh maith agus a théann na meáin i bhfeidhm {{inCountry}}.",
-    "pt-desc": "Léiríonn scóir níos airde ábhar atá an-ard-rátáilte agus atá éasca le fáil. Léiríonn scór de 90/100 ábhar den scoth atá coitianta agus ar fáil go forleathan. Déantar na scóir a nuashonrú go laethúil chun a bheith ar aon dul le roghanna réigiúnacha atá ag athrú."
+    "pt-title": "Rátáil tír-shonrach a léiríonn cé chomh maith agus a mheallann meáin {{inCountry}}.",
+    "pt-desc": "Léiríonn scóir níos airde ábhar atá an-ard-rátáil agus atá éasca le fáil. Tugann scór de 90/100 le fios go bhfuil ábhar den scoth atá coitianta agus ar fáil go forleathan. Déantar na scóir a nuashonrú go laethúil chun coinneáil suas le roghanna réigiúnacha atá ag athrú."
   },
   "sortBy": {
     "label": "Sórtáil de réir",
@@ -137,29 +137,29 @@
   "mediaTabs": {
     "links": "Naisc",
     "overview": "Forbhreathnú",
-    "similars": "Cosúil le chéile"
+    "similars": "Cosúil le seo"
   },
   "genres": {
     "ACTION": "Gníomh",
     "ADVENTURE": "Eachtraíochta",
     "ANIMATION": "Beochan",
     "COMEDY": "Coiméide",
-    "CRIME": "Coiriúlacht",
-    "DOCUMENTARY": "Clár faisnéise",
+    "CRIME": "Coireacht",
+    "DOCUMENTARY": "Clár Faisnéise",
     "DRAMA": "Dráma",
-    "FAMILY": "Teaghlaigh",
+    "FAMILY": "Clann",
     "FANTASY": "Fantasy",
     "HISTORY": "Stair",
     "HORROR": "Uafás",
     "MUSIC": "Ceol",
-    "MYSTERY": "Rúndiamhair",
+    "MYSTERY": "Mistéir",
     "OTHER": "Eile",
     "ROMANCE": "Rómánsacha",
     "SCIENCE_FICTION": "Sci-Fi",
     "THRILLER": "Thriller",
-    "TV_MOVIE": "Scannán teilifíse",
-    "WAR": "Cogaidh",
-    "WESTERN": "Iartharach"
+    "TV_MOVIE": "Scannán Teilifíse",
+    "WAR": "Cogadh",
+    "WESTERN": "Iarthar"
   },
   "country": {
     "ad": "Andóra",

@@ -8,11 +8,11 @@
     "loading": "Opstarten..."
   },
   "browse": {
-    "loading": "Laden...",
+    "loading": "Bezig met laden...",
     "load-more": "Meer laden",
     "populars": "Populair",
     "movies": "Films",
-    "tv-shows": "Tv-programma's"
+    "tv-shows": "Series"
   },
   "sidebar": {
     "back": "Ga terug",
@@ -21,7 +21,7 @@
   "media": {
     "free": "Vrij",
     "movie": "Film",
-    "tv-show": "Tv-show"
+    "tv-show": "Serie"
   },
   "mediaQuickActions": {
     "watch-on": "Kijk op {{platform}}",
@@ -31,7 +31,7 @@
     "free-on": "Kijk gratis op {{platform}}"
   },
   "commandCenter": {
-    "home": "Terug naar home"
+    "home": "Terug naar startpagina"
   },
   "search": {
     "search": "Zoeken",
@@ -49,14 +49,14 @@
   "settings": {
     "toast": "Je instellingen zijn succesvol bijgewerkt.",
     "settings": "Instellingen",
-    "description": "Configureer app-specifieke opties zoals analytics, thema's en andere lokale voorkeuren.",
+    "description": "Configureer app-specifieke opties zoals analyse, thema's en andere lokale voorkeuren.",
     "analytics": "Analytics",
-    "analytics-description": "Verzend anonieme gebruiksgegevens om de app te verbeteren en de ontwikkeling te begeleiden.",
+    "analytics-description": "Verstuur anonieme gebruiksgegevens om de app te verbeteren en de ontwikkeling te begeleiden.",
     "logs": "Logboeken",
-    "logs-description": "Bekijk toepassingslogboeken voor debuggen en probleemoplossing.",
+    "logs-description": "Bekijk applicatielogs voor debuggen en probleemoplossing.",
     "open-logs": "Open",
     "update": "Instellingen bijwerken",
-    "error": "Instellingen bijwerken mislukt"
+    "error": "Kan instellingen niet bijwerken"
   },
   "preferences": {
     "preferences": "Voorkeuren",
@@ -68,11 +68,11 @@
     "language": "Taal",
     "language-description": "Inhoud en applicatie-interface passen zich aan aan de door jou geselecteerde taal.",
     "country": "Land",
-    "country-description": "Stel je land in om inhoudsaanbevelingen te personaliseren en je ervaring aan te passen."
+    "country-description": "Stel je land in om contentaanbevelingen te personaliseren en je ervaring aan te passen."
   },
   "watchPreferences": {
     "label": "Kijkvoorkeuren",
-    "description": "Vertel ons waar je graag kijkt, zodat we de juiste opties voor jou kunnen uitlichten.",
+    "description": "Vertel ons waar je graag kijkt, zodat we de juiste opties voor je kunnen uitlichten.",
     "update": "Voorkeuren bijwerken",
     "toast": "Je kijkvoorkeuren zijn succesvol bijgewerkt.",
     "add": "Toevoegen",
@@ -80,7 +80,7 @@
   },
   "onboardingPreferences": {
     "countryTitle": "Selecteer je land",
-    "countryDescription": "Selecteer je land om beschikbare talen te zien",
+    "countryDescription": "Selecteer je land om de beschikbare talen te zien",
     "languageTitle": "Selecteer je taal",
     "languageDescription": "Selecteer je interface taal en geef prioriteit aan inhoud {{inCountry}}",
     "changeCountry": "Land wijzigen",
@@ -90,12 +90,12 @@
   "onboardingProviders": {
     "title": "Selecteer je streamingdiensten",
     "description": "Kies de platforms waartoe je toegang hebt, zodat we je kunnen laten zien wat je kunt kijken.",
-    "searchPlaceholder": "Zoekproviders...",
+    "searchPlaceholder": "Zoek providers...",
     "category": {
       "popular": "Populair",
-      "free": "Vrij",
+      "free": "Gratis",
       "subscription": "Abonnement",
-      "all": "Alle"
+      "all": "Alles"
     },
     "skip": "Ik doe het later.",
     "continue": "Doorgaan",
@@ -114,17 +114,17 @@
   },
   "update": {
     "available": "Popcorn Time {{version}} is beschikbaar...",
-    "downloading": "Download update...",
+    "downloading": "Update downloaden...",
     "downloaded": "Update gedownload...",
-    "installing": "Bezig met installeren van update...",
-    "installed": "Start de app opnieuw om de update toe te passen",
+    "installing": "Update installeren...",
+    "installed": "Start de app opnieuw om de update toe te passen.",
     "install": "Installeren",
-    "relaunch": "Herstart",
-    "error": "Kon het update niet installeren"
+    "relaunch": "Opnieuw starten",
+    "error": "Installatie van update mislukt"
   },
   "ranking": {
     "pt-title": "Een land-specifieke beoordeling die weergeeft hoe goed een media resoneert {{inCountry}}.",
-    "pt-desc": "Hogere scores weerspiegelen content die zowel hoog gewaardeerd als gemakkelijk toegankelijk is. Een score van 90/100 duidt op topkwaliteit content die populair en breed beschikbaar is. De scores worden dagelijks bijgewerkt om in lijn te blijven met veranderende regionale voorkeuren."
+    "pt-desc": "Hogere scores weerspiegelen inhoud die zowel hoog gewaardeerd als gemakkelijk toegankelijk is. Een score van 90/100 duidt op topkwaliteit inhoud die populair en breed beschikbaar is. De scores worden dagelijks bijgewerkt om in lijn te blijven met veranderende regionale voorkeuren."
   },
   "sortBy": {
     "label": "Sorteren op",
@@ -150,16 +150,16 @@
     "FAMILY": "Familie",
     "FANTASY": "Fantasie",
     "HISTORY": "Geschiedenis",
-    "HORROR": "Verschrikking",
+    "HORROR": "Horror",
     "MUSIC": "Muziek",
     "MYSTERY": "Mysterie",
-    "OTHER": "Ander",
+    "OTHER": "Overig",
     "ROMANCE": "Romantiek",
-    "SCIENCE_FICTION": "Sciencefiction",
-    "THRILLER": "Spannend",
+    "SCIENCE_FICTION": "Sci-Fi",
+    "THRILLER": "Thriller",
     "TV_MOVIE": "TV-film",
     "WAR": "Oorlog",
-    "WESTERN": "Westers"
+    "WESTERN": "Western"
   },
   "country": {
     "ad": "Andorra",

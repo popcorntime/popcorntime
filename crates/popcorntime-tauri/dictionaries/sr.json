@@ -5,28 +5,28 @@
     "soon": "Ускоро™"
   },
   "splash": {
-    "loading": "Pokrećem..."
+    "loading": "Pokreće se..."
   },
   "browse": {
     "loading": "Učitavanje...",
     "load-more": "Učitaj još",
-    "populars": "Popularno",
+    "populars": "Popularni",
     "movies": "Filmovi",
-    "tv-shows": "TV serije"
+    "tv-shows": "Serije"
   },
   "sidebar": {
-    "back": "Vrati se",
+    "back": "Vrati se назад",
     "charts": "Liste {{inCountry}}"
   },
   "media": {
     "free": "Бесплатно",
     "movie": "Филм",
-    "tv-show": "TV serija"
+    "tv-show": "Serija"
   },
   "mediaQuickActions": {
     "watch-on": "Gledaj na {{platform}}",
     "rent-on": "Iznajmi na {{platform}}",
-    "buy-on": "Kupite na {{platform}}",
+    "buy-on": "Kupi na {{platform}}",
     "buy-rent-on": "Kupi ili iznajmi na {{platform}}",
     "free-on": "Gledaj besplatno na {{platform}}"
   },
@@ -34,75 +34,75 @@
     "home": "Nazad na početnu stranu"
   },
   "search": {
-    "search": "Претрага",
+    "search": "Pretraži",
     "results": "Rezultati",
     "viewAll": "Prikaži sve",
     "noResults": "Nema rezultata",
-    "placeholder": "Претрага..."
+    "placeholder": "Pretraga..."
   },
   "menu": {
-    "preferences": "Језик и регион",
-    "watchPreferences": "Preferencije gledanja",
+    "preferences": "Jezik i region",
+    "watchPreferences": "Podešavanja gledanja",
     "settings": "Podešavanja aplikacije",
     "signOut": "Odjavi se"
   },
   "settings": {
     "toast": "Vaša podešavanja su uspešno ažurirana.",
     "settings": "Podešavanja",
-    "description": "Konfigurišite opcije specifične za aplikaciju kao što su analitika, teme i druge lokalne postavke.",
+    "description": "Konfiguriši opcije specifične za aplikaciju kao što su analitika, teme i druge lokalne postavke.",
     "analytics": "Analitika",
-    "analytics-description": "Pošaljite anonimne podatke o korišćenju kako biste pomogli u poboljšanju aplikacije i usmeravanju razvoja.",
+    "analytics-description": "Šalji anonimne podatke o korišćenju kako bi pomogao unapređenju aplikacije i usmeravanju razvoja.",
     "logs": "Дневници",
-    "logs-description": "Pregledajte logove aplikacije za otklanjanje grešaka i rešavanje problema.",
+    "logs-description": "Pregledajte logove aplikacije za debagovanje i rešavanje problema.",
     "open-logs": "Отворено",
-    "update": "Ажурирање подешавања",
+    "update": "Ažuriraj podešavanja",
     "error": "Nije uspelo ažuriranje podešavanja"
   },
   "preferences": {
     "preferences": "Preferencije",
-    "description": "Izaberite željeni jezik i državu da biste uživali u sadržaju prilagođenom vama.",
-    "update": "Ažuriraj postavke",
+    "description": "Izaberite željeni jezik i državu kako biste uživali u sadržaju prilagođenom vašim interesovanjima.",
+    "update": "Ažuriraj podešavanja",
     "error": "Ažuriranje preferencija nije uspelo",
     "signOut": "Odjavi se",
-    "toast": "Vaše preferencije su uspešno ažurirane.",
-    "language": "Језик",
-    "language-description": "Sadržaj i interfejs aplikacije će se prilagoditi odabranom jeziku.",
+    "toast": "Vaše postavke su uspešno ažurirane.",
+    "language": "Jezik",
+    "language-description": "Sadržaj i interfejs aplikacije će se prilagoditi vašem izabranom jeziku.",
     "country": "Zemlja",
     "country-description": "Podesite svoju zemlju kako biste personalizovali preporuke sadržaja i prilagodili svoje iskustvo."
   },
   "watchPreferences": {
-    "label": "Preferencije gledanja",
-    "description": "Recite nam gde volite da gledate kako bismo mogli da istaknemo prave opcije za vas.",
-    "update": "Ažuriraj postavke",
-    "toast": "Vaše preferencije gledanja su uspešno ažurirane.",
-    "add": "Додај",
-    "remove": "Уклони"
+    "label": "Podešavanja za gledanje",
+    "description": "Reci nam gde voliš da gledaš kako bismo mogli da istaknemo prave opcije za tebe.",
+    "update": "Ažuriraj preferencije gledanja",
+    "toast": "Vaše preferencije za gledanje su uspešno ažurirane.",
+    "add": "Dodaj",
+    "remove": "Ukloni"
   },
   "onboardingPreferences": {
     "countryTitle": "Izaberite svoju zemlju",
     "countryDescription": "Izaberite svoju zemlju da biste videli dostupne jezike",
-    "languageTitle": "Odaberite svoj jezik",
-    "languageDescription": "Izaberite jezik interfejsa i dajte prioritet sadržaju {{inCountry}}",
+    "languageTitle": "Izaberite svoj jezik",
+    "languageDescription": "Odaberite jezik interfejsa i dajte prioritet sadržaju {{inCountry}}",
     "changeCountry": "Promeni državu",
-    "default": "Podrazumevani jezik",
+    "default": "Podrazumevani lokalitet zemlje",
     "showAll": "Prikaži sve jezike"
   },
   "onboardingProviders": {
-    "title": "Izaberite svoje streaming usluge",
-    "description": "Izaberite platforme kojima imate pristup kako bismo vam mogli pokazati šta da gledate.",
-    "searchPlaceholder": "Pretraživači...",
+    "title": "Izaberite svoje striming usluge",
+    "description": "Izaberite platforme kojima imate pristup kako bismo vam pokazali šta da gledate.",
+    "searchPlaceholder": "Pretraži provajdere...",
     "category": {
-      "popular": "Popularno",
-      "free": "Бесплатно",
+      "popular": "Popularni",
+      "free": "Besplatno",
       "subscription": "Pretplata",
-      "all": "Сви"
+      "all": "Sve"
     },
     "skip": "Učiniću to kasnije",
     "continue": "Nastavi",
     "selectCountry": "Promeni zemlju",
     "clearAll": "Obriši sve",
     "clearSearch": "Obriši pretragu",
-    "selected": "{{count}} добављен(их) добављач(а)",
+    "selected": "{{count}} provajder(a) izabrano",
     "noFound": "Nema dostupnih provajdera za \"{{query}}\""
   },
   "priceType": {
@@ -114,17 +114,17 @@
   },
   "update": {
     "available": "Popcorn Time {{version}} je dostupan...",
-    "downloading": "Преузимање ажурирања...",
+    "downloading": "Preuzimanje ažuriranja...",
     "downloaded": "Ažuriranje preuzeto...",
     "installing": "Instaliranje ažuriranja...",
-    "installed": "Ponovo pokrenite aplikaciju da biste primenili ažuriranje",
+    "installed": "Ponovo pokrenite aplikaciju da biste primenili ažuriranje.",
     "install": "Instaliraj",
-    "relaunch": "Pokreni ponovo",
-    "error": "Неуспешно инсталирање ажурирања"
+    "relaunch": "Ponovo pokreni",
+    "error": "Neuspešno instaliranje ažuriranja"
   },
   "ranking": {
-    "pt-title": "Ocena specifična za zemlju koja odražava koliko dobro medij rezonuje {{inCountry}}.",
-    "pt-desc": "Viši rezultati odražavaju sadržaj koji je i visoko ocenjen i lako dostupan. Rezultat od 90/100 označava sadržaj vrhunskog kvaliteta koji je popularan i široko dostupan. Rezultati se svakodnevno ažuriraju kako bi bili u skladu sa promenljivim regionalnim preferencijama."
+    "pt-title": "Ocena specifična za određenu zemlju koja odražava koliko dobro mediji rezoniraju {{inCountry}}.",
+    "pt-desc": "Viši rezultati odražavaju sadržaj koji je visoko ocenjen i lako dostupan. Rezultat od 90/100 označava vrhunski kvalitet sadržaja koji je popularan i široko dostupan. Rezultati se ažuriraju svakodnevno kako bi bili u skladu sa promenama regionalnih preferencija."
   },
   "sortBy": {
     "label": "Sortiraj po",
@@ -132,34 +132,34 @@
     "updated": "Ažurirano"
   },
   "mediaActions": {
-    "open": "Отворено"
+    "open": "Otvoriti"
   },
   "mediaTabs": {
-    "links": "Линкови",
+    "links": "Veze",
     "overview": "Pregled",
     "similars": "Slični"
   },
   "genres": {
-    "ACTION": "Акција",
-    "ADVENTURE": "Авантура",
-    "ANIMATION": "Анимација",
-    "COMEDY": "Комедија",
-    "CRIME": "Злочин",
-    "DOCUMENTARY": "Документарни филм",
+    "ACTION": "Akcija",
+    "ADVENTURE": "Avantura",
+    "ANIMATION": "Animacija",
+    "COMEDY": "Komedija",
+    "CRIME": "Krimi",
+    "DOCUMENTARY": "Dokumentarac",
     "DRAMA": "Драма",
-    "FAMILY": "Породица",
-    "FANTASY": "Фантазија",
-    "HISTORY": "Историја",
-    "HORROR": "Ужас",
-    "MUSIC": "Музика",
-    "MYSTERY": "Мистерија",
-    "OTHER": "Остало",
-    "ROMANCE": "Романтика",
-    "SCIENCE_FICTION": "Сци-Фи",
-    "THRILLER": "Трилер",
-    "TV_MOVIE": "ТВ филм",
-    "WAR": "Рат",
-    "WESTERN": "Вестерн"
+    "FAMILY": "Porodični",
+    "FANTASY": "Fantazija",
+    "HISTORY": "Istorija",
+    "HORROR": "Horor",
+    "MUSIC": "Muzika",
+    "MYSTERY": "Misterija",
+    "OTHER": "Ostalo",
+    "ROMANCE": "Romantika",
+    "SCIENCE_FICTION": "Naučna fantastika",
+    "THRILLER": "Triler",
+    "TV_MOVIE": "TV film",
+    "WAR": "Rat",
+    "WESTERN": "Vestern"
   },
   "country": {
     "ad": "Андора",

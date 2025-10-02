@@ -1,6 +1,6 @@
 {
   "header": {
-    "popular": "Popolare",
+    "popular": "Popolari",
     "free": "Gratuito",
     "soon": "Presto™"
   },
@@ -8,24 +8,24 @@
     "loading": "Avvio in corso..."
   },
   "browse": {
-    "loading": "Caricamento in corso...",
+    "loading": "Caricamento...",
     "load-more": "Carica altro",
     "populars": "Popolari",
     "movies": "Film",
-    "tv-shows": "Programmi TV"
+    "tv-shows": "Serie"
   },
   "sidebar": {
     "back": "Torna indietro",
-    "charts": "Grafici {{inCountry}}"
+    "charts": "Classifiche {{inCountry}}"
   },
   "media": {
     "free": "Gratuito",
     "movie": "Film",
-    "tv-show": "Programma TV"
+    "tv-show": "Serie"
   },
   "mediaQuickActions": {
     "watch-on": "Guarda su {{platform}}",
-    "rent-on": "Affitta su {{platform}}",
+    "rent-on": "Noleggia su {{platform}}",
     "buy-on": "Acquista su {{platform}}",
     "buy-rent-on": "Acquista o noleggia su {{platform}}",
     "free-on": "Guarda gratis su {{platform}}"
@@ -53,15 +53,15 @@
     "analytics": "Analisi",
     "analytics-description": "Invia dati di utilizzo anonimi per aiutare a migliorare l'app e guidare lo sviluppo.",
     "logs": "Registri",
-    "logs-description": "Visualizza i registri dell'applicazione per il debug e la risoluzione dei problemi.",
+    "logs-description": "Visualizza i registri dell'applicazione per il debugging e la risoluzione dei problemi.",
     "open-logs": "Aprire",
     "update": "Aggiorna impostazioni",
     "error": "Impossibile aggiornare le impostazioni"
   },
   "preferences": {
     "preferences": "Preferenze",
-    "description": "Seleziona la tua lingua e il tuo paese preferiti per goderti contenuti su misura.",
-    "update": "Aggiorna le preferenze",
+    "description": "Seleziona la tua lingua e il tuo paese preferiti per goderti contenuti personalizzati.",
+    "update": "Aggiorna preferenze",
     "error": "Impossibile aggiornare le preferenze",
     "signOut": "Esci",
     "toast": "Le tue preferenze sono state aggiornate con successo.",
@@ -71,31 +71,31 @@
     "country-description": "Imposta il tuo paese per personalizzare i consigli sui contenuti e adattare la tua esperienza."
   },
   "watchPreferences": {
-    "label": "Preferenze di visualizzazione",
+    "label": "Preferenze di visione",
     "description": "Dicci dove ti piace guardare così possiamo evidenziare le opzioni giuste per te.",
-    "update": "Aggiorna preferenze",
+    "update": "Aggiorna le preferenze di visione",
     "toast": "Le tue preferenze di visualizzazione sono state aggiornate con successo.",
-    "add": "Aggiungere",
+    "add": "Aggiungi",
     "remove": "Rimuovi"
   },
   "onboardingPreferences": {
     "countryTitle": "Seleziona il tuo paese",
     "countryDescription": "Seleziona il tuo paese per vedere le lingue disponibili",
     "languageTitle": "Seleziona la tua lingua",
-    "languageDescription": "Seleziona la lingua dell'interfaccia e dai priorità ai contenuti {{inCountry}}",
+    "languageDescription": "Seleziona la tua lingua dell'interfaccia e dai priorità ai contenuti {{inCountry}}",
     "changeCountry": "Cambia paese",
-    "default": "Impostazione predefinita della lingua",
+    "default": "Lingua predefinita",
     "showAll": "Mostra tutte le lingue"
   },
   "onboardingProviders": {
     "title": "Seleziona i tuoi servizi di streaming",
     "description": "Scegli le piattaforme a cui hai accesso così possiamo mostrarti cosa guardare.",
-    "searchPlaceholder": "Fornitori di ricerca...",
+    "searchPlaceholder": "Cerca provider...",
     "category": {
-      "popular": "Popolare",
-      "free": "Gratuito",
+      "popular": "Popolari",
+      "free": "Gratis",
       "subscription": "Abbonamento",
-      "all": "Tutto"
+      "all": "Tutti"
     },
     "skip": "Lo farò più tardi",
     "continue": "Continua",
@@ -116,15 +116,15 @@
     "available": "Popcorn Time {{version}} è disponibile...",
     "downloading": "Scaricamento aggiornamento...",
     "downloaded": "Aggiornamento scaricato...",
-    "installing": "Installazione aggiornamento in corso...",
+    "installing": "Installazione aggiornamento...",
     "installed": "Rilancia l'app per applicare l'aggiornamento",
     "install": "Installa",
-    "relaunch": "Rilancio",
+    "relaunch": "Rilancia",
     "error": "Impossibile installare l'aggiornamento"
   },
   "ranking": {
     "pt-title": "Una valutazione specifica per paese che riflette quanto bene un media risuona {{inCountry}}.",
-    "pt-desc": "Punteggi più alti riflettono contenuti che sono sia altamente valutati che facilmente accessibili. Un punteggio di 90/100 indica contenuti di alta qualità che sono popolari e ampiamente disponibili. I punteggi vengono aggiornati quotidianamente per rimanere in linea con le preferenze regionali in evoluzione."
+    "pt-desc": "Punteggi più alti riflettono contenuti sia di alta qualità che facilmente accessibili. Un punteggio di 90/100 indica contenuti di alta qualità che sono popolari e ampiamente disponibili. I punteggi vengono aggiornati quotidianamente per rimanere in linea con le preferenze regionali in evoluzione."
   },
   "sortBy": {
     "label": "Ordina per",
@@ -132,10 +132,10 @@
     "updated": "Aggiornato"
   },
   "mediaActions": {
-    "open": "Aprire"
+    "open": "Apri"
   },
   "mediaTabs": {
-    "links": "Collegamenti",
+    "links": "Link",
     "overview": "Panoramica",
     "similars": "Simili"
   },
@@ -146,20 +146,20 @@
     "COMEDY": "Commedia",
     "CRIME": "Crimine",
     "DOCUMENTARY": "Documentario",
-    "DRAMA": "Dramma",
+    "DRAMA": "Drammatico",
     "FAMILY": "Famiglia",
-    "FANTASY": "Fantasia",
+    "FANTASY": "Fantascienza",
     "HISTORY": "Storia",
     "HORROR": "Orrore",
     "MUSIC": "Musica",
     "MYSTERY": "Mistero",
     "OTHER": "Altro",
-    "ROMANCE": "Romanticismo",
+    "ROMANCE": "Romantico",
     "SCIENCE_FICTION": "Fantascienza",
     "THRILLER": "Thriller",
-    "TV_MOVIE": "Film per la TV",
+    "TV_MOVIE": "Film TV",
     "WAR": "Guerra",
-    "WESTERN": "Occidentale"
+    "WESTERN": "Western"
   },
   "country": {
     "ad": "Andorra",

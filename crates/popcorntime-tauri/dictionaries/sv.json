@@ -1,6 +1,6 @@
 {
   "header": {
-    "popular": "Populär",
+    "popular": "Populärt",
     "free": "Gratis",
     "soon": "Snart™"
   },
@@ -10,9 +10,9 @@
   "browse": {
     "loading": "Laddar...",
     "load-more": "Ladda mer",
-    "populars": "Populära",
+    "populars": "Populära filmer och tv-serier",
     "movies": "Filmer",
-    "tv-shows": "TV-program"
+    "tv-shows": "Serier"
   },
   "sidebar": {
     "back": "Gå tillbaka",
@@ -21,7 +21,7 @@
   "media": {
     "free": "Gratis",
     "movie": "Film",
-    "tv-show": "TV-serie"
+    "tv-show": "Serie"
   },
   "mediaQuickActions": {
     "watch-on": "Titta på {{platform}}",
@@ -31,7 +31,7 @@
     "free-on": "Titta gratis på {{platform}}"
   },
   "commandCenter": {
-    "home": "Tillbaka till startsidan"
+    "home": "Tillbaka till huvudmenyn"
   },
   "search": {
     "search": "Sök",
@@ -42,7 +42,7 @@
   },
   "menu": {
     "preferences": "Språk och region",
-    "watchPreferences": "Tittarinställningar",
+    "watchPreferences": "Titta på inställningar",
     "settings": "Appinställningar",
     "signOut": "Logga ut"
   },
@@ -53,29 +53,29 @@
     "analytics": "Analys",
     "analytics-description": "Skicka anonym användardata för att hjälpa till att förbättra appen och vägleda utvecklingen.",
     "logs": "Loggar",
-    "logs-description": "Visa applikationsloggar för felsökning och avhjälpning.",
+    "logs-description": "Visa apploggar för felsökning och problemlösning.",
     "open-logs": "Öppna",
     "update": "Uppdatera inställningar",
-    "error": "Misslyckades med att uppdatera inställningarna"
+    "error": "Det gick inte att uppdatera inställningarna"
   },
   "preferences": {
     "preferences": "Inställningar",
-    "description": "Välj ditt föredragna språk och land för att njuta av skräddarsytt innehåll.",
+    "description": "Välj ditt föredragna språk och land för att njuta av anpassat innehåll.",
     "update": "Uppdatera inställningar",
     "error": "Misslyckades att uppdatera inställningar",
     "signOut": "Logga ut",
     "toast": "Dina inställningar har uppdaterats framgångsrikt.",
     "language": "Språk",
-    "language-description": "Innehåll och applikationsgränssnitt anpassas efter ditt valda språk.",
+    "language-description": "Innehåll och applikationsgränssnitt anpassas till ditt valda språk.",
     "country": "Land",
-    "country-description": "Ange ditt land för att anpassa innehållsrekommendationer och skräddarsy din upplevelse."
+    "country-description": "Ställ in ditt land för att anpassa innehållsrekommendationer och skräddarsy din upplevelse."
   },
   "watchPreferences": {
     "label": "Tittarinställningar",
-    "description": "Berätta var du gillar att titta så vi kan lyfta fram rätt alternativ för dig.",
-    "update": "Uppdatera inställningar",
-    "toast": "Dina tittarpreferenser har uppdaterats framgångsrikt.",
-    "add": "Tillägga",
+    "description": "Berätta var du gillar att titta så kan vi lyfta fram rätt alternativ för dig.",
+    "update": "Uppdatera visningsinställningar",
+    "toast": "Dina tittarinställningar har uppdaterats framgångsrikt.",
+    "add": "Lägg till",
     "remove": "Ta bort"
   },
   "onboardingPreferences": {
@@ -83,23 +83,23 @@
     "countryDescription": "Välj ditt land för att se tillgängliga språk",
     "languageTitle": "Välj ditt språk",
     "languageDescription": "Välj ditt gränssnittsspråk och prioritera innehåll {{inCountry}}",
-    "changeCountry": "Byt land",
-    "default": "Standardplats",
+    "changeCountry": "Ändra land",
+    "default": "Standardplatsinställning",
     "showAll": "Visa alla språk"
   },
   "onboardingProviders": {
     "title": "Välj dina streamingtjänster",
-    "description": "Välj de plattformar du har tillgång till så kan vi visa vad du kan titta på.",
+    "description": "Välj de plattformar du har tillgång till så kan vi visa dig vad du kan titta på.",
     "searchPlaceholder": "Sök leverantörer...",
     "category": {
-      "popular": "Populär",
+      "popular": "Populära",
       "free": "Gratis",
       "subscription": "Prenumeration",
       "all": "Alla"
     },
     "skip": "Jag gör det senare",
     "continue": "Fortsätt",
-    "selectCountry": "Ändra land",
+    "selectCountry": "Byt land",
     "clearAll": "Rensa alla",
     "clearSearch": "Rensa sökning",
     "selected": "{{count}} leverantör(er) valda",
@@ -120,11 +120,11 @@
     "installed": "Starta om appen för att tillämpa uppdateringen",
     "install": "Installera",
     "relaunch": "Starta om",
-    "error": "Misslyckades med att installera uppdateringen"
+    "error": "Misslyckades med att installera uppdatering"
   },
   "ranking": {
-    "pt-title": "Ett landspecifikt betyg som visar hur väl ett media resonerar {{inCountry}}.",
-    "pt-desc": "Högre poäng återspeglar innehåll som både är mycket uppskattat och lättillgängligt. En poäng på 90/100 indikerar innehåll av högsta kvalitet som är populärt och allmänt tillgängligt. Poängen uppdateras dagligen för att följa de föränderliga regionala preferenserna."
+    "pt-title": "En landspecifik betygsättning som visar hur väl en media resonerar {{inCountry}}.",
+    "pt-desc": "Högre poäng speglar innehåll som är både högt betygsatt och lättillgängligt. En poäng på 90/100 indikerar innehåll av högsta kvalitet som är populärt och allmänt tillgängligt. Poängen uppdateras dagligen för att hålla sig i linje med förändrade regionala preferenser."
   },
   "sortBy": {
     "label": "Sortera efter",
@@ -140,26 +140,26 @@
     "similars": "Liknande"
   },
   "genres": {
-    "ACTION": "Handling",
+    "ACTION": "Action",
     "ADVENTURE": "Äventyr",
     "ANIMATION": "Animation",
     "COMEDY": "Komedi",
-    "CRIME": "Brottslighet",
+    "CRIME": "Brott",
     "DOCUMENTARY": "Dokumentär",
     "DRAMA": "Drama",
     "FAMILY": "Familj",
-    "FANTASY": "Fantasi",
-    "HISTORY": "Historia",
-    "HORROR": "Fasa",
+    "FANTASY": "Fantasy",
+    "HISTORY": "Historik",
+    "HORROR": "Skräck",
     "MUSIC": "Musik",
-    "MYSTERY": "Mysterium",
-    "OTHER": "Andra",
+    "MYSTERY": "Mystik",
+    "OTHER": "Övrigt",
     "ROMANCE": "Romantik",
     "SCIENCE_FICTION": "Sci-Fi",
     "THRILLER": "Thriller",
     "TV_MOVIE": "TV-film",
     "WAR": "Krig",
-    "WESTERN": "Västra"
+    "WESTERN": "Västern"
   },
   "country": {
     "ad": "Andorra",

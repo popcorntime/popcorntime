@@ -9,10 +9,10 @@
   },
   "browse": {
     "loading": "読み込み中...",
-    "load-more": "もっと読み込む",
+    "load-more": "続きを読み込む",
     "populars": "人気作品",
     "movies": "映画",
-    "tv-shows": "テレビ番組"
+    "tv-shows": "シリーズ"
   },
   "sidebar": {
     "back": "戻る",
@@ -21,13 +21,13 @@
   "media": {
     "free": "無料",
     "movie": "映画",
-    "tv-show": "テレビ番組"
+    "tv-show": "シリーズ"
   },
   "mediaQuickActions": {
-    "watch-on": "{{platform}}で観る",
+    "watch-on": "{{platform}} で観る",
     "rent-on": "{{platform}}でレンタル",
     "buy-on": "{{platform}}で購入",
-    "buy-rent-on": "{{platform}} で購入またはレンタル",
+    "buy-rent-on": "{{platform}}で購入またはレンタル",
     "free-on": "{{platform}}で無料視聴"
   },
   "commandCenter": {
@@ -35,45 +35,45 @@
   },
   "search": {
     "search": "検索",
-    "results": "結果",
+    "results": "検索結果",
     "viewAll": "すべて表示",
-    "noResults": "結果がありません",
+    "noResults": "検索結果がありません",
     "placeholder": "検索..."
   },
   "menu": {
     "preferences": "言語と地域",
     "watchPreferences": "視聴設定",
     "settings": "アプリ設定",
-    "signOut": "ログアウト"
+    "signOut": "サインアウト"
   },
   "settings": {
     "toast": "設定が正常に更新されました。",
     "settings": "設定",
-    "description": "アプリ固有のオプションを設定して、分析、テーマ、その他のローカル設定を調整します。",
-    "analytics": "アナリティクス",
-    "analytics-description": "アプリを改善し、開発を進めるために匿名の使用データを送信します。",
+    "description": "アプリ固有のオプションを設定します。分析、テーマ、その他のローカル設定などを含みます。",
+    "analytics": "分析",
+    "analytics-description": "アプリの改善と開発の指針のために匿名の使用データを送信する。",
     "logs": "ログ",
-    "logs-description": "デバッグおよびトラブルシューティングのためにアプリケーションログを表示します。",
+    "logs-description": "デバッグとトラブルシューティングのためにアプリケーションログを表示します。",
     "open-logs": "開ける",
-    "update": "設定を更新する",
+    "update": "設定を更新",
     "error": "設定の更新に失敗しました"
   },
   "preferences": {
     "preferences": "設定",
-    "description": "言語と国を選択して、あなたに合わせたコンテンツをお楽しみください。",
+    "description": "お好みの言語と国を選んで、あなたにぴったりのコンテンツを楽しんでください。",
     "update": "設定を更新",
     "error": "設定の更新に失敗しました",
     "signOut": "サインアウト",
     "toast": "設定が正常に更新されました。",
     "language": "言語",
-    "language-description": "コンテンツとアプリケーションインターフェースは、選択した言語に適応します。",
+    "language-description": "選択した言語に応じて、コンテンツとアプリケーションインターフェースが適応します。",
     "country": "国",
-    "country-description": "国を設定して、コンテンツのおすすめをパーソナライズし、体験を自分に合わせてカスタマイズしましょう。"
+    "country-description": "国を設定してコンテンツのおすすめをパーソナライズし、体験をカスタマイズしましょう。"
   },
   "watchPreferences": {
     "label": "視聴設定",
-    "description": "どこで観るのが好きか教えてください。あなたにぴったりのオプションをおすすめします。",
-    "update": "設定を更新する",
+    "description": "どこで視聴するのが好きか教えてください。あなたに合った選択肢をハイライトします。",
+    "update": "視聴設定を更新",
     "toast": "視聴設定が正常に更新されました。",
     "add": "追加",
     "remove": "削除"
@@ -81,29 +81,29 @@
   "onboardingPreferences": {
     "countryTitle": "国を選択してください",
     "countryDescription": "国を選択して利用可能な言語を確認してください",
-    "languageTitle": "言語を選択",
-    "languageDescription": "インターフェイス言語を選択し、{{inCountry}}のコンテンツを優先します。",
-    "changeCountry": "国を変更",
-    "default": "デフォルトロケール",
+    "languageTitle": "言語を選択してください",
+    "languageDescription": "インターフェースの言語を選択し、{{inCountry}}のコンテンツを優先します。",
+    "changeCountry": "国を変更する",
+    "default": "デフォルトのロケール",
     "showAll": "すべての言語を表示"
   },
   "onboardingProviders": {
-    "title": "ストリーミングサービスを選択",
-    "description": "アクセス可能なプラットフォームを選択してください。視聴できる作品をお見せします。",
-    "searchPlaceholder": "プロバイダーを検索中...",
+    "title": "ストリーミングサービスを選択してください",
+    "description": "アクセスできるプラットフォームを選択して、視聴できるコンテンツを表示します。",
+    "searchPlaceholder": "プロバイダーを検索...",
     "category": {
       "popular": "人気",
       "free": "無料",
       "subscription": "サブスクリプション",
-      "all": "全て"
+      "all": "すべて"
     },
-    "skip": "後でやります",
-    "continue": "続行",
+    "skip": "後でやるよ",
+    "continue": "続ける",
     "selectCountry": "国を変更",
     "clearAll": "すべてクリア",
     "clearSearch": "検索をクリア",
     "selected": "{{count}} 件のプロバイダーが選択されました",
-    "noFound": "\"{{query}}\" のプロバイダーが見つかりませんでした"
+    "noFound": "\"{{query}}\" のプロバイダーが見つかりません"
   },
   "priceType": {
     "buy": "買う",
@@ -113,26 +113,26 @@
     "rent": "家賃"
   },
   "update": {
-    "available": "ポップコーンタイム{{version}}が利用可能です...",
+    "available": "Popcorn Time {{version}} が利用可能です...",
     "downloading": "アップデートをダウンロード中...",
     "downloaded": "アップデートがダウンロードされました...",
-    "installing": "アップデートをインストール中...",
-    "installed": "アプリを再起動してアップデートを適用してください",
+    "installing": "アップデートをインストールしています...",
+    "installed": "アプリを再起動してアップデートを適用してください。",
     "install": "インストール",
     "relaunch": "再起動",
     "error": "アップデートのインストールに失敗しました"
   },
   "ranking": {
-    "pt-title": "メディアが{{inCountry}}でどれだけ共鳴しているかを反映する国別の評価。",
-    "pt-desc": "高いスコアは、高評価でアクセスしやすいコンテンツを反映しています。90/100のスコアは、質が高く人気があり、広く利用可能なコンテンツを示しています。スコアは地域の好みの変化に合わせて毎日更新されます。"
+    "pt-title": "メディアが{{inCountry}}でどれくらい響いているかを反映した国別評価。",
+    "pt-desc": "高いスコアは、高評価でアクセスしやすいコンテンツを反映しています。90/100のスコアは、高品質で人気があり、広く利用可能なコンテンツを示しています。スコアは、地域の好みの変化に合わせて毎日更新されます。"
   },
   "sortBy": {
-    "label": "並び替え",
-    "popularity": "人気度",
+    "label": "並べ替え",
+    "popularity": "人気順",
     "updated": "更新済み"
   },
   "mediaActions": {
-    "open": "開ける"
+    "open": "開く"
   },
   "mediaTabs": {
     "links": "リンク",
@@ -147,19 +147,19 @@
     "CRIME": "犯罪",
     "DOCUMENTARY": "ドキュメンタリー",
     "DRAMA": "ドラマ",
-    "FAMILY": "家族",
+    "FAMILY": "ファミリー",
     "FANTASY": "ファンタジー",
-    "HISTORY": "歴史",
+    "HISTORY": "履歴",
     "HORROR": "ホラー",
     "MUSIC": "音楽",
     "MYSTERY": "ミステリー",
-    "OTHER": "他の",
+    "OTHER": "その他",
     "ROMANCE": "ロマンス",
-    "SCIENCE_FICTION": "SF",
+    "SCIENCE_FICTION": "サイエンス・フィクション",
     "THRILLER": "スリラー",
     "TV_MOVIE": "テレビ映画",
     "WAR": "戦争",
-    "WESTERN": "西洋"
+    "WESTERN": "西部劇"
   },
   "country": {
     "ad": "アンドラ",

@@ -9,99 +9,99 @@
   },
   "browse": {
     "loading": "Carregando...",
-    "load-more": "Carregar mais",
+    "load-more": "Carregar mais conteúdo",
     "populars": "Populares",
     "movies": "Filmes",
-    "tv-shows": "Programas de TV"
+    "tv-shows": "Séries"
   },
   "sidebar": {
     "back": "Voltar",
-    "charts": "Gráficos {{inCountry}}"
+    "charts": "Tendências {{inCountry}}"
   },
   "media": {
     "free": "Livre",
     "movie": "Filme",
-    "tv-show": "Programa de TV"
+    "tv-show": "Séries"
   },
   "mediaQuickActions": {
     "watch-on": "Assista no {{platform}}",
     "rent-on": "Alugar no {{platform}}",
     "buy-on": "Compre na {{platform}}",
     "buy-rent-on": "Compre ou alugue no {{platform}}",
-    "free-on": "Assista Gratuitamente no {{platform}}"
+    "free-on": "Assista grátis no {{platform}}"
   },
   "commandCenter": {
-    "home": "Voltar para casa"
+    "home": "Voltar para o início"
   },
   "search": {
-    "search": "Pesquisar",
+    "search": "Buscar",
     "results": "Resultados",
     "viewAll": "Ver tudo",
-    "noResults": "Nenhum resultado",
+    "noResults": "Sem resultados",
     "placeholder": "Pesquisar..."
   },
   "menu": {
     "preferences": "Idioma e região",
     "watchPreferences": "Preferências de visualização",
-    "settings": "Configurações do aplicativo",
+    "settings": "Configurações do app",
     "signOut": "Sair"
   },
   "settings": {
     "toast": "Suas configurações foram atualizadas com sucesso.",
     "settings": "Configurações",
-    "description": "Configure opções específicas do aplicativo como análises, temas e outras preferências locais.",
+    "description": "Configure opções específicas do aplicativo, como análises, temas e outras preferências locais.",
     "analytics": "Analytics",
-    "analytics-description": "Envie dados de uso anônimos para ajudar a melhorar o aplicativo e orientar o desenvolvimento.",
+    "analytics-description": "Enviar dados de uso anônimos para ajudar a melhorar o aplicativo e orientar o desenvolvimento.",
     "logs": "Registros",
     "logs-description": "Visualizar logs do aplicativo para depuração e solução de problemas.",
     "open-logs": "Abrir",
-    "update": "Configurações de atualização",
-    "error": "Falha ao atualizar as configurações"
+    "update": "Atualizar configurações",
+    "error": "Falha ao atualizar configurações"
   },
   "preferences": {
     "preferences": "Preferências",
     "description": "Selecione seu idioma e país preferidos para desfrutar de conteúdo personalizado.",
-    "update": "Preferências de atualização",
+    "update": "Atualizar preferências",
     "error": "Falha ao atualizar preferências",
     "signOut": "Sair",
-    "toast": "Suas preferências foram atualizadas com sucesso.",
+    "toast": "Seus preferências foram atualizadas com sucesso.",
     "language": "Idioma",
-    "language-description": "O conteúdo e a interface do aplicativo se adaptarão ao seu idioma selecionado.",
+    "language-description": "O conteúdo e a interface do aplicativo se adaptarão ao idioma selecionado.",
     "country": "País",
-    "country-description": "Configure seu país para personalizar as recomendações de conteúdo e adaptar sua experiência."
+    "country-description": "Defina seu país para personalizar as recomendações de conteúdo e adaptar sua experiência."
   },
   "watchPreferences": {
     "label": "Preferências de Assistir",
     "description": "Conte-nos onde você gosta de assistir para que possamos destacar as opções certas para você.",
     "update": "Atualizar preferências",
-    "toast": "Suas preferências de visualização foram atualizadas com sucesso.",
+    "toast": "Seus preferências de visualização foram atualizadas com sucesso.",
     "add": "Adicionar",
     "remove": "Remover"
   },
   "onboardingPreferences": {
-    "countryTitle": "Selecione seu país",
+    "countryTitle": "Selecione o seu país",
     "countryDescription": "Selecione seu país para ver os idiomas disponíveis",
     "languageTitle": "Selecione seu idioma",
-    "languageDescription": "Selecione o idioma da sua interface e priorize o conteúdo {{inCountry}}",
-    "changeCountry": "Alterar país",
+    "languageDescription": "Selecione o idioma da interface e priorize o conteúdo {{inCountry}}",
+    "changeCountry": "Mudar país",
     "default": "Local padrão",
     "showAll": "Mostrar todos os idiomas"
   },
   "onboardingProviders": {
     "title": "Selecione seus serviços de streaming",
     "description": "Escolha as plataformas às quais você tem acesso para que possamos mostrar o que assistir.",
-    "searchPlaceholder": "Pesquisar provedores...",
+    "searchPlaceholder": "Procurar provedores...",
     "category": {
       "popular": "Popular",
-      "free": "Livre",
+      "free": "Grátis",
       "subscription": "Assinatura",
-      "all": "Todos"
+      "all": "Tudo"
     },
     "skip": "Vou fazer isso depois",
     "continue": "Continuar",
     "selectCountry": "Alterar país",
     "clearAll": "Limpar tudo",
-    "clearSearch": "Limpar pesquisa",
+    "clearSearch": "Limpar busca",
     "selected": "{{count}} provedor(es) selecionado(s)",
     "noFound": "Nenhum provedor encontrado para \"{{query}}\""
   },
@@ -119,12 +119,12 @@
     "installing": "Instalando atualização...",
     "installed": "Reinicie o aplicativo para aplicar a atualização",
     "install": "Instalar",
-    "relaunch": "Relançamento",
+    "relaunch": "Relançar",
     "error": "Falha ao instalar a atualização"
   },
   "ranking": {
-    "pt-title": "Uma classificação específica para cada país que reflete o quanto uma mídia ressoa {{inCountry}}.",
-    "pt-desc": "Pontuações mais altas refletem conteúdo que é altamente avaliado e facilmente acessível. Uma pontuação de 90/100 indica conteúdo de alta qualidade que é popular e amplamente disponível. As pontuações são atualizadas diariamente para acompanhar as mudanças nas preferências regionais."
+    "pt-title": "Uma classificação específica do país que reflete quão bem uma mídia ressoa {{inCountry}}.",
+    "pt-desc": "Pontuações mais altas refletem conteúdo que é altamente avaliado e facilmente acessível. Uma pontuação de 90/100 indica conteúdo de primeira qualidade que é popular e amplamente disponível. As pontuações são atualizadas diariamente para acompanhar as mudanças nas preferências regionais."
   },
   "sortBy": {
     "label": "Ordenar por",
@@ -135,7 +135,7 @@
     "open": "Abrir"
   },
   "mediaTabs": {
-    "links": "Ligações",
+    "links": "Links",
     "overview": "Visão geral",
     "similars": "Semelhantes"
   },
@@ -149,17 +149,17 @@
     "DRAMA": "Drama",
     "FAMILY": "Família",
     "FANTASY": "Fantasia",
-    "HISTORY": "História",
+    "HISTORY": "Histórico",
     "HORROR": "Horror",
     "MUSIC": "Música",
     "MYSTERY": "Mistério",
-    "OTHER": "Outro",
+    "OTHER": "Outros",
     "ROMANCE": "Romance",
-    "SCIENCE_FICTION": "Ficção científica",
-    "THRILLER": "Filme de ação",
+    "SCIENCE_FICTION": "Ficção Científica",
+    "THRILLER": "Suspense",
     "TV_MOVIE": "Filme para TV",
     "WAR": "Guerra",
-    "WESTERN": "Ocidental"
+    "WESTERN": "Faroeste"
   },
   "country": {
     "ad": "Andorra",
