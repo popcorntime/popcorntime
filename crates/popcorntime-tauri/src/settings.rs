@@ -1,24 +1,24 @@
 use crate::error::Error;
-use popcorntime_settings::{AppHandleSettingsExt, Settings, SettingsInput};
-use tauri::{AppHandle, State};
+use popcorntime_settings::{Settings, SettingsInput, SettingsService};
+use tauri::State;
 use tracing::instrument;
 
 #[tauri::command(async)]
 #[specta::specta]
-#[instrument(skip(settings), err(Debug))]
-pub async fn settings(settings: State<'_, Settings>) -> Result<Settings, Error> {
-  Ok(settings.inner().clone())
+#[instrument(skip(service), err(Debug))]
+pub async fn settings(service: State<'_, SettingsService>) -> Result<Settings, Error> {
+  service.get().await.map_err(Into::into)
 }
 
 #[tauri::command(async)]
 #[specta::specta]
-#[instrument(skip(app_handle), err(Debug))]
+#[instrument(skip(service), err(Debug))]
 pub async fn update_settings(
-  app_handle: AppHandle,
+  service: State<'_, SettingsService>,
   settings: SettingsInput,
 ) -> Result<Settings, Error> {
-  app_handle
-    .settings_update(|current_settings| {
+  service
+    .update(|current_settings| {
       if let Some(onboarding_complete) = settings.onboarding_complete {
         current_settings.onboarding_complete = onboarding_complete;
       }
@@ -27,5 +27,6 @@ pub async fn update_settings(
         current_settings.enable_analytics = enable_analytics;
       }
     })
+    .await
     .map_err(Into::into)
 }

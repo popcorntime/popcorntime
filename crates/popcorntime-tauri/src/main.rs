@@ -3,7 +3,7 @@ use anyhow::Context;
 use popcorntime_error::Code;
 use popcorntime_graphql_client::client::ApiClient;
 use popcorntime_session::{AuthorizationService, SessionUpdateEvent};
-use popcorntime_settings::AppHandleSettingsExt;
+use popcorntime_settings::SettingsService;
 use popcorntime_tauri::event::{SessionServerReady, SessionUpdate};
 #[cfg(debug_assertions)]
 use specta_typescript::Typescript;
@@ -89,8 +89,9 @@ fn main() {
           tracing::info!(version = %app_handle.package_info().version,
                                    name = %app_handle.package_info().name, "starting app");
 
-          // initialize settings (load in state)
-          app_handle.settings_load_in_state()?;
+          // settings service
+          let settings_service = SettingsService::new(&config_dir)?;
+          app_handle.manage(settings_service);
 
           // auth service
           let auth_service =

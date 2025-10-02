@@ -1,7 +1,11 @@
-use anyhow::Result;
+use anyhow::{Ok, Result};
 use serde::{Deserialize, Serialize};
 use specta::Type;
-use tauri::Manager;
+use std::{
+  path::{Path, PathBuf},
+  sync::Arc,
+};
+use tokio::sync::RwLock;
 
 const SETTINGS_FILE: &str = "settings.toml";
 
@@ -23,53 +27,52 @@ pub struct SettingsInput {
   pub enable_analytics: Option<bool>,
 }
 
-pub trait AppHandleSettingsExt {
-  fn settings_load_in_state(&self) -> Result<()>;
-  fn settings_update<F>(&self, f: F) -> Result<Settings>
-  where
-    F: FnOnce(&mut Settings);
+#[derive(Debug)]
+pub struct SettingsService {
+  snapshot: Arc<RwLock<Settings>>,
+  config_dir: PathBuf,
 }
 
-impl AppHandleSettingsExt for tauri::AppHandle {
-  fn settings_load_in_state(&self) -> Result<()> {
-    let path = self.path().app_config_dir()?.join(SETTINGS_FILE);
+fn read_snapshot(path: &Path) -> Result<Settings> {
+  if path.exists() {
+    let content = std::fs::read_to_string(path)?;
+    let settings: Settings = toml::from_str(&content)?;
+    Ok(settings)
+  } else {
+    Ok(Settings::default())
+  }
+}
 
-    let settings: Settings = if path.exists() {
-      let content = std::fs::read_to_string(&path)?;
-      toml::from_str(&content)?
-    } else {
-      Settings::default()
-    };
-
-    self.manage(settings.clone());
-
-    Ok(())
+impl SettingsService {
+  pub fn new(config_dir: &Path) -> Result<Self> {
+    let snapshot = read_snapshot(&config_dir.join(SETTINGS_FILE))?;
+    Ok(Self {
+      snapshot: Arc::new(RwLock::new(snapshot)),
+      config_dir: config_dir.to_path_buf(),
+    })
   }
 
-  fn settings_update<F>(&self, f: F) -> Result<Settings>
+  pub async fn get(&self) -> Result<Settings> {
+    Ok(self.snapshot.read().await.clone())
+  }
+
+  pub async fn update<F>(&self, f: F) -> Result<Settings>
   where
     F: FnOnce(&mut Settings),
   {
-    let mut settings = if let Some(s) = self.try_state::<Settings>() {
-      s.inner().clone()
-    } else {
-      Settings::default()
-    };
+    let mut settings = self.snapshot.write().await;
 
     f(&mut settings);
 
-    let config_dir = self.path().app_config_dir()?;
-
-    if !config_dir.exists() {
-      std::fs::create_dir_all(&config_dir)?;
+    if !self.config_dir.exists() {
+      std::fs::create_dir_all(&self.config_dir)?;
     }
 
-    let path = config_dir.join(SETTINGS_FILE);
-    let content = toml::to_string_pretty(&settings)?;
+    let path = self.config_dir.join(SETTINGS_FILE);
+    let settings_inner = settings.clone();
+    let content = toml::to_string_pretty(&settings_inner)?;
     std::fs::write(path, content)?;
 
-    self.manage(settings.clone());
-
-    Ok(settings)
+    Ok(settings_inner)
   }
 }

@@ -3735,7 +3735,7 @@ dependencies = [
  "anyhow",
  "serde",
  "specta",
- "tauri",
+ "tokio",
  "toml 0.9.7",
 ]
 

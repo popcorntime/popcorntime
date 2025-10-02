@@ -10,4 +10,4 @@ toml.workspace = true
 serde.workspace = true
 specta.workspace = true
 anyhow.workspace = true
-tauri.workspace = true
+tokio.workspace = true
