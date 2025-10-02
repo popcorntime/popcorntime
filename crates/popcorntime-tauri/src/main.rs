@@ -86,8 +86,10 @@ fn main() {
           std::fs::create_dir_all(&app_cache_dir).expect("failed to create cache dir");
           std::fs::create_dir_all(&config_dir).expect("failed to create config dir");
 
-          tracing::info!(version = %app_handle.package_info().version,
-                                   name = %app_handle.package_info().name, "starting app");
+          tracing::info!(
+            version = %app_handle.package_info().version,
+            name = %app_handle.package_info().name, "starting app"
+          );
 
           // settings service
           let settings_service = SettingsService::new(&config_dir)?;
