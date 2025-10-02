@@ -105,35 +105,31 @@ export function SettingsDialog() {
 							<DialogDescription>{t("settings.description")}</DialogDescription>
 						</DialogHeader>
 						<div className="grid gap-4 py-4">
-							<div className="grid gap-4 py-4">
-								<FormField
-									control={form.control}
-									name="enableAnalytics"
-									render={({ field }) => (
-										<FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
-											<div className="space-y-0.5">
-												<FormLabel>{t("settings.analytics")}</FormLabel>
-												<FormDescription>{t("settings.analytics-description")}</FormDescription>
-											</div>
-											<FormControl>
-												<Switch checked={field.value} onCheckedChange={field.onChange} />
-											</FormControl>
-										</FormItem>
-									)}
-								/>
+							<FormField
+								control={form.control}
+								name="enableAnalytics"
+								render={({ field }) => (
+									<FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
+										<div className="space-y-0.5">
+											<FormLabel>{t("settings.analytics")}</FormLabel>
+											<FormDescription>{t("settings.analytics-description")}</FormDescription>
+										</div>
+										<FormControl>
+											<Switch checked={field.value} onCheckedChange={field.onChange} />
+										</FormControl>
+									</FormItem>
+								)}
+							/>
 
-								<div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
-									<div className="space-y-0.5">
-										<div>{t("settings.logs")}</div>
-										<p className="text-muted-foreground text-sm">
-											{t("settings.logs-description")}
-										</p>
-									</div>
-									<div>
-										<Button variant="accent" onClick={openLogsDir}>
-											{t("settings.open-logs")}
-										</Button>
-									</div>
+							<div className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
+								<div className="space-y-0.5">
+									<div>{t("settings.logs")}</div>
+									<p className="text-muted-foreground text-sm">{t("settings.logs-description")}</p>
+								</div>
+								<div>
+									<Button variant="accent" onClick={openLogsDir}>
+										{t("settings.open-logs")}
+									</Button>
 								</div>
 							</div>
 						</div>
