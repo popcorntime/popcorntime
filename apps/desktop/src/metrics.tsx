@@ -1,12 +1,15 @@
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useGlobalStore } from "@/stores/global";
 
 export function MetricsProvider({ children }: React.PropsWithChildren) {
 	const enableAnalytics = useGlobalStore(s => s.settings.enableAnalytics);
+	const initializedRef = useRef(false);
 
 	useEffect(() => {
+		if (initializedRef.current) return;
+
 		posthog.init(import.meta.env.VITE_PUBLIC_POSTHOG_KEY, {
 			api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
 			capture_pageview: true,
@@ -19,6 +22,8 @@ export function MetricsProvider({ children }: React.PropsWithChildren) {
 				}
 			},
 		});
+
+		initializedRef.current = true;
 	}, [enableAnalytics]);
 
 	useEffect(() => {
