@@ -8,7 +8,6 @@ import { useTauri } from "@/hooks/useTauri";
 import { useGlobalStore } from "@/stores/global";
 
 export function OnboardingTOS() {
-	const settingsSucceeded = useGlobalStore(state => state.settingsSucceeded);
 	const direction = useGlobalStore(state => state.i18n.direction);
 	const { api } = useTauri();
 	const [isLoading, setIsLoading] = useState(false);
@@ -16,12 +15,17 @@ export function OnboardingTOS() {
 	const { t } = useTranslation();
 
 	const handleContinue = useCallback(async () => {
-		api.updateSettings({ tosAccepted: true }).then(settings => {
-			setIsLoading(false);
-			settingsSucceeded(settings);
-			navigate("/browse");
-		});
-	}, [api, settingsSucceeded]);
+		const { settingsSucceeded, settingsFailed } = useGlobalStore.getState();
+		setIsLoading(true);
+		api
+			.updateSettings({ tosAccepted: true })
+			.then(settingsSucceeded)
+			.catch(settingsFailed)
+			.finally(() => {
+				setIsLoading(false);
+				navigate("/browse");
+			});
+	}, [api, setIsLoading]);
 
 	return (
 		<div className="h-screen max-h-screen flex flex-col">
