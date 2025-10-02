@@ -112,7 +112,7 @@ export function Header() {
 								<div>
 									<Button variant="link" disabled className="flex gap-2">
 										<Headphones className="h-4 w-4" />
-										<span>Podcasts</span>
+										<span>{t("browse.podcasts")}</span>
 									</Button>
 								</div>
 							</TooltipTrigger>

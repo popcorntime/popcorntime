@@ -13,6 +13,7 @@
     "populars": /* Populars movies and tv shows */ "Populars",
     "movies": /* Movies */ "Movies",
     "tv-shows": /* Series (prefer this for translation) */ "Series",
+    "podcasts": /* Podcasts (prefer english if its not a known word) */ "Podcasts",
   },
   "sidebar": {
     "back": /* Navigation in app, go back (browser) */ "Go back",

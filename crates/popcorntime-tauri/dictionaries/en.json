@@ -12,7 +12,8 @@
     "load-more": "Load more",
     "populars": "Populars",
     "movies": "Movies",
-    "tv-shows": "Series"
+    "tv-shows": "Series",
+    "podcasts": "Podcasts"
   },
   "sidebar": {
     "back": "Go back",

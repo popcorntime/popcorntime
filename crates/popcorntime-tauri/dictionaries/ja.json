@@ -12,7 +12,8 @@
     "load-more": "続きを読み込む",
     "populars": "人気作品",
     "movies": "映画",
-    "tv-shows": "シリーズ"
+    "tv-shows": "シリーズ",
+    "podcasts": "ポッドキャスト"
   },
   "sidebar": {
     "back": "戻る",
