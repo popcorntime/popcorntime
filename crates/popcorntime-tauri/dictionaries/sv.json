@@ -115,6 +115,8 @@
       "tv_show": "Serier",
       "all": "Alla"
     },
+    "like": "Gilla",
+    "dislike": "Ogilla",
     "skip": "Jag gör det senare",
     "continue": "Fortsätt"
   },

@@ -115,6 +115,8 @@
       "tv_show": /* Onboarding: Favorites (series and tv shows) */ "Series",
       "all": /* Onboarding: All Watch Providers (media tv shows) */ "All",
     },
+    "like": /* Onboarding: Like this media */ "Like",
+    "dislike": /* Onboarding: Dislike this media */ "Dislike",
     "skip": /* Onboarding: Skip */ "I'll do it later",
     "continue": /* Onboarding: Continue */ "Continue",
   },

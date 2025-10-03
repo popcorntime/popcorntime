@@ -115,6 +115,8 @@
       "tv_show": "Sarjat",
       "all": "Kaikki"
     },
+    "like": "Tykkää",
+    "dislike": "En pidä tästä mediasta",
     "skip": "Teen sen myöhemmin",
     "continue": "Jatka"
   },

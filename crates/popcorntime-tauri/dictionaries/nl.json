@@ -115,6 +115,8 @@
       "tv_show": "Series",
       "all": "Alles"
     },
+    "like": "Vind leuk",
+    "dislike": "Afkeer",
     "skip": "Ik doe het later.",
     "continue": "Doorgaan"
   },

@@ -115,6 +115,8 @@
       "tv_show": "Serier",
       "all": "Alle"
     },
+    "like": "Liker",
+    "dislike": "Misliker",
     "skip": "Jeg gjør det senere",
     "continue": "Fortsett"
   },

@@ -115,6 +115,8 @@
       "tv_show": "Sraithscéalta",
       "all": "Uile"
     },
+    "like": "Is maith liom",
+    "dislike": "Is maith liom é seo a dhiúltú",
     "skip": "Déanfaidh mé é níos déanaí",
     "continue": "Lean ar aghaidh"
   },

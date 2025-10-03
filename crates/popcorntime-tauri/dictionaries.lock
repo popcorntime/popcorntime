@@ -510,7 +510,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "es": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -1023,7 +1025,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "ar": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -1536,7 +1540,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "fa": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -2049,7 +2055,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "ur": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -2562,7 +2570,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "hi": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -3075,7 +3085,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "de": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -3588,7 +3600,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "nl": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -4101,7 +4115,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "sv": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -4614,7 +4630,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "ga": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -5127,7 +5145,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "fi": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -5640,7 +5660,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "he": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -6153,7 +6175,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "no": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -6666,7 +6690,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "da": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -7179,7 +7205,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "it": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -7692,7 +7720,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "ja": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -8205,7 +8235,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "pl": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -8718,7 +8750,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "tr": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -9231,7 +9265,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "et": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -9744,7 +9780,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "el": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -10257,7 +10295,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "pt": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -10770,7 +10810,9 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   },
   "sr": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -11283,6 +11325,8 @@
     "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
     "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
     "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
-    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d",
+    "$['onboardingFavorites']['like']": "b98c74974812b14bca7811e1947c7ab9bb8b93be4305c01d2cda07b137e0f377",
+    "$['onboardingFavorites']['dislike']": "13eb45a31a865f4ab92dbf02b199cd863b1312ef480efcdabf6af8e7a6f2dc50"
   }
 }

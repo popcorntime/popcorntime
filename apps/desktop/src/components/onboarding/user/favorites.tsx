@@ -47,10 +47,7 @@ export function OnboardingFavorites() {
 		first: 48,
 	});
 
-	const filteredNodes = useMemo(
-		() => data?.nodes.filter(m => m.poster !== null),
-		[data?.nodes, searchQuery]
-	);
+	const filteredNodes = useMemo(() => data?.nodes.filter(m => m.poster !== null), [data?.nodes]);
 
 	useEffect(() => {
 		setDisplayedNodes(filteredNodes?.filter(n => !reactedIds.has(n.id)) || []);
@@ -159,7 +156,7 @@ export function OnboardingFavorites() {
 													className="flex-1"
 												>
 													<ThumbsUp className="w-3 h-3 mr-1" />
-													Like
+													{t("onboardingFavorites.like")}
 												</Button>
 												<Button
 													onClick={() => handleReaction(media.id, "DISLIKE")}
@@ -168,7 +165,7 @@ export function OnboardingFavorites() {
 													className="flex-1"
 												>
 													<ThumbsDown className="w-3 h-3 mr-1" />
-													Dislike
+													{t("onboardingFavorites.dislike")}
 												</Button>
 											</div>
 										</motion.div>

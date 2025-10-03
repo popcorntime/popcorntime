@@ -115,6 +115,8 @@
       "tv_show": "Sarjad",
       "all": "Kõik"
     },
+    "like": "Meeldib",
+    "dislike": "Ei meeldi",
     "skip": "Teen seda hiljem",
     "continue": "Jätka"
   },

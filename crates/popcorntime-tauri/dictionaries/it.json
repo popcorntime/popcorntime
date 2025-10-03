@@ -115,6 +115,8 @@
       "tv_show": "Serie",
       "all": "Tutti"
     },
+    "like": "Mi Piace",
+    "dislike": "Non mi piace",
     "skip": "Lo farò più tardi",
     "continue": "Continua"
   },

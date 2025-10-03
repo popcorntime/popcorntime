@@ -115,6 +115,8 @@
       "tv_show": "Diziler",
       "all": "Tümü"
     },
+    "like": "Beğen",
+    "dislike": "Beğenme",
     "skip": "Daha sonra yapacağım",
     "continue": "Devam et"
   },

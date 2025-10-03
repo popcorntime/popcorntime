@@ -115,6 +115,8 @@
       "tv_show": "Serije",
       "all": "Sve"
     },
+    "like": "Sviđa mi se",
+    "dislike": "Ne sviđa mi se",
     "skip": "Preskočiću za kasnije",
     "continue": "Nastavi"
   },
