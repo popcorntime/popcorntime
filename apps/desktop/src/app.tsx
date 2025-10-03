@@ -12,6 +12,7 @@ import { LoginRoute } from "@/routes/login";
 import { MaintenanceRoute } from "@/routes/maintenance";
 import { NotFoundRoute } from "@/routes/not-found";
 import {
+	OnboardingFavoritesRoute,
 	OnboardingManifestRoute,
 	OnboardingPreferencesRoute,
 	OnboardingProvidersRoute,
@@ -28,6 +29,7 @@ import "flag-icons/css/flag-icons.min.css";
 
 initReactI18n();
 
+// Mount all loaders
 function Loaders() {
 	return (
 		<>
@@ -56,6 +58,7 @@ export function App() {
 							<Route element={<RequireSession />}>
 								<Route path="providers" element={<OnboardingProvidersRoute />} />
 								<Route path="preferences" element={<OnboardingPreferencesRoute />} />
+								<Route path="favorites" element={<OnboardingFavoritesRoute />} />
 								<Route path="tos" element={<OnboardingTOSRoute />} />
 							</Route>
 						</Route>

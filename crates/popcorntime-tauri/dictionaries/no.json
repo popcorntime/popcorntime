@@ -106,6 +106,18 @@
     "selected": "{{count}} leverandør(er) valgt",
     "noFound": "Ingen tilbydere funnet for \"{{query}}\""
   },
+  "onboardingFavorites": {
+    "title": "Hjelp oss med å tilpasse opplevelsen din",
+    "description": "Velg din favorittmedia slik at vi kan anbefale det beste innholdet for deg.",
+    "searchPlaceholder": "Søk...",
+    "category": {
+      "movie": "Filmer",
+      "tv_show": "Serier",
+      "all": "Alle"
+    },
+    "skip": "Jeg gjør det senere",
+    "continue": "Fortsett"
+  },
   "tos": {
     "title": "Vilkår for bruk",
     "description": "Før du bruker Popcorn Time, vennligst les våre vilkår for bruk.",

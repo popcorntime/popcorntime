@@ -106,6 +106,18 @@
     "selected": "{{count}} fournisseur(s) sélectionné(s)",
     "noFound": "Aucun fournisseur trouvé pour \"{{query}}\""
   },
+  "onboardingFavorites": {
+    "title": "Aidez-nous à personnaliser votre expérience",
+    "description": "Choisissez vos médias préférés pour que nous puissions vous recommander le meilleur contenu.",
+    "searchPlaceholder": "Rechercher...",
+    "category": {
+      "movie": "Films",
+      "tv_show": "Séries",
+      "all": "Tout"
+    },
+    "skip": "Je le ferai plus tard",
+    "continue": "Continuer"
+  },
   "tos": {
     "title": "Conditions d'utilisation",
     "description": "Avant d'utiliser Popcorn Time, veuillez consulter nos Conditions d'Utilisation.",

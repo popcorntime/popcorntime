@@ -65,7 +65,7 @@
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"cmdk": "^1.1.1",
-		"framer-motion": "^12.23.22",
+		"framer-motion": "catalog:",
 		"lucide-react": "catalog:",
 		"next-themes": "^0.4.6",
 		"react": "catalog:",

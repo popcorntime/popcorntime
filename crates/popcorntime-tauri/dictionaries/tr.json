@@ -106,6 +106,18 @@
     "selected": "{{count}} sağlayıcı seçildi",
     "noFound": "\"{{query}}\" için sağlayıcı bulunamadı"
   },
+  "onboardingFavorites": {
+    "title": "Deneyiminizi kişiselleştirmemize yardımcı olun",
+    "description": "En sevdiğiniz medyayı seçin, böylece size en iyi içeriği önerebiliriz.",
+    "searchPlaceholder": "Ara...",
+    "category": {
+      "movie": "Filmler",
+      "tv_show": "Diziler",
+      "all": "Tümü"
+    },
+    "skip": "Daha sonra yapacağım",
+    "continue": "Devam et"
+  },
   "tos": {
     "title": "Hizmet Şartları",
     "description": "Popcorn Time'ı kullanmadan önce, lütfen Hizmet Şartlarımızı inceleyin.",

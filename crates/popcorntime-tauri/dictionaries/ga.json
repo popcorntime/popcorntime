@@ -106,6 +106,18 @@
     "selected": "Tá {{count}} soláthraí roghnaithe ann",
     "noFound": "Níor aimsíodh soláthraithe le haghaidh \"{{query}}\""
   },
+  "onboardingFavorites": {
+    "title": "Cabhraigh linn do thaithí a phearsanú",
+    "description": "Roghnaigh do mheáin is fearr leat ionas gur féidir linn an t-ábhar is fearr a mholadh duit.",
+    "searchPlaceholder": "Cuardaigh...",
+    "category": {
+      "movie": "Scannáin",
+      "tv_show": "Sraithscéalta",
+      "all": "Uile"
+    },
+    "skip": "Déanfaidh mé é níos déanaí",
+    "continue": "Lean ar aghaidh"
+  },
   "tos": {
     "title": "Téarmaí Seirbhíse",
     "description": "Sula n-úsáideann tú Popcorn Time, léigh ár dTéarmaí Seirbhíse le do thoil.",

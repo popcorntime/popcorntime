@@ -106,6 +106,18 @@
     "selected": /* Onboarding: Selected favorites watch providers */ "{{count}} provider(s) selected",
     "noFound": /* Onboarding: watch providers found */ "No providers found for \"{{query}}\"",
   },
+  "onboardingFavorites": {
+    "title": /* Onboarding: Favorites medias step title */ "Help us personalize your experience",
+    "description": /* Onboarding: Favorites medias step description */ "Choose your favorite media so we can recommend the best content for you.",
+    "searchPlaceholder": /* Onboarding: Favorites medias search placeholder */ "Search...",
+    "category": {
+      "movie": /* Onboarding: Favorites (movies) */ "Movies",
+      "tv_show": /* Onboarding: Favorites (series and tv shows) */ "Series",
+      "all": /* Onboarding: All Watch Providers (media tv shows) */ "All",
+    },
+    "skip": /* Onboarding: Skip */ "I'll do it later",
+    "continue": /* Onboarding: Continue */ "Continue",
+  },
   "tos": {
     "title": /* Onboarding: Terms of Service step title */ "Terms of Service",
     "description": /* Onboarding: Terms of Service step description */ "Before using Popcorn Time, please review our Terms of Service.",

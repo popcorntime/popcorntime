@@ -106,6 +106,18 @@
     "selected": "{{count}} valittu tarjoaja(a)",
     "noFound": "Ei tarjoajia löytynyt haulle \"{{query}}\""
   },
+  "onboardingFavorites": {
+    "title": "Auta meitä räätälöimään kokemuksesi",
+    "description": "Valitse suosikkimediasi, jotta voimme suositella sinulle parasta sisältöä.",
+    "searchPlaceholder": "Hae...",
+    "category": {
+      "movie": "Elokuvat",
+      "tv_show": "Sarjat",
+      "all": "Kaikki"
+    },
+    "skip": "Teen sen myöhemmin",
+    "continue": "Jatka"
+  },
   "tos": {
     "title": "Käyttöehdot",
     "description": "Ennen kuin käytät Popcorn Timea, tutustu käyttöehtoihimme.",

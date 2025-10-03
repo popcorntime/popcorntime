@@ -12,6 +12,7 @@ catalog:
   "@tauri-apps/plugin-updater": ^2.9.0
   "@hookform/resolvers": ^5.2.2
   "fuse.js": ^7.1.0
+  framer-motion: ^12.23.22
   flag-icons: ^7.5.0
   i18next: ^25.5.3
   i18next-resources-to-backend: ^1.2.1

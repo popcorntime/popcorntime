@@ -502,7 +502,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "es": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -1007,7 +1015,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "ar": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -1512,7 +1528,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "fa": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -2017,7 +2041,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "ur": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -2522,7 +2554,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "hi": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -3027,7 +3067,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "de": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -3532,7 +3580,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "nl": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -4037,7 +4093,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "sv": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -4542,7 +4606,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "ga": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -5047,7 +5119,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "fi": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -5552,7 +5632,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "he": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -6057,7 +6145,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "no": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -6562,7 +6658,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "da": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -7067,7 +7171,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "it": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -7572,7 +7684,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "ja": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -8077,7 +8197,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "pl": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -8582,7 +8710,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "tr": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -9087,7 +9223,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "et": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -9592,7 +9736,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "el": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -10097,7 +10249,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "pt": {
     "$['header']['popular']": "76327dec9ae3a06a8c3c283e6a81d3710ae736021b583875c13e4e8fb2ad83c0",
@@ -10602,7 +10762,15 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   },
   "sr": {
     "$['header']['popular']": "2fa8cb5842f9a71e6dfd5026a8b6fdf83e6490349bb8e309a91ed9cdabe6ec8c",
@@ -11107,6 +11275,14 @@
     "$['tos']['description']": "e446aff6fa7ea43d12709d481035d31ac852402ee4dee30d6af9ae2ca5de6483",
     "$['tos']['read']": "894c13f32cf981b3203a2ca7b592f309e6b4e66b24c11ec46aa9dcc74e8089d2",
     "$['tos']['accept']": "c462e4b331be991556fc6aabb175dfe71f0a53dd48cee3286f1bc0c8b9a81b81",
-    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b"
+    "$['tos']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['title']": "b04127cc6846e8cc00f56c1f3ae6dfb9c237493a64edc3a38ea27381d741e631",
+    "$['onboardingFavorites']['description']": "e8da6084f5afbb4dac44cf9aa8f736643a6bd93c5c73675aabd3b112cf307ac5",
+    "$['onboardingFavorites']['searchPlaceholder']": "7b6915ce4474aaa6eb6c0a5ca556316927d1401dac79182051998b2d964b9829",
+    "$['onboardingFavorites']['category']['movie']": "732fb88d420e77d92262b91ce8edcc82bd1a458854f80f742d57d61722de079b",
+    "$['onboardingFavorites']['category']['tv_show']": "2759679da24f97dcdf526a4c46e46d6241ca99670e285e2980167c323ff87c59",
+    "$['onboardingFavorites']['category']['all']": "f8a9649c71c8750c3dd6c67352750aa23637a2c54c4d909bf602a831f90930c3",
+    "$['onboardingFavorites']['continue']": "073ce8042f472c3c1a243985cc9da5941d38fe12828685fbc3bdb26ac21fcd1b",
+    "$['onboardingFavorites']['skip']": "a104a686e1d987eeeb5918d93258a3241228a2237b0060040137eb97e4e1355d"
   }
 }

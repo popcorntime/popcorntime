@@ -106,6 +106,18 @@
     "selected": "{{count}} aanbieder(s) geselecteerd",
     "noFound": "Geen providers gevonden voor \"{{query}}\""
   },
+  "onboardingFavorites": {
+    "title": "Help ons je ervaring te personaliseren",
+    "description": "Kies je favoriete media zodat we de beste content voor je kunnen aanbevelen.",
+    "searchPlaceholder": "Zoeken...",
+    "category": {
+      "movie": "Films",
+      "tv_show": "Series",
+      "all": "Alles"
+    },
+    "skip": "Ik doe het later.",
+    "continue": "Doorgaan"
+  },
   "tos": {
     "title": "Servicevoorwaarden",
     "description": "Voordat je Popcorn Time gebruikt, bekijk alsjeblieft onze Servicevoorwaarden.",

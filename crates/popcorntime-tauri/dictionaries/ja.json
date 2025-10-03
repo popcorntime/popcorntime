@@ -106,6 +106,18 @@
     "selected": "{{count}} 件のプロバイダーが選択されました",
     "noFound": "\"{{query}}\" のプロバイダーが見つかりません"
   },
+  "onboardingFavorites": {
+    "title": "あなたの体験をパーソナライズするお手伝いをさせてください",
+    "description": "あなたに最適なコンテンツをおすすめするために、お気に入りのメディアを選んでください。",
+    "searchPlaceholder": "検索...",
+    "category": {
+      "movie": "映画",
+      "tv_show": "シリーズ",
+      "all": "すべて"
+    },
+    "skip": "後でやります",
+    "continue": "続行"
+  },
   "tos": {
     "title": "利用規約",
     "description": "ポップコーンタイムを使用する前に、利用規約をご確認ください。",

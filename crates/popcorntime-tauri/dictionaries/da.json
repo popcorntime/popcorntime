@@ -106,6 +106,18 @@
     "selected": "{{count}} udbyder(e) valgt",
     "noFound": "Ingen udbydere fundet for \"{{query}}\""
   },
+  "onboardingFavorites": {
+    "title": "Hjælp os med at personalisere din oplevelse",
+    "description": "Vælg dine foretrukne medier, så vi kan anbefale det bedste indhold til dig.",
+    "searchPlaceholder": "Søg...",
+    "category": {
+      "movie": "Film",
+      "tv_show": "Serier",
+      "all": "Alle"
+    },
+    "skip": "Jeg gør det senere",
+    "continue": "Fortsæt"
+  },
   "tos": {
     "title": "Servicevilkår",
     "description": "Før du bruger Popcorn Time, bedes du gennemgå vores servicevilkår.",

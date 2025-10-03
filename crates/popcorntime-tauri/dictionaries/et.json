@@ -106,6 +106,18 @@
     "selected": "{{count}} teenusepakkuja(t) valitud",
     "noFound": "Pakkujaid ei leitud päringule \"{{query}}\""
   },
+  "onboardingFavorites": {
+    "title": "Aita meil kohandada sinu kogemust",
+    "description": "Vali oma lemmikmeedia, et saaksime soovitada sulle parimat sisu.",
+    "searchPlaceholder": "Otsi...",
+    "category": {
+      "movie": "Filmid",
+      "tv_show": "Sarjad",
+      "all": "Kõik"
+    },
+    "skip": "Teen seda hiljem",
+    "continue": "Jätka"
+  },
   "tos": {
     "title": "Kasutustingimused",
     "description": "Enne Popcorn Time'i kasutamist vaadake palun üle meie kasutustingimused.",

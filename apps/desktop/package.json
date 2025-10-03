@@ -39,7 +39,8 @@
 		"use-debounce": "^10.0.6",
 		"vault66-crt-effect": "^1.4.1",
 		"zod": "catalog:",
-		"zustand": "catalog:"
+		"zustand": "catalog:",
+		"framer-motion": "catalog:"
 	},
 	"devDependencies": {
 		"@popcorntime/i18n": "workspace:*",

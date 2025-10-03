@@ -10,7 +10,7 @@ import { useNavigate } from "react-router";
 import { useProviders } from "@/hooks/useProviders";
 import { useGlobalStore } from "@/stores/global";
 import type { WatchPriceType } from "@/tauri/types";
-import { ProviderIcon } from "../provider";
+import { ProviderIcon } from "../../provider";
 
 type ProviderCategory = "popular" | "free" | "flatrate" | "all";
 type ProviderFilter =
@@ -94,12 +94,12 @@ export function OnboardingProviders() {
 			throw new Error("Country must be set before setting providers");
 		}
 		if (selectedProviders.length === 0) {
-			navigate("/onboarding/tos");
+			navigate("/onboarding/favorites");
 		} else {
 			setIsLoading(true);
 			setFavoritesMultipleProviders(selectedProviders).finally(() => {
 				setIsLoading(false);
-				navigate("/onboarding/tos");
+				navigate("/onboarding/favorites");
 			});
 		}
 	}, [selectedProviders, navigate, setFavoritesMultipleProviders, country, setIsLoading]);
