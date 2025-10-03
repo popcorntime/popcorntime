@@ -48,16 +48,16 @@ export function OnboardingTOS() {
 					<div className="mx-auto max-w-[40rem]">
 						<div className="space-y-5 text-muted-foreground">
 							<p className="italic leading-7 [&:not(:first-child)]:mt-6">
-								Last updated October 02, 2025
+								Last updated October 03, 2025
 							</p>
 							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								We operate the website{" "}
 								<Link to="https://popcorntime.app" className="underline" target="_blank">
 									popcorntime.app
 								</Link>{" "}
-								(the &quot;Site&quot;), the mobile application Popcorn Time (the &quot;App&quot;),
-								as well as any other related products and services that refer or link to these legal
-								terms (the &quot;Legal Terms&quot;) (collectively, the &quot;Services&quot;).
+								(the &quot;Site&quot;), the application(s) Popcorn Time (the &quot;App&quot;), as
+								well as any other related products and services that refer to these legal terms (the
+								&quot;Legal Terms&quot;) (collectively, the &quot;Services&quot;).
 							</p>
 							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								These legal terms constitute a legally binding agreement made between you, whether
@@ -87,9 +87,6 @@ export function OnboardingTOS() {
 								to use the Services. If you are a minor, you must have your parent or guardian read
 								and agree to these Legal Terms prior to you using the Services.
 							</p>
-							<p className="leading-7 [&:not(:first-child)]:mt-6">
-								We recommend that you print a copy of these Legal Terms for your records.
-							</p>
 
 							<h3 className="font-bold text-xl">1. OUR SERVICES</h3>
 							<p className="leading-7 [&:not(:first-child)]:mt-6">
@@ -100,13 +97,6 @@ export function OnboardingTOS() {
 								those persons who choose to access the Services from other locations do so on their
 								own initiative and are solely responsible for compliance with local laws, if and to
 								the extent local laws are applicable.
-							</p>
-							<p className="leading-7 [&:not(:first-child)]:mt-6">
-								The Services are not tailored to comply with industry-specific regulations (Health
-								Insurance Portability and Accountability Act (HIPAA), Federal Information Security
-								Management Act (FISMA), etc.), so if your interactions would be subjected to such
-								laws, you may not use the Services. You may not use the Services in a way that would
-								violate the Gramm-Leach-Bliley Act (GLBA).
 							</p>
 
 							<h3 className="font-bold text-xl">2. INTELLECTUAL PROPERTY RIGHTS</h3>
@@ -149,11 +139,13 @@ export function OnboardingTOS() {
 							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								If you wish to make any use of the Services, Content, or Marks other than as set out
 								in this section or elsewhere in our Legal Terms, please address your request to:
-								hello@popcorntime.app. If we ever grant you the permission to post, reproduce, or
-								publicly display any part of our Services or Content, you must identify us as the
-								owners or licensors of the Services, Content, or Marks and ensure that any copyright
-								or proprietary notice appears or is visible on posting, reproducing, or displaying
-								our Content.
+								<a href="mailto:hey@popcorntime.app" className="underline">
+									hey@popcorntime.app
+								</a>
+								. If we ever grant you the permission to post, reproduce, or publicly display any
+								part of our Services or Content, you must identify us as the owners or licensors of
+								the Services, Content, or Marks and ensure that any copyright or proprietary notice
+								appears or is visible on posting, reproducing, or displaying our Content.
 							</p>
 							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								We reserve all rights not expressly granted to you in and to the Services, Content,
@@ -403,7 +395,7 @@ export function OnboardingTOS() {
 								POSSIBILITY OF SUCH DAMAGES. NOTWITHSTANDING ANYTHING TO THE CONTRARY CONTAINED
 								HEREIN, OUR LIABILITY TO YOU FOR ANY CAUSE WHATSOEVER AND REGARDLESS OF THE FORM OF
 								THE ACTION, WILL AT ALL TIMES BE LIMITED TO THE AMOUNT PAID, IF ANY, BY YOU TO US
-								DURING THE six (6) MONTH PERIOD PRIOR TO ANY CAUSE OF ACTION ARISING. CERTAIN US
+								DURING THE SIX (6) MONTH PERIOD PRIOR TO ANY CAUSE OF ACTION ARISING. CERTAIN US
 								STATE LAWS AND INTERNATIONAL LAWS DO NOT ALLOW LIMITATIONS ON IMPLIED WARRANTIES OR
 								THE EXCLUSION OR LIMITATION OF CERTAIN DAMAGES. IF THESE LAWS APPLY TO YOU, SOME OR
 								ALL OF THE ABOVE DISCLAIMERS OR LIMITATIONS MAY NOT APPLY TO YOU, AND YOU MAY HAVE
