@@ -55,9 +55,10 @@ export function OnboardingTOS() {
 								<Link to="https://popcorntime.app" className="underline" target="_blank">
 									popcorntime.app
 								</Link>{" "}
-								(the &quot;Site&quot;), the application(s) Popcorn Time (the &quot;App&quot;), as
-								well as any other related products and services that refer to these legal terms (the
-								&quot;Legal Terms&quot;) (collectively, the &quot;Services&quot;).
+								(the &quot;Site&quot;), the application Popcorn Time (the &quot;App&quot;) available
+								on desktop, mobile, smart TV, and other platforms, as well as any related products
+								or services that reference these legal terms (the &quot;Legal Terms&quot;)
+								(collectively, the &quot;Services&quot;).
 							</p>
 							<p className="leading-7 [&:not(:first-child)]:mt-6">
 								These legal terms constitute a legally binding agreement made between you, whether
