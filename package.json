@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@popcorntime/typescript-config": "workspace:*",
-    "@biomejs/biome": "2.2.4",
+    "@biomejs/biome": "2.2.5",
     "@tauri-apps/cli": "^2.8.4",
     "prettier": "^3.6.2",
     "turbo": "^2.5.8",
