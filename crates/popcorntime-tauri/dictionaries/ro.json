@@ -55,7 +55,7 @@
     "analytics-description": "Trimite date de utilizare anonime pentru a ajuta la îmbunătățirea aplicației și la ghidarea dezvoltării.",
     "logs": "Jurnale",
     "logs-description": "Vizualizează jurnalele aplicației pentru depanare și rezolvarea problemelor.",
-    "open-logs": "Deschideți",
+    "open-logs": "Deschide jurnalele",
     "update": "Actualizează setările",
     "error": "A eșuat actualizarea setărilor"
   },
