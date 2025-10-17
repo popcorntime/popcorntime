@@ -135,4 +135,28 @@ export default {
 		default: "ar",
 		languages: ["ar", "fr"],
 	},
+	CO: {
+		default: "es",
+		languages: ["es"],
+	},
+	AR: {
+		default: "es",
+		languages: ["es"],
+	},
+	CL: {
+		default: "es",
+		languages: ["es"],
+	},
+	TW: {
+		default: "zh",
+		languages: ["zh"],
+	},
+	RO: {
+		default: "ro",
+		languages: ["ro"],
+	},
+	RU: {
+		default: "ru",
+		languages: ["ru"],
+	},
 } as const;
