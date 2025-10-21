@@ -72,7 +72,7 @@ If you want to skip right to getting the code to actually compile, take a look a
 Popcorn Time is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider [sponsoring Popcorn Time's development](https://github.com/sponsors/popcorntime).
 
 <div align="center">
-<table border="0">
+<table>
  <tr>
   <td>
     <a href="https://www.cloudflare.com/?utm_medium=opensource&utm_source=popcorntime">
