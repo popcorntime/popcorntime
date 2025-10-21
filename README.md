@@ -25,7 +25,7 @@
 [b-fb]: https://img.shields.io/badge/Facebook-blue?logo=facebook&logoColor=white
 [l-fb]: https://facebook.com/popcorntimetv
 [b-x]: https://img.shields.io/badge/Twitter-black?logo=x&logoColor=white
-[l-x]: https://facebook.com/popcorntimetv
+[l-x]: https://x.com/popcorntimetv
 [b-dw]: https://deepwiki.com/badge.svg
 [l-dw]: https://deepwiki.com/popcorntime/popcorntime
 [b-ds]: https://img.shields.io/discord/1419277122987491401?label=Discord&color=5865F2
@@ -72,9 +72,16 @@ If you want to skip right to getting the code to actually compile, take a look a
 Popcorn Time is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider [sponsoring Popcorn Time's development](https://github.com/sponsors/popcorntime).
 
 <div align="center">
-  <a href="https://www.cloudflare.com/?utm_medium=opensource&utm_source=popcorntime">
-    <img src="https://cf-assets.www.cloudflare.com/slt3lc6tev37/CHOl0sUhrumCxOXfRotGt/081f81d52274080b2d026fdf163e3009/cloudflare-icon-color_3x.png" width="101px">
-  </a> <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=popcorntime">
-    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201px">
-  </a>
+<table>
+ <tr>
+  <td>
+    <a href="https://www.cloudflare.com/?utm_medium=opensource&utm_source=popcorntime">
+    <img src="https://cf-assets.www.cloudflare.com/slt3lc6tev37/CHOl0sUhrumCxOXfRotGt/081f81d52274080b2d026fdf163e3009/cloudflare-icon-color_3x.png" width="101px"></a>
+  </td>
+  <td>
+    <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=popcorntime">
+    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201px"></a>
+  </td>
+ </tr>
+</table>
 </div>
