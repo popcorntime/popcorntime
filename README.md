@@ -12,22 +12,20 @@
 
 ![popcorntime](/resources/screenshot.jpg)
 
-[![Lint Rust][b-lr]][l-lr] [![Lint TS][b-lt]][l-lt] [![Test TS][b-tt]][l-tt] [![Test Rust][b-tr]][l-tr]
+[![Test TS][b-tt]][l-tt] [![Test Rust][b-tr]][l-tr]
 <br/>
-[![Discord][b-ds]][l-ds] [![FB][b-fb]][l-fb] [![DEEPWIKI][b-dw]][l-dw]
+[![Discord][b-ds]][l-ds] [![X][b-x]][l-x] [![FB][b-fb]][l-fb] [![DEEPWIKI][b-dw]][l-dw]
 
 </div>
 
-[b-lr]: https://github.com/popcorntime/popcorntime/actions/workflows/lint-rust.yaml/badge.svg?branch=dev
-[l-lr]: https://github.com/popcorntime/popcorntime/actions/workflows/lint-rust.yaml
-[b-lt]: https://github.com/popcorntime/popcorntime/actions/workflows/lint-ts.yaml/badge.svg?branch=dev
-[l-lt]: https://github.com/popcorntime/popcorntime/actions/workflows/lint-ts.yaml
 [b-tt]: https://github.com/popcorntime/popcorntime/actions/workflows/test-ts.yaml/badge.svg?branch=dev
 [l-tt]: https://github.com/popcorntime/popcorntime/actions/workflows/test-ts.yaml
 [b-tr]: https://github.com/popcorntime/popcorntime/actions/workflows/test-rust.yaml/badge.svg?branch=dev
 [l-tr]: https://github.com/popcorntime/popcorntime/actions/workflows/test-rust.yaml
 [b-fb]: https://img.shields.io/badge/Facebook-blue?logo=facebook&logoColor=white
 [l-fb]: https://facebook.com/popcorntimetv
+[b-x]: https://img.shields.io/badge/Twitter-black?logo=x&logoColor=white
+[l-x]: https://x.com/popcorntimetv
 [b-dw]: https://deepwiki.com/badge.svg
 [l-dw]: https://deepwiki.com/popcorntime/popcorntime
 [b-ds]: https://img.shields.io/discord/1419277122987491401?label=Discord&color=5865F2
@@ -71,7 +69,19 @@ If you want to skip right to getting the code to actually compile, take a look a
 
 ## Sponsors
 
-Support Popcorn Time and get your logo here and on the [official site](https://popcorntime.app).  
-[Become a sponsor](https://github.com/sponsors/popcorntime).
+Popcorn Time is an MIT-licensed open source project with its ongoing development made possible entirely by the support of these awesome backers. If you'd like to join them, please consider [sponsoring Popcorn Time's development](https://github.com/sponsors/popcorntime).
 
-This is a community-driven project. Your contributions let us spend more time building and improving Popcorn Time.
+<div align="center">
+<table>
+ <tr>
+  <td>
+    <a href="https://www.cloudflare.com/?utm_medium=opensource&utm_source=popcorntime">
+    <img src="https://cf-assets.www.cloudflare.com/slt3lc6tev37/CHOl0sUhrumCxOXfRotGt/081f81d52274080b2d026fdf163e3009/cloudflare-icon-color_3x.png" width="101px"></a>
+  </td>
+  <td>
+    <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=popcorntime">
+    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201px"></a>
+  </td>
+ </tr>
+</table>
+</div>
