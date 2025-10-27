@@ -170,7 +170,7 @@ jobs:
         with:
           token: ${{ secrets.PAT_POCHOCLIN }} # custom token here so that we can push tags later
       - name: Download artifacts
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: "${{ needs.build-tauri.outputs.channel }}-${{ matrix.platform }}-${{ github.run_number }}"
           path: release
