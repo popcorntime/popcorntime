@@ -25,7 +25,7 @@
 		"i18next-resources-to-backend": "catalog:",
 		"immer": "catalog:",
 		"lucide-react": "catalog:",
-		"posthog-js": "^1.276.0",
+		"posthog-js": "^1.280.1",
 		"react": "catalog:",
 		"react-dom": "catalog:",
 		"react-fast-compare": "catalog:",
