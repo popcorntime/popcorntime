@@ -29,7 +29,10 @@
       "identifier": "opener:allow-open-url",
       "allow": [
         {
-          "url": "http://127.0.0.1:808*"
+          "url": "http://127.0.0.1:8085"
+        },
+        {
+          "url": "http://127.0.0.1:8085/"
         },
         {
           "url": "https://go.popcorntime.app/*"

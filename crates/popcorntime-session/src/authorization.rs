@@ -140,6 +140,9 @@ impl AuthorizationBroker {
       .url();
     let send_event = Arc::new(send_event);
     let csrf_state = csrf_state.into_secret();
+    // The local callback server also needs the state so it can ignore requests
+    // that do not carry it, instead of letting them end this login attempt.
+    let server_state = csrf_state.clone();
 
     tauri::async_runtime::spawn({
       let send_event = Arc::clone(&send_event);
@@ -183,7 +186,7 @@ impl AuthorizationBroker {
         return;
       }
 
-      let result = run_local_oauth_server(authorize_url, PORT, tx).await;
+      let result = run_local_oauth_server(authorize_url, PORT, server_state, tx).await;
       if result.is_err() {
         tracing::warn!("Authorization handler timed out after 5 minutes.");
       }
